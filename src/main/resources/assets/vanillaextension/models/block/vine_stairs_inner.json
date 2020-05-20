@@ -1,0 +1,8 @@
+{
+	"parent": "block/inner_stairs",
+	"textures": {
+		"bottom": "minecraft:block/vine",
+		"top": "minecraft:block/vine",
+		"side": "minecraft:block/vine"
+	}
+}

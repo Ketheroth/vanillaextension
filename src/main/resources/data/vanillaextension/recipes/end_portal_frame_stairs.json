@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:end_portal_frame"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:end_portal_frame_stairs",
+		"count": 4
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:end_portal_frame"
+	},
+	"result": "vanillaextension:end_portal_frame_stairs",
+	"count": 1
+}

@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:oak_trapdoor"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:oak_trapdoor_stairs",
+		"count": 4
+	}
+}

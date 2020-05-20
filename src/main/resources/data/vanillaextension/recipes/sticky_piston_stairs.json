@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:sticky_piston"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:sticky_piston_stairs",
+		"count": 4
+	}
+}

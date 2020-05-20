@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:carved_pumpkin"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:carved_pumpkin_stairs",
+		"count": 4
+	}
+}

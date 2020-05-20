@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:daylight_detector"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:daylight_detector_stairs",
+		"count": 4
+	}
+}

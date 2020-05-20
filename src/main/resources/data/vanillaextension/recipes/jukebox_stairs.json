@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:jukebox"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:jukebox_stairs",
+		"count": 4
+	}
+}

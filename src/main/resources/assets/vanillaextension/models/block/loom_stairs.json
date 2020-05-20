@@ -1,0 +1,8 @@
+{
+	"parent": "block/stairs",
+	"textures": {
+		"bottom": "minecraft:block/loom_bottom",
+		"top": "minecraft:block/loom_top",
+		"side": "minecraft:block/loom_side"
+	}
+}

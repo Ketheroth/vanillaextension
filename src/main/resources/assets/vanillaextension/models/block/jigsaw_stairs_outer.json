@@ -1,0 +1,8 @@
+{
+	"parent": "block/outer_stairs",
+	"textures": {
+		"bottom": "minecraft:block/jigsaw_bottom",
+		"top": "minecraft:block/jigsaw_top",
+		"side": "minecraft:block/jigsaw_side"
+	}
+}

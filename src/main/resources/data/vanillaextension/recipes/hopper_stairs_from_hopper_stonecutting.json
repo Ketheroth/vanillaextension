@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:hopper"
+	},
+	"result": "vanillaextension:hopper_stairs",
+	"count": 1
+}

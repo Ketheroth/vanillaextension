@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:blast_furnace"
+	},
+	"result": "vanillaextension:blast_furnace_stairs",
+	"count": 1
+}

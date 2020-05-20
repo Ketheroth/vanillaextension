@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:blast_furnace"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:blast_furnace_stairs",
+		"count": 4
+	}
+}

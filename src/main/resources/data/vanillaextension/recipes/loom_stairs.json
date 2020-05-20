@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:loom"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:loom_stairs",
+		"count": 4
+	}
+}

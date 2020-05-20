@@ -1,0 +1,8 @@
+{
+	"parent": "block/inner_stairs",
+	"textures": {
+		"bottom": "minecraft:entity/end_portal",
+		"top": "minecraft:entity/end_portal",
+		"side": "minecraft:entity/end_portal"
+	}
+}

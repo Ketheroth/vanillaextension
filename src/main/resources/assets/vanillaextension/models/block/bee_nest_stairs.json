@@ -1,0 +1,8 @@
+{
+	"parent": "block/stairs",
+	"textures": {
+		"bottom": "minecraft:block/bee_nest_bottom",
+		"top": "minecraft:block/bee_nest_top",
+		"side": "minecraft:block/bee_nest_side"
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:smithing_table"
+	},
+	"result": "vanillaextension:smithing_table_stairs",
+	"count": 1
+}

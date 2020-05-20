@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:smoker"
+	},
+	"result": "vanillaextension:smoker_stairs",
+	"count": 1
+}

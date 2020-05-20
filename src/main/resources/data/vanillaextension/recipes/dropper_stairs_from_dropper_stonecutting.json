@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:dropper"
+	},
+	"result": "vanillaextension:dropper_stairs",
+	"count": 1
+}

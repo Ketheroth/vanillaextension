@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:iron_trapdoor"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:iron_trapdoor_stairs",
+		"count": 4
+	}
+}

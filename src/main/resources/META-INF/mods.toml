@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[31,)"
+#issueTrackerURL="http://my.issue.tracker/"
+[[mods]]
+modId="vanillaextension"
+version="1.15.2-1.0.0"
+displayName="Vanilla Extension"
+#updateJSONURL="http://myurl.me/"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/vanilla-extension"
+logoFile="logo.png"
+credits="Thanks for downloading my mod"
+authors="Nelson Brichau"
+description='''
+All the minecraft blocks
+(currently just all stairs)
+'''
+[[dependencies.vanillaextension]]
+    modId="forge"
+    mandatory=true
+    versionRange="[31,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.vanillaextension]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+    side="BOTH"

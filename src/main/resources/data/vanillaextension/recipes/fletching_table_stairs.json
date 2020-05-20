@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:fletching_table"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:fletching_table_stairs",
+		"count": 4
+	}
+}

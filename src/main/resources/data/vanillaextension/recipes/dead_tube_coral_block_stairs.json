@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#  ",
+		"## ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:dead_tube_coral_block"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:dead_tube_coral_block_stairs",
+		"count": 4
+	}
+}
