@@ -14,10 +14,11 @@ import net.minecraftforge.registries.ObjectHolder;
 
 @ObjectHolder(VanillaExtension.MODID)
 @Mod.EventBusSubscriber(modid = VanillaExtension.MODID, bus = Bus.MOD)
-public class BlockInit {// TODO: 21/05/2020 recipes stairs with other stairs to calque vanilla 
+public class BlockInit {
+	// TODO: 21/05/2020 loot_table of stairs to be like vanilla
 	public static final Block grass_block_stairs = null;// TODO: 19/05/2020 might change to be more like the grass block
 	public static final Block dirt_stairs = null;
-	public static final Block coarse_dirt_stairs = null;
+	public static final Block coarse_dirt_stairs = null;//right click with shovel should convert to dirt_stairs
 	public static final Block podzol_stairs = null;
 	public static final Block bedrock_stairs = null;
 	public static final Block sand_stairs = null;
