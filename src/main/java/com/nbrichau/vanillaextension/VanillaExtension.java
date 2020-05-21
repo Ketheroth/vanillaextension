@@ -1,11 +1,17 @@
 package com.nbrichau.vanillaextension;
 
 import com.nbrichau.vanillaextension.init.BlockInit;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.client.renderer.color.BlockColors;
+import net.minecraft.client.renderer.color.IBlockColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ILightReader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,6 +22,8 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import javax.annotation.Nullable;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("vanillaextension")
@@ -47,8 +55,46 @@ public class VanillaExtension
 	}
 
 	private void doClientStuff(final FMLClientSetupEvent event) {
+		RenderTypeLookup.setRenderLayer(BlockInit.oak_leaves_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.spruce_leaves_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.birch_leaves_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.jungle_leaves_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.acacia_leaves_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.dark_oak_leaves_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.glass_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.spawner_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.ice_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.cactus_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.soul_sand_stairs, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.white_stained_glass_stairs, RenderType.getTranslucent());
-		// TODO: 19/05/2020 change render transparent here for transparent or cropped block
+		RenderTypeLookup.setRenderLayer(BlockInit.orange_stained_glass_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.magenta_stained_glass_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.light_blue_stained_glass_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.yellow_stained_glass_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.lime_stained_glass_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.pink_stained_glass_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.gray_stained_glass_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.light_gray_stained_glass_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.cyan_stained_glass_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.purple_stained_glass_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.blue_stained_glass_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.brown_stained_glass_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.green_stained_glass_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.red_stained_glass_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.black_stained_glass_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.oak_trapdoor_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.spruce_trapdoor_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.birch_trapdoor_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.jungle_trapdoor_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.acacia_trapdoor_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.dark_oak_trapdoor_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.iron_bars_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.vine_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.slime_block_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.iron_trapdoor_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.sea_lantern_stairs, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.honey_block_stairs, RenderType.getTranslucent());
+
 	}
 
 	// You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -62,11 +108,9 @@ public class VanillaExtension
 		public ItemStack createIcon() {
 			return new ItemStack(Blocks.STRUCTURE_BLOCK);
 		}
-
 		private VanillaExtensionItemGroup(int index, String label){
 			super(index,label);
 		}
-
 	}
 	/*
 	//other mods compatibility

@@ -1,8 +1,0 @@
-{
-	"type": "minecraft:stonecutting",
-	"ingredient": {
-		"item": "minecraft:sticky_piston"
-	},
-	"result": "vanillaextension:sticky_piston_stairs",
-	"count": 1
-}

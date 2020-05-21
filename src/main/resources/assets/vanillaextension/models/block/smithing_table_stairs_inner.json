@@ -1,8 +1,0 @@
-{
-	"parent": "block/inner_stairs",
-	"textures": {
-		"bottom": "minecraft:block/smithing_table_bottom",
-		"top": "minecraft:block/smithing_table_top",
-		"side": "minecraft:block/smithing_table_side"
-	}
-}

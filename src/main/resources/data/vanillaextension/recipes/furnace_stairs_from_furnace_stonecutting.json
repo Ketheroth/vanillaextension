@@ -1,8 +1,0 @@
-{
-	"type": "minecraft:stonecutting",
-	"ingredient": {
-		"item": "minecraft:furnace"
-	},
-	"result": "vanillaextension:furnace_stairs",
-	"count": 1
-}

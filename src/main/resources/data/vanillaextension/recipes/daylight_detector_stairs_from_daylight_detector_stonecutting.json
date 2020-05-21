@@ -1,8 +1,0 @@
-{
-	"type": "minecraft:stonecutting",
-	"ingredient": {
-		"item": "minecraft:daylight_detector"
-	},
-	"result": "vanillaextension:daylight_detector_stairs",
-	"count": 1
-}

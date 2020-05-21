@@ -1,8 +1,0 @@
-{
-	"parent": "block/outer_stairs",
-	"textures": {
-		"bottom": "minecraft:block/blast_furnace_front",
-		"top": "minecraft:block/blast_furnace_top",
-		"side": "minecraft:block/blast_furnace_side"
-	}
-}

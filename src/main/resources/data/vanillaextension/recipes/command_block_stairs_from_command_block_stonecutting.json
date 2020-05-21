@@ -1,8 +1,0 @@
-{
-	"type": "minecraft:stonecutting",
-	"ingredient": {
-		"item": "minecraft:command_block"
-	},
-	"result": "vanillaextension:command_block_stairs",
-	"count": 1
-}

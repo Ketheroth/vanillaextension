@@ -1,8 +1,0 @@
-{
-	"type": "minecraft:stonecutting",
-	"ingredient": {
-		"item": "minecraft:piston"
-	},
-	"result": "vanillaextension:piston_stairs",
-	"count": 1
-}

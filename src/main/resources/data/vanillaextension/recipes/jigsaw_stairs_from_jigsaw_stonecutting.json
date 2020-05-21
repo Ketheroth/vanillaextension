@@ -1,8 +1,0 @@
-{
-	"type": "minecraft:stonecutting",
-	"ingredient": {
-		"item": "minecraft:jigsaw"
-	},
-	"result": "vanillaextension:jigsaw_stairs",
-	"count": 1
-}

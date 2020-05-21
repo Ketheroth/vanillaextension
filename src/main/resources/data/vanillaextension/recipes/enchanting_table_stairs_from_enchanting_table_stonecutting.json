@@ -1,8 +1,0 @@
-{
-	"type": "minecraft:stonecutting",
-	"ingredient": {
-		"item": "minecraft:enchanting_table"
-	},
-	"result": "vanillaextension:enchanting_table_stairs",
-	"count": 1
-}

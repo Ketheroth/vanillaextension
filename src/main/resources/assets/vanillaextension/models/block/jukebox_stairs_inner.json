@@ -1,8 +1,0 @@
-{
-	"parent": "block/inner_stairs",
-	"textures": {
-		"bottom": "minecraft:block/jukebox_side",
-		"top": "minecraft:block/jukebox_top",
-		"side": "minecraft:block/jukebox_side"
-	}
-}

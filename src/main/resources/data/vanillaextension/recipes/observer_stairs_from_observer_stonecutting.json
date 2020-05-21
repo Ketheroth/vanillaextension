@@ -1,8 +1,0 @@
-{
-	"type": "minecraft:stonecutting",
-	"ingredient": {
-		"item": "minecraft:observer"
-	},
-	"result": "vanillaextension:observer_stairs",
-	"count": 1
-}

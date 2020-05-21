@@ -1,8 +1,0 @@
-{
-	"type": "minecraft:stonecutting",
-	"ingredient": {
-		"item": "minecraft:structure_block"
-	},
-	"result": "vanillaextension:structure_block_stairs",
-	"count": 1
-}

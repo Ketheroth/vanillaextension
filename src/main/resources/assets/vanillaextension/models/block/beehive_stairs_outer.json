@@ -1,8 +1,0 @@
-{
-	"parent": "block/outer_stairs",
-	"textures": {
-		"bottom": "minecraft:block/beehive_end",
-		"top": "minecraft:block/beehive_end",
-		"side": "minecraft:block/beehive_side"
-	}
-}

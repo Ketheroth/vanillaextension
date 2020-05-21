@@ -1,8 +1,0 @@
-{
-	"type": "minecraft:stonecutting",
-	"ingredient": {
-		"item": "minecraft:note_block"
-	},
-	"result": "vanillaextension:note_block_stairs",
-	"count": 1
-}

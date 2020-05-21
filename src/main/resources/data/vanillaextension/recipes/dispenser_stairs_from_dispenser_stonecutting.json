@@ -1,8 +1,0 @@
-{
-	"type": "minecraft:stonecutting",
-	"ingredient": {
-		"item": "minecraft:dispenser"
-	},
-	"result": "vanillaextension:dispenser_stairs",
-	"count": 1
-}

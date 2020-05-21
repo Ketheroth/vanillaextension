@@ -1,8 +1,0 @@
-{
-	"parent": "block/stairs",
-	"textures": {
-		"bottom": "minecraft:block/cake_bottom",
-		"top": "minecraft:block/cake_top",
-		"side": "minecraft:block/cake_side"
-	}
-}
