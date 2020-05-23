@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:smelting",
+	"ingredient": {
+		"item": "vanillaextension:wet_sponge_stairs"
+	},
+	"result": "vanillaextension:sponge_stairs",
+	"experience": 0.15,
+	"cookingtime": 200
+}

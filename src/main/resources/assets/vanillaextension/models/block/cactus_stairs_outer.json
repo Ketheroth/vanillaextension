@@ -1,8 +1,0 @@
-{
-	"parent": "block/outer_stairs",
-	"textures": {
-		"bottom": "minecraft:block/cactus_bottom",
-		"top": "minecraft:block/cactus_top",
-		"side": "minecraft:block/cactus_side"
-	}
-}

@@ -12,11 +12,11 @@
 							"conditions": [
 								{
 									"condition": "minecraft:match_tool",
-									"predicate":{
+									"predicate": {
 										"enchantments": [
 											{
 												"enchantment": "minecraft:silk_touch",
-												"levels":{
+												"levels": {
 													"min": 1
 												}
 											}
@@ -30,7 +30,7 @@
 							"type": "minecraft:item",
 							"conditions": [
 								{
-									"condition": "minecraft:survive_explosion"
+									"condition": "minecraft:survives_explosion"
 								}
 							],
 							"name": "vanillaextension:dirt_stairs"

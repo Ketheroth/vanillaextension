@@ -17,7 +17,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod("vanillaextension")
 public class VanillaExtension
 {
@@ -27,12 +26,9 @@ public class VanillaExtension
 
 	public VanillaExtension() {
 		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-		// Register the setup method for modloading
 		modEventBus.addListener(this::setup);
-		// Register the doClientStuff method for modloading
 		modEventBus.addListener(this::doClientStuff);
 		instance = this;
-		// Register ourselves for server and other game events we are interested in
 		MinecraftForge.EVENT_BUS.register(this);
 		/*
 		//other mod compatibility
@@ -56,7 +52,6 @@ public class VanillaExtension
 		RenderTypeLookup.setRenderLayer(BlockInit.glass_stairs, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.spawner_stairs, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.ice_stairs, RenderType.getTranslucent());
-		RenderTypeLookup.setRenderLayer(BlockInit.cactus_stairs, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.soul_sand_stairs, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.white_stained_glass_stairs, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.orange_stained_glass_stairs, RenderType.getTranslucent());

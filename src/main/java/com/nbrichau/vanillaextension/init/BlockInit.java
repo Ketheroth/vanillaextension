@@ -1,7 +1,10 @@
 package com.nbrichau.vanillaextension.init;
 
 import com.nbrichau.vanillaextension.VanillaExtension;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
@@ -15,8 +18,7 @@ import net.minecraftforge.registries.ObjectHolder;
 @ObjectHolder(VanillaExtension.MODID)
 @Mod.EventBusSubscriber(modid = VanillaExtension.MODID, bus = Bus.MOD)
 public class BlockInit {
-	// TODO: 21/05/2020 loot_table of stairs to be like vanilla
-	public static final Block grass_block_stairs = null;// TODO: 19/05/2020 might change to be more like the grass block
+	public static final Block grass_block_stairs = null;
 	public static final Block dirt_stairs = null;
 	public static final Block coarse_dirt_stairs = null;//right click with shovel should convert to dirt_stairs
 	public static final Block podzol_stairs = null;
@@ -33,7 +35,7 @@ public class BlockInit {
 	public static final Block jungle_log_stairs = null;
 	public static final Block acacia_log_stairs = null;
 	public static final Block dark_oak_log_stairs = null;
-	public static final Block stripped_spruce_log_stairs = null;
+	public static final Block stripped_spruce_log_stairs = null;//right click to transform log stairs into stripped version
 	public static final Block stripped_birch_log_stairs = null;
 	public static final Block stripped_jungle_log_stairs = null;
 	public static final Block stripped_acacia_log_stairs = null;
@@ -90,15 +92,14 @@ public class BlockInit {
 	public static final Block redstone_ore_stairs = null;
 	public static final Block ice_stairs = null;
 	public static final Block snow_block_stairs = null;
-	public static final Block cactus_stairs = null;//might delete
 	public static final Block clay_stairs = null;
 	public static final Block pumpkin_stairs = null;
 	public static final Block netherrack_stairs = null;
 	public static final Block soul_sand_stairs = null;
 	public static final Block glowstone_stairs = null;
-	public static final Block carved_pumpkin_stairs = null;
+	public static final Block carved_pumpkin_stairs = null;//right click with a pumpkin stairs to get this block
 	public static final Block jack_o_lantern_stairs = null;
-	public static final Block white_stained_glass_stairs = null;// TODO: 19/05/2020 change to drop block only with silk touch
+	public static final Block white_stained_glass_stairs = null;
 	public static final Block orange_stained_glass_stairs = null;
 	public static final Block magenta_stained_glass_stairs = null;
 	public static final Block light_blue_stained_glass_stairs = null;
@@ -120,8 +121,8 @@ public class BlockInit {
 	public static final Block jungle_trapdoor_stairs = null;
 	public static final Block acacia_trapdoor_stairs = null;
 	public static final Block dark_oak_trapdoor_stairs = null;
-	public static final Block cracked_stone_bricks_stairs = null;
-	public static final Block chiseled_stone_bricks_stairs = null;
+	public static final Block cracked_stone_brick_stairs = null;
+	public static final Block chiseled_stone_brick_stairs = null;
 	public static final Block brown_mushroom_block_stairs = null;
 	public static final Block red_mushroom_block_stairs = null;
 	public static final Block mushroom_stem_stairs = null;
@@ -131,12 +132,13 @@ public class BlockInit {
 	public static final Block mycelium_stairs = null;
 	public static final Block end_stone_stairs = null;
 	public static final Block dragon_egg_stairs = null;
+	public static final Block redstone_lamp_stairs = null;
 	public static final Block emerald_ore_stairs = null;
 	public static final Block emerald_block_stairs = null;
 	public static final Block redstone_block_stairs = null;
 	public static final Block nether_quartz_ore_stairs = null;
 	public static final Block hopper_stairs = null;
-	public static final Block chiseled_quartz_block_stairs = null;// TODO: 19/05/2020 need to change recipe of quartz stairs
+	public static final Block chiseled_quartz_block_stairs = null;
 	public static final Block quartz_pillar_stairs = null;
 	public static final Block white_terracotta_stairs = null;
 	public static final Block orange_terracotta_stairs = null;
@@ -306,7 +308,6 @@ public class BlockInit {
 		event.getRegistry().register(new StairsBlock(Blocks.REDSTONE_ORE::getDefaultState, Block.Properties.from(Blocks.REDSTONE_ORE)).setRegistryName("redstone_ore_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.ICE::getDefaultState, Block.Properties.create(Material.ICE).slipperiness(0.98F).hardnessAndResistance(0.5F).sound(SoundType.GLASS).notSolid()).setRegistryName("ice_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.SNOW_BLOCK::getDefaultState, Block.Properties.from(Blocks.SNOW_BLOCK)).setRegistryName("snow_block_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.CACTUS::getDefaultState, Block.Properties.create(Material.CACTUS).hardnessAndResistance(0.4F).sound(SoundType.CLOTH).notSolid()).setRegistryName("cactus_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.CLAY::getDefaultState, Block.Properties.from(Blocks.CLAY)).setRegistryName("clay_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.PUMPKIN::getDefaultState, Block.Properties.from(Blocks.PUMPKIN)).setRegistryName("pumpkin_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.NETHERRACK::getDefaultState, Block.Properties.from(Blocks.NETHERRACK)).setRegistryName("netherrack_stairs"));
@@ -336,8 +337,8 @@ public class BlockInit {
 		event.getRegistry().register(new StairsBlock(Blocks.JUNGLE_TRAPDOOR::getDefaultState, Block.Properties.from(Blocks.JUNGLE_TRAPDOOR)).setRegistryName("jungle_trapdoor_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.ACACIA_TRAPDOOR::getDefaultState, Block.Properties.from(Blocks.ACACIA_TRAPDOOR)).setRegistryName("acacia_trapdoor_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.DARK_OAK_TRAPDOOR::getDefaultState, Block.Properties.from(Blocks.DARK_OAK_TRAPDOOR)).setRegistryName("dark_oak_trapdoor_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.CRACKED_STONE_BRICKS::getDefaultState, Block.Properties.from(Blocks.CRACKED_STONE_BRICKS)).setRegistryName("cracked_stone_bricks_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.CHISELED_STONE_BRICKS::getDefaultState, Block.Properties.from(Blocks.CHISELED_STONE_BRICKS)).setRegistryName("chiseled_stone_bricks_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.CRACKED_STONE_BRICKS::getDefaultState, Block.Properties.from(Blocks.CRACKED_STONE_BRICKS)).setRegistryName("cracked_stone_brick_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.CHISELED_STONE_BRICKS::getDefaultState, Block.Properties.from(Blocks.CHISELED_STONE_BRICKS)).setRegistryName("chiseled_stone_brick_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.BROWN_MUSHROOM_BLOCK::getDefaultState, Block.Properties.from(Blocks.BROWN_MUSHROOM_BLOCK)).setRegistryName("brown_mushroom_block_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.RED_MUSHROOM_BLOCK::getDefaultState, Block.Properties.from(Blocks.RED_MUSHROOM_BLOCK)).setRegistryName("red_mushroom_block_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.MUSHROOM_STEM::getDefaultState, Block.Properties.from(Blocks.MUSHROOM_STEM)).setRegistryName("mushroom_stem_stairs"));
@@ -347,6 +348,7 @@ public class BlockInit {
 		event.getRegistry().register(new StairsBlock(Blocks.MYCELIUM::getDefaultState, Block.Properties.create(Material.ORGANIC, MaterialColor.PURPLE).hardnessAndResistance(0.6F).sound(SoundType.PLANT)).setRegistryName("mycelium_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.END_STONE::getDefaultState, Block.Properties.from(Blocks.END_STONE)).setRegistryName("end_stone_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.DRAGON_EGG::getDefaultState, Block.Properties.from(Blocks.DRAGON_EGG)).setRegistryName("dragon_egg_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.REDSTONE_LAMP::getDefaultState, Block.Properties.from(Blocks.REDSTONE_LAMP)).setRegistryName("redstone_lamp_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.EMERALD_ORE::getDefaultState, Block.Properties.from(Blocks.EMERALD_ORE)).setRegistryName("emerald_ore_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.EMERALD_BLOCK::getDefaultState, Block.Properties.from(Blocks.EMERALD_BLOCK)).setRegistryName("emerald_block_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.REDSTONE_BLOCK::getDefaultState, Block.Properties.from(Blocks.REDSTONE_BLOCK)).setRegistryName("redstone_block_stairs"));
@@ -524,7 +526,6 @@ public class BlockInit {
 		event.getRegistry().register(new BlockItem(redstone_ore_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("redstone_ore_stairs"));
 		event.getRegistry().register(new BlockItem(ice_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("ice_stairs"));
 		event.getRegistry().register(new BlockItem(snow_block_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("snow_block_stairs"));
-		event.getRegistry().register(new BlockItem(cactus_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("cactus_stairs"));
 		event.getRegistry().register(new BlockItem(clay_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("clay_stairs"));
 		event.getRegistry().register(new BlockItem(pumpkin_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("pumpkin_stairs"));
 		event.getRegistry().register(new BlockItem(netherrack_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("netherrack_stairs"));
@@ -554,8 +555,8 @@ public class BlockInit {
 		event.getRegistry().register(new BlockItem(jungle_trapdoor_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("jungle_trapdoor_stairs"));
 		event.getRegistry().register(new BlockItem(acacia_trapdoor_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("acacia_trapdoor_stairs"));
 		event.getRegistry().register(new BlockItem(dark_oak_trapdoor_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("dark_oak_trapdoor_stairs"));
-		event.getRegistry().register(new BlockItem(cracked_stone_bricks_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("cracked_stone_bricks_stairs"));
-		event.getRegistry().register(new BlockItem(chiseled_stone_bricks_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("chiseled_stone_bricks_stairs"));
+		event.getRegistry().register(new BlockItem(cracked_stone_brick_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("cracked_stone_brick_stairs"));
+		event.getRegistry().register(new BlockItem(chiseled_stone_brick_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("chiseled_stone_brick_stairs"));
 		event.getRegistry().register(new BlockItem(brown_mushroom_block_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("brown_mushroom_block_stairs"));
 		event.getRegistry().register(new BlockItem(red_mushroom_block_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("red_mushroom_block_stairs"));
 		event.getRegistry().register(new BlockItem(mushroom_stem_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("mushroom_stem_stairs"));
@@ -565,6 +566,7 @@ public class BlockInit {
 		event.getRegistry().register(new BlockItem(mycelium_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("mycelium_stairs"));
 		event.getRegistry().register(new BlockItem(end_stone_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("end_stone_stairs"));
 		event.getRegistry().register(new BlockItem(dragon_egg_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("dragon_egg_stairs"));
+		event.getRegistry().register(new BlockItem(redstone_lamp_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("redstone_lamp_stairs"));
 		event.getRegistry().register(new BlockItem(emerald_ore_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("emerald_ore_stairs"));
 		event.getRegistry().register(new BlockItem(emerald_block_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("emerald_block_stairs"));
 		event.getRegistry().register(new BlockItem(redstone_block_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("redstone_block_stairs"));

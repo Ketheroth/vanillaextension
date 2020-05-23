@@ -1,0 +1,22 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:terracotta_stairs",
+		"vanillaextension:white_terracotta_stairs",
+		"vanillaextension:orange_terracotta_stairs",
+		"vanillaextension:magenta_terracotta_stairs",
+		"vanillaextension:light_blue_terracotta_stairs",
+		"vanillaextension:yellow_terracotta_stairs",
+		"vanillaextension:lime_terracotta_stairs",
+		"vanillaextension:pink_terracotta_stairs",
+		"vanillaextension:gray_terracotta_stairs",
+		"vanillaextension:light_gray_terracotta_stairs",
+		"vanillaextension:cyan_terracotta_stairs",
+		"vanillaextension:purple_terracotta_stairs",
+		"vanillaextension:blue_terracotta_stairs",
+		"vanillaextension:brown_terracotta_stairs",
+		"vanillaextension:green_terracotta_stairs",
+		"vanillaextension:red_terracotta_stairs",
+		"vanillaextension:black_terracotta_stairs"
+	]
+}

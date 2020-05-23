@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:smelting",
+	"ingredient": {
+		"item": "vanillaextension:magenta_terracotta_stairs"
+	},
+	"result": "vanillaextension:magenta_glazed_terracotta_stairs",
+	"experience": 0.1,
+	"cookingtime": 200
+}
