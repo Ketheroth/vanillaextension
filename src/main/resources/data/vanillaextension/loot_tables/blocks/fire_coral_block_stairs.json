@@ -24,7 +24,7 @@
 									}
 								}
 							],
-							"name": "vanillaextension:bubble_coral_block_stairs"
+							"name": "vanillaextension:fire_coral_block_stairs"
 						},
 						{
 							"type": "minecraft:item",
@@ -33,7 +33,7 @@
 									"condition": "minecraft:survives_explosion"
 								}
 							],
-							"name": "vanillaextension:dead_bubble_coral_block_stairs"
+							"name": "vanillaextension:dead_fire_coral_block_stairs"
 						}
 					]
 				}

@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/oak_leaves_slab" },
+		"type=top": { "model": "vanillaextension:block/oak_leaves_slab_top" },
+		"type=double": { "model": "minecraft:block/oak_leaves" }
+	}
+}

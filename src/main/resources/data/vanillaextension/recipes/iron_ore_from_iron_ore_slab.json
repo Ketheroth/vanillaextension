@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:iron_ore_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:iron_ore",
+		"count": 1
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:spruce_log_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:spruce_log",
+		"count": 1
+	}
+}

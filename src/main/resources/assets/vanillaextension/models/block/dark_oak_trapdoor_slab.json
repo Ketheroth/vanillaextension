@@ -1,0 +1,8 @@
+{
+	"parent": "block/slab",
+	"textures": {
+		"bottom": "minecraft:block/dark_oak_trapdoor",
+		"top": "minecraft:block/dark_oak_trapdoor",
+		"side": "minecraft:block/dark_oak_trapdoor"
+	}
+}

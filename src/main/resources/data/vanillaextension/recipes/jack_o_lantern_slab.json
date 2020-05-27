@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:jack_o_lantern"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:jack_o_lantern_slab",
+		"count": 6
+	}
+}

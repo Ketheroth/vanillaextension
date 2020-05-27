@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:bookshelf_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:bookshelf",
+		"count": 1
+	}
+}

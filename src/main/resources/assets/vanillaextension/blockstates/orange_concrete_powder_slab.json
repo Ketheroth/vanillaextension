@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/orange_concrete_powder_slab" },
+		"type=top": { "model": "vanillaextension:block/orange_concrete_powder_slab_top" },
+		"type=double": { "model": "minecraft:block/orange_concrete_powder" }
+	}
+}

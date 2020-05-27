@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:purple_glazed_terracotta_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:purple_glazed_terracotta",
+		"count": 1
+	}
+}

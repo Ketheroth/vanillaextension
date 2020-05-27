@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:coal_ore_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:coal_ore",
+		"count": 1
+	}
+}

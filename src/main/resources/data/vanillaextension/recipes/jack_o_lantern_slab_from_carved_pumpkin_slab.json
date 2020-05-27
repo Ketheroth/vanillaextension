@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "vanillaextension:carved_pumpkin_slab"
+		},
+		{
+			"item": "minecraft:torch"
+		}
+	],
+	"result": {
+		"item": "vanillaextension:jack_o_lantern_slab",
+		"count": 1
+	}
+}

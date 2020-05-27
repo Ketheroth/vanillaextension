@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "terracotta_slab",
+	"pattern": [
+		"SSS",
+		"SDS",
+		"SSS"
+	],
+	"key": {
+		"S": {
+			"tag": "vanillaextension:terracotta_slab"
+		},
+		"D": {
+			"item": "minecraft:magenta_dye"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:magenta_terracotta_slab",
+		"count": 8
+	}
+}

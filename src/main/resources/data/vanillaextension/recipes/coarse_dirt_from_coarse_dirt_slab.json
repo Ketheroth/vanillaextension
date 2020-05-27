@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:coarse_dirt_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:coarse_dirt",
+		"count": 1
+	}
+}

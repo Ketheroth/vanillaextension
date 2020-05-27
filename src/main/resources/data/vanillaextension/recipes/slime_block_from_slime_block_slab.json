@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:slime_block_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:slime_block",
+		"count": 1
+	}
+}

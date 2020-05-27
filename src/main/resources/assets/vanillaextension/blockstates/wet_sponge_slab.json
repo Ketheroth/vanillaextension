@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/wet_sponge_slab" },
+		"type=top": { "model": "vanillaextension:block/wet_sponge_slab_top" },
+		"type=double": { "model": "minecraft:block/wet_sponge" }
+	}
+}

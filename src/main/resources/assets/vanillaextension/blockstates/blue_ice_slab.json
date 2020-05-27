@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/blue_ice_slab" },
+		"type=top": { "model": "vanillaextension:block/blue_ice_slab_top" },
+		"type=double": { "model": "minecraft:block/blue_ice" }
+	}
+}

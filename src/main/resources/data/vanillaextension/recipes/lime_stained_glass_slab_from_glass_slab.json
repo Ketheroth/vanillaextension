@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "glass_slab",
+	"pattern": [
+		"SSS",
+		"SDS",
+		"SSS"
+	],
+	"key": {
+		"S": {
+			"tag": "vanillaextension:glass_slab"
+		},
+		"D": {
+			"item": "minecraft:lime_dye"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:lime_stained_glass_slab",
+		"count": 8
+	}
+}

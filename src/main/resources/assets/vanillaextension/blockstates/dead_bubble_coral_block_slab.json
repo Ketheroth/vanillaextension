@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/dead_bubble_coral_block_slab" },
+		"type=top": { "model": "vanillaextension:block/dead_bubble_coral_block_slab_top" },
+		"type=double": { "model": "minecraft:block/dead_bubble_coral_block" }
+	}
+}

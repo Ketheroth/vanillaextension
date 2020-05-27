@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:acacia_wood_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:acacia_wood",
+		"count": 1
+	}
+}

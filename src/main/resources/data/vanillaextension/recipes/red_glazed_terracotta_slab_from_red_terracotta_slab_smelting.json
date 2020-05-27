@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:smelting",
+	"ingredient": {
+		"item": "vanillaextension:red_terracotta_slab"
+	},
+	"result": "vanillaextension:red_glazed_terracotta_slab",
+	"experience": 0.1,
+	"cookingtime": 200
+}

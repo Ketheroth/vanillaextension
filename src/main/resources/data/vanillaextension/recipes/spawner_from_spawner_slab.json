@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:spawner_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:spawner",
+		"count": 1
+	}
+}

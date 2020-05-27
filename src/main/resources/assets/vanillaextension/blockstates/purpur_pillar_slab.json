@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/purpur_pillar_slab" },
+		"type=top": { "model": "vanillaextension:block/purpur_pillar_slab_top" },
+		"type=double": { "model": "minecraft:block/purpur_pillar" }
+	}
+}

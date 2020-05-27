@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/birch_leaves_slab" },
+		"type=top": { "model": "vanillaextension:block/birch_leaves_slab_top" },
+		"type=double": { "model": "minecraft:block/birch_leaves" }
+	}
+}

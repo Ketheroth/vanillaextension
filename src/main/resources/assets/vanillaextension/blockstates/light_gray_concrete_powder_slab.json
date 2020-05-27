@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/light_gray_concrete_powder_slab" },
+		"type=top": { "model": "vanillaextension:block/light_gray_concrete_powder_slab_top" },
+		"type=double": { "model": "minecraft:block/light_gray_concrete_powder" }
+	}
+}

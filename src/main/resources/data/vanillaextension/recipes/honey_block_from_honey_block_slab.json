@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:honey_block_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:honey_block",
+		"count": 1
+	}
+}

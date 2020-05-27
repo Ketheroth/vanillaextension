@@ -1,0 +1,8 @@
+{
+	"parent": "block/slab",
+	"textures": {
+		"bottom": "minecraft:block/dragon_egg",
+		"top": "minecraft:block/dragon_egg",
+		"side": "minecraft:block/dragon_egg"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/birch_trapdoor_slab" },
+		"type=top": { "model": "vanillaextension:block/birch_trapdoor_slab_top" },
+		"type=double": { "model": "vanillaextension:block/birch_trapdoor_slab_double" }
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:emerald_ore"
+	},
+	"result": "vanillaextension:emerald_ore_slab",
+	"count": 2
+}

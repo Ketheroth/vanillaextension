@@ -1,0 +1,22 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:terracotta_slab",
+		"vanillaextension:white_terracotta_slab",
+		"vanillaextension:orange_terracotta_slab",
+		"vanillaextension:magenta_terracotta_slab",
+		"vanillaextension:light_blue_terracotta_slab",
+		"vanillaextension:yellow_terracotta_slab",
+		"vanillaextension:lime_terracotta_slab",
+		"vanillaextension:pink_terracotta_slab",
+		"vanillaextension:gray_terracotta_slab",
+		"vanillaextension:light_gray_terracotta_slab",
+		"vanillaextension:cyan_terracotta_slab",
+		"vanillaextension:purple_terracotta_slab",
+		"vanillaextension:blue_terracotta_slab",
+		"vanillaextension:brown_terracotta_slab",
+		"vanillaextension:green_terracotta_slab",
+		"vanillaextension:red_terracotta_slab",
+		"vanillaextension:black_terracotta_slab"
+	]
+}

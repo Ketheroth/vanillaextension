@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "wool_slab",
+	"pattern": [
+		"SSS",
+		"SDS",
+		"SSS"
+	],
+	"key": {
+		"S": {
+			"tag": "vanillaextension:wool_slab"
+		},
+		"D": {
+			"item": "minecraft:cyan_dye"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:cyan_wool_slab",
+		"count": 8
+	}
+}

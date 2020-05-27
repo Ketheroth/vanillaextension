@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/brown_mushroom_block_slab" },
+		"type=top": { "model": "vanillaextension:block/brown_mushroom_block_slab_top" },
+		"type=double": { "model": "minecraft:block/brown_mushroom_block" }
+	}
+}

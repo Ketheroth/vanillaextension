@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:stripped_acacia_log_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:stripped_acacia_log",
+		"count": 1
+	}
+}

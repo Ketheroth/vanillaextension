@@ -1,0 +1,21 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:white_wool_slab",
+		"vanillaextension:orange_wool_slab",
+		"vanillaextension:magenta_wool_slab",
+		"vanillaextension:light_blue_wool_slab",
+		"vanillaextension:yellow_wool_slab",
+		"vanillaextension:lime_wool_slab",
+		"vanillaextension:pink_wool_slab",
+		"vanillaextension:gray_wool_slab",
+		"vanillaextension:light_gray_wool_slab",
+		"vanillaextension:cyan_wool_slab",
+		"vanillaextension:purple_wool_slab",
+		"vanillaextension:blue_wool_slab",
+		"vanillaextension:brown_wool_slab",
+		"vanillaextension:green_wool_slab",
+		"vanillaextension:red_wool_slab",
+		"vanillaextension:black_wool_slab"
+	]
+}

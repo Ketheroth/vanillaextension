@@ -1,0 +1,8 @@
+{
+	"parent": "block/slab_top",
+	"textures": {
+		"bottom": "minecraft:block/carved_pumpkin",
+		"top": "minecraft:block/pumpkin_top",
+		"side": "minecraft:block/pumpkin_side"
+	}
+}

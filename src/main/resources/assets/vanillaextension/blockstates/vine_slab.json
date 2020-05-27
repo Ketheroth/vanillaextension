@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/vine_slab" },
+		"type=top": { "model": "vanillaextension:block/vine_slab_top" },
+		"type=double": { "model": "vanillaextension:block/vine_slab_double" }
+	}
+}

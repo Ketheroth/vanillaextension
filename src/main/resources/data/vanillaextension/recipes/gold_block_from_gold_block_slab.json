@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:gold_block_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:gold_block",
+		"count": 1
+	}
+}

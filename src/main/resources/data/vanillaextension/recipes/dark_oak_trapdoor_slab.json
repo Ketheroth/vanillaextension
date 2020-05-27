@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:dark_oak_trapdoor"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:dark_oak_trapdoor_slab",
+		"count": 6
+	}
+}

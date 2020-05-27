@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/acacia_trapdoor_slab" },
+		"type=top": { "model": "vanillaextension:block/acacia_trapdoor_slab_top" },
+		"type=double": { "model": "vanillaextension:block/acacia_trapdoor_slab_double" }
+	}
+}

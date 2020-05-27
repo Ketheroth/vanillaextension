@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:bone_block_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:bone_block",
+		"count": 1
+	}
+}
