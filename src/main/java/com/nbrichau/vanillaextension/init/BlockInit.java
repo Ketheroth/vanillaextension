@@ -15,7 +15,6 @@ import net.minecraftforge.registries.ObjectHolder;
 @ObjectHolder(VanillaExtension.MODID)
 @Mod.EventBusSubscriber(modid = VanillaExtension.MODID, bus = Bus.MOD)
 public class BlockInit {
-	// TODO: 25/05/2020 add recipes advancement
 	public static final Block grass_block_stairs = null;
 	public static final Block dirt_stairs = null;
 	public static final Block coarse_dirt_stairs = null;//right click with shovel should convert to dirt_stairs
