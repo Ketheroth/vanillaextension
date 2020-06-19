@@ -3,7 +3,7 @@ loaderVersion="[31,)"
 #issueTrackerURL="http://my.issue.tracker/"
 [[mods]]
 modId="vanillaextension"
-version="1.15.2-1.0.0"
+version="1.15.2-1.0.2"
 displayName="Vanilla Extension"
 #updateJSONURL="http://myurl.me/"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/vanilla-extension"
@@ -11,8 +11,7 @@ logoFile="logo.png"
 credits="Thanks for downloading my mod"
 authors="Nelson Brichau"
 description='''
-All the minecraft blocks
-(currently just all stairs)
+You can convert all the vanilla blocks to stairs and slabs
 '''
 [[dependencies.vanillaextension]]
     modId="forge"

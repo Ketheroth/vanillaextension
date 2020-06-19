@@ -120,6 +120,45 @@ public class VanillaExtension
 		RenderTypeLookup.setRenderLayer(BlockInit.iron_trapdoor_slab, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.sea_lantern_slab, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.honey_block_slab, RenderType.getTranslucent());
+
+		RenderTypeLookup.setRenderLayer(BlockInit.oak_leaves_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.spruce_leaves_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.birch_leaves_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.jungle_leaves_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.acacia_leaves_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.dark_oak_leaves_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.glass_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.spawner_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.ice_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.soul_sand_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.white_stained_glass_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.orange_stained_glass_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.magenta_stained_glass_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.light_blue_stained_glass_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.yellow_stained_glass_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.lime_stained_glass_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.pink_stained_glass_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.gray_stained_glass_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.light_gray_stained_glass_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.cyan_stained_glass_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.purple_stained_glass_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.blue_stained_glass_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.brown_stained_glass_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.green_stained_glass_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.red_stained_glass_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.black_stained_glass_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.oak_trapdoor_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.spruce_trapdoor_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.birch_trapdoor_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.jungle_trapdoor_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.acacia_trapdoor_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.dark_oak_trapdoor_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.iron_bars_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.vine_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.slime_block_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.iron_trapdoor_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.sea_lantern_fence, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.honey_block_fence, RenderType.getTranslucent());
 	}
 
 	// You can use SubscribeEvent and let the Event Bus discover methods to call
