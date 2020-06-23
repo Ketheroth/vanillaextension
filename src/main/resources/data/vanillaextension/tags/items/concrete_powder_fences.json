@@ -1,0 +1,21 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:white_concrete_powder_fence",
+		"vanillaextension:orange_concrete_powder_fence",
+		"vanillaextension:magenta_concrete_powder_fence",
+		"vanillaextension:light_blue_concrete_powder_fence",
+		"vanillaextension:yellow_concrete_powder_fence",
+		"vanillaextension:lime_concrete_powder_fence",
+		"vanillaextension:pink_concrete_powder_fence",
+		"vanillaextension:gray_concrete_powder_fence",
+		"vanillaextension:light_gray_concrete_powder_fence",
+		"vanillaextension:cyan_concrete_powder_fence",
+		"vanillaextension:purple_concrete_powder_fence",
+		"vanillaextension:blue_concrete_powder_fence",
+		"vanillaextension:brown_concrete_powder_fence",
+		"vanillaextension:green_concrete_powder_fence",
+		"vanillaextension:red_concrete_powder_fence",
+		"vanillaextension:black_concrete_powder_fence"
+	]
+}

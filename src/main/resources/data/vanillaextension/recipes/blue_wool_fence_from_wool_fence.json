@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "wool_fence",
+	"pattern": [
+		"SSS",
+		"SDS",
+		"SSS"
+	],
+	"key": {
+		"S": {
+			"tag": "vanillaextension:wool_fences"
+		},
+		"D": {
+			"item": "minecraft:blue_dye"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:blue_wool_fence",
+		"count": 8
+	}
+}

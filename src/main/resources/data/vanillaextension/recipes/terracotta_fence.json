@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:terracotta"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:terracotta_fence",
+		"count": 3
+	}
+}

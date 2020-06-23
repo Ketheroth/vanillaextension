@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:black_wool"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:black_wool_fence",
+		"count": 3
+	}
+}

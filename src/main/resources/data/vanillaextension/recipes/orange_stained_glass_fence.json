@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:orange_stained_glass"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:orange_stained_glass_fence",
+		"count": 3
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:diamond_block"
+	},
+	"result": "vanillaextension:diamond_block_fence",
+	"count": 1
+}

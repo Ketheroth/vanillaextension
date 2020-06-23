@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:dark_prismarine"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:dark_prismarine_fence",
+		"count": 3
+	}
+}

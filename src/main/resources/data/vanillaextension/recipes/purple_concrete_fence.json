@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:purple_concrete"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:purple_concrete_fence",
+		"count": 3
+	}
+}

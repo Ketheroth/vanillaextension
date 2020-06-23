@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:acacia_log"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:acacia_log_fence",
+		"count": 3
+	}
+}

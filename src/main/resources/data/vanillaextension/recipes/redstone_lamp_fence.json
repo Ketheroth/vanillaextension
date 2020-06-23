@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:redstone_lamp"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:redstone_lamp_fence",
+		"count": 3
+	}
+}

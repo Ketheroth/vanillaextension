@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:dark_oak_trapdoor"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:dark_oak_trapdoor_fence",
+		"count": 3
+	}
+}

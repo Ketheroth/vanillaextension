@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:polished_diorite"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:polished_diorite_fence",
+		"count": 3
+	}
+}

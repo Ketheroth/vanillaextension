@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:dried_kelp_block"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:dried_kelp_block_fence",
+		"count": 3
+	}
+}

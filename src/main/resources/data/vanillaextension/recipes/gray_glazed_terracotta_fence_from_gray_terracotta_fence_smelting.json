@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:smelting",
+	"ingredient": {
+		"item": "vanillaextension:gray_terracotta_fence"
+	},
+	"result": "vanillaextension:gray_glazed_terracotta_fence",
+	"experience": 0.1,
+	"cookingtime": 200
+}

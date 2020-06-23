@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:smelting",
+	"ingredient": {
+		"item": "vanillaextension:wet_sponge_fence"
+	},
+	"result": "vanillaextension:sponge_fence",
+	"experience": 0.15,
+	"cookingtime": 200
+}

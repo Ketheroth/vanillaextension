@@ -1,0 +1,21 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:white_concrete_fence",
+		"vanillaextension:orange_concrete_fence",
+		"vanillaextension:magenta_concrete_fence",
+		"vanillaextension:light_blue_concrete_fence",
+		"vanillaextension:yellow_concrete_fence",
+		"vanillaextension:lime_concrete_fence",
+		"vanillaextension:pink_concrete_fence",
+		"vanillaextension:gray_concrete_fence",
+		"vanillaextension:light_gray_concrete_fence",
+		"vanillaextension:cyan_concrete_fence",
+		"vanillaextension:purple_concrete_fence",
+		"vanillaextension:blue_concrete_fence",
+		"vanillaextension:brown_concrete_fence",
+		"vanillaextension:green_concrete_fence",
+		"vanillaextension:red_concrete_fence",
+		"vanillaextension:black_concrete_fence"
+	]
+}

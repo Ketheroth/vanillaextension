@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:cut_red_sandstone"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:cut_red_sandstone_fence",
+		"count": 3
+	}
+}

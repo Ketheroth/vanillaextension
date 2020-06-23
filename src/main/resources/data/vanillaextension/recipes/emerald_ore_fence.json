@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:emerald_ore"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:emerald_ore_fence",
+		"count": 3
+	}
+}

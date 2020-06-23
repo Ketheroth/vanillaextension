@@ -8,7 +8,7 @@
 	],
 	"key": {
 		"S": {
-			"tag": "vanillaextension:glass_slab"
+			"tag": "vanillaextension:glass_slabs"
 		},
 		"D": {
 			"item": "minecraft:green_dye"

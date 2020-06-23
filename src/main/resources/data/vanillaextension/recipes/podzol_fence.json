@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:podzol"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:podzol_fence",
+		"count": 3
+	}
+}

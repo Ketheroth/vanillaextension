@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:block/fence_post",
+	"textures": {
+		"texture": "minecraft:block/honey_block_side"
+	}
+}

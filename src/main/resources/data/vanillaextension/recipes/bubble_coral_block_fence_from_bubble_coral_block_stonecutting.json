@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:bubble_coral_block"
+	},
+	"result": "vanillaextension:bubble_coral_block_fence",
+	"count": 1
+}

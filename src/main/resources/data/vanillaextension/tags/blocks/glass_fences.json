@@ -1,0 +1,22 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:glass_fence",
+		"vanillaextension:white_stained_glass_fence",
+		"vanillaextension:orange_stained_glass_fence",
+		"vanillaextension:magenta_stained_glass_fence",
+		"vanillaextension:light_blue_stained_glass_fence",
+		"vanillaextension:yellow_stained_glass_fence",
+		"vanillaextension:lime_stained_glass_fence",
+		"vanillaextension:pink_stained_glass_fence",
+		"vanillaextension:gray_stained_glass_fence",
+		"vanillaextension:light_gray_stained_glass_fence",
+		"vanillaextension:cyan_stained_glass_fence",
+		"vanillaextension:purple_stained_glass_fence",
+		"vanillaextension:blue_stained_glass_fence",
+		"vanillaextension:brown_stained_glass_fence",
+		"vanillaextension:green_stained_glass_fence",
+		"vanillaextension:red_stained_glass_fence",
+		"vanillaextension:black_stained_glass_fence"
+	]
+}

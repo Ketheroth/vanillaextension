@@ -8,7 +8,7 @@
 	],
 	"key": {
 		"S": {
-			"tag": "vanillaextension:wool_slab"
+			"tag": "vanillaextension:wool_slabs"
 		},
 		"D": {
 			"item": "minecraft:light_gray_dye"

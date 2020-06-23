@@ -15,10 +15,10 @@ import net.minecraftforge.registries.ObjectHolder;
 @ObjectHolder(VanillaExtension.MODID)
 @Mod.EventBusSubscriber(modid = VanillaExtension.MODID, bus = Bus.MOD)
 public class BlockInit {
-	// TODO: 14/06/2020 add grass_path ???
+
 	public static final Block grass_block_stairs = null;
 	public static final Block dirt_stairs = null;
-	public static final Block coarse_dirt_stairs = null;//right click with shovel should convert to dirt_stairs
+	public static final Block coarse_dirt_stairs = null;
 	public static final Block podzol_stairs = null;
 	public static final Block bedrock_stairs = null;
 	public static final Block sand_stairs = null;
@@ -27,14 +27,14 @@ public class BlockInit {
 	public static final Block gold_ore_stairs = null;
 	public static final Block iron_ore_stairs = null;
 	public static final Block coal_ore_stairs = null;
-	public static final Block oak_log_stairs = null;// TODO: 19/05/2020 change with custom model, cause texture is bad
+	public static final Block oak_log_stairs = null;
 	public static final Block spruce_log_stairs = null;
 	public static final Block birch_log_stairs = null;
 	public static final Block jungle_log_stairs = null;
 	public static final Block acacia_log_stairs = null;
 	public static final Block dark_oak_log_stairs = null;
 	public static final Block stripped_oak_log_stairs = null;
-	public static final Block stripped_spruce_log_stairs = null;//right click to transform log stairs into stripped version
+	public static final Block stripped_spruce_log_stairs = null;
 	public static final Block stripped_birch_log_stairs = null;
 	public static final Block stripped_jungle_log_stairs = null;
 	public static final Block stripped_acacia_log_stairs = null;
@@ -46,12 +46,12 @@ public class BlockInit {
 	public static final Block acacia_wood_stairs = null;
 	public static final Block dark_oak_wood_stairs = null;
 	public static final Block stripped_oak_wood_stairs = null;
-	public static final Block stripped_spruce_wood_stairs = null;// TODO: 21/05/2020 right click with axe transform into this
+	public static final Block stripped_spruce_wood_stairs = null;
 	public static final Block stripped_birch_wood_stairs = null;
 	public static final Block stripped_jungle_wood_stairs = null;
 	public static final Block stripped_acacia_wood_stairs = null;
 	public static final Block stripped_dark_oak_wood_stairs = null;
-	public static final Block oak_leaves_stairs = null;// TODO: 19/05/2020 texture in gray shade
+	public static final Block oak_leaves_stairs = null;
 	public static final Block spruce_leaves_stairs = null;
 	public static final Block birch_leaves_stairs = null;
 	public static final Block jungle_leaves_stairs = null;
@@ -95,7 +95,7 @@ public class BlockInit {
 	public static final Block netherrack_stairs = null;
 	public static final Block soul_sand_stairs = null;
 	public static final Block glowstone_stairs = null;
-	public static final Block carved_pumpkin_stairs = null;//right click with a pumpkin stairs to get this block
+	public static final Block carved_pumpkin_stairs = null;
 	public static final Block jack_o_lantern_stairs = null;
 	public static final Block white_stained_glass_stairs = null;
 	public static final Block orange_stained_glass_stairs = null;
@@ -113,7 +113,7 @@ public class BlockInit {
 	public static final Block green_stained_glass_stairs = null;
 	public static final Block red_stained_glass_stairs = null;
 	public static final Block black_stained_glass_stairs = null;
-	public static final Block oak_trapdoor_stairs = null;//change when right clicked
+	public static final Block oak_trapdoor_stairs = null;
 	public static final Block spruce_trapdoor_stairs = null;
 	public static final Block birch_trapdoor_stairs = null;
 	public static final Block jungle_trapdoor_stairs = null;
@@ -233,7 +233,7 @@ public class BlockInit {
 
 	public static final Block grass_block_slab = null;
 	public static final Block dirt_slab = null;
-	public static final Block coarse_dirt_slab = null;//right click with shovel should convert to dirt_slab
+	public static final Block coarse_dirt_slab = null;
 	public static final Block podzol_slab = null;
 	public static final Block bedrock_slab = null;
 	public static final Block sand_slab = null;
@@ -249,7 +249,7 @@ public class BlockInit {
 	public static final Block acacia_log_slab = null;
 	public static final Block dark_oak_log_slab = null;
 	public static final Block stripped_oak_log_slab = null;
-	public static final Block stripped_spruce_log_slab = null;//right click to transform log slab into stripped version
+	public static final Block stripped_spruce_log_slab = null;
 	public static final Block stripped_birch_log_slab = null;
 	public static final Block stripped_jungle_log_slab = null;
 	public static final Block stripped_acacia_log_slab = null;
@@ -309,7 +309,7 @@ public class BlockInit {
 	public static final Block netherrack_slab = null;
 	public static final Block soul_sand_slab = null;
 	public static final Block glowstone_slab = null;
-	public static final Block carved_pumpkin_slab = null;//right click with a pumpkin slab to get this block
+	public static final Block carved_pumpkin_slab = null;
 	public static final Block jack_o_lantern_slab = null;
 	public static final Block white_stained_glass_slab = null;
 	public static final Block orange_stained_glass_slab = null;
@@ -327,7 +327,7 @@ public class BlockInit {
 	public static final Block green_stained_glass_slab = null;
 	public static final Block red_stained_glass_slab = null;
 	public static final Block black_stained_glass_slab = null;
-	public static final Block oak_trapdoor_slab = null;//change when right clicked
+	public static final Block oak_trapdoor_slab = null;
 	public static final Block spruce_trapdoor_slab = null;
 	public static final Block birch_trapdoor_slab = null;
 	public static final Block jungle_trapdoor_slab = null;
@@ -452,7 +452,7 @@ public class BlockInit {
 	public static final Block polished_andesite_fence = null;
 	public static final Block grass_block_fence = null;
 	public static final Block dirt_fence = null;
-	public static final Block coarse_dirt_fence = null;//right click with shovel should convert to dirt_fence
+	public static final Block coarse_dirt_fence = null;
 	public static final Block podzol_fence = null;
 	public static final Block cobblestone_fence = null;
 	public static final Block bedrock_fence = null;
@@ -469,7 +469,7 @@ public class BlockInit {
 	public static final Block acacia_log_fence = null;
 	public static final Block dark_oak_log_fence = null;
 	public static final Block stripped_oak_log_fence = null;
-	public static final Block stripped_spruce_log_fence = null;//right click to transform log fence into stripped version
+	public static final Block stripped_spruce_log_fence = null;
 	public static final Block stripped_birch_log_fence = null;
 	public static final Block stripped_jungle_log_fence = null;
 	public static final Block stripped_acacia_log_fence = null;
@@ -534,7 +534,7 @@ public class BlockInit {
 	public static final Block netherrack_fence = null;
 	public static final Block soul_sand_fence = null;
 	public static final Block glowstone_fence = null;
-	public static final Block carved_pumpkin_fence = null;//right click with a pumpkin fence to get this block
+	public static final Block carved_pumpkin_fence = null;
 	public static final Block jack_o_lantern_fence = null;
 	public static final Block white_stained_glass_fence = null;
 	public static final Block orange_stained_glass_fence = null;
@@ -552,7 +552,7 @@ public class BlockInit {
 	public static final Block green_stained_glass_fence = null;
 	public static final Block red_stained_glass_fence = null;
 	public static final Block black_stained_glass_fence = null;
-	public static final Block oak_trapdoor_fence = null;//change when right clicked
+	public static final Block oak_trapdoor_fence = null;
 	public static final Block spruce_trapdoor_fence = null;
 	public static final Block birch_trapdoor_fence = null;
 	public static final Block jungle_trapdoor_fence = null;
@@ -605,7 +605,7 @@ public class BlockInit {
 	public static final Block hay_block_fence = null;
 	public static final Block terracotta_fence = null;
 	public static final Block coal_block_fence = null;
-	public static final Block packed_ice_fence = null;// TODO: 14/06/2020 pac   ked_ice stairs and slabs ?
+	public static final Block packed_ice_fence = null;
 	public static final Block red_sandstone_fence = null;
 	public static final Block chiseled_red_sandstone_fence = null;
 	public static final Block cut_red_sandstone_fence = null;
@@ -685,7 +685,7 @@ public class BlockInit {
 
 	@SubscribeEvent
 	public static void registerStairsBlock(final RegistryEvent.Register<Block> event) {
-		event.getRegistry().register(new StairsBlock(Blocks.GRASS_BLOCK::getDefaultState, Block.Properties.from(Blocks.DIRT)).setRegistryName("grass_block_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.GRASS_BLOCK::getDefaultState, Block.Properties.create(Material.ORGANIC).hardnessAndResistance(0.6F).sound(SoundType.PLANT)).setRegistryName("grass_block_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.DIRT::getDefaultState, Block.Properties.from(Blocks.DIRT)).setRegistryName("dirt_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.COARSE_DIRT::getDefaultState, Block.Properties.from(Blocks.COARSE_DIRT)).setRegistryName("coarse_dirt_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.PODZOL::getDefaultState, Block.Properties.from(Blocks.PODZOL)).setRegistryName("podzol_stairs"));
@@ -756,13 +756,13 @@ public class BlockInit {
 		event.getRegistry().register(new StairsBlock(Blocks.SPAWNER::getDefaultState, Block.Properties.from(Blocks.SPAWNER)).setRegistryName("spawner_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.DIAMOND_ORE::getDefaultState, Block.Properties.from(Blocks.DIAMOND_ORE)).setRegistryName("diamond_ore_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.DIAMOND_BLOCK::getDefaultState, Block.Properties.from(Blocks.DIAMOND_BLOCK)).setRegistryName("diamond_block_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.REDSTONE_ORE::getDefaultState, Block.Properties.from(Blocks.REDSTONE_ORE)).setRegistryName("redstone_ore_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.IRON_ORE::getDefaultState, Block.Properties.create(Material.ROCK).lightValue(9).hardnessAndResistance(3.0F, 3.0F)).setRegistryName("redstone_ore_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.ICE::getDefaultState, Block.Properties.create(Material.ICE).slipperiness(0.98F).hardnessAndResistance(0.5F).sound(SoundType.GLASS).notSolid()).setRegistryName("ice_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.SNOW_BLOCK::getDefaultState, Block.Properties.from(Blocks.SNOW_BLOCK)).setRegistryName("snow_block_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.CLAY::getDefaultState, Block.Properties.from(Blocks.CLAY)).setRegistryName("clay_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.PUMPKIN::getDefaultState, Block.Properties.from(Blocks.PUMPKIN)).setRegistryName("pumpkin_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.NETHERRACK::getDefaultState, Block.Properties.from(Blocks.NETHERRACK)).setRegistryName("netherrack_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.SOUL_SAND::getDefaultState, Block.Properties.from(Blocks.SOUL_SAND)).setRegistryName("soul_sand_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.SOUL_SAND::getDefaultState, Block.Properties.create(Material.SAND, MaterialColor.BROWN).hardnessAndResistance(0.5F).speedFactor(0.4F).sound(SoundType.SAND)).setRegistryName("soul_sand_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.GLOWSTONE::getDefaultState, Block.Properties.from(Blocks.GLOWSTONE)).setRegistryName("glowstone_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.CARVED_PUMPKIN::getDefaultState, Block.Properties.from(Blocks.CARVED_PUMPKIN)).setRegistryName("carved_pumpkin_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.JACK_O_LANTERN::getDefaultState, Block.Properties.from(Blocks.JACK_O_LANTERN)).setRegistryName("jack_o_lantern_stairs"));
@@ -782,12 +782,12 @@ public class BlockInit {
 		event.getRegistry().register(new StairsBlock(Blocks.GREEN_STAINED_GLASS::getDefaultState, Block.Properties.from(Blocks.GREEN_STAINED_GLASS)).setRegistryName("green_stained_glass_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.RED_STAINED_GLASS::getDefaultState, Block.Properties.from(Blocks.RED_STAINED_GLASS)).setRegistryName("red_stained_glass_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.BLACK_STAINED_GLASS::getDefaultState, Block.Properties.from(Blocks.BLACK_STAINED_GLASS)).setRegistryName("black_stained_glass_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.OAK_TRAPDOOR::getDefaultState, Block.Properties.from(Blocks.OAK_TRAPDOOR)).setRegistryName("oak_trapdoor_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.SPRUCE_TRAPDOOR::getDefaultState, Block.Properties.from(Blocks.SPRUCE_TRAPDOOR)).setRegistryName("spruce_trapdoor_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.BIRCH_TRAPDOOR::getDefaultState, Block.Properties.from(Blocks.BIRCH_TRAPDOOR)).setRegistryName("birch_trapdoor_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.JUNGLE_TRAPDOOR::getDefaultState, Block.Properties.from(Blocks.JUNGLE_TRAPDOOR)).setRegistryName("jungle_trapdoor_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.ACACIA_TRAPDOOR::getDefaultState, Block.Properties.from(Blocks.ACACIA_TRAPDOOR)).setRegistryName("acacia_trapdoor_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.DARK_OAK_TRAPDOOR::getDefaultState, Block.Properties.from(Blocks.DARK_OAK_TRAPDOOR)).setRegistryName("dark_oak_trapdoor_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.OAK_PLANKS::getDefaultState, Block.Properties.from(Blocks.OAK_TRAPDOOR)).setRegistryName("oak_trapdoor_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.SPRUCE_PLANKS::getDefaultState, Block.Properties.from(Blocks.SPRUCE_TRAPDOOR)).setRegistryName("spruce_trapdoor_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.BIRCH_PLANKS::getDefaultState, Block.Properties.from(Blocks.BIRCH_TRAPDOOR)).setRegistryName("birch_trapdoor_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.JUNGLE_PLANKS::getDefaultState, Block.Properties.from(Blocks.JUNGLE_TRAPDOOR)).setRegistryName("jungle_trapdoor_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.ACACIA_PLANKS::getDefaultState, Block.Properties.from(Blocks.ACACIA_TRAPDOOR)).setRegistryName("acacia_trapdoor_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.DARK_OAK_PLANKS::getDefaultState, Block.Properties.from(Blocks.DARK_OAK_TRAPDOOR)).setRegistryName("dark_oak_trapdoor_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.CRACKED_STONE_BRICKS::getDefaultState, Block.Properties.from(Blocks.CRACKED_STONE_BRICKS)).setRegistryName("cracked_stone_brick_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.CHISELED_STONE_BRICKS::getDefaultState, Block.Properties.from(Blocks.CHISELED_STONE_BRICKS)).setRegistryName("chiseled_stone_brick_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.BROWN_MUSHROOM_BLOCK::getDefaultState, Block.Properties.from(Blocks.BROWN_MUSHROOM_BLOCK)).setRegistryName("brown_mushroom_block_stairs"));
@@ -834,7 +834,7 @@ public class BlockInit {
 		event.getRegistry().register(new StairsBlock(Blocks.CUT_RED_SANDSTONE::getDefaultState, Block.Properties.from(Blocks.CUT_RED_SANDSTONE)).setRegistryName("cut_red_sandstone_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.SMOOTH_STONE::getDefaultState, Block.Properties.from(Blocks.SMOOTH_STONE)).setRegistryName("smooth_stone_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.PURPUR_PILLAR::getDefaultState, Block.Properties.from(Blocks.PURPUR_PILLAR)).setRegistryName("purpur_pillar_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.MAGMA_BLOCK::getDefaultState, Block.Properties.from(Blocks.MAGMA_BLOCK)).setRegistryName("magma_block_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.MAGMA_BLOCK::getDefaultState, Block.Properties.create(Material.ROCK, MaterialColor.NETHERRACK).lightValue(3).hardnessAndResistance(0.5F)).setRegistryName("magma_block_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.NETHER_WART_BLOCK::getDefaultState, Block.Properties.from(Blocks.NETHER_WART_BLOCK)).setRegistryName("nether_wart_block_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.BONE_BLOCK::getDefaultState, Block.Properties.from(Blocks.BONE_BLOCK)).setRegistryName("bone_block_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.WHITE_GLAZED_TERRACOTTA::getDefaultState, Block.Properties.from(Blocks.WHITE_GLAZED_TERRACOTTA)).setRegistryName("white_glazed_terracotta_stairs"));
@@ -973,13 +973,13 @@ public class BlockInit {
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.SPAWNER)).setRegistryName("spawner_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.DIAMOND_ORE)).setRegistryName("diamond_ore_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.DIAMOND_BLOCK)).setRegistryName("diamond_block_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.REDSTONE_ORE)).setRegistryName("redstone_ore_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.ROCK).lightValue(9).hardnessAndResistance(3.0F, 3.0F)).setRegistryName("redstone_ore_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.ICE).slipperiness(0.98F).hardnessAndResistance(0.5F).sound(SoundType.GLASS).notSolid()).setRegistryName("ice_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.SNOW_BLOCK)).setRegistryName("snow_block_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.CLAY)).setRegistryName("clay_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.PUMPKIN)).setRegistryName("pumpkin_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.NETHERRACK)).setRegistryName("netherrack_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.SOUL_SAND)).setRegistryName("soul_sand_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.SAND, MaterialColor.BROWN).hardnessAndResistance(0.5F).speedFactor(0.4F).sound(SoundType.SAND)).setRegistryName("soul_sand_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.GLOWSTONE)).setRegistryName("glowstone_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.CARVED_PUMPKIN)).setRegistryName("carved_pumpkin_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.JACK_O_LANTERN)).setRegistryName("jack_o_lantern_slab"));
@@ -1049,7 +1049,7 @@ public class BlockInit {
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.PACKED_ICE)).setRegistryName("packed_ice_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.CHISELED_RED_SANDSTONE)).setRegistryName("chiseled_red_sandstone_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.PURPUR_PILLAR)).setRegistryName("purpur_pillar_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.MAGMA_BLOCK)).setRegistryName("magma_block_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.NETHERRACK).lightValue(3).hardnessAndResistance(0.5F)).setRegistryName("magma_block_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.NETHER_WART_BLOCK)).setRegistryName("nether_wart_block_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.BONE_BLOCK)).setRegistryName("bone_block_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.WHITE_GLAZED_TERRACOTTA)).setRegistryName("white_glazed_terracotta_slab"));
@@ -1117,7 +1117,7 @@ public class BlockInit {
 	}
 
 	@SubscribeEvent
-	public static void registerFenceBlock(final RegistryEvent.Register<Block> event){
+	public static void registerFenceBlock(final RegistryEvent.Register<Block> event) {
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.STONE)).setRegistryName("stone_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.GRANITE)).setRegistryName("granite_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.POLISHED_GRANITE)).setRegistryName("polished_granite_fence"));
@@ -1125,7 +1125,7 @@ public class BlockInit {
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.POLISHED_ANDESITE)).setRegistryName("polished_andesite_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.DIORITE)).setRegistryName("diorite_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.POLISHED_DIORITE)).setRegistryName("polished_diorite_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.GRASS_BLOCK)).setRegistryName("grass_block_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.ORGANIC).hardnessAndResistance(0.6F).sound(SoundType.PLANT)).setRegistryName("grass_block_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.DIRT)).setRegistryName("dirt_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.COARSE_DIRT)).setRegistryName("coarse_dirt_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.PODZOL)).setRegistryName("podzol_fence"));
@@ -1161,12 +1161,12 @@ public class BlockInit {
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.STRIPPED_JUNGLE_WOOD)).setRegistryName("stripped_jungle_wood_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.STRIPPED_ACACIA_WOOD)).setRegistryName("stripped_acacia_wood_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.STRIPPED_DARK_OAK_WOOD)).setRegistryName("stripped_dark_oak_wood_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.OAK_LEAVES)).setRegistryName("oak_leaves_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.SPRUCE_LEAVES)).setRegistryName("spruce_leaves_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.BIRCH_LEAVES)).setRegistryName("birch_leaves_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.JUNGLE_LEAVES)).setRegistryName("jungle_leaves_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.ACACIA_LEAVES)).setRegistryName("acacia_leaves_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.DARK_OAK_LEAVES)).setRegistryName("dark_oak_leaves_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT)).setRegistryName("oak_leaves_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT)).setRegistryName("spruce_leaves_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT)).setRegistryName("birch_leaves_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT)).setRegistryName("jungle_leaves_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT)).setRegistryName("acacia_leaves_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT)).setRegistryName("dark_oak_leaves_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.SPONGE)).setRegistryName("sponge_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.WET_SPONGE)).setRegistryName("wet_sponge_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.GLASS)).setRegistryName("glass_fence"));
@@ -1201,13 +1201,13 @@ public class BlockInit {
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.SPAWNER)).setRegistryName("spawner_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.DIAMOND_ORE)).setRegistryName("diamond_ore_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.DIAMOND_BLOCK)).setRegistryName("diamond_block_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.REDSTONE_ORE)).setRegistryName("redstone_ore_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.ICE)).setRegistryName("ice_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.ROCK).lightValue(9).hardnessAndResistance(3.0F, 3.0F)).setRegistryName("redstone_ore_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.ICE).slipperiness(0.98F).hardnessAndResistance(0.5F).sound(SoundType.GLASS).notSolid()).setRegistryName("ice_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.SNOW_BLOCK)).setRegistryName("snow_block_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.CLAY)).setRegistryName("clay_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.PUMPKIN)).setRegistryName("pumpkin_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.NETHERRACK)).setRegistryName("netherrack_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.SOUL_SAND)).setRegistryName("soul_sand_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.SAND, MaterialColor.BROWN).hardnessAndResistance(0.5F).speedFactor(0.4F).sound(SoundType.SAND)).setRegistryName("soul_sand_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.GLOWSTONE)).setRegistryName("glowstone_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.CARVED_PUMPKIN)).setRegistryName("carved_pumpkin_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.JACK_O_LANTERN)).setRegistryName("jack_o_lantern_fence"));
@@ -1242,8 +1242,8 @@ public class BlockInit {
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.MUSHROOM_STEM)).setRegistryName("mushroom_stem_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.IRON_BARS)).setRegistryName("iron_bars_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.MELON)).setRegistryName("melon_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.VINE)).setRegistryName("vine_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.MYCELIUM)).setRegistryName("mycelium_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.TALL_PLANTS).doesNotBlockMovement().hardnessAndResistance(0.2F).sound(SoundType.PLANT)).setRegistryName("vine_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.ORGANIC, MaterialColor.PURPLE).hardnessAndResistance(0.6F).sound(SoundType.PLANT)).setRegistryName("mycelium_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.END_STONE)).setRegistryName("end_stone_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.DRAGON_EGG)).setRegistryName("dragon_egg_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.REDSTONE_LAMP)).setRegistryName("redstone_lamp_fence"));
@@ -1291,7 +1291,7 @@ public class BlockInit {
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.PURPUR_BLOCK)).setRegistryName("purpur_block_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.PURPUR_PILLAR)).setRegistryName("purpur_pillar_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.END_STONE_BRICKS)).setRegistryName("end_stone_brick_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.MAGMA_BLOCK)).setRegistryName("magma_block_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.ROCK, MaterialColor.NETHERRACK).lightValue(3).hardnessAndResistance(0.5F)).setRegistryName("magma_block_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.NETHER_WART_BLOCK)).setRegistryName("nether_wart_block_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.RED_NETHER_BRICKS)).setRegistryName("red_nether_brick_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.BONE_BLOCK)).setRegistryName("bone_block_fence"));

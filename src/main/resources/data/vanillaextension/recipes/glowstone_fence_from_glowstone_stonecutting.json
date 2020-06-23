@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:glowstone"
+	},
+	"result": "vanillaextension:glowstone_fence",
+	"count": 1
+}

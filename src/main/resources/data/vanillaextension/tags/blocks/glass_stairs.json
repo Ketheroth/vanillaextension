@@ -1,0 +1,22 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:glass_stairs",
+		"vanillaextension:white_stained_glass_stairs",
+		"vanillaextension:orange_stained_glass_stairs",
+		"vanillaextension:magenta_stained_glass_stairs",
+		"vanillaextension:light_blue_stained_glass_stairs",
+		"vanillaextension:yellow_stained_glass_stairs",
+		"vanillaextension:lime_stained_glass_stairs",
+		"vanillaextension:pink_stained_glass_stairs",
+		"vanillaextension:gray_stained_glass_stairs",
+		"vanillaextension:light_gray_stained_glass_stairs",
+		"vanillaextension:cyan_stained_glass_stairs",
+		"vanillaextension:purple_stained_glass_stairs",
+		"vanillaextension:blue_stained_glass_stairs",
+		"vanillaextension:brown_stained_glass_stairs",
+		"vanillaextension:green_stained_glass_stairs",
+		"vanillaextension:red_stained_glass_stairs",
+		"vanillaextension:black_stained_glass_stairs"
+	]
+}

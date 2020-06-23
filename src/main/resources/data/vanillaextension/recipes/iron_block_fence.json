@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:iron_block"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:iron_block_fence",
+		"count": 3
+	}
+}

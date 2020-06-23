@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:oak_log"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:oak_log_fence",
+		"count": 3
+	}
+}

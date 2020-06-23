@@ -1,0 +1,21 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:white_glazed_terracotta_fence",
+		"vanillaextension:orange_glazed_terracotta_fence",
+		"vanillaextension:magenta_glazed_terracotta_fence",
+		"vanillaextension:light_blue_glazed_terracotta_fence",
+		"vanillaextension:yellow_glazed_terracotta_fence",
+		"vanillaextension:lime_glazed_terracotta_fence",
+		"vanillaextension:pink_glazed_terracotta_fence",
+		"vanillaextension:gray_glazed_terracotta_fence",
+		"vanillaextension:light_gray_glazed_terracotta_fence",
+		"vanillaextension:cyan_glazed_terracotta_fence",
+		"vanillaextension:purple_glazed_terracotta_fence",
+		"vanillaextension:blue_glazed_terracotta_fence",
+		"vanillaextension:brown_glazed_terracotta_fence",
+		"vanillaextension:green_glazed_terracotta_fence",
+		"vanillaextension:red_glazed_terracotta_fence",
+		"vanillaextension:black_glazed_terracotta_fence"
+	]
+}

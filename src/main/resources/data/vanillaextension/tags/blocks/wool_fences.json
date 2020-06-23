@@ -1,0 +1,21 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:white_wool_fence",
+		"vanillaextension:orange_wool_fence",
+		"vanillaextension:magenta_wool_fence",
+		"vanillaextension:light_blue_wool_fence",
+		"vanillaextension:yellow_wool_fence",
+		"vanillaextension:lime_wool_fence",
+		"vanillaextension:pink_wool_fence",
+		"vanillaextension:gray_wool_fence",
+		"vanillaextension:light_gray_wool_fence",
+		"vanillaextension:cyan_wool_fence",
+		"vanillaextension:purple_wool_fence",
+		"vanillaextension:blue_wool_fence",
+		"vanillaextension:brown_wool_fence",
+		"vanillaextension:green_wool_fence",
+		"vanillaextension:red_wool_fence",
+		"vanillaextension:black_wool_fence"
+	]
+}

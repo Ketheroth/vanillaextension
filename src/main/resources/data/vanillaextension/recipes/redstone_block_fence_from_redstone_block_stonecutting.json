@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:redstone_block"
+	},
+	"result": "vanillaextension:redstone_block_fence",
+	"count": 2
+}

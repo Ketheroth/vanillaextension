@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:end_stone"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:end_stone_fence",
+		"count": 3
+	}
+}

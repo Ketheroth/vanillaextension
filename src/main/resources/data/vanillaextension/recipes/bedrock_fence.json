@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:bedrock"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:bedrock_fence",
+		"count": 3
+	}
+}

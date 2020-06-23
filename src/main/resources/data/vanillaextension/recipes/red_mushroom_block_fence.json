@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:red_mushroom_block"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:red_mushroom_block_fence",
+		"count": 3
+	}
+}

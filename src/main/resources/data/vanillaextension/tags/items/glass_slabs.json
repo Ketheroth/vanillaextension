@@ -1,0 +1,22 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:glass_slab",
+		"vanillaextension:white_stained_glass_slab",
+		"vanillaextension:orange_stained_glass_slab",
+		"vanillaextension:magenta_stained_glass_slab",
+		"vanillaextension:light_blue_stained_glass_slab",
+		"vanillaextension:yellow_stained_glass_slab",
+		"vanillaextension:lime_stained_glass_slab",
+		"vanillaextension:pink_stained_glass_slab",
+		"vanillaextension:gray_stained_glass_slab",
+		"vanillaextension:light_gray_stained_glass_slab",
+		"vanillaextension:cyan_stained_glass_slab",
+		"vanillaextension:purple_stained_glass_slab",
+		"vanillaextension:blue_stained_glass_slab",
+		"vanillaextension:brown_stained_glass_slab",
+		"vanillaextension:green_stained_glass_slab",
+		"vanillaextension:red_stained_glass_slab",
+		"vanillaextension:black_stained_glass_slab"
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:netherrack"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:netherrack_fence",
+		"count": 3
+	}
+}

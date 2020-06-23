@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:polished_andesite"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:polished_andesite_fence",
+		"count": 3
+	}
+}

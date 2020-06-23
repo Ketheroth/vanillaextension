@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:smooth_quartz"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:smooth_quartz_fence",
+		"count": 3
+	}
+}

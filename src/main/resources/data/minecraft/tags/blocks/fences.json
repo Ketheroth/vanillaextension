@@ -1,0 +1,13 @@
+{
+	"replace": false,
+	"values": [
+		"#vanillaextension:fences",
+		"#vanillaextension:glass_fences",
+		"#vanillaextension:concrete_fences",
+		"#vanillaextension:concrete_powder_fences",
+		"#vanillaextension:terracotta_fences",
+		"#vanillaextension:glazed_terracotta_fences",
+		"#vanillaextension:wool_fences",
+		"#vanillaextension:wooden_fences"
+	]
+}

@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:smelting",
+	"ingredient": {
+		"item": "vanillaextension:red_sand_slab"
+	},
+	"result": "vanillaextension:glass_slab",
+	"experience": 0.1,
+	"cookingtime": 200
+}

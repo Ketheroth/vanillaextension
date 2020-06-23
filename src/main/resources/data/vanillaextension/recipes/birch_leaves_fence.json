@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:birch_leaves"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:birch_leaves_fence",
+		"count": 3
+	}
+}

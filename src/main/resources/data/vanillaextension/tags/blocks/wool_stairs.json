@@ -1,0 +1,21 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:white_wool_stairs",
+		"vanillaextension:orange_wool_stairs",
+		"vanillaextension:magenta_wool_stairs",
+		"vanillaextension:light_blue_wool_stairs",
+		"vanillaextension:yellow_wool_stairs",
+		"vanillaextension:lime_wool_stairs",
+		"vanillaextension:pink_wool_stairs",
+		"vanillaextension:gray_wool_stairs",
+		"vanillaextension:light_gray_wool_stairs",
+		"vanillaextension:cyan_wool_stairs",
+		"vanillaextension:purple_wool_stairs",
+		"vanillaextension:blue_wool_stairs",
+		"vanillaextension:brown_wool_stairs",
+		"vanillaextension:green_wool_stairs",
+		"vanillaextension:red_wool_stairs",
+		"vanillaextension:black_wool_stairs"
+	]
+}

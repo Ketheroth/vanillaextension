@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:spruce_log"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:spruce_log_fence",
+		"count": 3
+	}
+}

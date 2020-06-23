@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:coal_ore"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:coal_ore_fence",
+		"count": 3
+	}
+}

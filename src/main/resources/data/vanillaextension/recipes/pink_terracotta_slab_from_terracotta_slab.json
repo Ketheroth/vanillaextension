@@ -8,7 +8,7 @@
 	],
 	"key": {
 		"S": {
-			"tag": "vanillaextension:terracotta_slab"
+			"tag": "vanillaextension:terracotta_slabs"
 		},
 		"D": {
 			"item": "minecraft:pink_dye"

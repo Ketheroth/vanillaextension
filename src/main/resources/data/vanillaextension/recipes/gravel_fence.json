@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:gravel"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:gravel_fence",
+		"count": 3
+	}
+}
