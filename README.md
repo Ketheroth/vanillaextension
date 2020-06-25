@@ -16,7 +16,7 @@ CurseForge link : [Vanilla Extension](https://www.curseforge.com/minecraft/mc-mo
 
 ## FAQ
 #### Will there be more block in the future ?
-Yeah, of course. I planned to add fences, barriers, slabs and mod support.
+Yeah, of course. I planned to add walls and mod support for now.
 
 #### Can I use this mod in my modpack ?
 Feel free to add this mod in any modpack you want.  

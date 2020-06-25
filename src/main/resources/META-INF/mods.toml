@@ -11,7 +11,7 @@ logoFile="logo.png"
 credits="Thanks for downloading my mod"
 authors="Nelson Brichau"
 description='''
-You can convert most of the vanilla blocks into stairs slabs and fences
+You can convert most of the vanilla blocks into stairs, slabs and fences
 '''
 [[dependencies.vanillaextension]]
     modId="forge"
