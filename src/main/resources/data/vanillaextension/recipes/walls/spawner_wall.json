@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:spawner"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:spawner_wall",
+		"count": 6
+	}
+}

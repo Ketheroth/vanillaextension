@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:blasting",
+	"ingredient": {
+		"item": "vanillaextension:nether_quartz_ore_fence"
+	},
+	"result": "minecraft:quartz",
+	"experience": 0.2,
+	"cookingtime": 100
+}

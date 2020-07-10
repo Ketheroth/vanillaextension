@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:blasting",
+	"ingredient": {
+		"item": "vanillaextension:emerald_ore_wall"
+	},
+	"result": "minecraft:emerald",
+	"experience": 1.0,
+	"cookingtime": 100
+}

@@ -1,0 +1,22 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:glass_wall",
+		"vanillaextension:white_stained_glass_wall",
+		"vanillaextension:orange_stained_glass_wall",
+		"vanillaextension:magenta_stained_glass_wall",
+		"vanillaextension:light_blue_stained_glass_wall",
+		"vanillaextension:yellow_stained_glass_wall",
+		"vanillaextension:lime_stained_glass_wall",
+		"vanillaextension:pink_stained_glass_wall",
+		"vanillaextension:gray_stained_glass_wall",
+		"vanillaextension:light_gray_stained_glass_wall",
+		"vanillaextension:cyan_stained_glass_wall",
+		"vanillaextension:purple_stained_glass_wall",
+		"vanillaextension:blue_stained_glass_wall",
+		"vanillaextension:brown_stained_glass_wall",
+		"vanillaextension:green_stained_glass_wall",
+		"vanillaextension:red_stained_glass_wall",
+		"vanillaextension:black_stained_glass_wall"
+	]
+}

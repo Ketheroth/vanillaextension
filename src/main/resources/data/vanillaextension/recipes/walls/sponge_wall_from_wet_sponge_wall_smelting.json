@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:smelting",
+	"ingredient": {
+		"item": "vanillaextension:wet_sponge_wall"
+	},
+	"result": "vanillaextension:sponge_wall",
+	"experience": 0.15,
+	"cookingtime": 200
+}

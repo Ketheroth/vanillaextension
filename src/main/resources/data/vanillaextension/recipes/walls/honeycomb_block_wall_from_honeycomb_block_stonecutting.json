@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:honeycomb_block"
+	},
+	"result": "vanillaextension:honeycomb_block_wall",
+	"count": 1
+}

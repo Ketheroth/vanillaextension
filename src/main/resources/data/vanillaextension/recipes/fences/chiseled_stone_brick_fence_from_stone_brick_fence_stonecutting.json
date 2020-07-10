@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "vanillaextension:stone_brick_fence"
+	},
+	"result": "vanillaextension:chiseled_stone_brick_fence",
+	"count": 1
+}

@@ -1,0 +1,21 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:white_wool_wall",
+		"vanillaextension:orange_wool_wall",
+		"vanillaextension:magenta_wool_wall",
+		"vanillaextension:light_blue_wool_wall",
+		"vanillaextension:yellow_wool_wall",
+		"vanillaextension:lime_wool_wall",
+		"vanillaextension:pink_wool_wall",
+		"vanillaextension:gray_wool_wall",
+		"vanillaextension:light_gray_wool_wall",
+		"vanillaextension:cyan_wool_wall",
+		"vanillaextension:purple_wool_wall",
+		"vanillaextension:blue_wool_wall",
+		"vanillaextension:brown_wool_wall",
+		"vanillaextension:green_wool_wall",
+		"vanillaextension:red_wool_wall",
+		"vanillaextension:black_wool_wall"
+	]
+}

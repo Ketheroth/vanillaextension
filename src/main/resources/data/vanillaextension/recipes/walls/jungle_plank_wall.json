@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:jungle_plank"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:jungle_plank_wall",
+		"count": 6
+	}
+}

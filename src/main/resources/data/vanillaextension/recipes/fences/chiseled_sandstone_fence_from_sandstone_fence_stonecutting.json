@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "vanillaextension:sandstone_fence"
+	},
+	"result": "vanillaextension:chiseled_sandstone_fence",
+	"count": 1
+}

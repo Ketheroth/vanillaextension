@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "terracotta_wall",
+	"pattern": [
+		"SSS",
+		"SDS",
+		"SSS"
+	],
+	"key": {
+		"S": {
+			"tag": "vanillaextension:terracotta_walls"
+		},
+		"D": {
+			"item": "minecraft:blue_dye"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:blue_terracotta_wall",
+		"count": 8
+	}
+}

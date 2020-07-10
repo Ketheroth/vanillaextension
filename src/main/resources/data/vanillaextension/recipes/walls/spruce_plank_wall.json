@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:spruce_plank"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:spruce_plank_wall",
+		"count": 6
+	}
+}

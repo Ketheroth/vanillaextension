@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:blasting",
+	"ingredient": {
+		"item": "vanillaextension:diamond_ore_slab"
+	},
+	"result": "minecraft:diamond",
+	"experience": 1.0,
+	"cookingtime": 100
+}

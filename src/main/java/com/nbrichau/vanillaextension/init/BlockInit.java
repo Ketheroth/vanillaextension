@@ -16,15 +16,13 @@ import net.minecraftforge.registries.ObjectHolder;
 @Mod.EventBusSubscriber(modid = VanillaExtension.MODID, bus = Bus.MOD)
 public class BlockInit {
 
-	// TODO: 25/06/2020 assets/data
-	// TODO: 25/06/2020 special recipes
-	// TODO: 25/06/2020 special loot_tables
-	// TODO: 25/06/2020 check textures in models
-	// TODO: 25/06/2020 check advancements (bricks)
-	// TODO: 25/06/2020 lang files
-	// TODO: 25/06/2020 tags
+	// TODO: 10/07/2020 add chiseled_sandstone_slab & chiseled_sandstone_stairs
+	// TODO: 26/06/2020 add advancements for stonecutting, smelting, dying and other recipes
+	// TODO: 25/06/2020 need using parent model for sided block ? yes (wooden log)
+	// TODO: 28/06/2020 check modded tags in recipes. need to add vanillaextension: ?
 	// TODO: 25/06/2020 update readme
 	// TODO: 25/06/2020 update version
+	// TODO: 04/07/2020 pictures for curseforge
 
 	public static final Block grass_block_stairs = null;
 	public static final Block dirt_stairs = null;
@@ -72,6 +70,7 @@ public class BlockInit {
 	public static final Block glass_stairs = null;
 	public static final Block lapis_ore_stairs = null;
 	public static final Block lapis_block_stairs = null;
+	public static final Block chiseled_sandstone_stairs = null;
 	public static final Block cut_sandstone_stairs = null;
 	public static final Block white_wool_stairs = null;
 	public static final Block orange_wool_stairs = null;
@@ -287,6 +286,7 @@ public class BlockInit {
 	public static final Block glass_slab = null;
 	public static final Block lapis_ore_slab = null;
 	public static final Block lapis_block_slab = null;
+	public static final Block chiseled_sandstone_slab = null;
 	public static final Block white_wool_slab = null;
 	public static final Block orange_wool_slab = null;
 	public static final Block magenta_wool_slab = null;

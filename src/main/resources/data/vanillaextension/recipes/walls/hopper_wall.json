@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:hopper"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:hopper_wall",
+		"count": 6
+	}
+}

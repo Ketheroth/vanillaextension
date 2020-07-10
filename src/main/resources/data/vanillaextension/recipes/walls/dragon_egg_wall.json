@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:dragon_egg"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:dragon_egg_wall",
+		"count": 6
+	}
+}

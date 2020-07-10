@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:redstone_ore"
+	},
+	"result": "vanillaextension:redstone_ore_wall",
+	"count": 1
+}

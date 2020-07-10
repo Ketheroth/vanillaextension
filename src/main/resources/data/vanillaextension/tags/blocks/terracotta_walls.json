@@ -1,0 +1,22 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:terracotta_wall",
+		"vanillaextension:white_terracotta_wall",
+		"vanillaextension:orange_terracotta_wall",
+		"vanillaextension:magenta_terracotta_wall",
+		"vanillaextension:light_blue_terracotta_wall",
+		"vanillaextension:yellow_terracotta_wall",
+		"vanillaextension:lime_terracotta_wall",
+		"vanillaextension:pink_terracotta_wall",
+		"vanillaextension:gray_terracotta_wall",
+		"vanillaextension:light_gray_terracotta_wall",
+		"vanillaextension:cyan_terracotta_wall",
+		"vanillaextension:purple_terracotta_wall",
+		"vanillaextension:blue_terracotta_wall",
+		"vanillaextension:brown_terracotta_wall",
+		"vanillaextension:green_terracotta_wall",
+		"vanillaextension:red_terracotta_wall",
+		"vanillaextension:black_terracotta_wall"
+	]
+}

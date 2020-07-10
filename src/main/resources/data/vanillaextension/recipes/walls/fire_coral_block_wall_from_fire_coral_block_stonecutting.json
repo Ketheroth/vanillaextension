@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:fire_coral_block"
+	},
+	"result": "vanillaextension:fire_coral_block_wall",
+	"count": 1
+}
