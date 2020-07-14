@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:polished_diorite_wall_from_polished_diorite_stonecutting"
+			"vanillaextension:walls/polished_diorite_wall_from_polished_diorite_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:polished_diorite_wall_from_polished_diorite_stonecutting"
+				"recipe": "vanillaextension:walls/polished_diorite_wall_from_polished_diorite_stonecutting"
 			}
 		}
 	},

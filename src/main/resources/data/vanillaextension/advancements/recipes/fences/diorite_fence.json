@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:diorite_fence"
+			"vanillaextension:fences/diorite_fence"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:diorite_fence"
+				"recipe": "vanillaextension:fences/diorite_fence"
 			}
 		}
 	},

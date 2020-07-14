@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:obsidian_wall_from_obsidian_stonecutting"
+			"vanillaextension:walls/obsidian_wall_from_obsidian_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:obsidian_wall_from_obsidian_stonecutting"
+				"recipe": "vanillaextension:walls/obsidian_wall_from_obsidian_stonecutting"
 			}
 		}
 	},

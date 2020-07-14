@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:jungle_wood_stairs"
+			"vanillaextension:stairs/jungle_wood_stairs"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:jungle_wood_stairs"
+				"recipe": "vanillaextension:stairs/jungle_wood_stairs"
 			}
 		}
 	},

@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:mushroom_stem_stairs"
+			"vanillaextension:stairs/mushroom_stem_stairs"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:mushroom_stem_stairs"
+				"recipe": "vanillaextension:stairs/mushroom_stem_stairs"
 			}
 		}
 	},

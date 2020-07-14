@@ -1,0 +1,43 @@
+{
+	"parent": "minecraft:recipes/root",
+	"rewards": {
+		"recipes": [
+			"vanillaextension:stairs/orange_stained_glass_stairs_from_glass_stairs"
+		]
+	},
+	"criteria": {
+		"has_block": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"tag": "vanillaextension:stairs/glass_stairs"
+					}
+				]
+			}
+		},
+		"has_dye": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "minecraft:orange_dye"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "vanillaextension:stairs/orange_stained_glass_stairs_from_glass_stairs"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_block",
+			"has_dye",
+			"has_the_recipe"
+		]
+	]
+}

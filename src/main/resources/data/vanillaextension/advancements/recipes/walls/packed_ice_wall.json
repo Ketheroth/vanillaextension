@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:packed_ice_wall"
+			"vanillaextension:walls/packed_ice_wall"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:packed_ice_wall"
+				"recipe": "vanillaextension:walls/packed_ice_wall"
 			}
 		}
 	},

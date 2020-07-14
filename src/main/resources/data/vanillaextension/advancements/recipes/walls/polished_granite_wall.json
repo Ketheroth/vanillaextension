@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:polished_granite_wall"
+			"vanillaextension:walls/polished_granite_wall"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:polished_granite_wall"
+				"recipe": "vanillaextension:walls/polished_granite_wall"
 			}
 		}
 	},

@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:jack_o_lantern_stairs"
+			"vanillaextension:stairs/jack_o_lantern_stairs"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:jack_o_lantern_stairs"
+				"recipe": "vanillaextension:stairs/jack_o_lantern_stairs"
 			}
 		}
 	},

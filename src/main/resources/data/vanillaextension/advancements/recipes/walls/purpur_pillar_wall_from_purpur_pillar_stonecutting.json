@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:purpur_pillar_wall_from_purpur_pillar_stonecutting"
+			"vanillaextension:walls/purpur_pillar_wall_from_purpur_pillar_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:purpur_pillar_wall_from_purpur_pillar_stonecutting"
+				"recipe": "vanillaextension:walls/purpur_pillar_wall_from_purpur_pillar_stonecutting"
 			}
 		}
 	},

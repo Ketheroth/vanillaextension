@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:hay_block_slab"
+			"vanillaextension:slabs/hay_block_slab"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:hay_block_slab"
+				"recipe": "vanillaextension:slabs/hay_block_slab"
 			}
 		}
 	},

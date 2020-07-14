@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:ice_fence"
+			"vanillaextension:fences/ice_fence"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:ice_fence"
+				"recipe": "vanillaextension:fences/ice_fence"
 			}
 		}
 	},

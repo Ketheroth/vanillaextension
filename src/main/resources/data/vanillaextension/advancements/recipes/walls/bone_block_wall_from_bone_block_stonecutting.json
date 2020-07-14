@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:bone_block_wall_from_bone_block_stonecutting"
+			"vanillaextension:walls/bone_block_wall_from_bone_block_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:bone_block_wall_from_bone_block_stonecutting"
+				"recipe": "vanillaextension:walls/bone_block_wall_from_bone_block_stonecutting"
 			}
 		}
 	},

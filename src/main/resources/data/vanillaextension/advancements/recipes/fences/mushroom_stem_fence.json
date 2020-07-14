@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:mushroom_stem_fence"
+			"vanillaextension:fences/mushroom_stem_fence"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:mushroom_stem_fence"
+				"recipe": "vanillaextension:fences/mushroom_stem_fence"
 			}
 		}
 	},

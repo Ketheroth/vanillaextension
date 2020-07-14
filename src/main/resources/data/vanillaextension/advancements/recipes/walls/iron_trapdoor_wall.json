@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:iron_trapdoor_wall"
+			"vanillaextension:walls/iron_trapdoor_wall"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:iron_trapdoor_wall"
+				"recipe": "vanillaextension:walls/iron_trapdoor_wall"
 			}
 		}
 	},

@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:sea_lantern_wall_from_sea_lantern_stonecutting"
+			"vanillaextension:walls/sea_lantern_wall_from_sea_lantern_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:sea_lantern_wall_from_sea_lantern_stonecutting"
+				"recipe": "vanillaextension:walls/sea_lantern_wall_from_sea_lantern_stonecutting"
 			}
 		}
 	},

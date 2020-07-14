@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:brown_concrete_powder_wall"
+			"vanillaextension:walls/brown_concrete_powder_wall"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:brown_concrete_powder_wall"
+				"recipe": "vanillaextension:walls/brown_concrete_powder_wall"
 			}
 		}
 	},

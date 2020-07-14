@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:fire_coral_block_stairs"
+			"vanillaextension:stairs/fire_coral_block_stairs"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:fire_coral_block_stairs"
+				"recipe": "vanillaextension:stairs/fire_coral_block_stairs"
 			}
 		}
 	},

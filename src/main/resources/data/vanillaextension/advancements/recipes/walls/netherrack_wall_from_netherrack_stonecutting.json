@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:netherrack_wall_from_netherrack_stonecutting"
+			"vanillaextension:walls/netherrack_wall_from_netherrack_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:netherrack_wall_from_netherrack_stonecutting"
+				"recipe": "vanillaextension:walls/netherrack_wall_from_netherrack_stonecutting"
 			}
 		}
 	},

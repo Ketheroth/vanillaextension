@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:tnt_stairs"
+			"vanillaextension:stairs/tnt_stairs"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:tnt_stairs"
+				"recipe": "vanillaextension:stairs/tnt_stairs"
 			}
 		}
 	},

@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:acacia_plank_wall"
+			"vanillaextension:walls/acacia_plank_wall"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:acacia_plank_wall"
+				"recipe": "vanillaextension:walls/acacia_plank_wall"
 			}
 		}
 	},

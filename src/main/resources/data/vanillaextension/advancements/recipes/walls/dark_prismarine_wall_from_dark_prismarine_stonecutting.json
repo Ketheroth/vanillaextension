@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:dark_prismarine_wall_from_dark_prismarine_stonecutting"
+			"vanillaextension:walls/dark_prismarine_wall_from_dark_prismarine_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:dark_prismarine_wall_from_dark_prismarine_stonecutting"
+				"recipe": "vanillaextension:walls/dark_prismarine_wall_from_dark_prismarine_stonecutting"
 			}
 		}
 	},

@@ -16,8 +16,7 @@ import net.minecraftforge.registries.ObjectHolder;
 @Mod.EventBusSubscriber(modid = VanillaExtension.MODID, bus = Bus.MOD)
 public class BlockInit {
 
-	// TODO: 10/07/2020 add chiseled_sandstone_slab & chiseled_sandstone_stairs
-	// TODO: 26/06/2020 add advancements for stonecutting, smelting, dying and other recipes
+	// TODO: 14/07/2020 remove = null;
 	// TODO: 25/06/2020 need using parent model for sided block ? yes (wooden log)
 	// TODO: 28/06/2020 check modded tags in recipes. need to add vanillaextension: ?
 	// TODO: 25/06/2020 update readme
@@ -974,6 +973,7 @@ public class BlockInit {
 		event.getRegistry().register(new StairsBlock(Blocks.GLASS::getDefaultState, Block.Properties.from(Blocks.GLASS)).setRegistryName("glass_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.LAPIS_ORE::getDefaultState, Block.Properties.from(Blocks.LAPIS_ORE)).setRegistryName("lapis_ore_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.LAPIS_BLOCK::getDefaultState, Block.Properties.from(Blocks.LAPIS_BLOCK)).setRegistryName("lapis_block_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.CHISELED_SANDSTONE::getDefaultState, Block.Properties.from(Blocks.CHISELED_SANDSTONE)).setRegistryName("chiseled_sandstone_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.CUT_SANDSTONE::getDefaultState, Block.Properties.from(Blocks.CUT_SANDSTONE)).setRegistryName("cut_sandstone_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.WHITE_WOOL::getDefaultState, Block.Properties.from(Blocks.WHITE_WOOL)).setRegistryName("white_wool_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.ORANGE_WOOL::getDefaultState, Block.Properties.from(Blocks.ORANGE_WOOL)).setRegistryName("orange_wool_stairs"));
@@ -1192,6 +1192,7 @@ public class BlockInit {
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.GLASS)).setRegistryName("glass_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.LAPIS_ORE)).setRegistryName("lapis_ore_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.LAPIS_BLOCK)).setRegistryName("lapis_block_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.CHISELED_SANDSTONE)).setRegistryName("chiseled_sandstone_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.WHITE_WOOL)).setRegistryName("white_wool_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.ORANGE_WOOL)).setRegistryName("orange_wool_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.MAGENTA_WOOL)).setRegistryName("magenta_wool_slab"));
@@ -1885,6 +1886,7 @@ public class BlockInit {
 		event.getRegistry().register(new BlockItem(glass_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("glass_stairs"));
 		event.getRegistry().register(new BlockItem(lapis_ore_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("lapis_ore_stairs"));
 		event.getRegistry().register(new BlockItem(lapis_block_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("lapis_block_stairs"));
+		event.getRegistry().register(new BlockItem(chiseled_sandstone_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("chiseled_sandstone_stairs"));
 		event.getRegistry().register(new BlockItem(cut_sandstone_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("cut_sandstone_stairs"));
 		event.getRegistry().register(new BlockItem(white_wool_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("white_wool_stairs"));
 		event.getRegistry().register(new BlockItem(orange_wool_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("orange_wool_stairs"));
@@ -2103,6 +2105,7 @@ public class BlockInit {
 		event.getRegistry().register(new BlockItem(glass_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("glass_slab"));
 		event.getRegistry().register(new BlockItem(lapis_ore_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("lapis_ore_slab"));
 		event.getRegistry().register(new BlockItem(lapis_block_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("lapis_block_slab"));
+		event.getRegistry().register(new BlockItem(chiseled_sandstone_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("chiseled_sandstone_slab"));
 		event.getRegistry().register(new BlockItem(white_wool_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("white_wool_slab"));
 		event.getRegistry().register(new BlockItem(orange_wool_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("orange_wool_slab"));
 		event.getRegistry().register(new BlockItem(magenta_wool_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("magenta_wool_slab"));

@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:redstone_lamp_wall"
+			"vanillaextension:walls/redstone_lamp_wall"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:redstone_lamp_wall"
+				"recipe": "vanillaextension:walls/redstone_lamp_wall"
 			}
 		}
 	},

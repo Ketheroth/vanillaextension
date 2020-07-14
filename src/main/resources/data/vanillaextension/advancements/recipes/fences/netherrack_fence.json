@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:netherrack_fence"
+			"vanillaextension:fences/netherrack_fence"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:netherrack_fence"
+				"recipe": "vanillaextension:fences/netherrack_fence"
 			}
 		}
 	},

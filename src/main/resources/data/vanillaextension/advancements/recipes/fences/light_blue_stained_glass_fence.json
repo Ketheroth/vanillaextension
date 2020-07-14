@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:light_blue_stained_glass_fence"
+			"vanillaextension:fences/light_blue_stained_glass_fence"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:light_blue_stained_glass_fence"
+				"recipe": "vanillaextension:fences/light_blue_stained_glass_fence"
 			}
 		}
 	},

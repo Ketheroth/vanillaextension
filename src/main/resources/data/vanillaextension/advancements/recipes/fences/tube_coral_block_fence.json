@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:tube_coral_block_fence"
+			"vanillaextension:fences/tube_coral_block_fence"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:tube_coral_block_fence"
+				"recipe": "vanillaextension:fences/tube_coral_block_fence"
 			}
 		}
 	},

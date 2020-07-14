@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:glowstone_wall_from_glowstone_stonecutting"
+			"vanillaextension:walls/glowstone_wall_from_glowstone_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:glowstone_wall_from_glowstone_stonecutting"
+				"recipe": "vanillaextension:walls/glowstone_wall_from_glowstone_stonecutting"
 			}
 		}
 	},

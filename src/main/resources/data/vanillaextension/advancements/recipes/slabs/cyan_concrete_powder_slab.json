@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:cyan_concrete_powder_slab"
+			"vanillaextension:slabs/cyan_concrete_powder_slab"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:cyan_concrete_powder_slab"
+				"recipe": "vanillaextension:slabs/cyan_concrete_powder_slab"
 			}
 		}
 	},

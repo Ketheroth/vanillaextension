@@ -26,3 +26,6 @@ forge*changelog.txt
 
 # Vim files
 *~
+
+/src/main/resources/blank.txt
+/src/main/resources/script.sh

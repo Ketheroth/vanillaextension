@@ -1,0 +1,43 @@
+{
+	"parent": "minecraft:recipes/root",
+	"rewards": {
+		"recipes": [
+			"vanillaextension:walls/pink_terracotta_wall_from_terracotta_wall"
+		]
+	},
+	"criteria": {
+		"has_block": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"tag": "vanillaextension:walls/terracotta_walls"
+					}
+				]
+			}
+		},
+		"has_dye": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "minecraft:pink_dye"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "vanillaextension:walls/pink_terracotta_wall_from_terracotta_wall"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_block",
+			"has_dye",
+			"has_the_recipe"
+		]
+	]
+}

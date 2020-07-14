@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:lapis_block_stairs"
+			"vanillaextension:stairs/lapis_block_stairs"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:lapis_block_stairs"
+				"recipe": "vanillaextension:stairs/lapis_block_stairs"
 			}
 		}
 	},

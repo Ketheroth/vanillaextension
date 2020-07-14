@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:dark_prismarine_fence"
+			"vanillaextension:fences/dark_prismarine_fence"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:dark_prismarine_fence"
+				"recipe": "vanillaextension:fences/dark_prismarine_fence"
 			}
 		}
 	},

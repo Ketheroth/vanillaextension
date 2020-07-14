@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:acacia_log_slab"
+			"vanillaextension:slabs/acacia_log_slab"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:acacia_log_slab"
+				"recipe": "vanillaextension:slabs/acacia_log_slab"
 			}
 		}
 	},

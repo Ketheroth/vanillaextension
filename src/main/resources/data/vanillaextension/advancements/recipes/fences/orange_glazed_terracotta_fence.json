@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:orange_glazed_terracotta_fence"
+			"vanillaextension:fences/orange_glazed_terracotta_fence"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:orange_glazed_terracotta_fence"
+				"recipe": "vanillaextension:fences/orange_glazed_terracotta_fence"
 			}
 		}
 	},

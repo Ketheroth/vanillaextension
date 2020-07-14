@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:yellow_wool_slab"
+			"vanillaextension:slabs/yellow_wool_slab"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:yellow_wool_slab"
+				"recipe": "vanillaextension:slabs/yellow_wool_slab"
 			}
 		}
 	},

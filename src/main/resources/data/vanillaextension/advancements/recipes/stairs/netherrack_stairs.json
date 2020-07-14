@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:netherrack_stairs"
+			"vanillaextension:stairs/netherrack_stairs"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:netherrack_stairs"
+				"recipe": "vanillaextension:stairs/netherrack_stairs"
 			}
 		}
 	},

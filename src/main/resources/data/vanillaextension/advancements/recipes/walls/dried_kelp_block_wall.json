@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:dried_kelp_block_wall"
+			"vanillaextension:walls/dried_kelp_block_wall"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:dried_kelp_block_wall"
+				"recipe": "vanillaextension:walls/dried_kelp_block_wall"
 			}
 		}
 	},

@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:dead_brain_coral_block_wall_from_dead_brain_coral_block_stonecutting"
+			"vanillaextension:walls/dead_brain_coral_block_wall_from_dead_brain_coral_block_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:dead_brain_coral_block_wall_from_dead_brain_coral_block_stonecutting"
+				"recipe": "vanillaextension:walls/dead_brain_coral_block_wall_from_dead_brain_coral_block_stonecutting"
 			}
 		}
 	},

@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:green_concrete_powder_fence"
+			"vanillaextension:fences/green_concrete_powder_fence"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:green_concrete_powder_fence"
+				"recipe": "vanillaextension:fences/green_concrete_powder_fence"
 			}
 		}
 	},

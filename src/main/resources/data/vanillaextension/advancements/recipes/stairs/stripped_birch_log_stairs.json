@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:stripped_birch_log_stairs"
+			"vanillaextension:stairs/stripped_birch_log_stairs"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:stripped_birch_log_stairs"
+				"recipe": "vanillaextension:stairs/stripped_birch_log_stairs"
 			}
 		}
 	},

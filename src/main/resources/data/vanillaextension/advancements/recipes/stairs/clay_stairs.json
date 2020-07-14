@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:clay_stairs"
+			"vanillaextension:stairs/clay_stairs"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:clay_stairs"
+				"recipe": "vanillaextension:stairs/clay_stairs"
 			}
 		}
 	},

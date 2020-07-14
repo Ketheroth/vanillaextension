@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:chiseled_stone_brick_wall"
+			"vanillaextension:walls/chiseled_stone_brick_wall"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:chiseled_stone_brick_wall"
+				"recipe": "vanillaextension:walls/chiseled_stone_brick_wall"
 			}
 		}
 	},

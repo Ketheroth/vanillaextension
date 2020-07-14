@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:purpur_pillar_slab"
+			"vanillaextension:slabs/purpur_pillar_slab"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:purpur_pillar_slab"
+				"recipe": "vanillaextension:slabs/purpur_pillar_slab"
 			}
 		}
 	},

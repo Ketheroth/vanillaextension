@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:purple_glazed_terracotta_wall"
+			"vanillaextension:walls/purple_glazed_terracotta_wall"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:purple_glazed_terracotta_wall"
+				"recipe": "vanillaextension:walls/purple_glazed_terracotta_wall"
 			}
 		}
 	},

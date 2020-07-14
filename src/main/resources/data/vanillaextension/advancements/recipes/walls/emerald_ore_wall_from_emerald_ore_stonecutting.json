@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:emerald_ore_wall_from_emerald_ore_stonecutting"
+			"vanillaextension:walls/emerald_ore_wall_from_emerald_ore_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:emerald_ore_wall_from_emerald_ore_stonecutting"
+				"recipe": "vanillaextension:walls/emerald_ore_wall_from_emerald_ore_stonecutting"
 			}
 		}
 	},

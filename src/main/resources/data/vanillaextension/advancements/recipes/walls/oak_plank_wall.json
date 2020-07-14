@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:oak_plank_wall"
+			"vanillaextension:walls/oak_plank_wall"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:oak_plank_wall"
+				"recipe": "vanillaextension:walls/oak_plank_wall"
 			}
 		}
 	},

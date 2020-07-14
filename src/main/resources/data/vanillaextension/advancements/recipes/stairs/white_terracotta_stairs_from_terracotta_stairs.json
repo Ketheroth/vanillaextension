@@ -1,0 +1,43 @@
+{
+	"parent": "minecraft:recipes/root",
+	"rewards": {
+		"recipes": [
+			"vanillaextension:stairs/white_terracotta_stairs_from_terracotta_stairs"
+		]
+	},
+	"criteria": {
+		"has_block": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"tag": "vanillaextension:stairs/terracotta_stairs"
+					}
+				]
+			}
+		},
+		"has_dye": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "minecraft:white_dye"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "vanillaextension:stairs/white_terracotta_stairs_from_terracotta_stairs"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_block",
+			"has_dye",
+			"has_the_recipe"
+		]
+	]
+}

@@ -1,9 +1,0 @@
-{
-	"type": "minecraft:smelting",
-	"ingredient": {
-		"item": "vanillaextension:quartz_fence"
-	},
-	"result": "vanillaextension:smooth_quartz_fence_fence",
-	"experience": 0.1,
-	"cookingtime": 200
-}

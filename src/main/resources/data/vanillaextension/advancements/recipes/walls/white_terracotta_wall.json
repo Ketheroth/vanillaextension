@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:white_terracotta_wall"
+			"vanillaextension:walls/white_terracotta_wall"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:white_terracotta_wall"
+				"recipe": "vanillaextension:walls/white_terracotta_wall"
 			}
 		}
 	},

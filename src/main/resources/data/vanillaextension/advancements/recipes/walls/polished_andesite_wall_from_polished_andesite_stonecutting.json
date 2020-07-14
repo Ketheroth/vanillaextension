@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:polished_andesite_wall_from_polished_andesite_stonecutting"
+			"vanillaextension:walls/polished_andesite_wall_from_polished_andesite_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:polished_andesite_wall_from_polished_andesite_stonecutting"
+				"recipe": "vanillaextension:walls/polished_andesite_wall_from_polished_andesite_stonecutting"
 			}
 		}
 	},

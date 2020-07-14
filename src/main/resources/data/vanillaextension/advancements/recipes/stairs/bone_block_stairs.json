@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:bone_block_stairs"
+			"vanillaextension:stairs/bone_block_stairs"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:bone_block_stairs"
+				"recipe": "vanillaextension:stairs/bone_block_stairs"
 			}
 		}
 	},

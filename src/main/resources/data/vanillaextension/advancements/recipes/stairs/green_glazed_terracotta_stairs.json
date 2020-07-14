@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:green_glazed_terracotta_stairs"
+			"vanillaextension:stairs/green_glazed_terracotta_stairs"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:green_glazed_terracotta_stairs"
+				"recipe": "vanillaextension:stairs/green_glazed_terracotta_stairs"
 			}
 		}
 	},

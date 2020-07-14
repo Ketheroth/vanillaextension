@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:smooth_stone_wall_from_smooth_stone_stonecutting"
+			"vanillaextension:walls/smooth_stone_wall_from_smooth_stone_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:smooth_stone_wall_from_smooth_stone_stonecutting"
+				"recipe": "vanillaextension:walls/smooth_stone_wall_from_smooth_stone_stonecutting"
 			}
 		}
 	},

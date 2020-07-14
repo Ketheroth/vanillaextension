@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:light_blue_terracotta_wall_from_light_blue_terracotta_stonecutting"
+			"vanillaextension:walls/light_blue_terracotta_wall_from_light_blue_terracotta_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:light_blue_terracotta_wall_from_light_blue_terracotta_stonecutting"
+				"recipe": "vanillaextension:walls/light_blue_terracotta_wall_from_light_blue_terracotta_stonecutting"
 			}
 		}
 	},

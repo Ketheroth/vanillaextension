@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:white_concrete_wall_from_white_concrete_stonecutting"
+			"vanillaextension:walls/white_concrete_wall_from_white_concrete_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:white_concrete_wall_from_white_concrete_stonecutting"
+				"recipe": "vanillaextension:walls/white_concrete_wall_from_white_concrete_stonecutting"
 			}
 		}
 	},

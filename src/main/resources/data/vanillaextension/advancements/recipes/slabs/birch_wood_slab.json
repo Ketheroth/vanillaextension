@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:birch_wood_slab"
+			"vanillaextension:slabs/birch_wood_slab"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:birch_wood_slab"
+				"recipe": "vanillaextension:slabs/birch_wood_slab"
 			}
 		}
 	},

@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:dragon_egg_wall"
+			"vanillaextension:walls/dragon_egg_wall"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:dragon_egg_wall"
+				"recipe": "vanillaextension:walls/dragon_egg_wall"
 			}
 		}
 	},

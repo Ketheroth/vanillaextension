@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:stripped_jungle_log_fence"
+			"vanillaextension:fences/stripped_jungle_log_fence"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:stripped_jungle_log_fence"
+				"recipe": "vanillaextension:fences/stripped_jungle_log_fence"
 			}
 		}
 	},

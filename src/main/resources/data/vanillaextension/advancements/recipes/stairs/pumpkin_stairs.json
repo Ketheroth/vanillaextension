@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:pumpkin_stairs"
+			"vanillaextension:stairs/pumpkin_stairs"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:pumpkin_stairs"
+				"recipe": "vanillaextension:stairs/pumpkin_stairs"
 			}
 		}
 	},

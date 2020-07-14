@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:tnt_wall_from_tnt_stonecutting"
+			"vanillaextension:walls/tnt_wall_from_tnt_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:tnt_wall_from_tnt_stonecutting"
+				"recipe": "vanillaextension:walls/tnt_wall_from_tnt_stonecutting"
 			}
 		}
 	},

@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:brain_coral_block_wall"
+			"vanillaextension:walls/brain_coral_block_wall"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:brain_coral_block_wall"
+				"recipe": "vanillaextension:walls/brain_coral_block_wall"
 			}
 		}
 	},

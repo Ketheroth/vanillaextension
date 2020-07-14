@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:birch_wood_stairs"
+			"vanillaextension:stairs/birch_wood_stairs"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:birch_wood_stairs"
+				"recipe": "vanillaextension:stairs/birch_wood_stairs"
 			}
 		}
 	},

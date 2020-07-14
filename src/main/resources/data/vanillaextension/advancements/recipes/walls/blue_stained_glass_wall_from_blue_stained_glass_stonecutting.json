@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:blue_stained_glass_wall_from_blue_stained_glass_stonecutting"
+			"vanillaextension:walls/blue_stained_glass_wall_from_blue_stained_glass_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:blue_stained_glass_wall_from_blue_stained_glass_stonecutting"
+				"recipe": "vanillaextension:walls/blue_stained_glass_wall_from_blue_stained_glass_stonecutting"
 			}
 		}
 	},

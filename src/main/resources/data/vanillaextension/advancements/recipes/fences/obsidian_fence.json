@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:obsidian_fence"
+			"vanillaextension:fences/obsidian_fence"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:obsidian_fence"
+				"recipe": "vanillaextension:fences/obsidian_fence"
 			}
 		}
 	},

@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:podzol_fence"
+			"vanillaextension:fences/podzol_fence"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:podzol_fence"
+				"recipe": "vanillaextension:fences/podzol_fence"
 			}
 		}
 	},

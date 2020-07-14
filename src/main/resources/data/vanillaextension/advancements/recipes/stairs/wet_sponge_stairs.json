@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:wet_sponge_stairs"
+			"vanillaextension:stairs/wet_sponge_stairs"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:wet_sponge_stairs"
+				"recipe": "vanillaextension:stairs/wet_sponge_stairs"
 			}
 		}
 	},

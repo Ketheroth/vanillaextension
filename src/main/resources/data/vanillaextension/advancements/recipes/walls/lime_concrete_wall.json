@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:lime_concrete_wall"
+			"vanillaextension:walls/lime_concrete_wall"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:lime_concrete_wall"
+				"recipe": "vanillaextension:walls/lime_concrete_wall"
 			}
 		}
 	},

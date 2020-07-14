@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:smooth_stone_fence"
+			"vanillaextension:fences/smooth_stone_fence"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:smooth_stone_fence"
+				"recipe": "vanillaextension:fences/smooth_stone_fence"
 			}
 		}
 	},

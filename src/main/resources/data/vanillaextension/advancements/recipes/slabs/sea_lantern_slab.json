@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:sea_lantern_slab"
+			"vanillaextension:slabs/sea_lantern_slab"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:sea_lantern_slab"
+				"recipe": "vanillaextension:slabs/sea_lantern_slab"
 			}
 		}
 	},

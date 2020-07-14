@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:green_wool_stairs"
+			"vanillaextension:stairs/green_wool_stairs"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:green_wool_stairs"
+				"recipe": "vanillaextension:stairs/green_wool_stairs"
 			}
 		}
 	},

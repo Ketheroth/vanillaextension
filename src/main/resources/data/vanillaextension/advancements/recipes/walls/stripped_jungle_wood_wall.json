@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:stripped_jungle_wood_wall"
+			"vanillaextension:walls/stripped_jungle_wood_wall"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:stripped_jungle_wood_wall"
+				"recipe": "vanillaextension:walls/stripped_jungle_wood_wall"
 			}
 		}
 	},

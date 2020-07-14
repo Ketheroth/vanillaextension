@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:spawner_stairs"
+			"vanillaextension:stairs/spawner_stairs"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:spawner_stairs"
+				"recipe": "vanillaextension:stairs/spawner_stairs"
 			}
 		}
 	},

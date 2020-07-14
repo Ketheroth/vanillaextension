@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:jungle_leaves_fence"
+			"vanillaextension:fences/jungle_leaves_fence"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:jungle_leaves_fence"
+				"recipe": "vanillaextension:fences/jungle_leaves_fence"
 			}
 		}
 	},

@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:cracked_stone_brick_fence"
+			"vanillaextension:fences/cracked_stone_brick_fence"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:cracked_stone_brick_fence"
+				"recipe": "vanillaextension:fences/cracked_stone_brick_fence"
 			}
 		}
 	},

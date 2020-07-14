@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:purple_concrete_powder_stairs"
+			"vanillaextension:stairs/purple_concrete_powder_stairs"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:purple_concrete_powder_stairs"
+				"recipe": "vanillaextension:stairs/purple_concrete_powder_stairs"
 			}
 		}
 	},

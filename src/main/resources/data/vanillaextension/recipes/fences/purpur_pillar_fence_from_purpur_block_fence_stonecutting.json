@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "vanillaextension:purpur_block_fence"
+	},
+	"result": "vanillaextension:purpur_pillar_fence",
+	"count": 1
+}

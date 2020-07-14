@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:yellow_glazed_terracotta_wall_from_yellow_glazed_terracotta_stonecutting"
+			"vanillaextension:walls/yellow_glazed_terracotta_wall_from_yellow_glazed_terracotta_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:yellow_glazed_terracotta_wall_from_yellow_glazed_terracotta_stonecutting"
+				"recipe": "vanillaextension:walls/yellow_glazed_terracotta_wall_from_yellow_glazed_terracotta_stonecutting"
 			}
 		}
 	},

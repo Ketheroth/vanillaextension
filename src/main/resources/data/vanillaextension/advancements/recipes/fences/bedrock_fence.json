@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:bedrock_fence"
+			"vanillaextension:fences/bedrock_fence"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:bedrock_fence"
+				"recipe": "vanillaextension:fences/bedrock_fence"
 			}
 		}
 	},

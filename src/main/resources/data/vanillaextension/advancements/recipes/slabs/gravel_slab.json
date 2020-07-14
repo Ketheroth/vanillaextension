@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:gravel_slab"
+			"vanillaextension:slabs/gravel_slab"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:gravel_slab"
+				"recipe": "vanillaextension:slabs/gravel_slab"
 			}
 		}
 	},

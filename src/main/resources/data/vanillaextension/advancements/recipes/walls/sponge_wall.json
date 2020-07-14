@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:sponge_wall"
+			"vanillaextension:walls/sponge_wall"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:sponge_wall"
+				"recipe": "vanillaextension:walls/sponge_wall"
 			}
 		}
 	},

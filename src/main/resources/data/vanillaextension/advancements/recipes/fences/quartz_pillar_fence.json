@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:quartz_pillar_fence"
+			"vanillaextension:fences/quartz_pillar_fence"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:quartz_pillar_fence"
+				"recipe": "vanillaextension:fences/quartz_pillar_fence"
 			}
 		}
 	},

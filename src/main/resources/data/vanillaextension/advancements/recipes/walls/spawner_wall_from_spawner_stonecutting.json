@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:spawner_wall_from_spawner_stonecutting"
+			"vanillaextension:walls/spawner_wall_from_spawner_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:spawner_wall_from_spawner_stonecutting"
+				"recipe": "vanillaextension:walls/spawner_wall_from_spawner_stonecutting"
 			}
 		}
 	},

@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:tnt_slab"
+			"vanillaextension:slabs/tnt_slab"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:tnt_slab"
+				"recipe": "vanillaextension:slabs/tnt_slab"
 			}
 		}
 	},
