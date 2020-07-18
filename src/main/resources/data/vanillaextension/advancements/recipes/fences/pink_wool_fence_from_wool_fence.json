@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "vanillaextension:fences/wool_fences"
+						"tag": "vanillaextension:wool_fences"
 					}
 				]
 			}

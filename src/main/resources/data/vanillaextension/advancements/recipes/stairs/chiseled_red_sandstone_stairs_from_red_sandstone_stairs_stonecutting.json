@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:stairs/red_sandstone_stairs"
+						"item": "minecraft:red_sandstone_stairs"
 					}
 				]
 			}

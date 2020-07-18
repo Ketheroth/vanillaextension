@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:fences/red_terracotta_fence"
+						"item": "vanillaextension:red_terracotta_fence"
 					}
 				]
 			}

@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:stairs/smooth_stone_stairs_from_stone_stairs_stonecutting"
+			"vanillaextension:fences/smooth_stone_fence_from_stone_fence_smelting"
 		]
 	},
 	"criteria": {
@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:stairs/stone_stairs"
+						"item": "vanillaextension:stone_fence"
 					}
 				]
 			}
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:stairs/smooth_stone_stairs_from_stone_stairs_stonecutting"
+				"recipe": "vanillaextension:fences/smooth_stone_fence_from_stone_fence_smelting"
 			}
 		}
 	},

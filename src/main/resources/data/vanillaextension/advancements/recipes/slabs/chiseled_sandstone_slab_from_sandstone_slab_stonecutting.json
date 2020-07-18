@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:slabs/sandstone_slab"
+						"item": "minecraft:sandstone_slab"
 					}
 				]
 			}

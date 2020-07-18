@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:fences/stone_brick_fence"
+						"item": "vanillaextension:stone_brick_fence"
 					}
 				]
 			}

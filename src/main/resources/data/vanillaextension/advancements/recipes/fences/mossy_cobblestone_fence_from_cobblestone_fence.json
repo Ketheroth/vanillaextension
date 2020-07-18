@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:fences/cobblestone_fence"
+						"item": "vanillaextension:cobblestone_fence"
 					}
 				]
 			}

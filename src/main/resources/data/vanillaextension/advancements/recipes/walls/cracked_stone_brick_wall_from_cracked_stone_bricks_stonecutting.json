@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:walls/cracked_stone_brick_wall_from_cracked_stone_brick_stonecutting"
+			"vanillaextension:walls/cracked_stone_brick_wall_from_cracked_stone_bricks_stonecutting"
 		]
 	},
 	"criteria": {
@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "minecraft:cracked_stone_brick"
+						"item": "minecraft:cracked_stone_bricks"
 					}
 				]
 			}
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:walls/cracked_stone_brick_wall_from_cracked_stone_brick_stonecutting"
+				"recipe": "vanillaextension:walls/cracked_stone_brick_wall_from_cracked_stone_bricks_stonecutting"
 			}
 		}
 	},

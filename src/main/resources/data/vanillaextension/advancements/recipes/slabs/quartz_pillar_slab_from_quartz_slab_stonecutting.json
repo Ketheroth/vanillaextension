@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:slabs/quartz_pillar_slab_from_quartz_block_slab_stonecutting"
+			"vanillaextension:slabs/quartz_pillar_slab_from_quartz_slab_stonecutting"
 		]
 	},
 	"criteria": {
@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:slabs/quartz_block_slab"
+						"item": "minecraft:quartz_slab"
 					}
 				]
 			}
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:slabs/quartz_pillar_slab_from_quartz_block_slab_stonecutting"
+				"recipe": "vanillaextension:slabs/quartz_pillar_slab_from_quartz_slab_stonecutting"
 			}
 		}
 	},

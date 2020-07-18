@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:fences/carved_pumpkin_fence"
+						"item": "vanillaextension:carved_pumpkin_fence"
 					}
 				]
 			}

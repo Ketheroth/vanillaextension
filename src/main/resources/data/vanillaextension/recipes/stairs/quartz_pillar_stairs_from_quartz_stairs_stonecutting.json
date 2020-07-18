@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:quartz_stairs"
+	},
+	"result": "vanillaextension:quartz_pillar_stairs",
+	"count": 1
+}

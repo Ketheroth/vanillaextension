@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:slabs/blue_terracotta_slab"
+						"item": "vanillaextension:blue_terracotta_slab"
 					}
 				]
 			}

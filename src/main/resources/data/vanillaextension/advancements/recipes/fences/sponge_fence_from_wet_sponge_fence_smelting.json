@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:fences/sponge_fence_from_wet_sponge_fence_stonecutting"
+			"vanillaextension:fences/sponge_fence_from_wet_sponge_fence_smelting"
 		]
 	},
 	"criteria": {
@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:fences/wet_sponge_fence"
+						"item": "vanillaextension:wet_sponge_fence"
 					}
 				]
 			}
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:fences/sponge_fence_from_wet_sponge_fence_stonecutting"
+				"recipe": "vanillaextension:fences/sponge_fence_from_wet_sponge_fence_smelting"
 			}
 		}
 	},

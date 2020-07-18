@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:smelting",
 	"ingredient": {
-		"item": "vanillaextension:cobblestone_wall"
+		"item": "minecraft:cobblestone_wall"
 	},
 	"result": "vanillaextension:stone_wall",
 	"experience": 0.15,

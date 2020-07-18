@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:fences/red_sandstone_fence"
+						"item": "vanillaextension:red_sandstone_fence"
 					}
 				]
 			}

@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "vanillaextension:fences/glass_fences"
+						"tag": "vanillaextension:glass_fences"
 					}
 				]
 			}

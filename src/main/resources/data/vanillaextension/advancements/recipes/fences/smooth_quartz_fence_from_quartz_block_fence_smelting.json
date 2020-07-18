@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:fences/quartz_block_fence"
+						"item": "vanillaextension:quartz_block_fence"
 					}
 				]
 			}

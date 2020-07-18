@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:walls/stone_wall"
+						"item": "vanillaextension:stone_wall"
 					}
 				]
 			}

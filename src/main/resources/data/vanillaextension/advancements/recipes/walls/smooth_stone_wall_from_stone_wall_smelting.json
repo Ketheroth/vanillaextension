@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:stairs/chiseled_quartz_block_stairs_from_quartz_block_stairs_stonecutting"
+			"vanillaextension:walls/smooth_stone_wall_from_stone_wall_smelting"
 		]
 	},
 	"criteria": {
@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:stairs/quartz_block_stairs"
+						"item": "vanillaextension:stone_wall"
 					}
 				]
 			}
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:stairs/chiseled_quartz_block_stairs_from_quartz_block_stairs_stonecutting"
+				"recipe": "vanillaextension:walls/smooth_stone_wall_from_stone_wall_smelting"
 			}
 		}
 	},

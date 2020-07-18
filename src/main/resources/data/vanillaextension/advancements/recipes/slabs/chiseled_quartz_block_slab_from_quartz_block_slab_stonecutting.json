@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:slabs/quartz_block_slab"
+						"item": "minecraft:quartz_slab"
 					}
 				]
 			}

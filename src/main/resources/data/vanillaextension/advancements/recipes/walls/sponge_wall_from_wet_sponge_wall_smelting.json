@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:walls/sponge_wall_from_wet_sponge_wall_stonecutting"
+			"vanillaextension:walls/sponge_wall_from_wet_sponge_wall_smelting"
 		]
 	},
 	"criteria": {
@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:walls/wet_sponge_wall"
+						"item": "vanillaextension:wet_sponge_wall"
 					}
 				]
 			}
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:walls/sponge_wall_from_wet_sponge_wall_stonecutting"
+				"recipe": "vanillaextension:walls/sponge_wall_from_wet_sponge_wall_smelting"
 			}
 		}
 	},

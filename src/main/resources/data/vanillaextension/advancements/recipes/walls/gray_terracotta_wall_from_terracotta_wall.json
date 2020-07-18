@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "vanillaextension:walls/terracotta_walls"
+						"tag": "vanillaextension:terracotta_walls"
 					}
 				]
 			}

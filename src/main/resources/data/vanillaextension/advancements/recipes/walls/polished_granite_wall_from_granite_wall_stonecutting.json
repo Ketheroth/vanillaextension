@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:walls/granite_wall"
+						"item": "minecraft:granite_wall"
 					}
 				]
 			}

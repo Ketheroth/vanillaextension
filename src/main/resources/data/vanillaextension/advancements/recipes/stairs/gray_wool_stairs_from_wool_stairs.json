@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"tag": "vanillaextension:stairs/wool_stairs"
+						"tag": "vanillaextension:wool_stairs"
 					}
 				]
 			}

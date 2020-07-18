@@ -12,12 +12,13 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.ObjectHolder;
 
+import java.util.ArrayList;
+
 @ObjectHolder(VanillaExtension.MODID)
 @Mod.EventBusSubscriber(modid = VanillaExtension.MODID, bus = Bus.MOD)
 public class BlockInit {
 
-	// TODO: 14/07/2020 remove = null;
-	// TODO: 25/06/2020 need using parent model for sided block ? yes (wooden log)
+	// TODO: 25/06/2020 need using parent model for sided block ? yes (wooden log) for fences & walls
 	// TODO: 28/06/2020 check modded tags in recipes. need to add vanillaextension: ?
 	// TODO: 25/06/2020 update readme
 	// TODO: 25/06/2020 update version
@@ -1612,6 +1613,7 @@ public class BlockInit {
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.GRASS_BLOCK)).setRegistryName("grass_block_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.DIRT)).setRegistryName("dirt_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.COARSE_DIRT)).setRegistryName("coarse_dirt_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.PODZOL)).setRegistryName("podzol_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.OAK_PLANKS)).setRegistryName("oak_plank_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.SPRUCE_PLANKS)).setRegistryName("spruce_plank_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.BIRCH_PLANKS)).setRegistryName("birch_plank_wall"));
@@ -1729,7 +1731,7 @@ public class BlockInit {
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.MYCELIUM)).setRegistryName("mycelium_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.END_STONE)).setRegistryName("end_stone_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.DRAGON_EGG)).setRegistryName("dragon_egg_wall"));
-		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.REDSTONE_LAMP)).setRegistryName("restone_lamp_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.REDSTONE_LAMP)).setRegistryName("redstone_lamp_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.EMERALD_ORE)).setRegistryName("emerald_ore_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.EMERALD_BLOCK)).setRegistryName("emerald_block_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.REDSTONE_BLOCK)).setRegistryName("redstone_block_wall"));
@@ -1772,8 +1774,8 @@ public class BlockInit {
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.PURPUR_BLOCK)).setRegistryName("purpur_block_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.PURPUR_PILLAR)).setRegistryName("purpur_pillar_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.MAGMA_BLOCK)).setRegistryName("magma_block_wall"));
-		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.NETHER_WART_BLOCK)).setRegistryName("nether_wart_block_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.BONE_BLOCK)).setRegistryName("bone_block_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.NETHER_WART_BLOCK)).setRegistryName("nether_wart_block_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.WHITE_GLAZED_TERRACOTTA)).setRegistryName("white_glazed_terracotta_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.ORANGE_GLAZED_TERRACOTTA)).setRegistryName("orange_glazed_terracotta_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.MAGENTA_GLAZED_TERRACOTTA)).setRegistryName("magenta_glazed_terracotta_wall"));
@@ -2544,7 +2546,7 @@ public class BlockInit {
 		event.getRegistry().register(new BlockItem(birch_log_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("birch_log_wall"));
 		event.getRegistry().register(new BlockItem(jungle_log_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("jungle_log_wall"));
 		event.getRegistry().register(new BlockItem(acacia_log_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("acacia_log_wall"));
-		event.getRegistry().register(new BlockItem(dark_oak_log_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_dark_oak_log_wall"));
+		event.getRegistry().register(new BlockItem(dark_oak_log_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("dark_oak_log_wall"));
 		event.getRegistry().register(new BlockItem(stripped_oak_log_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_oak_log_wall"));
 		event.getRegistry().register(new BlockItem(stripped_spruce_log_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_spruce_log_wall"));
 		event.getRegistry().register(new BlockItem(stripped_birch_log_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_birch_log_wall"));
@@ -2556,7 +2558,7 @@ public class BlockInit {
 		event.getRegistry().register(new BlockItem(birch_wood_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("birch_wood_wall"));
 		event.getRegistry().register(new BlockItem(jungle_wood_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("jungle_wood_wall"));
 		event.getRegistry().register(new BlockItem(acacia_wood_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("acacia_wood_wall"));
-		event.getRegistry().register(new BlockItem(dark_oak_wood_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_dark_oak_wood_wall"));
+		event.getRegistry().register(new BlockItem(dark_oak_wood_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("dark_oak_wood_wall"));
 		event.getRegistry().register(new BlockItem(stripped_oak_wood_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_oak_wood_wall"));
 		event.getRegistry().register(new BlockItem(stripped_spruce_wood_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_spruce_wood_wall"));
 		event.getRegistry().register(new BlockItem(stripped_birch_wood_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_birch_wood_wall"));
@@ -2568,7 +2570,7 @@ public class BlockInit {
 		event.getRegistry().register(new BlockItem(birch_leaves_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("birch_leaves_wall"));
 		event.getRegistry().register(new BlockItem(jungle_leaves_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("jungle_leaves_wall"));
 		event.getRegistry().register(new BlockItem(acacia_leaves_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("acacia_leaves_wall"));
-		event.getRegistry().register(new BlockItem(dark_oak_leaves_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_dark_oak_leaves_wall"));
+		event.getRegistry().register(new BlockItem(dark_oak_leaves_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("dark_oak_leaves_wall"));
 		event.getRegistry().register(new BlockItem(sponge_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("sponge_wall"));
 		event.getRegistry().register(new BlockItem(wet_sponge_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("wet_sponge_wall"));
 		event.getRegistry().register(new BlockItem(glass_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("glass_wall"));
@@ -2751,5 +2753,4 @@ public class BlockInit {
 		event.getRegistry().register(new BlockItem(honey_block_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("honey_block_wall"));
 		event.getRegistry().register(new BlockItem(honeycomb_block_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("honeycomb_block_wall"));
 	}
-
 }

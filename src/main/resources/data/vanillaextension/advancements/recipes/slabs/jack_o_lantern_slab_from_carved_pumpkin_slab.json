@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:slabs/carved_pumpkin_slab"
+						"item": "vanillaextension:carved_pumpkin_slab"
 					}
 				]
 			}

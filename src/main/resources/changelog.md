@@ -5,6 +5,3 @@
 - missing recipes (stonecutting & smelting)
 - blasting recipes
 - missing advancements to unlock recipes
-
-#### Change :
-- h

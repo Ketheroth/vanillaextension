@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:slabs/purpur_pillar_slab_from_purpur_block_stonecutting"
+			"vanillaextension:slabs/purpur_pillar_slab_from_purpur_slab_stonecutting"
 		]
 	},
 	"criteria": {
@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "minecraft:purpur_pillar"
+						"item": "minecraft:purpur_slab"
 					}
 				]
 			}
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:slabs/purpur_pillar_slab_from_purpur_block_stonecutting"
+				"recipe": "vanillaextension:slabs/purpur_pillar_slab_from_purpur_slab_stonecutting"
 			}
 		}
 	},

@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:fences/purpur_pillar_fence_from_purpur_block_stonecutting"
+			"vanillaextension:fences/purpur_pillar_fence_from_purpur_block_fence_stonecutting"
 		]
 	},
 	"criteria": {
@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "minecraft:purpur_pillar"
+						"item": "vanillaextension:purpur_block_fence"
 					}
 				]
 			}
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:fences/purpur_pillar_fence_from_purpur_block_stonecutting"
+				"recipe": "vanillaextension:fences/purpur_pillar_fence_from_purpur_block_fence_stonecutting"
 			}
 		}
 	},

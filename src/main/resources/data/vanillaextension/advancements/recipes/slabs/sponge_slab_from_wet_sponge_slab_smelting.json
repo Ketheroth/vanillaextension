@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:slabs/sponge_slab_from_wet_sponge_slab_stonecutting"
+			"vanillaextension:slabs/sponge_slab_from_wet_sponge_slab_smelting"
 		]
 	},
 	"criteria": {
@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:slabs/wet_sponge_slab"
+						"item": "vanillaextension:wet_sponge_slab"
 					}
 				]
 			}
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:slabs/sponge_slab_from_wet_sponge_slab_stonecutting"
+				"recipe": "vanillaextension:slabs/sponge_slab_from_wet_sponge_slab_smelting"
 			}
 		}
 	},

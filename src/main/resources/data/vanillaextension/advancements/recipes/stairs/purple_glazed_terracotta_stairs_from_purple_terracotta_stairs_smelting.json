@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:stairs/purple_terracotta_stairs"
+						"item": "vanillaextension:purple_terracotta_stairs"
 					}
 				]
 			}

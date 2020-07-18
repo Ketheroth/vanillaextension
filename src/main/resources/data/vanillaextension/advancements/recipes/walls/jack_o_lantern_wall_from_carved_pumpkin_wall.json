@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:walls/carved_pumpkin_wall"
+						"item": "vanillaextension:carved_pumpkin_wall"
 					}
 				]
 			}

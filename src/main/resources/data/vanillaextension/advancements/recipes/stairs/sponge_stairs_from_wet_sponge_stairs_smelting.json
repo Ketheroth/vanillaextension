@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:stairs/wet_sponge_stairs"
+						"item": "vanillaextension:wet_sponge_stairs"
 					}
 				]
 			}

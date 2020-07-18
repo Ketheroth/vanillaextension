@@ -27,5 +27,6 @@ forge*changelog.txt
 # Vim files
 *~
 
-/src/main/resources/blank.txt
-/src/main/resources/script.sh
+/src/main/resources/assets/vanillaextension/models/block/template_wall_post.json
+/src/main/resources/assets/vanillaextension/models/block/template_wall_side.json
+/src/main/resources/assets/vanillaextension/models/block/wall_inventory.json
