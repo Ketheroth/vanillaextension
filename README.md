@@ -1,29 +1,11 @@
 # Vanilla Extension
 
-With this mod most of the vanilla building blocks can be crafted into stairs, slabs and fences.
+A mod for Minecraft Forge
 
-Stairs are crafted like vanilla ones.  
-They also have smelting recipes, for example you can smelt stone stairs to obtain smooth stone stairs, or smelt white terracotta stairs to get white glazed terracotta stairs.  
-Rock based stairs can be crafted in the stonecutter.
+This mod adds Stairs, Slabs, Fences and Walls for most of the vanilla blocks.  
 
-They act like their vanilla block counterpart upon breaking.  
-Example : glass stairs need to be mined with silk touch.  
+CurseForge link : [Vanilla Extension](https://www.curseforge.com/minecraft/mc-mods/vanilla-extension).  
 
-Slabs and fences have the same properties as stairs.  
-Slabs can be reconverted to full blocks.
+If there is a bug, or you want suggest something you can use this [issue list](https://github.com/nbrichau/vanillaextension/issues).  
 
-CurseForge link : [Vanilla Extension](https://www.curseforge.com/minecraft/mc-mods/vanilla-extension)  
-
-## FAQ
-#### Will there be more block in the future ?
-Yeah, of course. I planned to add walls and mod support for now.
-
-#### Can I use this mod in my modpack ?
-Feel free to add this mod in any modpack you want.  
-Just add a link to this page please.
-
-#### There is a bug, where can I submit it ?
-You can use this [issue list](https://github.com/nbrichau/vanillaextension/issues)
-
-#### What about older versions of Minecraft ?
-Older version of Minecraft than 1.15 will not be supported.
+If you would like to help me translate this mod, please fork the [github project](https://github.com/nbrichau/vanillaextension) and create a pull request.  
