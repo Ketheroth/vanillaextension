@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/wall_inventory",
+	"parent": "vanillaextension:block/wall_inventory",
 	"textures": {
-		"wall": "minecraft:block/cut_red_sandstone"
+		"side": "minecraft:block/cut_red_sandstone",
+		"top": "minecraft:block/red_sandstone_top"
 	}
 }

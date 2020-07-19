@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/wall_inventory",
+	"parent": "vanillaextension:block/wall_inventory",
 	"textures": {
-		"wall": "minecraft:block/jungle_log"
+		"side": "minecraft:block/jungle_log",
+		"top": "minecraft:block/jungle_log_top"
 	}
 }

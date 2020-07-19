@@ -18,12 +18,6 @@ import java.util.ArrayList;
 @Mod.EventBusSubscriber(modid = VanillaExtension.MODID, bus = Bus.MOD)
 public class BlockInit {
 
-	// TODO: 25/06/2020 need using parent model for sided block ? yes (wooden log) for fences & walls
-	// TODO: 28/06/2020 check modded tags in recipes. need to add vanillaextension: ?
-	// TODO: 25/06/2020 update readme
-	// TODO: 25/06/2020 update version
-	// TODO: 04/07/2020 pictures for curseforge
-
 	public static final Block grass_block_stairs = null;
 	public static final Block dirt_stairs = null;
 	public static final Block coarse_dirt_stairs = null;

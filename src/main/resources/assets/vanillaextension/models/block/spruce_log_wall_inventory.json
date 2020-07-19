@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/wall_inventory",
+	"parent": "vanillaextension:block/wall_inventory",
 	"textures": {
-		"wall": "minecraft:block/spruce_log"
+		"side": "minecraft:block/spruce_log",
+		"top": "minecraft:block/spruce_log_top"
 	}
 }

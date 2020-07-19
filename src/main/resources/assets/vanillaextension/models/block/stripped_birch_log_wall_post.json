@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/template_wall_post",
+	"parent": "vanillaextension:block/template_wall_post",
 	"textures": {
-		"wall": "minecraft:block/stripped_birch_log"
+		"side": "minecraft:block/stripped_birch_log",
+		"top": "minecraft:block/stripped_birch_log_top"
 	}
 }

@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/fence_post",
+	"parent": "vanillaextension:block/fence_post",
 	"textures": {
-		"texture": "minecraft:block/grass_block_side"
+		"texture": "minecraft:block/grass_block_side",
+		"top": "minecraft:block/grass_block_top"
 	}
 }

@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/template_wall_post",
+	"parent": "vanillaextension:block/template_wall_post",
 	"textures": {
-		"wall": "minecraft:block/chiseled_quartz_block"
+		"side": "minecraft:block/chiseled_quartz_block",
+		"top": "minecraft:block/chiseled_quartz_block_top"
 	}
 }

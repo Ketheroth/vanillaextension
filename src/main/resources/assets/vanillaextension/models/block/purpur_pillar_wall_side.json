@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/template_wall_side",
+	"parent": "vanillaextension:block/template_wall_side",
 	"textures": {
-		"wall": "minecraft:block/purpur_pillar"
+		"side": "minecraft:block/purpur_pillar",
+		"top": "minecraft:block/purpur_pillar_top"
 	}
 }

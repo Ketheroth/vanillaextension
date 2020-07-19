@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/template_wall_post",
+	"parent": "vanillaextension:block/template_wall_post",
 	"textures": {
-		"wall": "minecraft:block/carved_pumpkin"
+		"side": "minecraft:block/carved_pumpkin",
+		"top": "minecraft:block/pumpkin_top"
 	}
 }

@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/wall_inventory",
+	"parent": "vanillaextension:block/wall_inventory",
 	"textures": {
-		"wall": "minecraft:block/bookshelf"
+		"side": "minecraft:block/bookshelf",
+		"top": "minecraft:block/oak_planks"
 	}
 }

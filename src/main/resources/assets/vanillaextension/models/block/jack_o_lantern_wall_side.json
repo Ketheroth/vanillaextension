@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/template_wall_side",
+	"parent": "vanillaextension:block/template_wall_side",
 	"textures": {
-		"wall": "minecraft:block/jack_o_lantern"
+		"side": "minecraft:block/jack_o_lantern",
+		"top": "minecraft:block/pumpkin_top"
 	}
 }

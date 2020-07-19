@@ -43,7 +43,6 @@ public class VanillaExtension
 	}
 
 	private void doClientStuff(final FMLClientSetupEvent event) {
-		/*
 		RenderTypeLookup.setRenderLayer(BlockInit.oak_leaves_stairs, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.spruce_leaves_stairs, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.birch_leaves_stairs, RenderType.getTranslucent());
@@ -160,7 +159,7 @@ public class VanillaExtension
 		RenderTypeLookup.setRenderLayer(BlockInit.iron_trapdoor_fence, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.sea_lantern_fence, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.honey_block_fence, RenderType.getTranslucent());
-/*
+
 		RenderTypeLookup.setRenderLayer(BlockInit.oak_leaves_wall, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.spruce_leaves_wall, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.birch_leaves_wall, RenderType.getTranslucent());
@@ -199,7 +198,6 @@ public class VanillaExtension
 		RenderTypeLookup.setRenderLayer(BlockInit.iron_trapdoor_wall, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.sea_lantern_wall, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.honey_block_wall, RenderType.getTranslucent());
-	*/
 	}
 
 	// You can use SubscribeEvent and let the Event Bus discover methods to call

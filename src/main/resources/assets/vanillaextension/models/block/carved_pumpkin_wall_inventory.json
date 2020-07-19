@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/wall_inventory",
+	"parent": "vanillaextension:block/wall_inventory",
 	"textures": {
-		"wall": "minecraft:block/carved_pumpkin"
+		"side": "minecraft:block/carved_pumpkin",
+		"top": "minecraft:block/pumpkin_top"
 	}
 }

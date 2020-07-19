@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/wall_inventory",
+	"parent": "vanillaextension:block/wall_inventory",
 	"textures": {
-		"wall": "minecraft:block/stripped_acacia_log"
+		"side": "minecraft:block/stripped_acacia_log",
+		"top": "minecraft:block/stripped_acacia_log_top"
 	}
 }

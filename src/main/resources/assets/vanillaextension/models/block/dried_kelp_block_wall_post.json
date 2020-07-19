@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/template_wall_post",
+	"parent": "vanillaextension:block/template_wall_post",
 	"textures": {
-		"wall": "minecraft:block/dried_kelp_side"
+		"side": "minecraft:block/dried_kelp_side",
+		"top": "minecraft:block/dried_kelp_top"
 	}
 }

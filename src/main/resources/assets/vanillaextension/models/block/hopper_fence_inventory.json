@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/fence_inventory",
+	"parent": "vanillaextension:block/fence_inventory",
 	"textures": {
-		"texture": "minecraft:block/hopper_outside"
+		"texture": "minecraft:block/hopper_outside",
+		"top": "minecraft:block/hopper_inside"
 	}
 }

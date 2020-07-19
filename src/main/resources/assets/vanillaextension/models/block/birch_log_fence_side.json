@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/fence_side",
+	"parent": "vanillaextension:block/fence_side",
 	"textures": {
-		"texture": "minecraft:block/birch_log"
+		"texture": "minecraft:block/birch_log",
+		"top": "minecraft:block/birch_log_top"
 	}
 }

@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/fence_inventory",
+	"parent": "vanillaextension:block/fence_inventory",
 	"textures": {
-		"texture": "minecraft:block/chiseled_sandstone"
+		"texture": "minecraft:block/chiseled_sandstone",
+		"top": "minecraft:block/sandstone_top"
 	}
 }

@@ -1,6 +1,7 @@
 {
 	"parent": "minecraft:block/fence_post",
 	"textures": {
-		"texture": "minecraft:block/bookshelf"
+		"texture": "minecraft:block/bookshelf",
+		"top": "minecraft:block/oak_planks"
 	}
 }

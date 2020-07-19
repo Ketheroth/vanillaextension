@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/wall_inventory",
+	"parent": "vanillaextension:block/wall_inventory",
 	"textures": {
-		"wall": "minecraft:block/melon_side"
+		"side": "minecraft:block/melon_side",
+		"top": "minecraft:block/melon_top"
 	}
 }

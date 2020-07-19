@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/template_wall_side",
+	"parent": "vanillaextension:block/template_wall_side",
 	"textures": {
-		"wall": "minecraft:block/melon_side"
+		"side": "minecraft:block/melon_side",
+		"top": "minecraft:block/melon_top"
 	}
 }

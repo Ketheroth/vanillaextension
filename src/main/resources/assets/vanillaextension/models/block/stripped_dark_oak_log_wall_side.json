@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/template_wall_side",
+	"parent": "vanillaextension:block/template_wall_side",
 	"textures": {
-		"wall": "minecraft:block/stripped_dark_oak_log"
+		"side": "minecraft:block/stripped_dark_oak_log",
+		"top": "minecraft:block/stripped_dark_oak_log_top"
 	}
 }

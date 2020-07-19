@@ -1,6 +1,7 @@
 {
-	"parent": "minecraft:block/fence_inventory",
+	"parent": "vanillaextension:block/fence_inventory",
 	"textures": {
-		"texture": "minecraft:block/purpur_pillar"
+		"texture": "minecraft:block/purpur_pillar",
+		"top": "minecraft:block/purpur_pillar_top"
 	}
 }
