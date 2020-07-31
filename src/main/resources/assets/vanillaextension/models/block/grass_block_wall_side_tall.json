@@ -1,0 +1,7 @@
+{
+	"parent": "vanillaextension:block/template_wall_side_tall",
+	"textures": {
+		"side": "minecraft:block/grass_block_side",
+		"top": "minecraft:block/grass_block_top"
+	}
+}

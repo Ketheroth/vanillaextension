@@ -1,0 +1,7 @@
+{
+	"parent": "vanillaextension:block/template_wall_side_tall",
+	"textures": {
+		"side": "minecraft:block/hopper_outside",
+		"top": "minecraft:block/hopper_inside"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "vanillaextension:block/template_wall_side_tall",
+	"textures": {
+		"side": "minecraft:block/purpur_pillar",
+		"top": "minecraft:block/purpur_pillar_top"
+	}
+}

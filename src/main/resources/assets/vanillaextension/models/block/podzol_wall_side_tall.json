@@ -1,0 +1,7 @@
+{
+	"parent": "vanillaextension:block/template_wall_side_tall",
+	"textures": {
+		"side": "minecraft:block/podzol_side",
+		"top": "minecraft:block/podzol_top"
+	}
+}

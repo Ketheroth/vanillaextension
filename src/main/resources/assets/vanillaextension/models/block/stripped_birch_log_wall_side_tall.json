@@ -1,0 +1,7 @@
+{
+	"parent": "vanillaextension:block/template_wall_side_tall",
+	"textures": {
+		"side": "minecraft:block/stripped_birch_log",
+		"top": "minecraft:block/stripped_birch_log_top"
+	}
+}

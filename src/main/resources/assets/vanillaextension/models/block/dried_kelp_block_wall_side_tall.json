@@ -1,0 +1,7 @@
+{
+	"parent": "vanillaextension:block/template_wall_side_tall",
+	"textures": {
+		"side": "minecraft:block/dried_kelp_side",
+		"top": "minecraft:block/dried_kelp_top"
+	}
+}
