@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:basalt_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:basalt",
+		"count": 1
+	}
+}

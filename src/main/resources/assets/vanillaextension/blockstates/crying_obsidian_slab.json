@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/crying_obsidian_slab" },
+		"type=top": { "model": "vanillaextension:block/crying_obsidian_slab_top" },
+		"type=double": { "model": "minecraft:block/crying_obsidian" }
+	}
+}

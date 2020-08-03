@@ -3,7 +3,7 @@ loaderVersion="[32,)"
 #issueTrackerURL="http://my.issue.tracker/"
 [[mods]]
 modId="vanillaextension"
-version="1.16.1-1.0.4"
+version="1.16.1-1.0.5"
 displayName="Vanilla Extension"
 #updateJSONURL="http://myurl.me/"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/vanilla-extension"

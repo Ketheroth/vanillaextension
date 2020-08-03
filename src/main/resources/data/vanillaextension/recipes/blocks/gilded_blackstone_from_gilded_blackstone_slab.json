@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:gilded_blackstone_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:gilded_blackstone",
+		"count": 1
+	}
+}

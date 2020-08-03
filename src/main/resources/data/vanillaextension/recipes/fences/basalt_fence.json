@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:basalt"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:basalt_fence",
+		"count": 3
+	}
+}

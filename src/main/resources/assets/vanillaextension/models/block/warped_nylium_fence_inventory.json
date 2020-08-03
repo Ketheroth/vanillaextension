@@ -1,0 +1,7 @@
+{
+	"parent": "vanillaextension:block/fence_inventory",
+	"textures": {
+		"texture": "minecraft:block/warped_nylium_side",
+		"top": "minecraft:block/warped_nylium"
+	}
+}

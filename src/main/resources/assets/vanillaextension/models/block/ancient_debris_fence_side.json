@@ -1,0 +1,7 @@
+{
+	"parent": "vanillaextension:block/fence_side",
+	"textures": {
+		"texture": "minecraft:block/ancient_debris_side",
+		"top": "minecraft:block/ancient_debris_top"
+	}
+}

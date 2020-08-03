@@ -30,6 +30,14 @@
 		"vanillaextension:birch_trapdoor_slab",
 		"vanillaextension:jungle_trapdoor_slab",
 		"vanillaextension:acacia_trapdoor_slab",
-		"vanillaextension:dark_oak_trapdoor_slab"
+		"vanillaextension:dark_oak_trapdoor_slab",
+		"vanillaextension:warped_stem_slab",
+		"vanillaextension:stripped_warped_stem_slab",
+		"vanillaextension:warped_hyphae_slab",
+		"vanillaextension:stripped_warped_hyphae_slab",
+		"vanillaextension:crimson_stem_slab",
+		"vanillaextension:stripped_crimson_stem_slab",
+		"vanillaextension:crimson_hyphae_slab",
+		"vanillaextension:stripped_crimson_hyphae_slab"
 	]
 }

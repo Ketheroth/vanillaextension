@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:nether_bricks"
+	},
+	"result": "vanillaextension:chiseled_nether_brick_wall",
+	"count": 1
+}

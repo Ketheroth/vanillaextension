@@ -1,0 +1,7 @@
+{
+	"parent": "vanillaextension:block/template_wall_post",
+	"textures": {
+		"side": "minecraft:block/basalt_side",
+		"top": "minecraft:block/basalt_top"
+	}
+}

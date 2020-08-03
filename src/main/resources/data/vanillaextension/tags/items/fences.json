@@ -118,6 +118,24 @@
 		"vanillaextension:horn_coral_block_fence",
 		"vanillaextension:blue_ice_fence",
 		"vanillaextension:honey_block_fence",
-		"vanillaextension:honeycomb_block_fence"
+		"vanillaextension:honeycomb_block_fence",
+		"vanillaextension:warped_nylium_fence",
+		"vanillaextension:warped_wart_block_fence",
+		"vanillaextension:crimson_nylium_fence",
+		"vanillaextension:shroomlight_fence",
+		"vanillaextension:netherite_block_fence",
+		"vanillaextension:ancient_debris_fence",
+		"vanillaextension:crying_obsidian_fence",
+		"vanillaextension:basalt_fence",
+		"vanillaextension:polished_basalt_fence",
+		"vanillaextension:blackstone_fence",
+		"vanillaextension:polished_blackstone_fence",
+		"vanillaextension:polished_blackstone_brick_fence",
+		"vanillaextension:cracked_polished_blackstone_brick_fence",
+		"vanillaextension:chiseled_polished_blackstone_fence",
+		"vanillaextension:gilded_blackstone_fence",
+		"vanillaextension:chiseled_nether_brick_fence",
+		"vanillaextension:cracked_nether_brick_fence",
+		"vanillaextension:quartz_brick_fence"
 	]
 }

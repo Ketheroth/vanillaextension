@@ -1,0 +1,7 @@
+{
+	"parent": "vanillaextension:block/template_wall_side",
+	"textures": {
+		"side": "minecraft:block/crimson_nylium_side",
+		"top": "minecraft:block/crimson_nylium"
+	}
+}

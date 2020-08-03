@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/polished_basalt_slab" },
+		"type=top": { "model": "vanillaextension:block/polished_basalt_slab_top" },
+		"type=double": { "model": "minecraft:block/polished_basalt" }
+	}
+}

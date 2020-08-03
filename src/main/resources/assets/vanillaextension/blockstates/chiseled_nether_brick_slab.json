@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/chiseled_nether_brick_slab" },
+		"type=top": { "model": "vanillaextension:block/chiseled_nether_brick_slab_top" },
+		"type=double": { "model": "minecraft:block/chiseled_nether_bricks" }
+	}
+}

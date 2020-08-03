@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "vanillaextension:quartz_block_fence"
+	},
+	"result": "vanillaextension:quartz_brick_fence",
+	"count": 1
+}

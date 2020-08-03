@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:stripped_crimson_hyphae"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:stripped_crimson_hyphae_fence",
+		"count": 3
+	}
+}

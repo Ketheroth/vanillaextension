@@ -4,6 +4,7 @@
 		"#vanillaextension:glass_walls",
 		"#vanillaextension:terracotta_walls",
 		"#vanillaextension:wool_walls",
+		"#vanillaextension:wooden_walls",
 		"vanillaextension:stone_wall",
 		"vanillaextension:polished_granite_wall",
 		"vanillaextension:polished_diorite_wall",
@@ -186,6 +187,21 @@
 		"vanillaextension:horn_coral_block_wall",
 		"vanillaextension:blue_ice_wall",
 		"vanillaextension:honey_block_wall",
-		"vanillaextension:honeycomb_block_wall"
+		"vanillaextension:honeycomb_block_wall",
+		"vanillaextension:warped_nylium_wall",
+		"vanillaextension:warped_wart_block_wall",
+		"vanillaextension:crimson_nylium_wall",
+		"vanillaextension:shroomlight_wall",
+		"vanillaextension:netherite_block_wall",
+		"vanillaextension:ancient_debris_wall",
+		"vanillaextension:crying_obsidian_wall",
+		"vanillaextension:basalt_wall",
+		"vanillaextension:polished_basalt_wall",
+		"vanillaextension:cracked_polished_blackstone_brick_wall",
+		"vanillaextension:chiseled_polished_blackstone_wall",
+		"vanillaextension:gilded_blackstone_wall",
+		"vanillaextension:chiseled_nether_brick_wall",
+		"vanillaextension:cracked_nether_brick_wall",
+		"vanillaextension:quartz_brick_wall"
 	]
 }

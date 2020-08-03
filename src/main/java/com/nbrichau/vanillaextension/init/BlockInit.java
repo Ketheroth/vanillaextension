@@ -235,6 +235,29 @@ public class BlockInit {
 	public static final Block blue_ice_stairs = null;
 	public static final Block honey_block_stairs = null;
 	public static final Block honeycomb_block_stairs = null;
+	public static final Block warped_stem_stairs = null;
+	public static final Block stripped_warped_stem_stairs = null;
+	public static final Block warped_hyphae_stairs = null;
+	public static final Block stripped_warped_hyphae_stairs = null;
+	public static final Block warped_nylium_stairs = null;
+	public static final Block warped_wart_block_stairs = null;
+	public static final Block crimson_stem_stairs = null;
+	public static final Block stripped_crimson_stem_stairs = null;
+	public static final Block crimson_hyphae_stairs = null;
+	public static final Block stripped_crimson_hyphae_stairs = null;
+	public static final Block crimson_nylium_stairs = null;
+	public static final Block shroomlight_stairs = null;
+	public static final Block netherite_block_stairs = null;
+	public static final Block ancient_debris_stairs = null;
+	public static final Block crying_obsidian_stairs = null;
+	public static final Block basalt_stairs = null;
+	public static final Block polished_basalt_stairs = null;
+	public static final Block cracked_polished_blackstone_brick_stairs = null;
+	public static final Block chiseled_polished_blackstone_stairs = null;
+	public static final Block gilded_blackstone_stairs = null;
+	public static final Block chiseled_nether_brick_stairs = null;
+	public static final Block cracked_nether_brick_stairs = null;
+	public static final Block quartz_brick_stairs = null;
 
 	public static final Block grass_block_slab = null;
 	public static final Block dirt_slab = null;
@@ -448,6 +471,29 @@ public class BlockInit {
 	public static final Block blue_ice_slab = null;
 	public static final Block honey_block_slab = null;
 	public static final Block honeycomb_block_slab = null;
+	public static final Block warped_stem_slab = null;
+	public static final Block stripped_warped_stem_slab = null;
+	public static final Block warped_hyphae_slab = null;
+	public static final Block stripped_warped_hyphae_slab = null;
+	public static final Block warped_nylium_slab = null;
+	public static final Block warped_wart_block_slab = null;
+	public static final Block crimson_stem_slab = null;
+	public static final Block stripped_crimson_stem_slab = null;
+	public static final Block crimson_hyphae_slab = null;
+	public static final Block stripped_crimson_hyphae_slab = null;
+	public static final Block crimson_nylium_slab = null;
+	public static final Block shroomlight_slab = null;
+	public static final Block netherite_block_slab = null;
+	public static final Block ancient_debris_slab = null;
+	public static final Block crying_obsidian_slab = null;
+	public static final Block basalt_slab = null;
+	public static final Block polished_basalt_slab = null;
+	public static final Block cracked_polished_blackstone_brick_slab = null;
+	public static final Block chiseled_polished_blackstone_slab = null;
+	public static final Block gilded_blackstone_slab = null;
+	public static final Block chiseled_nether_brick_slab = null;
+	public static final Block cracked_nether_brick_slab = null;
+	public static final Block quartz_brick_slab = null;
 
 	public static final Block stone_fence = null;
 	public static final Block granite_fence = null;
@@ -688,6 +734,32 @@ public class BlockInit {
 	public static final Block blue_ice_fence = null;
 	public static final Block honey_block_fence = null;
 	public static final Block honeycomb_block_fence = null;
+	public static final Block warped_stem_fence = null;
+	public static final Block stripped_warped_stem_fence = null;
+	public static final Block warped_hyphae_fence = null;
+	public static final Block stripped_warped_hyphae_fence = null;
+	public static final Block warped_nylium_fence = null;
+	public static final Block warped_wart_block_fence = null;
+	public static final Block crimson_stem_fence = null;
+	public static final Block stripped_crimson_stem_fence = null;
+	public static final Block crimson_hyphae_fence = null;
+	public static final Block stripped_crimson_hyphae_fence = null;
+	public static final Block crimson_nylium_fence = null;
+	public static final Block shroomlight_fence = null;
+	public static final Block netherite_block_fence = null;
+	public static final Block ancient_debris_fence = null;
+	public static final Block crying_obsidian_fence = null;
+	public static final Block basalt_fence = null;
+	public static final Block polished_basalt_fence = null;
+	public static final Block blackstone_fence = null;
+	public static final Block polished_blackstone_fence = null;
+	public static final Block polished_blackstone_brick_fence = null;
+	public static final Block cracked_polished_blackstone_brick_fence = null;
+	public static final Block chiseled_polished_blackstone_fence = null;
+	public static final Block gilded_blackstone_fence = null;
+	public static final Block chiseled_nether_brick_fence = null;
+	public static final Block cracked_nether_brick_fence = null;
+	public static final Block quartz_brick_fence = null;
 
 	public static final Block stone_wall = null;
 	public static final Block polished_granite_wall = null;
@@ -921,6 +993,31 @@ public class BlockInit {
 	public static final Block blue_ice_wall = null;
 	public static final Block honey_block_wall = null;
 	public static final Block honeycomb_block_wall = null;
+	public static final Block warped_stem_wall = null;
+	public static final Block stripped_warped_stem_wall = null;
+	public static final Block warped_hyphae_wall = null;
+	public static final Block stripped_warped_hyphae_wall = null;
+	public static final Block warped_plank_wall = null;
+	public static final Block warped_nylium_wall = null;
+	public static final Block warped_wart_block_wall = null;
+	public static final Block crimson_stem_wall = null;
+	public static final Block stripped_crimson_stem_wall = null;
+	public static final Block crimson_hyphae_wall = null;
+	public static final Block stripped_crimson_hyphae_wall = null;
+	public static final Block crimson_plank_wall = null;
+	public static final Block crimson_nylium_wall = null;
+	public static final Block shroomlight_wall = null;
+	public static final Block netherite_block_wall = null;
+	public static final Block ancient_debris_wall = null;
+	public static final Block crying_obsidian_wall = null;
+	public static final Block basalt_wall = null;
+	public static final Block polished_basalt_wall = null;
+	public static final Block cracked_polished_blackstone_brick_wall = null;
+	public static final Block chiseled_polished_blackstone_wall = null;
+	public static final Block gilded_blackstone_wall = null;
+	public static final Block chiseled_nether_brick_wall = null;
+	public static final Block cracked_nether_brick_wall = null;
+	public static final Block quartz_brick_wall = null;
 
 	@SubscribeEvent
 	public static void registerStairsBlock(final RegistryEvent.Register<Block> event) {
@@ -1139,6 +1236,29 @@ public class BlockInit {
 		event.getRegistry().register(new StairsBlock(Blocks.BLUE_ICE::getDefaultState, Block.Properties.from(Blocks.BLUE_ICE)).setRegistryName("blue_ice_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.HONEY_BLOCK::getDefaultState, Block.Properties.from(Blocks.HONEY_BLOCK)).setRegistryName("honey_block_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.HONEYCOMB_BLOCK::getDefaultState, Block.Properties.from(Blocks.HONEYCOMB_BLOCK)).setRegistryName("honeycomb_block_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.WARPED_STEM::getDefaultState, Block.Properties.from(Blocks.WARPED_STEM)).setRegistryName("warped_stem_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.STRIPPED_WARPED_STEM::getDefaultState, Block.Properties.from(Blocks.STRIPPED_WARPED_STEM)).setRegistryName("stripped_warped_stem_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.WARPED_HYPHAE::getDefaultState, Block.Properties.from(Blocks.WARPED_HYPHAE)).setRegistryName("warped_hyphae_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.STRIPPED_WARPED_HYPHAE::getDefaultState, Block.Properties.from(Blocks.STRIPPED_WARPED_HYPHAE)).setRegistryName("stripped_warped_hyphae_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.WARPED_NYLIUM::getDefaultState, Block.Properties.from(Blocks.WARPED_NYLIUM)).setRegistryName("warped_nylium_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.WARPED_WART_BLOCK::getDefaultState, Block.Properties.from(Blocks.WARPED_WART_BLOCK)).setRegistryName("warped_wart_block_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.CRIMSON_STEM::getDefaultState, Block.Properties.from(Blocks.CRIMSON_STEM)).setRegistryName("crimson_stem_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.STRIPPED_CRIMSON_STEM::getDefaultState, Block.Properties.from(Blocks.STRIPPED_CRIMSON_STEM)).setRegistryName("stripped_crimson_stem_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.CRIMSON_HYPHAE::getDefaultState, Block.Properties.from(Blocks.CRIMSON_HYPHAE)).setRegistryName("crimson_hyphae_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.STRIPPED_CRIMSON_HYPHAE::getDefaultState, Block.Properties.from(Blocks.STRIPPED_CRIMSON_HYPHAE)).setRegistryName("stripped_crimson_hyphae_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.CRIMSON_NYLIUM::getDefaultState, Block.Properties.from(Blocks.CRIMSON_NYLIUM)).setRegistryName("crimson_nylium_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.SHROOMLIGHT::getDefaultState, Block.Properties.from(Blocks.SHROOMLIGHT)).setRegistryName("shroomlight_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.NETHERITE_BLOCK::getDefaultState, Block.Properties.from(Blocks.NETHERITE_BLOCK)).setRegistryName("netherite_block_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.ANCIENT_DEBRIS::getDefaultState, Block.Properties.from(Blocks.ANCIENT_DEBRIS)).setRegistryName("ancient_debris_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.CRYING_OBSIDIAN::getDefaultState, Block.Properties.from(Blocks.CRYING_OBSIDIAN)).setRegistryName("crying_obsidian_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.BASALT::getDefaultState, Block.Properties.from(Blocks.BASALT)).setRegistryName("basalt_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.POLISHED_BASALT::getDefaultState, Block.Properties.from(Blocks.POLISHED_BASALT)).setRegistryName("polished_basalt_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS::getDefaultState, Block.Properties.from(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS)).setRegistryName("cracked_polished_blackstone_brick_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.CHISELED_POLISHED_BLACKSTONE::getDefaultState, Block.Properties.from(Blocks.CHISELED_POLISHED_BLACKSTONE)).setRegistryName("chiseled_polished_blackstone_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.GILDED_BLACKSTONE::getDefaultState, Block.Properties.from(Blocks.GILDED_BLACKSTONE)).setRegistryName("gilded_blackstone_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.CHISELED_NETHER_BRICKS::getDefaultState, Block.Properties.from(Blocks.CHISELED_NETHER_BRICKS)).setRegistryName("chiseled_nether_brick_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.CRACKED_NETHER_BRICKS::getDefaultState, Block.Properties.from(Blocks.CRACKED_NETHER_BRICKS)).setRegistryName("cracked_nether_brick_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.QUARTZ_BRICKS::getDefaultState, Block.Properties.from(Blocks.QUARTZ_BRICKS)).setRegistryName("quartz_brick_stairs"));
 	}
 
 	@SubscribeEvent
@@ -1355,6 +1475,29 @@ public class BlockInit {
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.BLUE_ICE)).setRegistryName("blue_ice_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.HONEY_BLOCK)).setRegistryName("honey_block_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.HONEYCOMB_BLOCK)).setRegistryName("honeycomb_block_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.WARPED_STEM)).setRegistryName("warped_stem_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.STRIPPED_WARPED_STEM)).setRegistryName("stripped_warped_stem_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.WARPED_HYPHAE)).setRegistryName("warped_hyphae_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.STRIPPED_WARPED_HYPHAE)).setRegistryName("stripped_warped_hyphae_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.WARPED_NYLIUM)).setRegistryName("warped_nylium_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.WARPED_WART_BLOCK)).setRegistryName("warped_wart_block_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.CRIMSON_STEM)).setRegistryName("crimson_stem_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.STRIPPED_CRIMSON_STEM)).setRegistryName("stripped_crimson_stem_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.CRIMSON_HYPHAE)).setRegistryName("crimson_hyphae_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.STRIPPED_CRIMSON_HYPHAE)).setRegistryName("stripped_crimson_hyphae_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.CRIMSON_NYLIUM)).setRegistryName("crimson_nylium_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.SHROOMLIGHT)).setRegistryName("shroomlight_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.NETHERITE_BLOCK)).setRegistryName("netherite_block_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.ANCIENT_DEBRIS)).setRegistryName("ancient_debris_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.CRYING_OBSIDIAN)).setRegistryName("crying_obsidian_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.BASALT)).setRegistryName("basalt_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.POLISHED_BASALT)).setRegistryName("polished_basalt_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS)).setRegistryName("cracked_polished_blackstone_brick_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.CHISELED_POLISHED_BLACKSTONE)).setRegistryName("chiseled_polished_blackstone_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.GILDED_BLACKSTONE)).setRegistryName("gilded_blackstone_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.CHISELED_NETHER_BRICKS)).setRegistryName("chiseled_nether_brick_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.CRACKED_NETHER_BRICKS)).setRegistryName("cracked_nether_brick_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.QUARTZ_BRICKS)).setRegistryName("quartz_brick_slab"));
 	}
 
 	@SubscribeEvent
@@ -1598,6 +1741,32 @@ public class BlockInit {
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.BLUE_ICE)).setRegistryName("blue_ice_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.HONEY_BLOCK)).setRegistryName("honey_block_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.HONEYCOMB_BLOCK)).setRegistryName("honeycomb_block_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.WARPED_STEM)).setRegistryName("warped_stem_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.STRIPPED_WARPED_STEM)).setRegistryName("stripped_warped_stem_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.WARPED_HYPHAE)).setRegistryName("warped_hyphae_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.STRIPPED_WARPED_HYPHAE)).setRegistryName("stripped_warped_hyphae_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.WARPED_NYLIUM)).setRegistryName("warped_nylium_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.WARPED_WART_BLOCK)).setRegistryName("warped_wart_block_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.CRIMSON_STEM)).setRegistryName("crimson_stem_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.STRIPPED_CRIMSON_STEM)).setRegistryName("stripped_crimson_stem_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.CRIMSON_HYPHAE)).setRegistryName("crimson_hyphae_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.STRIPPED_CRIMSON_HYPHAE)).setRegistryName("stripped_crimson_hyphae_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.CRIMSON_NYLIUM)).setRegistryName("crimson_nylium_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.SHROOMLIGHT)).setRegistryName("shroomlight_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.NETHERITE_BLOCK)).setRegistryName("netherite_block_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.ANCIENT_DEBRIS)).setRegistryName("ancient_debris_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.CRYING_OBSIDIAN)).setRegistryName("crying_obsidian_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.BASALT)).setRegistryName("basalt_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.POLISHED_BASALT)).setRegistryName("polished_basalt_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.BLACKSTONE)).setRegistryName("blackstone_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.POLISHED_BLACKSTONE)).setRegistryName("polished_blackstone_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.POLISHED_BLACKSTONE_BRICKS)).setRegistryName("polished_blackstone_brick_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS)).setRegistryName("cracked_polished_blackstone_brick_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.CHISELED_POLISHED_BLACKSTONE)).setRegistryName("chiseled_polished_blackstone_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.GILDED_BLACKSTONE)).setRegistryName("gilded_blackstone_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.CHISELED_NETHER_BRICKS)).setRegistryName("chiseled_nether_brick_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.CRACKED_NETHER_BRICKS)).setRegistryName("cracked_nether_brick_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.QUARTZ_BRICKS)).setRegistryName("quartz_brick_fence"));
 	}
 
 	@SubscribeEvent
@@ -1834,6 +2003,31 @@ public class BlockInit {
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.BLUE_ICE)).setRegistryName("blue_ice_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.HONEY_BLOCK)).setRegistryName("honey_block_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.HONEYCOMB_BLOCK)).setRegistryName("honeycomb_block_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.WARPED_STEM)).setRegistryName("warped_stem_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.STRIPPED_WARPED_STEM)).setRegistryName("stripped_warped_stem_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.WARPED_HYPHAE)).setRegistryName("warped_hyphae_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.STRIPPED_WARPED_HYPHAE)).setRegistryName("stripped_warped_hyphae_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.WARPED_NYLIUM)).setRegistryName("warped_nylium_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.WARPED_WART_BLOCK)).setRegistryName("warped_wart_block_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.CRIMSON_STEM)).setRegistryName("crimson_stem_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.STRIPPED_CRIMSON_STEM)).setRegistryName("stripped_crimson_stem_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.CRIMSON_HYPHAE)).setRegistryName("crimson_hyphae_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.STRIPPED_CRIMSON_HYPHAE)).setRegistryName("stripped_crimson_hyphae_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.CRIMSON_NYLIUM)).setRegistryName("crimson_nylium_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.SHROOMLIGHT)).setRegistryName("shroomlight_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.CRIMSON_PLANKS)).setRegistryName("crimson_plank_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.WARPED_PLANKS)).setRegistryName("warped_plank_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.NETHERITE_BLOCK)).setRegistryName("netherite_block_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.ANCIENT_DEBRIS)).setRegistryName("ancient_debris_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.CRYING_OBSIDIAN)).setRegistryName("crying_obsidian_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.BASALT)).setRegistryName("basalt_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.POLISHED_BASALT)).setRegistryName("polished_basalt_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS)).setRegistryName("cracked_polished_blackstone_brick_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.CHISELED_POLISHED_BLACKSTONE)).setRegistryName("chiseled_polished_blackstone_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.GILDED_BLACKSTONE)).setRegistryName("gilded_blackstone_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.CHISELED_NETHER_BRICKS)).setRegistryName("chiseled_nether_brick_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.CRACKED_NETHER_BRICKS)).setRegistryName("cracked_nether_brick_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.QUARTZ_BRICKS)).setRegistryName("quartz_brick_wall"));
 	}
 
 	@SubscribeEvent
@@ -2053,6 +2247,29 @@ public class BlockInit {
 		event.getRegistry().register(new BlockItem(blue_ice_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("blue_ice_stairs"));
 		event.getRegistry().register(new BlockItem(honey_block_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("honey_block_stairs"));
 		event.getRegistry().register(new BlockItem(honeycomb_block_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("honeycomb_block_stairs"));
+		event.getRegistry().register(new BlockItem(warped_stem_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("warped_stem_stairs"));
+		event.getRegistry().register(new BlockItem(stripped_warped_stem_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_warped_stem_stairs"));
+		event.getRegistry().register(new BlockItem(warped_hyphae_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("warped_hyphae_stairs"));
+		event.getRegistry().register(new BlockItem(stripped_warped_hyphae_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_warped_hyphae_stairs"));
+		event.getRegistry().register(new BlockItem(warped_nylium_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("warped_nylium_stairs"));
+		event.getRegistry().register(new BlockItem(warped_wart_block_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("warped_wart_block_stairs"));
+		event.getRegistry().register(new BlockItem(crimson_stem_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("crimson_stem_stairs"));
+		event.getRegistry().register(new BlockItem(stripped_crimson_stem_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_crimson_stem_stairs"));
+		event.getRegistry().register(new BlockItem(crimson_hyphae_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("crimson_hyphae_stairs"));
+		event.getRegistry().register(new BlockItem(stripped_crimson_hyphae_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_crimson_hyphae_stairs"));
+		event.getRegistry().register(new BlockItem(crimson_nylium_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("crimson_nylium_stairs"));
+		event.getRegistry().register(new BlockItem(shroomlight_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("shroomlight_stairs"));
+		event.getRegistry().register(new BlockItem(netherite_block_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("netherite_block_stairs"));
+		event.getRegistry().register(new BlockItem(ancient_debris_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("ancient_debris_stairs"));
+		event.getRegistry().register(new BlockItem(crying_obsidian_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("crying_obsidian_stairs"));
+		event.getRegistry().register(new BlockItem(basalt_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("basalt_stairs"));
+		event.getRegistry().register(new BlockItem(polished_basalt_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("polished_basalt_stairs"));
+		event.getRegistry().register(new BlockItem(cracked_polished_blackstone_brick_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("cracked_polished_blackstone_brick_stairs"));
+		event.getRegistry().register(new BlockItem(chiseled_polished_blackstone_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("chiseled_polished_blackstone_stairs"));
+		event.getRegistry().register(new BlockItem(gilded_blackstone_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("gilded_blackstone_stairs"));
+		event.getRegistry().register(new BlockItem(chiseled_nether_brick_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("chiseled_nether_brick_stairs"));
+		event.getRegistry().register(new BlockItem(cracked_nether_brick_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("cracked_nether_brick_stairs"));
+		event.getRegistry().register(new BlockItem(quartz_brick_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("quartz_brick_stairs"));
 	}
 
 	@SubscribeEvent
@@ -2269,6 +2486,29 @@ public class BlockInit {
 		event.getRegistry().register(new BlockItem(blue_ice_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("blue_ice_slab"));
 		event.getRegistry().register(new BlockItem(honey_block_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("honey_block_slab"));
 		event.getRegistry().register(new BlockItem(honeycomb_block_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("honeycomb_block_slab"));
+		event.getRegistry().register(new BlockItem(warped_stem_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("warped_stem_slab"));
+		event.getRegistry().register(new BlockItem(stripped_warped_stem_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_warped_stem_slab"));
+		event.getRegistry().register(new BlockItem(warped_hyphae_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("warped_hyphae_slab"));
+		event.getRegistry().register(new BlockItem(stripped_warped_hyphae_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_warped_hyphae_slab"));
+		event.getRegistry().register(new BlockItem(warped_nylium_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("warped_nylium_slab"));
+		event.getRegistry().register(new BlockItem(warped_wart_block_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("warped_wart_block_slab"));
+		event.getRegistry().register(new BlockItem(crimson_stem_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("crimson_stem_slab"));
+		event.getRegistry().register(new BlockItem(stripped_crimson_stem_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_crimson_stem_slab"));
+		event.getRegistry().register(new BlockItem(crimson_hyphae_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("crimson_hyphae_slab"));
+		event.getRegistry().register(new BlockItem(stripped_crimson_hyphae_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_crimson_hyphae_slab"));
+		event.getRegistry().register(new BlockItem(crimson_nylium_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("crimson_nylium_slab"));
+		event.getRegistry().register(new BlockItem(shroomlight_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("shroomlight_slab"));
+		event.getRegistry().register(new BlockItem(netherite_block_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("netherite_block_slab"));
+		event.getRegistry().register(new BlockItem(ancient_debris_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("ancient_debris_slab"));
+		event.getRegistry().register(new BlockItem(crying_obsidian_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("crying_obsidian_slab"));
+		event.getRegistry().register(new BlockItem(basalt_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("basalt_slab"));
+		event.getRegistry().register(new BlockItem(polished_basalt_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("polished_basalt_slab"));
+		event.getRegistry().register(new BlockItem(cracked_polished_blackstone_brick_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("cracked_polished_blackstone_brick_slab"));
+		event.getRegistry().register(new BlockItem(chiseled_polished_blackstone_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("chiseled_polished_blackstone_slab"));
+		event.getRegistry().register(new BlockItem(gilded_blackstone_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("gilded_blackstone_slab"));
+		event.getRegistry().register(new BlockItem(chiseled_nether_brick_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("chiseled_nether_brick_slab"));
+		event.getRegistry().register(new BlockItem(cracked_nether_brick_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("cracked_nether_brick_slab"));
+		event.getRegistry().register(new BlockItem(quartz_brick_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("quartz_brick_slab"));
 	}
 
 	@SubscribeEvent
@@ -2512,6 +2752,32 @@ public class BlockInit {
 		event.getRegistry().register(new BlockItem(blue_ice_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("blue_ice_fence"));
 		event.getRegistry().register(new BlockItem(honey_block_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("honey_block_fence"));
 		event.getRegistry().register(new BlockItem(honeycomb_block_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("honeycomb_block_fence"));
+		event.getRegistry().register(new BlockItem(warped_stem_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("warped_stem_fence"));
+		event.getRegistry().register(new BlockItem(stripped_warped_stem_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_warped_stem_fence"));
+		event.getRegistry().register(new BlockItem(warped_hyphae_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("warped_hyphae_fence"));
+		event.getRegistry().register(new BlockItem(stripped_warped_hyphae_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_warped_hyphae_fence"));
+		event.getRegistry().register(new BlockItem(warped_nylium_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("warped_nylium_fence"));
+		event.getRegistry().register(new BlockItem(warped_wart_block_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("warped_wart_block_fence"));
+		event.getRegistry().register(new BlockItem(crimson_stem_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("crimson_stem_fence"));
+		event.getRegistry().register(new BlockItem(stripped_crimson_stem_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_crimson_stem_fence"));
+		event.getRegistry().register(new BlockItem(crimson_hyphae_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("crimson_hyphae_fence"));
+		event.getRegistry().register(new BlockItem(stripped_crimson_hyphae_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_crimson_hyphae_fence"));
+		event.getRegistry().register(new BlockItem(crimson_nylium_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("crimson_nylium_fence"));
+		event.getRegistry().register(new BlockItem(shroomlight_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("shroomlight_fence"));
+		event.getRegistry().register(new BlockItem(netherite_block_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("netherite_block_fence"));
+		event.getRegistry().register(new BlockItem(ancient_debris_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("ancient_debris_fence"));
+		event.getRegistry().register(new BlockItem(crying_obsidian_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("crying_obsidian_fence"));
+		event.getRegistry().register(new BlockItem(basalt_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("basalt_fence"));
+		event.getRegistry().register(new BlockItem(polished_basalt_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("polished_basalt_fence"));
+		event.getRegistry().register(new BlockItem(blackstone_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("blackstone_fence"));
+		event.getRegistry().register(new BlockItem(polished_blackstone_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("polished_blackstone_fence"));
+		event.getRegistry().register(new BlockItem(polished_blackstone_brick_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("polished_blackstone_brick_fence"));
+		event.getRegistry().register(new BlockItem(cracked_polished_blackstone_brick_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("cracked_polished_blackstone_brick_fence"));
+		event.getRegistry().register(new BlockItem(chiseled_polished_blackstone_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("chiseled_polished_blackstone_fence"));
+		event.getRegistry().register(new BlockItem(gilded_blackstone_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("gilded_blackstone_fence"));
+		event.getRegistry().register(new BlockItem(chiseled_nether_brick_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("chiseled_nether_brick_fence"));
+		event.getRegistry().register(new BlockItem(cracked_nether_brick_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("cracked_nether_brick_fence"));
+		event.getRegistry().register(new BlockItem(quartz_brick_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("quartz_brick_fence"));
 	}
 
 	@SubscribeEvent
@@ -2748,5 +3014,30 @@ public class BlockInit {
 		event.getRegistry().register(new BlockItem(blue_ice_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("blue_ice_wall"));
 		event.getRegistry().register(new BlockItem(honey_block_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("honey_block_wall"));
 		event.getRegistry().register(new BlockItem(honeycomb_block_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("honeycomb_block_wall"));
+		event.getRegistry().register(new BlockItem(warped_stem_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("warped_stem_wall"));
+		event.getRegistry().register(new BlockItem(stripped_warped_stem_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_warped_stem_wall"));
+		event.getRegistry().register(new BlockItem(warped_hyphae_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("warped_hyphae_wall"));
+		event.getRegistry().register(new BlockItem(stripped_warped_hyphae_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_warped_hyphae_wall"));
+		event.getRegistry().register(new BlockItem(warped_nylium_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("warped_nylium_wall"));
+		event.getRegistry().register(new BlockItem(warped_wart_block_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("warped_wart_block_wall"));
+		event.getRegistry().register(new BlockItem(crimson_stem_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("crimson_stem_wall"));
+		event.getRegistry().register(new BlockItem(stripped_crimson_stem_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_crimson_stem_wall"));
+		event.getRegistry().register(new BlockItem(crimson_hyphae_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("crimson_hyphae_wall"));
+		event.getRegistry().register(new BlockItem(stripped_crimson_hyphae_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("stripped_crimson_hyphae_wall"));
+		event.getRegistry().register(new BlockItem(crimson_nylium_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("crimson_nylium_wall"));
+		event.getRegistry().register(new BlockItem(shroomlight_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("shroomlight_wall"));
+		event.getRegistry().register(new BlockItem(crimson_plank_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("crimson_plank_wall"));
+		event.getRegistry().register(new BlockItem(warped_plank_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("warped_plank_wall"));
+		event.getRegistry().register(new BlockItem(netherite_block_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("netherite_block_wall"));
+		event.getRegistry().register(new BlockItem(ancient_debris_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("ancient_debris_wall"));
+		event.getRegistry().register(new BlockItem(crying_obsidian_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("crying_obsidian_wall"));
+		event.getRegistry().register(new BlockItem(basalt_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("basalt_wall"));
+		event.getRegistry().register(new BlockItem(polished_basalt_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("polished_basalt_wall"));
+		event.getRegistry().register(new BlockItem(cracked_polished_blackstone_brick_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("cracked_polished_blackstone_brick_wall"));
+		event.getRegistry().register(new BlockItem(chiseled_polished_blackstone_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("chiseled_polished_blackstone_wall"));
+		event.getRegistry().register(new BlockItem(gilded_blackstone_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("gilded_blackstone_wall"));
+		event.getRegistry().register(new BlockItem(chiseled_nether_brick_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("chiseled_nether_brick_wall"));
+		event.getRegistry().register(new BlockItem(cracked_nether_brick_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("cracked_nether_brick_wall"));
+		event.getRegistry().register(new BlockItem(quartz_brick_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("quartz_brick_wall"));
 	}
 }

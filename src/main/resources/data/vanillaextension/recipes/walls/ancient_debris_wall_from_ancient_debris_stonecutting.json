@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:ancient_debris"
+	},
+	"result": "vanillaextension:ancient_debris_wall",
+	"count": 1
+}

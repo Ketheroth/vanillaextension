@@ -1,0 +1,7 @@
+{
+	"parent": "vanillaextension:block/fence_post",
+	"textures": {
+		"texture": "minecraft:block/crimson_nylium_side",
+		"top": "minecraft:block/crimson_nylium"
+	}
+}

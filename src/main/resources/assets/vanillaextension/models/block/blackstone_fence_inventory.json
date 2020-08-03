@@ -1,0 +1,7 @@
+{
+	"parent": "vanillaextension:block/fence_inventory",
+	"textures": {
+		"texture": "minecraft:block/blackstone",
+		"top": "minecraft:block/blackstone_top"
+	}
+}

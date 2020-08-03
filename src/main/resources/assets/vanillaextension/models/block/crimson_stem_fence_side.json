@@ -1,0 +1,7 @@
+{
+	"parent": "vanillaextension:block/fence_side",
+	"textures": {
+		"texture": "minecraft:block/crimson_stem",
+		"top": "minecraft:block/crimson_stem_top"
+	}
+}

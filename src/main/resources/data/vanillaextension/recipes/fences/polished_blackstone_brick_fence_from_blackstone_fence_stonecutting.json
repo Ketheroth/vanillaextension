@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "vanillaextension:blackstone_fence"
+	},
+	"result": "vanillaextension:polished_blackstone_brick_fence",
+	"count": 1
+}
