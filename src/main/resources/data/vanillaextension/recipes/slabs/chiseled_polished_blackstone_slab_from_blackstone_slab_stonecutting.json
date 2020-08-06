@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:stonecutting",
 	"ingredient": {
-		"item": "vanillaextension:blackstone_slab"
+		"item": "minecraft:blackstone_slab"
 	},
 	"result": "vanillaextension:chiseled_polished_blackstone_slab",
 	"count": 1

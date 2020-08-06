@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:fences/quartz_brick_fence_from_quartz_fence_stonecutting"
+			"vanillaextension:fences/quartz_brick_fence_from_quartz_block_fence_stonecutting"
 		]
 	},
 	"criteria": {
@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "vanillaextension:quartz_blockfence"
+						"item": "vanillaextension:quartz_block_fence"
 					}
 				]
 			}
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:fences/quartz_brick_fence_from_quartz_fence_stonecutting"
+				"recipe": "vanillaextension:fences/quartz_brick_fence_from_quartz_block_fence_stonecutting"
 			}
 		}
 	},

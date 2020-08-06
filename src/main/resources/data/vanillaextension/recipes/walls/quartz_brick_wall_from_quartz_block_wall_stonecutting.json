@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:stonecutting",
 	"ingredient": {
-		"item": "minecraft:quartz_block_wall"
+		"item": "vanillaextension:quartz_block_wall"
 	},
 	"result": "vanillaextension:quartz_brick_wall",
 	"count": 1

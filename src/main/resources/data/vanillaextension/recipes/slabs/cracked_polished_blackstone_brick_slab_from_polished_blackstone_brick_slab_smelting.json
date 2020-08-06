@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:smelting",
 	"ingredient": {
-		"item": "vanillaextension:polished_blackstone_brick_slab"
+		"item": "minecraft:polished_blackstone_brick_slab"
 	},
 	"result": "vanillaextension:cracked_polished_blackstone_brick_slab",
 	"experience": 0.1,
