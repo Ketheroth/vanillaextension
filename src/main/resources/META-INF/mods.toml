@@ -1,10 +1,10 @@
 modLoader="javafml"
 loaderVersion="[32,)"
 license="MIT License"
-#issueTrackerURL="http://my.issue.tracker/"
+issueTrackerURL="https://github.com/nbrichau/vanillaextension/issues"
 [[mods]]
 modId="vanillaextension"
-version="1.16.1-1.0.5.1"
+version="1.16.1-1.0.5.2"
 displayName="Vanilla Extension"
 #updateJSONURL="http://myurl.me/"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/vanilla-extension"
