@@ -1,0 +1,16 @@
+{
+	"name": "Cracked Stairs Smelting Recipes",
+	"icon": "vanillaextension:cracked_stone_brick_stairs",
+	"category": "vanillaextension:smelting_stairs",
+	"pages": [
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:stairs/cracked_nether_brick_stairs_from_nether_brick_stairs_smelting",
+			"recipe2": "vanillaextension:stairs/cracked_polished_blackstone_brick_stairs_from_polished_blackstone_brick_stairs_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:stairs/cracked_stone_brick_stairs_from_stone_brick_stairs_smelting"
+		}
+	]
+}

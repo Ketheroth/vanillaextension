@@ -1,0 +1,47 @@
+{
+	"name": "Glazed Terracotta Slabs Smelting Recipes",
+	"icon": "vanillaextension:green_glazed_terracotta_slab",
+	"category": "vanillaextension:smelting_slab",
+	"pages": [
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:slabs/black_glazed_terracotta_slab_from_black_terracotta_slab_smelting",
+			"recipe2": "vanillaextension:slabs/blue_glazed_terracotta_slab_from_blue_terracotta_slab_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:slabs/brown_glazed_terracotta_slab_from_brown_terracotta_slab_smelting",
+			"recipe2": "vanillaextension:slabs/cyan_glazed_terracotta_slab_from_cyan_terracotta_slab_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:slabs/gray_glazed_terracotta_slab_from_gray_terracotta_slab_smelting",
+			"recipe2": "vanillaextension:slabs/green_glazed_terracotta_slab_from_green_terracotta_slab_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:slabs/light_blue_glazed_terracotta_slab_from_light_blue_terracotta_slab_smelting",
+			"recipe2": "vanillaextension:slabs/light_gray_glazed_terracotta_slab_from_light_gray_terracotta_slab_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:slabs/lime_glazed_terracotta_slab_from_lime_terracotta_slab_smelting",
+			"recipe2": "vanillaextension:slabs/magenta_glazed_terracotta_slab_from_magenta_terracotta_slab_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:slabs/orange_glazed_terracotta_slab_from_orange_terracotta_slab_smelting",
+			"recipe2": "vanillaextension:slabs/pink_glazed_terracotta_slab_from_pink_terracotta_slab_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:slabs/purple_glazed_terracotta_slab_from_purple_terracotta_slab_smelting",
+			"recipe2": "vanillaextension:slabs/red_glazed_terracotta_slab_from_red_terracotta_slab_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:slabs/white_glazed_terracotta_slab_from_white_terracotta_slab_smelting",
+			"recipe2": "vanillaextension:slabs/yellow_glazed_terracotta_slab_from_yellow_terracotta_slab_smelting"
+		}
+	]
+}

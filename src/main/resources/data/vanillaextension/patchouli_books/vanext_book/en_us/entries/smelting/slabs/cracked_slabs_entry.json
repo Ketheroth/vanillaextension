@@ -1,0 +1,16 @@
+{
+	"name": "Cracked Slabs Smelting Recipes",
+	"icon": "vanillaextension:cracked_stone_brick_slabs",
+	"category": "vanillaextension:smelting_slab",
+	"pages": [
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:slabs/cracked_nether_brick_slab_from_nether_brick_slab_smelting",
+			"recipe2": "vanillaextension:slabs/cracked_polished_blackstone_brick_slab_from_polished_blackstone_brick_slab_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:slabs/cracked_stone_brick_slab_from_stone_brick_slab_smelting"
+		}
+	]
+}

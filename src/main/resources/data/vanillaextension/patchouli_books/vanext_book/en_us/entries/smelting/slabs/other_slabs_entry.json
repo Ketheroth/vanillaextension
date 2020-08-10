@@ -1,0 +1,16 @@
+{
+	"name": "Other Slabs Smelting Recipes",
+	"icon": "vanillaextension:sponge_slab",
+	"category": "vanillaextension:smelting_slab",
+	"pages": [
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:slabs/glass_slab_from_red_sand_slab_smelting",
+			"recipe2": "vanillaextension:slabs/glass_slab_from_sand_slab_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:slabs/sponge_slab_from_wet_sponge_slab_smelting"
+		}
+	]
+}

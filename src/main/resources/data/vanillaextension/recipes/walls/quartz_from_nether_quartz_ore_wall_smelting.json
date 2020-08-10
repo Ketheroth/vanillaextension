@@ -1,9 +1,0 @@
-{
-	"type": "minecraft:smelting",
-	"ingredient": {
-		"item": "vanillaextension:nether_quartz_ore_wall"
-	},
-	"result": "minecraft:quartz",
-	"experience": 0.2,
-	"cookingtime": 200
-}

@@ -1,0 +1,11 @@
+{
+	"name": "Smooth Stairs Smelting Recipes",
+	"icon": "vanillaextension:smooth_stone_stairs",
+	"category": "vanillaextension:smelting_stairs",
+	"pages": [
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:stairs/smooth_stone_stairs_from_stone_stairs_smelting"
+		}
+	]
+}
