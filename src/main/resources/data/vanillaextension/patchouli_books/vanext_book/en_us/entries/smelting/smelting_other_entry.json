@@ -1,49 +1,52 @@
 {
-	"name": "Cracked Fences Smelting Recipes",
-	"icon": "vanillaextension:cracked_stone_brick_fence",
+	"name": "Other Smelting Recipes",
+	"icon": "vanillaextension:diamond_ore_stairs",
 	"category": "vanillaextension:smelting_other",
 	"pages": [
 		{
 			"type": "smelting",
-			"recipe": "vanillaextension:misc/coal_from_coal_ore_fence_blasting",
-			"recipe2": "vanillaextension:misc/coal_from_coal_ore_fence_smelting",
-			"text": "Work with "
+			"recipe": "vanillaextension:misc/coal_from_coal_ore_stairs_smelting",
+			"text": "You can replace the Coal Ore Stairs by the Slab, Fence or Wall version of the Coal Ore."
 		},
 		{
 			"type": "smelting",
-			"recipe": "vanillaextension:misc/coal_from_coal_ore_slab_blasting",
-			"recipe2": "vanillaextension:misc/coal_from_coal_ore_slab_smelting"
+			"recipe": "vanillaextension:misc/diamond_from_diamond_ore_stairs_smelting",
+			"text": "You can replace the Diamond Ore Stairs by the Slab, Fence or Wall version of the Diamond Ore."
 		},
 		{
 			"type": "smelting",
-			"recipe": "vanillaextension:misc/coal_from_coal_ore_stairs_blasting",
-			"recipe2": "vanillaextension:misc/coal_from_coal_ore_stairs_smelting"
+			"recipe": "vanillaextension:misc/emerald_from_emerald_ore_stairs_smelting",
+			"text": "You can replace the Emerald Ore Stairs by the Slab, Fence or Wall version of the Emerald Ore."
 		},
 		{
 			"type": "smelting",
-			"recipe": "vanillaextension:misc/coal_from_coal_ore_wall_blasting",
-			"recipe2": "vanillaextension:misc/coal_from_coal_ore_wall_smelting"
+			"recipe": "vanillaextension:misc/gold_ingot_from_gold_ore_stairs_smelting",
+			"text": "You can replace the Gold Ore Stairs by the Slab, Fence or Wall version of the Gold Ore."
 		},
 		{
 			"type": "smelting",
-			"recipe": "vanillaextension:misc/diamond_from_diamond_ore_fence_blasting",
-			"recipe2": "vanillaextension:misc/diamond_from_diamond_ore_fence_smelting"
+			"recipe": "vanillaextension:misc/iron_ingot_from_iron_ore_stairs_smelting",
+			"text": "You can replace the Iron Ore Stairs by the Slab, Fence or Wall version of the Iron Ore."
 		},
 		{
 			"type": "smelting",
-			"recipe": "vanillaextension:misc/diamond_from_diamond_ore_slab_blasting",
-			"recipe2": "vanillaextension:misc/diamond_from_diamond_ore_slab_smelting"
+			"recipe": "vanillaextension:misc/lapis_from_lapis_ore_stairs_smelting",
+			"text": "You can replace the Lapis Lazuli Ore Stairs by the Slab, Fence or Wall version of the Lapis Lazuli Ore."
 		},
 		{
 			"type": "smelting",
-			"recipe": "vanillaextension:misc/diamond_from_diamond_ore_stairs_blasting",
-			"recipe2": "vanillaextension:misc/diamond_from_diamond_ore_stairs_smelting"
+			"recipe": "vanillaextension:misc/netherite_scrap_from_ancient_debris_fence_smelting",
+			"text": "You can replace the Ancient Debris Stairs by the Slab, Fence or Wall version of the Ancient Debris."
 		},
 		{
 			"type": "smelting",
-			"recipe": "vanillaextension:misc/diamond_from_diamond_ore_wall_blasting",
-			"recipe2": "vanillaextension:misc/diamond_from_diamond_ore_wall_smelting",
-			"text": "diamond_from_diamond_ore_slab_blasting.json\ndiamond_from_diamond_ore_slab_smelting.json\ndiamond_from_diamond_ore_stairs_blasting.json\ndiamond_from_diamond_ore_stairs_smelting.json\ndiamond_from_diamond_ore_wall_blasting.json\ndiamond_from_diamond_ore_wall_smelting.json\nemerald_from_emerald_ore_fence_blasting.json\nemerald_from_emerald_ore_fence_smelting.json\nemerald_from_emerald_ore_slab_blasting.json\nemerald_from_emerald_ore_slab_smelting.json\nemerald_from_emerald_ore_stairs_blasting.json\nemerald_from_emerald_ore_stairs_smelting.json\nemerald_from_emerald_ore_wall_blasting.json\nemerald_from_emerald_ore_wall_smelting.json\ngold_ingot_from_gold_ore_fence_blasting.json\ngold_ingot_from_gold_ore_fence_smelting.json\ngold_ingot_from_gold_ore_slab_blasting.json\ngold_ingot_from_gold_ore_slab_smelting.json\ngold_ingot_from_gold_ore_stairs_blasting.json\ngold_ingot_from_gold_ore_stairs_smelting.json\ngold_ingot_from_gold_ore_wall_blasting.json\ngold_ingot_from_gold_ore_wall_smelting.json\niron_ingot_from_iron_ore_fence_blasting.json\niron_ingot_from_iron_ore_fence_smelting.json\niron_ingot_from_iron_ore_slab_smelting.json\niron_ingot_from_iron_ore_stairs_smelting.json\niron_ingot_from_iron_ore_wall_smelting.json\nlapis_from_lapis_ore_fence_blasting.json\nlapis_from_lapis_ore_fence_smelting.json\nlapis_from_lapis_ore_slab_blasting.json\nlapis_from_lapis_ore_slab_smelting.json\nlapis_from_lapis_ore_stairs_blasting.json\nlapis_from_lapis_ore_stairs_smelting.json\nlapis_from_lapis_ore_wall_blasting.json\nlapis_from_lapis_ore_wall_smelting.json\nnetherite_scrap_from_ancient_debris_fence_blasting.json\nnetherite_scrap_from_ancient_debris_fence_smelting.json\nnetherite_scrap_from_ancient_debris_slab_blasting.json\nnetherite_scrap_from_ancient_debris_slab_smelting.json\nnetherite_scrap_from_ancient_debris_stairs_blasting.json\nnetherite_scrap_from_ancient_debris_stairs_smelting.json\nnetherite_scrap_from_ancient_debris_wall_blasting.json\nnetherite_scrap_from_ancient_debris_wall_smelting.json\nquartz_from_nether_quartz_ore_fence_blasting.json\nquartz_from_nether_quartz_ore_fence_smelting.json\nquartz_from_nether_quartz_ore_slab_blasting.json\nquartz_from_nether_quartz_ore_slab_smelting.json\nquartz_from_nether_quartz_ore_stairs_blasting.json\nquartz_from_nether_quartz_ore_stairs_smelting.json\nquartz_from_nether_quartz_ore_wall_blasting.json\nquartz_from_nether_quartz_ore_wall_smelting.json\nredstone_from_redstone_ore_fence_blasting.json\nredstone_from_redstone_ore_fence_smelting.json\nredstone_from_redstone_ore_slab_blasting.json\nredstone_from_redstone_ore_slab_smelting.json\nredstone_from_redstone_ore_stairs_blasting.json\nredstone_from_redstone_ore_stairs_smelting.json\nredstone_from_redstone_ore_wall_blasting.json\nredstone_from_redstone_ore_wall_smelting.json\n"
+			"recipe": "vanillaextension:misc/quartz_from_nether_quartz_ore_fence_smelting",
+			"text": "You can replace the Nether Quartz Ore Stairs by the Slab, Fence or Wall version of the Nether Quartz Ore."
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:misc/redstone_from_redstone_ore_fence_smelting",
+			"text": "You can replace the Redstone Ore Stairs by the Slab, Fence or Wall version of the Redstone Ore."
 		}
 	]
 }

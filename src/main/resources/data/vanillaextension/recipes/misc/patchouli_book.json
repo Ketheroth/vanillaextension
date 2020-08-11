@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "minecraft:book"
+		},
+		{
+			"item": "minecraft:stick"
+		}
+	],
+	"result": {
+		"item": "parchouli:guide_book",
+		"nbt": {
+			"patchouli:book": "vanillaextension:vanext_book"
+		}
+	}
+}
