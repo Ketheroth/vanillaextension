@@ -9,7 +9,7 @@
 		}
 	],
 	"result": {
-		"item": "parchouli:guide_book",
+		"item": "patchouli:guide_book",
 		"nbt": {
 			"patchouli:book": "vanillaextension:vanext_book"
 		}

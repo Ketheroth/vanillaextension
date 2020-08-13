@@ -1,25 +1,26 @@
 package com.nbrichau.vanillaextension.init;
 
+import com.nbrichau.vanillaextension.slabs.DirtSlab;
+import com.nbrichau.vanillaextension.slabs.FarmlandSlab;
+import com.nbrichau.vanillaextension.stairs.DirtStairs;
+import com.nbrichau.vanillaextension.stairs.FarmlandStairs;
 import com.nbrichau.vanillaextension.VanillaExtension;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.ObjectHolder;
 
-import java.util.ArrayList;
-import java.util.function.ToIntFunction;
-
 @ObjectHolder(VanillaExtension.MODID)
 @Mod.EventBusSubscriber(modid = VanillaExtension.MODID, bus = Bus.MOD)
 public class BlockInit {
 
+	public static final Block farmland_stairs = null;
 	public static final Block grass_block_stairs = null;
 	public static final Block dirt_stairs = null;
 	public static final Block coarse_dirt_stairs = null;
@@ -259,6 +260,7 @@ public class BlockInit {
 	public static final Block cracked_nether_brick_stairs = null;
 	public static final Block quartz_brick_stairs = null;
 
+	public static final Block farmland_slab = null;
 	public static final Block grass_block_slab = null;
 	public static final Block dirt_slab = null;
 	public static final Block coarse_dirt_slab = null;
@@ -1021,8 +1023,9 @@ public class BlockInit {
 
 	@SubscribeEvent
 	public static void registerStairsBlock(final RegistryEvent.Register<Block> event) {
-		event.getRegistry().register(new StairsBlock(Blocks.GRASS_BLOCK::getDefaultState, Block.Properties.create(Material.ORGANIC).hardnessAndResistance(0.6F).sound(SoundType.PLANT)).setRegistryName("grass_block_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.DIRT::getDefaultState, Block.Properties.from(Blocks.DIRT)).setRegistryName("dirt_stairs"));
+		event.getRegistry().register(new FarmlandStairs(AbstractBlock.Properties.from(Blocks.FARMLAND)).setRegistryName("farmland_stairs"));
+		event.getRegistry().register(new DirtStairs(Blocks.GRASS_BLOCK::getDefaultState, Block.Properties.create(Material.ORGANIC).hardnessAndResistance(0.6F).sound(SoundType.PLANT)).setRegistryName("grass_block_stairs"));
+		event.getRegistry().register(new DirtStairs(Blocks.DIRT::getDefaultState, Block.Properties.from(Blocks.DIRT)).setRegistryName("dirt_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.COARSE_DIRT::getDefaultState, Block.Properties.from(Blocks.COARSE_DIRT)).setRegistryName("coarse_dirt_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.PODZOL::getDefaultState, Block.Properties.from(Blocks.PODZOL)).setRegistryName("podzol_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.BEDROCK::getDefaultState, Block.Properties.from(Blocks.BEDROCK)).setRegistryName("bedrock_stairs"));
@@ -1263,8 +1266,9 @@ public class BlockInit {
 
 	@SubscribeEvent
 	public static void registerSlabBlock(final RegistryEvent.Register<Block> event) {
-		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.DIRT)).setRegistryName("grass_block_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.DIRT)).setRegistryName("dirt_slab"));
+		event.getRegistry().register(new FarmlandSlab(Block.Properties.from(Blocks.FARMLAND)).setRegistryName("farmland_slab"));
+		event.getRegistry().register(new DirtSlab(Block.Properties.from(Blocks.DIRT)).setRegistryName("grass_block_slab"));
+		event.getRegistry().register(new DirtSlab(Block.Properties.from(Blocks.DIRT)).setRegistryName("dirt_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.COARSE_DIRT)).setRegistryName("coarse_dirt_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.PODZOL)).setRegistryName("podzol_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.BEDROCK)).setRegistryName("bedrock_slab"));
@@ -2032,6 +2036,7 @@ public class BlockInit {
 
 	@SubscribeEvent
 	public static void registerStairsBlockItems(final RegistryEvent.Register<Item> event) {
+		event.getRegistry().register(new BlockItem(farmland_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("farmland_stairs"));
 		event.getRegistry().register(new BlockItem(grass_block_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("grass_block_stairs"));
 		event.getRegistry().register(new BlockItem(dirt_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("dirt_stairs"));
 		event.getRegistry().register(new BlockItem(coarse_dirt_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("coarse_dirt_stairs"));
@@ -2274,6 +2279,7 @@ public class BlockInit {
 
 	@SubscribeEvent
 	public static void registerSlabBlockItems(final RegistryEvent.Register<Item> event) {
+		event.getRegistry().register(new BlockItem(farmland_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("farmland_slab"));
 		event.getRegistry().register(new BlockItem(grass_block_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("grass_block_slab"));
 		event.getRegistry().register(new BlockItem(dirt_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("dirt_slab"));
 		event.getRegistry().register(new BlockItem(coarse_dirt_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("coarse_dirt_slab"));
