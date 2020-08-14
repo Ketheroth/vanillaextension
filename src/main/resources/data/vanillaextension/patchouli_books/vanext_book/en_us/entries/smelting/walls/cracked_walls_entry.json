@@ -1,0 +1,11 @@
+{
+	"name": "Cracked Walls Smelting Recipes",
+	"icon": "vanillaextension:cracked_stone_brick_wall",
+	"category": "vanillaextension:smelting_wall",
+	"pages": [
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:walls/cracked_stone_brick_wall_from_stone_brick_wall_smelting"
+		}
+	]
+}

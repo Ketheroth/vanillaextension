@@ -1,0 +1,6 @@
+{
+	"name": "Smelting Blocks",
+	"description": "Smelting ore fence/slab/stairs/wall give you resources. $(br2)You can use the furnace or the blast furnace.",
+	"icon": "vanillaextension:diamond_ore_stairs",
+	"parent": "smelting"
+}

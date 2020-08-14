@@ -1,0 +1,6 @@
+{
+	"name": "Smelting Walls",
+	"description": "Walls by smelting",
+	"icon": "vanillaextension:cracked_stone_brick_wall",
+	"parent": "smelting"
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Other Smelting Recipes",
+	"icon": "vanillaextension:diamond_ore_stairs",
+	"category": "vanillaextension:smelting_other",
+	"pages": [
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:misc/coal_from_coal_ore_stairs_smelting",
+			"text": "You can replace the Coal Ore Stairs by the Slab, Fence or Wall version of the Coal Ore."
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:misc/diamond_from_diamond_ore_stairs_smelting",
+			"text": "You can replace the Diamond Ore Stairs by the Slab, Fence or Wall version of the Diamond Ore."
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:misc/emerald_from_emerald_ore_stairs_smelting",
+			"text": "You can replace the Emerald Ore Stairs by the Slab, Fence or Wall version of the Emerald Ore."
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:misc/gold_ingot_from_gold_ore_stairs_smelting",
+			"text": "You can replace the Gold Ore Stairs by the Slab, Fence or Wall version of the Gold Ore."
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:misc/iron_ingot_from_iron_ore_stairs_smelting",
+			"text": "You can replace the Iron Ore Stairs by the Slab, Fence or Wall version of the Iron Ore."
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:misc/lapis_from_lapis_ore_stairs_smelting",
+			"text": "You can replace the Lapis Lazuli Ore Stairs by the Slab, Fence or Wall version of the Lapis Lazuli Ore."
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:misc/quartz_from_nether_quartz_ore_fence_smelting",
+			"text": "You can replace the Nether Quartz Ore Stairs by the Slab, Fence or Wall version of the Nether Quartz Ore."
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:misc/redstone_from_redstone_ore_fence_smelting",
+			"text": "You can replace the Redstone Ore Stairs by the Slab, Fence or Wall version of the Redstone Ore."
+		}
+	]
+}

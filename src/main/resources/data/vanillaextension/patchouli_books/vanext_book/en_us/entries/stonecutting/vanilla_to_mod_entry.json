@@ -1,0 +1,15 @@
+{
+	"name": "Vanilla to Mod Stonecutting Recipes",
+	"icon": "minecraft:stone_bricks",
+	"category": "vanillaextension:stonecutting",
+	"pages": [
+		{
+			"type": "text",
+			"text": "The list of vanilla blocks that can be used in the stonecutter to obtain a block from Vanilla Extension (stairs, slabs, fences and walls).$(br2)For example: Diamond Block can be used to craft Diamond Block Stairs in the Stonecutter"
+		},
+		{
+			"type": "text",
+			"text": "list blocks"
+		}
+	]
+}

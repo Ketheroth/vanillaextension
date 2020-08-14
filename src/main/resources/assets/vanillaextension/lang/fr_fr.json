@@ -1,4 +1,5 @@
 {
+	"block.vanillaextension.farmland_stairs": "Escalier en terre labourée",
 	"block.vanillaextension.grass_block_stairs": "Escalier en bloc d'herbes",
 	"block.vanillaextension.dirt_stairs": "Escalier en terre",
 	"block.vanillaextension.coarse_dirt_stairs": "Escalier en terre stérile",
@@ -215,6 +216,7 @@
 	"block.vanillaextension.honey_block_stairs": "Escalier en bloc de miel",
 	"block.vanillaextension.honeycomb_block_stairs": "Escalier en bloc de rayon de miel",
 
+	"block.vanillaextension.farmland_slab": "Dalle en terre labourée",
 	"block.vanillaextension.grass_block_slab": "Dalle en bloc d'herbes",
 	"block.vanillaextension.dirt_slab": "Dalle en terre",
 	"block.vanillaextension.coarse_dirt_slab": "Dalle en terre stérile",

@@ -1,0 +1,16 @@
+{
+	"name": "Other Stairs Smelting Recipes",
+	"icon": "vanillaextension:sponge_stairs",
+	"category": "vanillaextension:smelting_stairs",
+	"pages": [
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:stairs/glass_stairs_from_red_sand_stairs_smelting",
+			"recipe2": "vanillaextension:stairs/glass_stairs_from_sand_stairs_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:stairs/sponge_stairs_from_wet_sponge_stairs_smelting"
+		}
+	]
+}

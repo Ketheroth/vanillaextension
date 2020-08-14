@@ -1,0 +1,32 @@
+{
+	"parent": "minecraft:recipes/root",
+	"rewards": {
+		"recipes": [
+			"vanillaextension:misc/patchouli_book"
+		]
+	},
+	"criteria": {
+		"has_block": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "minecraft:stick"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "vanillaextension:misc/patchouli_book"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_block",
+			"has_the_recipe"
+		]
+	]
+}

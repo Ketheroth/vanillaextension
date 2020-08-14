@@ -1,5 +1,6 @@
 {
 
+	"block.vanillaextension.farmland_stairs": "Farmland Stairs",
 	"block.vanillaextension.grass_block_stairs": "Grass Block Stairs",
 	"block.vanillaextension.dirt_stairs": "Dirt Stairs",
 	"block.vanillaextension.coarse_dirt_stairs": "Coarse Dirt Stairs",
@@ -216,6 +217,7 @@
 	"block.vanillaextension.honey_block_stairs": "Honey Block Stairs",
 	"block.vanillaextension.honeycomb_block_stairs": "Honeycomb Block Stairs",
 
+	"block.vanillaextension.farmland_slab": "Farmland Slab",
 	"block.vanillaextension.grass_block_slab": "Grass Block Slab",
 	"block.vanillaextension.dirt_slab": "Dirt Slab",
 	"block.vanillaextension.coarse_dirt_slab": "Coarse Dirt Slab",

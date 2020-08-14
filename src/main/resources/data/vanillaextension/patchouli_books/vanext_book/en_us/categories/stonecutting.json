@@ -1,0 +1,5 @@
+{
+	"name": "Stonecutting Recipes",
+	"description": "All stonecutting recipes added by the mod.$(br2)If the corresponding vanilla block have a stonecutting recipe, it exist with the block of my mod.",
+	"icon": "minecraft:stonecutter"
+}

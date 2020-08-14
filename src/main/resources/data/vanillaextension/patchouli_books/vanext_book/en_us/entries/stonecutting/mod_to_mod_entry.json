@@ -1,0 +1,15 @@
+{
+	"name": "Mod to Mod Stonecutting Recipes",
+	"icon": "vanillaextension:chiseled_stone_brick_stairs",
+	"category": "vanillaextension:stonecutting",
+	"pages": [
+		{
+			"type": "text",
+			"text": "The list of Vanilla Extension blocks that can be used in the stonecutter to obtain an other block from Vanilla Extension.$(br2)An example : You can use Stone Brick Stairs to craft Chiseled Stone Brick Stairs in the stonecutter."
+		},
+		{
+			"type": "text",
+			"text": "list blocks"
+		}
+	]
+}

@@ -1,0 +1,11 @@
+{
+	"name": "Cracked Fences Smelting Recipes",
+	"icon": "vanillaextension:cracked_stone_brick_fence",
+	"category": "vanillaextension:smelting_fence",
+	"pages": [
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:fences/cracked_stone_brick_fence_from_stone_brick_fence_smelting"
+		}
+	]
+}

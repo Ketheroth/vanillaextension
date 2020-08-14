@@ -1,0 +1,6 @@
+{
+	"name": "Smelting Fences",
+	"description": "Fences by smelting",
+	"icon": "vanillaextension:cracked_stone_brick_fence",
+	"parent": "smelting"
+}
