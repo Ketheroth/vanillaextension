@@ -1,5 +1,5 @@
 {
-	"parent": "block/slab",
+	"parent": "vanillaextension:block/slab",
 	"textures": {
 		"bottom": "minecraft:block/vine",
 		"top": "minecraft:block/vine",

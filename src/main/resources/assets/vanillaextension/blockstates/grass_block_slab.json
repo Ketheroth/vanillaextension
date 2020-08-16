@@ -2,6 +2,6 @@
 	"variants": {
 		"type=bottom": { "model": "vanillaextension:block/grass_block_slab" },
 		"type=top": { "model": "vanillaextension:block/grass_block_slab_top" },
-		"type=double": { "model": "vanillaextension:block/grass_block_slab_double" }
+		"type=double": { "model": "minecraft:block/grass_block" }
 	}
 }

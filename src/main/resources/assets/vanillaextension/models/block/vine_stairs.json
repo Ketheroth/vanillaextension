@@ -1,5 +1,5 @@
 {
-	"parent": "block/stairs",
+	"parent": "vanillaextension:block/stairs",
 	"textures": {
 		"bottom": "minecraft:block/vine",
 		"top": "minecraft:block/vine",

@@ -1,5 +1,5 @@
 {
-	"parent": "block/outer_stairs",
+	"parent": "vanillaextension:block/outer_stairs",
 	"textures": {
 		"bottom": "minecraft:block/jungle_leaves",
 		"top": "minecraft:block/jungle_leaves",

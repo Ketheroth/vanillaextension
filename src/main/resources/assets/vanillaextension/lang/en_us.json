@@ -1,5 +1,6 @@
 {
 
+	"block.vanillaextension.farmland_stairs": "Farmland Stairs",
 	"block.vanillaextension.grass_block_stairs": "Grass Block Stairs",
 	"block.vanillaextension.dirt_stairs": "Dirt Stairs",
 	"block.vanillaextension.coarse_dirt_stairs": "Coarse Dirt Stairs",
@@ -139,7 +140,7 @@
 	"block.vanillaextension.green_terracotta_stairs": "Green Terracotta Stairs",
 	"block.vanillaextension.red_terracotta_stairs": "Red Terracotta Stairs",
 	"block.vanillaextension.black_terracotta_stairs": "Black Terracotta Stairs",
-	"block.vanillaextension.slime_stairs": "Slime Stairs",
+	"block.vanillaextension.slime_block_stairs": "Slime Stairs",
 	"block.vanillaextension.iron_trapdoor_stairs": "Iron Trapdoor Stairs",
 	"block.vanillaextension.sea_lantern_stairs": "Sea Lantern Stairs",
 	"block.vanillaextension.hay_block_stairs": "Hay Block Stairs",
@@ -239,6 +240,7 @@
 	"block.vanillaextension.cracked_nether_brick_stairs": "Cracked Nether Brick Stairs",
 	"block.vanillaextension.quartz_brick_stairs": "Quartz Brick Stairs",
 
+	"block.vanillaextension.farmland_slab": "Farmland Slab",
 	"block.vanillaextension.grass_block_slab": "Grass Block Slab",
 	"block.vanillaextension.dirt_slab": "Dirt Slab",
 	"block.vanillaextension.coarse_dirt_slab": "Coarse Dirt Slab",
@@ -377,7 +379,7 @@
 	"block.vanillaextension.green_terracotta_slab": "Green Terracotta Slab",
 	"block.vanillaextension.red_terracotta_slab": "Red Terracotta Slab",
 	"block.vanillaextension.black_terracotta_slab": "Black Terracotta Slab",
-	"block.vanillaextension.slime_slab": "Slime Slab",
+	"block.vanillaextension.slime_block_slab": "Slime Slab",
 	"block.vanillaextension.iron_trapdoor_slab": "Iron Trapdoor Slab",
 	"block.vanillaextension.sea_lantern_slab": "Sea Lantern Slab",
 	"block.vanillaextension.hay_block_slab": "Hay Block Slab",
@@ -733,7 +735,7 @@
 	"block.vanillaextension.polished_basalt_fence": "Polished Basalt Fence",
 	"block.vanillaextension.blackstone_fence": "Blackstone Fence",
 	"block.vanillaextension.polished_blackstone_fence": "Polished Blackstone Fence",
-	"block.vanillaextension.polished_blackstone_bricks_fence": "Polished Blackstone Brick Fence",
+	"block.vanillaextension.polished_blackstone_brick_fence": "Polished Blackstone Brick Fence",
 	"block.vanillaextension.cracked_polished_blackstone_brick_fence": "Cracked Polished Blackstone Brick Fence",
 	"block.vanillaextension.chiseled_polished_blackstone_fence": "Chiseled Polished Blackstone Fence",
 	"block.vanillaextension.gilded_blackstone_fence": "Gilded Blackstone Fence",

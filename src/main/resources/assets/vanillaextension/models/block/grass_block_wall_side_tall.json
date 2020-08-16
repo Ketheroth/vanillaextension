@@ -1,7 +1,30 @@
 {
-	"parent": "vanillaextension:block/template_wall_side_tall",
 	"textures": {
+		"particle": "#side",
 		"side": "minecraft:block/grass_block_side",
+		"overlay": "minecraft:block/grass_block_side_overlay",
+		"bottom": "minecraft:block/dirt",
 		"top": "minecraft:block/grass_block_top"
-	}
+	},
+	"elements": [
+		{   "from": [ 5, 0, 0 ],
+			"to": [ 11, 16, 8 ],
+			"faces": {
+				"down":  { "texture": "#bottom", "cullface": "down" },
+				"up":    { "texture": "#top", "tintindex": 0, "cullface": "up"},
+				"north": { "texture": "#side", "cullface": "north" },
+				"west":  { "texture": "#side" },
+				"east":  { "texture": "#side" }
+			}
+		},
+		{   "from": [ 5, 0, 0 ],
+			"to": [ 11, 16, 8 ],
+			"faces": {
+				"north": { "texture": "#overlay", "tintindex": 0, "cullface": "north" },
+				"west":  { "texture": "#overlay", "tintindex": 0 },
+				"east":  { "texture": "#overlay", "tintindex": 0 }
+			}
+		}
+	]
 }
+

@@ -1,7 +1,33 @@
 {
-	"parent": "vanillaextension:block/template_wall_post",
 	"textures": {
+		"particle": "#side",
 		"side": "minecraft:block/grass_block_side",
+		"overlay": "minecraft:block/grass_block_side_overlay",
+		"bottom": "minecraft:block/dirt",
 		"top": "minecraft:block/grass_block_top"
-	}
+	},
+	"elements": [
+		{   "from": [ 4, 0, 4 ],
+			"to": [ 12, 16, 12 ],
+			"faces": {
+				"down":  { "texture": "#bottom", "cullface": "down" },
+				"up":    { "texture": "#top", "tintindex": 0, "cullface": "up" },
+				"north": { "texture": "#side" },
+				"south": { "texture": "#side" },
+				"west":  { "texture": "#side" },
+				"east":  { "texture": "#side" }
+			},
+			"__comment": "Center post"
+		},
+		{   "from": [ 4, 0, 4 ],
+			"to": [ 12, 16, 12 ],
+			"faces": {
+				"north": { "texture": "#overlay", "tintindex": 0 },
+				"south": { "texture": "#overlay", "tintindex": 0 },
+				"west":  { "texture": "#overlay", "tintindex": 0 },
+				"east":  { "texture": "#overlay", "tintindex": 0 }
+			},
+			"__comment": "Center post"
+		}
+	]
 }

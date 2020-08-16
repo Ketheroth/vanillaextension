@@ -1,11 +1,20 @@
 package com.nbrichau.vanillaextension;
 
 import com.nbrichau.vanillaextension.init.BlockInit;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.client.renderer.color.ItemColors;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.FoliageColors;
+import net.minecraft.world.GrassColors;
+import net.minecraft.world.IBlockDisplayReader;
+import net.minecraft.world.biome.BiomeColors;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -43,6 +52,7 @@ public class VanillaExtension
 	}
 
 	private void doClientStuff(final FMLClientSetupEvent event) {
+		RenderTypeLookup.setRenderLayer(BlockInit.grass_block_stairs, RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(BlockInit.oak_leaves_stairs, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.spruce_leaves_stairs, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.birch_leaves_stairs, RenderType.getTranslucent());
@@ -82,6 +92,7 @@ public class VanillaExtension
 		RenderTypeLookup.setRenderLayer(BlockInit.sea_lantern_stairs, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.honey_block_stairs, RenderType.getTranslucent());
 
+		RenderTypeLookup.setRenderLayer(BlockInit.grass_block_slab, RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(BlockInit.oak_leaves_slab, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.spruce_leaves_slab, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.birch_leaves_slab, RenderType.getTranslucent());
@@ -121,6 +132,7 @@ public class VanillaExtension
 		RenderTypeLookup.setRenderLayer(BlockInit.sea_lantern_slab, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.honey_block_slab, RenderType.getTranslucent());
 
+		RenderTypeLookup.setRenderLayer(BlockInit.grass_block_fence, RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(BlockInit.oak_leaves_fence, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.spruce_leaves_fence, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.birch_leaves_fence, RenderType.getTranslucent());
@@ -160,6 +172,7 @@ public class VanillaExtension
 		RenderTypeLookup.setRenderLayer(BlockInit.sea_lantern_fence, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.honey_block_fence, RenderType.getTranslucent());
 
+		RenderTypeLookup.setRenderLayer(BlockInit.grass_block_wall, RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(BlockInit.oak_leaves_wall, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.spruce_leaves_wall, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.birch_leaves_wall, RenderType.getTranslucent());
@@ -198,6 +211,28 @@ public class VanillaExtension
 		RenderTypeLookup.setRenderLayer(BlockInit.iron_trapdoor_wall, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.sea_lantern_wall, RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.honey_block_wall, RenderType.getTranslucent());
+
+		Minecraft.getInstance().getBlockColors().register((a, r, g, b) -> r != null && g != null ? BiomeColors.getGrassColor(r, g) : GrassColors.get(0.5D, 1.0D), BlockInit.grass_block_stairs, BlockInit.grass_block_slab, BlockInit.grass_block_fence, BlockInit.grass_block_wall);
+		Minecraft.getInstance().getBlockColors().register((a, r, g, b) -> FoliageColors.getSpruce(), BlockInit.spruce_leaves_stairs, BlockInit.spruce_leaves_slab, BlockInit.spruce_leaves_fence, BlockInit.spruce_leaves_wall);
+		Minecraft.getInstance().getBlockColors().register((a, r, g, b) -> FoliageColors.getBirch(), BlockInit.birch_leaves_stairs, BlockInit.birch_leaves_slab, BlockInit.birch_leaves_fence, BlockInit.birch_leaves_wall);
+		Minecraft.getInstance().getBlockColors().register((a, r, g, b) -> r != null && g != null ? BiomeColors.getFoliageColor(r, g) : FoliageColors.getDefault(), BlockInit.oak_leaves_stairs, BlockInit.oak_leaves_slab, BlockInit.oak_leaves_fence, BlockInit.oak_leaves_wall,
+			BlockInit.jungle_leaves_stairs,BlockInit.jungle_leaves_slab, BlockInit.jungle_leaves_fence, BlockInit.jungle_leaves_wall,
+			BlockInit.acacia_leaves_stairs, BlockInit.acacia_leaves_slab, BlockInit.acacia_leaves_fence, BlockInit.acacia_leaves_wall,
+			BlockInit.dark_oak_leaves_stairs,BlockInit.dark_oak_leaves_slab, BlockInit.dark_oak_leaves_fence, BlockInit.dark_oak_leaves_wall,
+			BlockInit.vine_stairs, BlockInit.vine_slab, BlockInit.vine_fence, BlockInit.vine_wall);
+
+		Minecraft.getInstance().getItemColors().register((blockItem, tintIndexIn) -> {
+			BlockState blockstate = ((BlockItem)blockItem.getItem()).getBlock().getDefaultState();
+			return Minecraft.getInstance().getBlockColors().getColor(blockstate, null, null, tintIndexIn);
+		}, BlockInit.grass_block_stairs, BlockInit.grass_block_slab, BlockInit.grass_block_fence, BlockInit.grass_block_wall,
+			BlockInit.vine_stairs, BlockInit.vine_slab, BlockInit.vine_fence, BlockInit.vine_wall,
+			BlockInit.oak_leaves_stairs, BlockInit.oak_leaves_slab, BlockInit.oak_leaves_fence, BlockInit.oak_leaves_wall,
+			BlockInit.spruce_leaves_stairs, BlockInit.spruce_leaves_slab, BlockInit.spruce_leaves_fence, BlockInit.spruce_leaves_wall,
+			BlockInit.birch_leaves_stairs, BlockInit.birch_leaves_slab, BlockInit.birch_leaves_fence, BlockInit.birch_leaves_wall,
+			BlockInit.jungle_leaves_stairs, BlockInit.jungle_leaves_slab, BlockInit.jungle_leaves_fence, BlockInit.jungle_leaves_wall,
+			BlockInit.acacia_leaves_stairs, BlockInit.acacia_leaves_slab, BlockInit.acacia_leaves_fence, BlockInit.acacia_leaves_wall,
+			BlockInit.dark_oak_leaves_stairs, BlockInit.dark_oak_leaves_slab, BlockInit.dark_oak_leaves_fence, BlockInit.dark_oak_leaves_wall);
+
 	}
 
 	// You can use SubscribeEvent and let the Event Bus discover methods to call

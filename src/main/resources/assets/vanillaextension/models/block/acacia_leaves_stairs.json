@@ -1,5 +1,5 @@
 {
-	"parent": "block/stairs",
+	"parent": "vanillaextension:block/stairs",
 	"textures": {
 		"bottom": "minecraft:block/acacia_leaves",
 		"top": "minecraft:block/acacia_leaves",
