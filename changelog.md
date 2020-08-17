@@ -3,14 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [Unreleased]
+### Added
+- Stairs, slabs, fences and walls variant for leaves block, vine and grass block use overlay textures. The color change depending of the biome.
+- Log, Wood, Stem and Hyphae can be stripped to get the stripped version of the block. Work with stairs, slabs, fences and walls.
+
+### Changed
+- recipes for glass walls don't conflict with glass pane recipe anymore. Recipe for these walls are like the recipes for plank walls
+
 ## [1.16.1-1.0.6]
 ### Added
 - Patchouli guide book. (WIP)  
 If you have the mod Patchouli in you modpack, a book which describe some recipes/loot\_tables from Vanilla Extension will be possible to craft (book+stick).  
 Patchouli is not required to launch my mod. It is only required if you want the guide book.  
 - Farmland Slab & Farmland Stairs.  
-You can have them by tilling grass/dirt slab/stairs
-crops on Farmland Stairs are kinda glitchy, but I can't really do something for it.
+You can have them by tilling grass/dirt slab/stairs.  
+Crops on Farmland Stairs are kinda glitchy, but I can't really do something for it.
 
 ### Changed
 - better textures for Grass Block Slab, Crimson Nylium Slab, Warped Nylium Slab & Mycelium Slab. The side of the block is now aligned like normal block.
