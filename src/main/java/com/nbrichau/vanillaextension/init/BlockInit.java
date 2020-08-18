@@ -1,13 +1,17 @@
 package com.nbrichau.vanillaextension.init;
 
+import com.nbrichau.vanillaextension.fences.CoarseDirtFence;
 import com.nbrichau.vanillaextension.fences.LogFence;
+import com.nbrichau.vanillaextension.slabs.CoarseDirtSlab;
 import com.nbrichau.vanillaextension.slabs.DirtSlab;
 import com.nbrichau.vanillaextension.slabs.FarmlandSlab;
 import com.nbrichau.vanillaextension.slabs.LogSlab;
+import com.nbrichau.vanillaextension.stairs.CoarseDirtStairs;
 import com.nbrichau.vanillaextension.stairs.DirtStairs;
 import com.nbrichau.vanillaextension.stairs.FarmlandStairs;
 import com.nbrichau.vanillaextension.VanillaExtension;
 import com.nbrichau.vanillaextension.stairs.LogStairs;
+import com.nbrichau.vanillaextension.walls.CoarseDirtWall;
 import com.nbrichau.vanillaextension.walls.LogWall;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -1032,7 +1036,7 @@ public class BlockInit {
 		event.getRegistry().register(new FarmlandStairs(AbstractBlock.Properties.from(Blocks.FARMLAND)).setRegistryName("farmland_stairs"));
 		event.getRegistry().register(new DirtStairs(Blocks.GRASS_BLOCK::getDefaultState, Block.Properties.create(Material.ORGANIC).hardnessAndResistance(0.6F).sound(SoundType.PLANT)).setRegistryName("grass_block_stairs"));
 		event.getRegistry().register(new DirtStairs(Blocks.DIRT::getDefaultState, Block.Properties.from(Blocks.DIRT)).setRegistryName("dirt_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.COARSE_DIRT::getDefaultState, Block.Properties.from(Blocks.COARSE_DIRT)).setRegistryName("coarse_dirt_stairs"));
+		event.getRegistry().register(new CoarseDirtStairs(Blocks.COARSE_DIRT::getDefaultState, Block.Properties.from(Blocks.COARSE_DIRT)).setRegistryName("coarse_dirt_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.PODZOL::getDefaultState, Block.Properties.from(Blocks.PODZOL)).setRegistryName("podzol_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.BEDROCK::getDefaultState, Block.Properties.from(Blocks.BEDROCK)).setRegistryName("bedrock_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.SAND::getDefaultState, Block.Properties.from(Blocks.SAND)).setRegistryName("sand_stairs"));
@@ -1275,7 +1279,7 @@ public class BlockInit {
 		event.getRegistry().register(new FarmlandSlab(Block.Properties.from(Blocks.FARMLAND)).setRegistryName("farmland_slab"));
 		event.getRegistry().register(new DirtSlab(Block.Properties.from(Blocks.DIRT)).setRegistryName("grass_block_slab"));
 		event.getRegistry().register(new DirtSlab(Block.Properties.from(Blocks.DIRT)).setRegistryName("dirt_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.COARSE_DIRT)).setRegistryName("coarse_dirt_slab"));
+		event.getRegistry().register(new CoarseDirtSlab(Block.Properties.from(Blocks.COARSE_DIRT)).setRegistryName("coarse_dirt_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.PODZOL)).setRegistryName("podzol_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.BEDROCK)).setRegistryName("bedrock_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.SAND)).setRegistryName("sand_slab"));
@@ -1521,7 +1525,7 @@ public class BlockInit {
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.POLISHED_DIORITE)).setRegistryName("polished_diorite_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.ORGANIC).hardnessAndResistance(0.6F).sound(SoundType.PLANT)).setRegistryName("grass_block_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.DIRT)).setRegistryName("dirt_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.COARSE_DIRT)).setRegistryName("coarse_dirt_fence"));
+		event.getRegistry().register(new CoarseDirtFence(Block.Properties.from(Blocks.COARSE_DIRT)).setRegistryName("coarse_dirt_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.PODZOL)).setRegistryName("podzol_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.COBBLESTONE)).setRegistryName("cobblestone_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.BEDROCK)).setRegistryName("bedrock_fence"));
@@ -1787,7 +1791,7 @@ public class BlockInit {
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.POLISHED_ANDESITE)).setRegistryName("polished_andesite_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.GRASS_BLOCK)).setRegistryName("grass_block_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.DIRT)).setRegistryName("dirt_wall"));
-		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.COARSE_DIRT)).setRegistryName("coarse_dirt_wall"));
+		event.getRegistry().register(new CoarseDirtWall(Block.Properties.from(Blocks.COARSE_DIRT)).setRegistryName("coarse_dirt_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.PODZOL)).setRegistryName("podzol_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.OAK_PLANKS)).setRegistryName("oak_plank_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.SPRUCE_PLANKS)).setRegistryName("spruce_plank_wall"));

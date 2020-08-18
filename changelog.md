@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 - Stairs, slabs, fences and walls variant for leaves block, vine and grass block use overlay textures. The color change depending of the biome.
 - Log, Wood, Stem and Hyphae can be stripped to get the stripped version of the block. Work with stairs, slabs, fences and walls.
+- Secret advancements
+- You can convert Coarse Dirt Blocks to Dirt Blocks with a Hoe.
 
 ### Changed
 - recipes for glass walls don't conflict with glass pane recipe anymore. Recipe for these walls are like the recipes for plank walls
