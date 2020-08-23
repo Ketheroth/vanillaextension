@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"   ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:prismarine_brick"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:prismarine_brick_trapdoor",
+		"count": 2
+	}
+}

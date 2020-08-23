@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"   ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:acacia_leaves"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:acacia_leaves_trapdoor",
+		"count": 2
+	}
+}

@@ -1,6 +1,9 @@
 package com.nbrichau.vanillaextension.fences;
 
-import com.nbrichau.vanillaextension.init.BlockInit;
+import com.nbrichau.vanillaextension.init.FenceInit;
+import com.nbrichau.vanillaextension.init.SlabInit;
+import com.nbrichau.vanillaextension.init.StairsInit;
+import com.nbrichau.vanillaextension.init.WallInit;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FenceBlock;
@@ -48,7 +51,7 @@ public class GrassBlockFence extends FenceBlock {
 		if (!isSnowyConditions(state, worldIn, pos)) {
 			if (!worldIn.isAreaLoaded(pos, 3))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
-			worldIn.setBlockState(pos, BlockInit.dirt_wall.getDefaultState().with(NORTH, state.get(NORTH)).with(EAST, state.get(EAST)).with(SOUTH, state.get(SOUTH)).with(WEST, state.get(WEST)).with(WATERLOGGED, state.get(WATERLOGGED)));
+			worldIn.setBlockState(pos, WallInit.dirt_wall.getDefaultState().with(NORTH, state.get(NORTH)).with(EAST, state.get(EAST)).with(SOUTH, state.get(SOUTH)).with(WEST, state.get(WEST)).with(WATERLOGGED, state.get(WATERLOGGED)));
 		} else {
 			if (worldIn.getLight(pos.up()) >= 9) {
 				for (int i = 0; i < 4; ++i) {
@@ -57,14 +60,14 @@ public class GrassBlockFence extends FenceBlock {
 					if (isSnowyAndNotUnderwater(blockstate, worldIn, blockpos)) {
 						if (blockstate.isIn(Blocks.DIRT)) {
 							worldIn.setBlockState(blockpos, Blocks.GRASS_BLOCK.getDefaultState().with(SNOWY, worldIn.getBlockState(blockpos.up()).isIn(Blocks.SNOW)));
-						} else if (blockstate.isIn(BlockInit.dirt_stairs)) {
-							worldIn.setBlockState(blockpos, BlockInit.grass_block_stairs.getDefaultState().with(HORIZONTAL_FACING, blockstate.get(HORIZONTAL_FACING)).with(HALF, blockstate.get(HALF)).with(STAIRS_SHAPE, blockstate.get(STAIRS_SHAPE)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
-						} else if (blockstate.isIn(BlockInit.dirt_slab)) {
-							worldIn.setBlockState(blockpos, BlockInit.grass_block_slab.getDefaultState().with(SLAB_TYPE, blockstate.get(SLAB_TYPE)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
-						} else if (blockstate.isIn(BlockInit.dirt_fence)) {
-							worldIn.setBlockState(blockpos, BlockInit.grass_block_fence.getDefaultState().with(NORTH, blockstate.get(NORTH)).with(EAST, blockstate.get(EAST)).with(SOUTH, blockstate.get(SOUTH)).with(WEST, blockstate.get(WEST)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
-						} else if (blockstate.isIn(BlockInit.dirt_wall)) {
-							worldIn.setBlockState(blockpos, BlockInit.grass_block_wall.getDefaultState().with(UP, blockstate.get(UP)).with(WALL_HEIGHT_NORTH, blockstate.get(WALL_HEIGHT_NORTH)).with(WALL_HEIGHT_EAST, blockstate.get(WALL_HEIGHT_EAST)).with(WALL_HEIGHT_SOUTH, blockstate.get(WALL_HEIGHT_SOUTH)).with(WALL_HEIGHT_WEST, blockstate.get(WALL_HEIGHT_WEST)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
+						} else if (blockstate.isIn(StairsInit.dirt_stairs)) {
+							worldIn.setBlockState(blockpos, StairsInit.grass_block_stairs.getDefaultState().with(HORIZONTAL_FACING, blockstate.get(HORIZONTAL_FACING)).with(HALF, blockstate.get(HALF)).with(STAIRS_SHAPE, blockstate.get(STAIRS_SHAPE)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
+						} else if (blockstate.isIn(SlabInit.dirt_slab)) {
+							worldIn.setBlockState(blockpos, SlabInit.grass_block_slab.getDefaultState().with(SLAB_TYPE, blockstate.get(SLAB_TYPE)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
+						} else if (blockstate.isIn(FenceInit.dirt_fence)) {
+							worldIn.setBlockState(blockpos, FenceInit.grass_block_fence.getDefaultState().with(NORTH, blockstate.get(NORTH)).with(EAST, blockstate.get(EAST)).with(SOUTH, blockstate.get(SOUTH)).with(WEST, blockstate.get(WEST)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
+						} else if (blockstate.isIn(WallInit.dirt_wall)) {
+							worldIn.setBlockState(blockpos, WallInit.grass_block_wall.getDefaultState().with(UP, blockstate.get(UP)).with(WALL_HEIGHT_NORTH, blockstate.get(WALL_HEIGHT_NORTH)).with(WALL_HEIGHT_EAST, blockstate.get(WALL_HEIGHT_EAST)).with(WALL_HEIGHT_SOUTH, blockstate.get(WALL_HEIGHT_SOUTH)).with(WALL_HEIGHT_WEST, blockstate.get(WALL_HEIGHT_WEST)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
 						}
 					}
 				}

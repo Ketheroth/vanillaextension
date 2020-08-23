@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"   ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:polished_blackstone"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:polished_blackstone_trapdoor",
+		"count": 2
+	}
+}

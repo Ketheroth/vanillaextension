@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"   ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:smooth_red_sandstone"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:smooth_red_sandstone_trapdoor",
+		"count": 2
+	}
+}

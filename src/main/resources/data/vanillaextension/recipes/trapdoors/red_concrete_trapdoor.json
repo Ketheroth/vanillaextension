@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"   ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:red_concrete"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:red_concrete_trapdoor",
+		"count": 2
+	}
+}

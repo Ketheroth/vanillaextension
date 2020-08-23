@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"   ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:nether_brick"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:nether_brick_trapdoor",
+		"count": 2
+	}
+}

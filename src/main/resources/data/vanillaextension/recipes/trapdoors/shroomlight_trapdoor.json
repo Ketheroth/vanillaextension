@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"   ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:shroomlight"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:shroomlight_trapdoor",
+		"count": 2
+	}
+}

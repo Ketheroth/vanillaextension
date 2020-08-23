@@ -1,0 +1,8 @@
+{
+	"parent": "vanillaextension:block/template_orientable_trapdoor_top",
+	"textures": {
+		"bottom": "minecraft:block/dried_kelp_bottom",
+		"top": "minecraft:block/dried_kelp_top",
+		"side": "minecraft:block/dried_kelp_side"
+	}
+}

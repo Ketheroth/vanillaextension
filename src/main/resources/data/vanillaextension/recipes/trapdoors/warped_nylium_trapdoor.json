@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"   ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:warped_nylium"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:warped_nylium_trapdoor",
+		"count": 2
+	}
+}

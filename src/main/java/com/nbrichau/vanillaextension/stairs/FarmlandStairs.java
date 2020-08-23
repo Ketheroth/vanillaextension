@@ -1,12 +1,11 @@
 package com.nbrichau.vanillaextension.stairs;
 
-import com.nbrichau.vanillaextension.init.BlockInit;
+import com.nbrichau.vanillaextension.init.StairsInit;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.EnumProperty;
@@ -29,7 +28,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
-import net.minecraftforge.common.ToolType;
 
 import java.util.Random;
 import java.util.stream.IntStream;
@@ -104,7 +102,7 @@ public class FarmlandStairs extends FarmlandBlock implements IWaterLoggable{
 		BlockPos blockpos = context.getPos();
 		FluidState fluidstate = context.getWorld().getFluidState(blockpos);
 		BlockState blockstate = this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing()).with(HALF, direction != Direction.DOWN && (direction == Direction.UP || !(context.getHitVec().y - (double)blockpos.getY() > 0.5D)) ? Half.BOTTOM : Half.TOP).with(WATERLOGGED, fluidstate.getFluid() == Fluids.WATER);
-		return !this.getDefaultState().isValidPosition(context.getWorld(), context.getPos()) ? BlockInit.dirt_stairs.getDefaultState() : blockstate.with(SHAPE, getShapeProperty(blockstate, context.getWorld(), blockpos));
+		return !this.getDefaultState().isValidPosition(context.getWorld(), context.getPos()) ? StairsInit.dirt_stairs.getDefaultState() : blockstate.with(SHAPE, getShapeProperty(blockstate, context.getWorld(), blockpos));
 	}
 
 	@Override
@@ -247,7 +245,7 @@ public class FarmlandStairs extends FarmlandBlock implements IWaterLoggable{
 
 
 	public static void turnToDirtStairs(BlockState state, World worldIn, BlockPos pos) {
-		BlockState bs = BlockInit.dirt_stairs.getDefaultState().with(FACING, state.get(FACING)).with(HALF, state.get(HALF)).with(SHAPE, state.get(SHAPE)).with(WATERLOGGED, state.get(WATERLOGGED));
+		BlockState bs = StairsInit.dirt_stairs.getDefaultState().with(FACING, state.get(FACING)).with(HALF, state.get(HALF)).with(SHAPE, state.get(SHAPE)).with(WATERLOGGED, state.get(WATERLOGGED));
 		worldIn.setBlockState(pos, bs);
 	}
 

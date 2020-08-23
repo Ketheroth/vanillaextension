@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:obsidian"
+	},
+	"result": "vanillaextension:obsidian_trapdoor",
+	"count": 1
+}

@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"   ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:mossy_stone_brick"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:mossy_stone_brick_trapdoor",
+		"count": 2
+	}
+}
