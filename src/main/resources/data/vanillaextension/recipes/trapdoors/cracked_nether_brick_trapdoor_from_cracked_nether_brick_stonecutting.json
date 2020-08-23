@@ -1,8 +1,0 @@
-{
-	"type": "minecraft:stonecutting",
-	"ingredient": {
-		"item": "minecraft:cracked_nether_brick"
-	},
-	"result": "vanillaextension:cracked_nether_brick_trapdoor",
-	"count": 1
-}

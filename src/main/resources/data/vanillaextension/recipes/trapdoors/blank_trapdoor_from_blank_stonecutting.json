@@ -1,8 +1,0 @@
-{
-	"type": "minecraft:stonecutting",
-	"ingredient": {
-		"item": "minecraft:blank"
-	},
-	"result": "vanillaextension:blank_trapdoor",
-	"count": 1
-}

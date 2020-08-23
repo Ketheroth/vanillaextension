@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:brick_trapdoor"
+			"vanillaextension:chiseled_nether_brick_trapdoor_from_chiseled_nether_bricks_stonecutting"
 		]
 	},
 	"criteria": {
@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "minecraft:bricks"
+						"item": "minecraft:chiseled_nether_bricks"
 					}
 				]
 			}
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:brick_trapdoor"
+				"recipe": "vanillaextension:chiseled_nether_brick_trapdoor_from_chiseled_nether_bricks_stonecutting"
 			}
 		}
 	},
