@@ -4,8 +4,8 @@
 		"icon": {
 			"item": "vanillaextension:farmland_slab"
 		},
-		"title": "Those pesky water holes - john1997br",
-		"description": "Create a Farmland Slab by tilling a Dirt Slab or a Grass Block Slab with a Hoe",
+		"title": "Those pesky water holes",
+		"description": "john1997br - Create a Farmland Slab by tilling a Dirt Slab or a Grass Block Slab with a Hoe",
 		"hidden": true
 	},
 	"criteria": {

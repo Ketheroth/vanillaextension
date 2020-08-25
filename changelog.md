@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
-## [Unreleased]
+## [1.16.1-1.0.7]
 ### Added
 - Trapdoor variant for most of the vanilla blocks. To not interfere with vanilla recipes, trapdoor recipes from this mod are like this :  
 ```
@@ -13,7 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ```
 Where # is the block you want convert in trapdoor.  
 Rock based block have stonecutting recipe.
-- Stairs, slabs, fences and walls variant for leaves block, vine and grass block use overlay textures. The color change depending of the biome.
+- Stairs, slabs, fences and walls variant for leaves block, vine and grass block use overlay/tintindex textures. The color change depending on the biome.
 - Log, Wood, Stem and Hyphae can be stripped to get the stripped version of the block. Work with stairs, slabs, fences and walls.
 - Secret advancements
 - You can convert Coarse Dirt Blocks to Dirt Blocks with a Hoe.

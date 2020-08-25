@@ -5,13 +5,37 @@
 			"rolls": 1,
 			"entries": [
 				{
-					"type": "minecraft:item",
-					"name": "vanillaextension:fire_coral_block_trapdoor"
-				}
-			],
-			"conditions": [
-				{
-					"condition": "minecraft:survives_explosion"
+					"type": "minecraft:alternatives",
+					"children": [
+						{
+							"type": "minecraft:item",
+							"conditions": [
+								{
+									"condition": "minecraft:match_tool",
+									"predicate": {
+										"enchantments": [
+											{
+												"enchantment": "minecraft:silk_touch",
+												"levels": {
+													"min": 1
+												}
+											}
+										]
+									}
+								}
+							],
+							"name": "vanillaextension:fire_coral_block_trapdoor"
+						},
+						{
+							"type": "minecraft:item",
+							"conditions": [
+								{
+									"condition": "minecraft:survives_explosion"
+								}
+							],
+							"name": "vanillaextension:dead_fire_coral_block_trapdoor"
+						}
+					]
 				}
 			]
 		}
