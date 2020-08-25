@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "vanillaextension:red_sandstone_trapdoor"
+	},
+	"result": "vanillaextension:chiseled_red_sandstone_trapdoor",
+	"count": 1
+}

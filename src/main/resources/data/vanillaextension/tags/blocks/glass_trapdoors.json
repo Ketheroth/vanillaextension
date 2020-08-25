@@ -1,0 +1,22 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:glass_trapdoor",
+		"vanillaextension:white_stained_glass_trapdoor",
+		"vanillaextension:orange_stained_glass_trapdoor",
+		"vanillaextension:magenta_stained_glass_trapdoor",
+		"vanillaextension:light_blue_stained_glass_trapdoor",
+		"vanillaextension:yellow_stained_glass_trapdoor",
+		"vanillaextension:lime_stained_glass_trapdoor",
+		"vanillaextension:pink_stained_glass_trapdoor",
+		"vanillaextension:gray_stained_glass_trapdoor",
+		"vanillaextension:light_gray_stained_glass_trapdoor",
+		"vanillaextension:cyan_stained_glass_trapdoor",
+		"vanillaextension:purple_stained_glass_trapdoor",
+		"vanillaextension:blue_stained_glass_trapdoor",
+		"vanillaextension:brown_stained_glass_trapdoor",
+		"vanillaextension:green_stained_glass_trapdoor",
+		"vanillaextension:red_stained_glass_trapdoor",
+		"vanillaextension:black_stained_glass_trapdoor"
+	]
+}

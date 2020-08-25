@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:smelting",
+	"ingredient": {
+		"item": "vanillaextension:nether_brick_trapdoor"
+	},
+	"result": "vanillaextension:cracked_nether_brick_trapdoor",
+	"experience": 0.1,
+	"cookingtime": 200
+}

@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "vanillaextension:prismarine_trapdoor"
+	},
+	"result": "vanillaextension:prismarine_brick_trapdoor",
+	"count": 1
+}

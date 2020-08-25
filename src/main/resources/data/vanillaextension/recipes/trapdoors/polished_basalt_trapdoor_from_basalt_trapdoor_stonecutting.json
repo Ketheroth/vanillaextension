@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "vanillaextension:basalt_trapdoor"
+	},
+	"result": "vanillaextension:polished_basalt_trapdoor",
+	"count": 1
+}

@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "vanillaextension:blackstone_trapdoor"
+	},
+	"result": "vanillaextension:polished_blackstone_brick_trapdoor",
+	"count": 1
+}

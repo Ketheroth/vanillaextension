@@ -327,12 +327,12 @@ public class TrapdoorInit {
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.WOOD, MaterialColor.DIRT)).setRegistryName("stripped_jungle_wood_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.WOOD, MaterialColor.ADOBE)).setRegistryName("stripped_acacia_wood_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.WOOD, MaterialColor.BROWN)).setRegistryName("stripped_dark_oak_wood_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT)).setRegistryName("oak_leaves_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT)).setRegistryName("spruce_leaves_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT)).setRegistryName("birch_leaves_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT)).setRegistryName("jungle_leaves_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT)).setRegistryName("acacia_leaves_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT)).setRegistryName("dark_oak_leaves_trapdoor"));
+		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state,reader,pos)->false)).setRegistryName("oak_leaves_trapdoor"));
+		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state,reader,pos)->false)).setRegistryName("spruce_leaves_trapdoor"));
+		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state,reader,pos)->false)).setRegistryName("birch_leaves_trapdoor"));
+		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state,reader,pos)->false)).setRegistryName("jungle_leaves_trapdoor"));
+		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state,reader,pos)->false)).setRegistryName("acacia_leaves_trapdoor"));
+		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state,reader,pos)->false)).setRegistryName("dark_oak_leaves_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.SPONGE)).setRegistryName("sponge_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.WET_SPONGE)).setRegistryName("wet_sponge_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.GLASS)).setRegistryName("glass_trapdoor"));

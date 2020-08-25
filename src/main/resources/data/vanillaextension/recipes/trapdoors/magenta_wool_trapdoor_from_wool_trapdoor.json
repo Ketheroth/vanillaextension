@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "wool_trapdoor",
+	"pattern": [
+		"TTT",
+		"TDT",
+		"TTT"
+	],
+	"key": {
+		"T": {
+			"tag": "vanillaextension:wool_trapdoors"
+		},
+		"D": {
+			"item": "minecraft:magenta_dye"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:magenta_wool_trapdoor",
+		"count": 8
+	}
+}

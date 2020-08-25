@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "vanillaextension:andesite_trapdoor"
+	},
+	"result": "vanillaextension:polished_andesite_trapdoor",
+	"count": 1
+}

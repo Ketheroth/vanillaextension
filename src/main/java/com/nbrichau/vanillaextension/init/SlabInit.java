@@ -341,7 +341,7 @@ public class SlabInit {
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.GLOWSTONE)).setRegistryName("glowstone_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.CARVED_PUMPKIN)).setRegistryName("carved_pumpkin_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.JACK_O_LANTERN)).setRegistryName("jack_o_lantern_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.WHITE_STAINED_GLASS)/*.notSolid()*/).setRegistryName("white_stained_glass_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.WHITE_STAINED_GLASS)).setRegistryName("white_stained_glass_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.ORANGE_STAINED_GLASS)).setRegistryName("orange_stained_glass_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.MAGENTA_STAINED_GLASS)).setRegistryName("magenta_stained_glass_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.LIGHT_BLUE_STAINED_GLASS)).setRegistryName("light_blue_stained_glass_slab"));
