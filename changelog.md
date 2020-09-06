@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [1.16.1-1.0.8]
+### Changed
+- Concrete Powder Stairs, Slabs, Walls, Fences and Trapdoors have gravity and turn into Concrete upon touching water
+- Log Trapdoor can be stripped with an axe
+- Grass Block Trapdoor spread to dirt blocks
+- Coarse Dirt Trapdoor can be tilled with a hoe
+
 ## [1.16.1-1.0.7]
 ### Added
 - Trapdoor variant for most of the vanilla blocks. To not interfere with vanilla recipes, trapdoor recipes from this mod are like this :  

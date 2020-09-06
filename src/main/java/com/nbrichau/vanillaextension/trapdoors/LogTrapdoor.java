@@ -1,8 +1,8 @@
-package com.nbrichau.vanillaextension.slabs;
+package com.nbrichau.vanillaextension.trapdoors;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.SlabBlock;
+import net.minecraft.block.TrapDoorBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
@@ -11,9 +11,9 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.registries.ForgeRegistries;
 
-public class LogSlab extends SlabBlock {
+public class LogTrapdoor extends TrapDoorBlock {
 
-	public LogSlab(Properties properties) {
+	public LogTrapdoor(Properties properties) {
 		super(properties);
 	}
 
@@ -23,7 +23,7 @@ public class LogSlab extends SlabBlock {
 		if (block != null && player.getHeldItem(handIn).getToolTypes().contains(ToolType.AXE)) {
 			worldIn.playSound(player, pos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			if (!worldIn.isRemote) {
-				worldIn.setBlockState(pos, block.getDefaultState().with(TYPE, state.get(TYPE)).with(WATERLOGGED, state.get(WATERLOGGED)), 11);
+				worldIn.setBlockState(pos, block.getDefaultState().with(HORIZONTAL_FACING, state.get(HORIZONTAL_FACING)).with(OPEN, state.get(OPEN)).with(HALF, state.get(HALF)).with(POWERED, state.get(POWERED)).with(WATERLOGGED, state.get(WATERLOGGED)), 11);
 				if (player != null) {
 					player.getHeldItem(handIn).damageItem(1, player, item -> item.sendBreakAnimation(handIn));
 				}

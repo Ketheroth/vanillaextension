@@ -28,7 +28,7 @@ public class LogStairs extends StairsBlock {
 			if (!worldIn.isRemote) {
 				worldIn.setBlockState(pos, block.getDefaultState().with(FACING, state.get(FACING)).with(HALF, state.get(HALF)).with(SHAPE, state.get(SHAPE)).with(WATERLOGGED, state.get(WATERLOGGED)), 11);
 				if (player != null) {
-					player.getHeldItem(handIn).damageItem(1, player, item->item.sendBreakAnimation(handIn));
+					player.getHeldItem(handIn).damageItem(1, player, item -> item.sendBreakAnimation(handIn));
 				}
 				return ActionResultType.SUCCESS;
 			}
@@ -36,10 +36,7 @@ public class LogStairs extends StairsBlock {
 		return ActionResultType.PASS;
 	}
 
-	private static Block getBlockStripping(Block blockIn){
-		System.out.println(blockIn.getRegistryName().getNamespace());
-		System.out.println(blockIn.getRegistryName().getPath());
-		System.out.println(ResourceLocation.create(blockIn.getRegistryName().getNamespace()+":stripped_"+blockIn.getRegistryName().getPath(),':'));
-		return ForgeRegistries.BLOCKS.getValue(ResourceLocation.create(blockIn.getRegistryName().getNamespace()+":stripped_"+blockIn.getRegistryName().getPath(),':'));
+	private static Block getBlockStripping(Block blockIn) {
+		return ForgeRegistries.BLOCKS.getValue(ResourceLocation.create(blockIn.getRegistryName().getNamespace() + ":stripped_" + blockIn.getRegistryName().getPath(), ':'));
 	}
 }

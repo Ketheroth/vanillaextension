@@ -1,43 +1,24 @@
-package com.nbrichau.vanillaextension.stairs;
+package com.nbrichau.vanillaextension.trapdoors;
 
 import com.nbrichau.vanillaextension.init.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SnowBlock;
-import net.minecraft.block.StairsBlock;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.block.TrapDoorBlock;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.util.*;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.IWorldReader;
-import net.minecraft.world.World;
 import net.minecraft.world.lighting.LightEngine;
 import net.minecraft.world.server.ServerWorld;
-import net.minecraftforge.common.ToolType;
 
 import java.util.Random;
-import java.util.function.Supplier;
 
 import static net.minecraft.state.properties.BlockStateProperties.*;
 
-public class GrassBlockStairs extends StairsBlock {
-	public GrassBlockStairs(Supplier<BlockState> state, Properties properties) {
-		super(state, properties);
-	}
-
-	@Override
-	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-		if (!worldIn.isRemote()) {
-			if (player.getHeldItem(handIn).getToolTypes().contains(ToolType.HOE)) {
-				BlockState bs = StairsInit.farmland_stairs.getDefaultState().with(FACING, state.get(FACING)).with(HALF, state.get(HALF)).with(SHAPE, state.get(SHAPE)).with(WATERLOGGED, state.get(WATERLOGGED));
-				worldIn.setBlockState(pos, bs);
-				worldIn.playSound(null,pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F,1.0F);
-				player.getHeldItem(handIn).damageItem(1, player, item->item.sendBreakAnimation(handIn));
-				return ActionResultType.SUCCESS;
-			}
-		}
-		return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
+public class GrassBlockTrapdoor extends TrapDoorBlock {
+	public GrassBlockTrapdoor(Properties properties) {
+		super(properties);
 	}
 
 	private static boolean isSnowyConditions(BlockState state, IWorldReader worldReader, BlockPos pos) {
@@ -66,7 +47,7 @@ public class GrassBlockStairs extends StairsBlock {
 		if (!isSnowyConditions(state, worldIn, pos)) {
 			if (!worldIn.isAreaLoaded(pos, 3))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
-			worldIn.setBlockState(pos, StairsInit.dirt_stairs.getDefaultState().with(FACING, state.get(FACING)).with(HALF, state.get(HALF)).with(SHAPE, state.get(SHAPE)).with(WATERLOGGED, state.get(WATERLOGGED)));
+			worldIn.setBlockState(pos, TrapdoorInit.dirt_trapdoor.getDefaultState().with(HORIZONTAL_FACING, state.get(HORIZONTAL_FACING)).with(OPEN, state.get(OPEN)).with(HALF, state.get(HALF)).with(POWERED, state.get(POWERED)).with(WATERLOGGED, state.get(WATERLOGGED)));
 		} else {
 			if (worldIn.getLight(pos.up()) >= 9) {
 				for (int i = 0; i < 4; ++i) {
@@ -76,7 +57,7 @@ public class GrassBlockStairs extends StairsBlock {
 						if (blockstate.isIn(Blocks.DIRT)) {
 							worldIn.setBlockState(blockpos, Blocks.GRASS_BLOCK.getDefaultState().with(SNOWY, worldIn.getBlockState(blockpos.up()).isIn(Blocks.SNOW)));
 						} else if (blockstate.isIn(StairsInit.dirt_stairs)) {
-							worldIn.setBlockState(blockpos, StairsInit.grass_block_stairs.getDefaultState().with(FACING, blockstate.get(FACING)).with(HALF, blockstate.get(HALF)).with(SHAPE, blockstate.get(SHAPE)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
+							worldIn.setBlockState(blockpos, StairsInit.grass_block_stairs.getDefaultState().with(HORIZONTAL_FACING, blockstate.get(HORIZONTAL_FACING)).with(HALF, blockstate.get(HALF)).with(STAIRS_SHAPE, blockstate.get(STAIRS_SHAPE)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
 						} else if (blockstate.isIn(SlabInit.dirt_slab)) {
 							worldIn.setBlockState(blockpos, SlabInit.grass_block_slab.getDefaultState().with(SLAB_TYPE, blockstate.get(SLAB_TYPE)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
 						} else if (blockstate.isIn(FenceInit.dirt_fence)) {

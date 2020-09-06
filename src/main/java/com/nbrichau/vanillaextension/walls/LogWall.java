@@ -25,7 +25,7 @@ public class LogWall extends WallBlock {
 			if (!worldIn.isRemote) {
 				worldIn.setBlockState(pos, block.getDefaultState().with(UP, state.get(UP)).with(WALL_HEIGHT_NORTH, state.get(WALL_HEIGHT_NORTH)).with(WALL_HEIGHT_EAST, state.get(WALL_HEIGHT_EAST)).with(WALL_HEIGHT_SOUTH, state.get(WALL_HEIGHT_SOUTH)).with(WALL_HEIGHT_WEST, state.get(WALL_HEIGHT_WEST)).with(WATERLOGGED, state.get(WATERLOGGED)), 11);
 				if (player != null) {
-					player.getHeldItem(handIn).damageItem(1, player, item->item.sendBreakAnimation(handIn));
+					player.getHeldItem(handIn).damageItem(1, player, item -> item.sendBreakAnimation(handIn));
 				}
 				return ActionResultType.SUCCESS;
 			}
@@ -33,10 +33,7 @@ public class LogWall extends WallBlock {
 		return ActionResultType.PASS;
 	}
 
-	private static Block getBlockStripping(Block blockIn){
-		System.out.println(blockIn.getRegistryName().getNamespace());
-		System.out.println(blockIn.getRegistryName().getPath());
-		System.out.println(ResourceLocation.create(blockIn.getRegistryName().getNamespace()+":stripped_"+blockIn.getRegistryName().getPath(),':'));
-		return ForgeRegistries.BLOCKS.getValue(ResourceLocation.create(blockIn.getRegistryName().getNamespace()+":stripped_"+blockIn.getRegistryName().getPath(),':'));
+	private static Block getBlockStripping(Block blockIn) {
+		return ForgeRegistries.BLOCKS.getValue(ResourceLocation.create(blockIn.getRegistryName().getNamespace() + ":stripped_" + blockIn.getRegistryName().getPath(), ':'));
 	}
 }
