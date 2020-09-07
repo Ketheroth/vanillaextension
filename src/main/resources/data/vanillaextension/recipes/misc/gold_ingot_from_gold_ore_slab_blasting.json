@@ -1,9 +1,0 @@
-{
-	"type": "minecraft:blasting",
-	"ingredient": {
-		"item": "vanillaextension:gold_ore_slab"
-	},
-	"result": "minecraft:gold_ingot",
-	"experience": 1.0,
-	"cookingtime": 100
-}

@@ -1,10 +1,7 @@
 package com.nbrichau.vanillaextension.init;
 
 import com.nbrichau.vanillaextension.VanillaExtension;
-import com.nbrichau.vanillaextension.fences.CoarseDirtFence;
-import com.nbrichau.vanillaextension.fences.ConcretePowderFence;
-import com.nbrichau.vanillaextension.fences.GrassBlockFence;
-import com.nbrichau.vanillaextension.fences.LogFence;
+import com.nbrichau.vanillaextension.fences.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FenceBlock;
@@ -307,9 +304,9 @@ public class FenceInit {
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.SAND)).setRegistryName("sand_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.RED_SAND)).setRegistryName("red_sand_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.GRAVEL)).setRegistryName("gravel_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.GOLD_ORE)).setRegistryName("gold_ore_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.IRON_ORE)).setRegistryName("iron_ore_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.COAL_ORE)).setRegistryName("coal_ore_fence"));
+		event.getRegistry().register(new OreFence(Block.Properties.from(Blocks.GOLD_ORE)).setRegistryName("gold_ore_fence"));
+		event.getRegistry().register(new OreFence(Block.Properties.from(Blocks.IRON_ORE)).setRegistryName("iron_ore_fence"));
+		event.getRegistry().register(new OreFence(Block.Properties.from(Blocks.COAL_ORE)).setRegistryName("coal_ore_fence"));
 		event.getRegistry().register(new LogFence(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("oak_log_fence"));
 		event.getRegistry().register(new LogFence(Block.Properties.create(Material.WOOD, MaterialColor.OBSIDIAN).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("spruce_log_fence"));
 		event.getRegistry().register(new LogFence(Block.Properties.create(Material.WOOD, MaterialColor.SAND).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("birch_log_fence"));
@@ -343,7 +340,7 @@ public class FenceInit {
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.SPONGE)).setRegistryName("sponge_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.WET_SPONGE)).setRegistryName("wet_sponge_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.GLASS)).setRegistryName("glass_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.LAPIS_ORE)).setRegistryName("lapis_ore_fence"));
+		event.getRegistry().register(new OreFence(Block.Properties.from(Blocks.LAPIS_ORE)).setRegistryName("lapis_ore_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.LAPIS_BLOCK)).setRegistryName("lapis_block_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.SANDSTONE)).setRegistryName("sandstone_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.CHISELED_SANDSTONE)).setRegistryName("chiseled_sandstone_fence"));
@@ -372,13 +369,13 @@ public class FenceInit {
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.MOSSY_COBBLESTONE)).setRegistryName("mossy_cobblestone_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.OBSIDIAN)).setRegistryName("obsidian_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.SPAWNER)).setRegistryName("spawner_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.DIAMOND_ORE)).setRegistryName("diamond_ore_fence"));
+		event.getRegistry().register(new OreFence(Block.Properties.from(Blocks.DIAMOND_ORE)).setRegistryName("diamond_ore_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.DIAMOND_BLOCK)).setRegistryName("diamond_block_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.ROCK).setLightLevel((state)->{return 4;}).hardnessAndResistance(3.0F, 3.0F)).setRegistryName("redstone_ore_fence"));
+		event.getRegistry().register(new OreFence(Block.Properties.create(Material.ROCK).setLightLevel((state)->{return 4;}).hardnessAndResistance(3.0F, 3.0F)).setRegistryName("redstone_ore_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.ICE).slipperiness(0.98F).hardnessAndResistance(0.5F).sound(SoundType.GLASS).notSolid()).setRegistryName("ice_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.SNOW_BLOCK)).setRegistryName("snow_block_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.CLAY)).setRegistryName("clay_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.PUMPKIN)).setRegistryName("pumpkin_fence"));
+		event.getRegistry().register(new PumpkinFence(Block.Properties.from(Blocks.PUMPKIN)).setRegistryName("pumpkin_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.NETHERRACK)).setRegistryName("netherrack_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.SAND, MaterialColor.BROWN).hardnessAndResistance(0.5F).speedFactor(0.4F).sound(SoundType.SAND)).setRegistryName("soul_sand_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.GLOWSTONE)).setRegistryName("glowstone_fence"));
@@ -420,10 +417,10 @@ public class FenceInit {
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.END_STONE)).setRegistryName("end_stone_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.DRAGON_EGG)).setRegistryName("dragon_egg_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.REDSTONE_LIGHT).setLightLevel((state)->{return 5;}).hardnessAndResistance(0.3F).sound(SoundType.GLASS)).setRegistryName("redstone_lamp_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.EMERALD_ORE)).setRegistryName("emerald_ore_fence"));
+		event.getRegistry().register(new OreFence(Block.Properties.from(Blocks.EMERALD_ORE)).setRegistryName("emerald_ore_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.EMERALD_BLOCK)).setRegistryName("emerald_block_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.REDSTONE_BLOCK)).setRegistryName("redstone_block_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.NETHER_QUARTZ_ORE)).setRegistryName("nether_quartz_ore_fence"));
+		event.getRegistry().register(new OreFence(Block.Properties.from(Blocks.NETHER_QUARTZ_ORE)).setRegistryName("nether_quartz_ore_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.HOPPER)).setRegistryName("hopper_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.QUARTZ_BLOCK)).setRegistryName("quartz_block_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.CHISELED_QUARTZ_BLOCK)).setRegistryName("chiseled_quartz_block_fence"));

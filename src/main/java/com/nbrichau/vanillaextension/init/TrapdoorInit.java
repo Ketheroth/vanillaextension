@@ -1,10 +1,7 @@
 package com.nbrichau.vanillaextension.init;
 
 import com.nbrichau.vanillaextension.VanillaExtension;
-import com.nbrichau.vanillaextension.trapdoors.CoarseDirtTrapdoor;
-import com.nbrichau.vanillaextension.trapdoors.ConcretePowderTrapdoor;
-import com.nbrichau.vanillaextension.trapdoors.GrassBlockTrapdoor;
-import com.nbrichau.vanillaextension.trapdoors.LogTrapdoor;
+import com.nbrichau.vanillaextension.trapdoors.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SoundType;
@@ -303,10 +300,10 @@ public class TrapdoorInit {
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.SAND)).setRegistryName("sand_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.RED_SAND)).setRegistryName("red_sand_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.GRAVEL)).setRegistryName("gravel_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.GOLD_ORE)).setRegistryName("gold_ore_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.IRON_ORE)).setRegistryName("iron_ore_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.COAL_ORE)).setRegistryName("coal_ore_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.NETHER_GOLD_ORE)).setRegistryName("nether_gold_ore_trapdoor"));// TODO: 19/08/2020 others nether_gold_ore type
+		event.getRegistry().register(new OreTrapdoor(Block.Properties.from(Blocks.GOLD_ORE)).setRegistryName("gold_ore_trapdoor"));
+		event.getRegistry().register(new OreTrapdoor(Block.Properties.from(Blocks.IRON_ORE)).setRegistryName("iron_ore_trapdoor"));
+		event.getRegistry().register(new OreTrapdoor(Block.Properties.from(Blocks.COAL_ORE)).setRegistryName("coal_ore_trapdoor"));
+		event.getRegistry().register(new OreTrapdoor(Block.Properties.from(Blocks.NETHER_GOLD_ORE)).setRegistryName("nether_gold_ore_trapdoor"));// TODO: 19/08/2020 others nether_gold_ore type
 		event.getRegistry().register(new LogTrapdoor(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)).setRegistryName("oak_log_trapdoor"));
 		event.getRegistry().register(new LogTrapdoor(Block.Properties.create(Material.WOOD, MaterialColor.OBSIDIAN)).setRegistryName("spruce_log_trapdoor"));
 		event.getRegistry().register(new LogTrapdoor(Block.Properties.create(Material.WOOD, MaterialColor.SAND)).setRegistryName("birch_log_trapdoor"));
@@ -340,7 +337,7 @@ public class TrapdoorInit {
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.SPONGE)).setRegistryName("sponge_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.WET_SPONGE)).setRegistryName("wet_sponge_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.GLASS)).setRegistryName("glass_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.LAPIS_ORE)).setRegistryName("lapis_ore_trapdoor"));
+		event.getRegistry().register(new OreTrapdoor(Block.Properties.from(Blocks.LAPIS_ORE)).setRegistryName("lapis_ore_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.LAPIS_BLOCK)).setRegistryName("lapis_block_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.SANDSTONE)).setRegistryName("sandstone_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.CHISELED_SANDSTONE)).setRegistryName("chiseled_sandstone_trapdoor"));
@@ -368,13 +365,13 @@ public class TrapdoorInit {
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.MOSSY_COBBLESTONE)).setRegistryName("mossy_cobblestone_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.OBSIDIAN)).setRegistryName("obsidian_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.SPAWNER)).setRegistryName("spawner_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.DIAMOND_ORE)).setRegistryName("diamond_ore_trapdoor"));
+		event.getRegistry().register(new OreTrapdoor(Block.Properties.from(Blocks.DIAMOND_ORE)).setRegistryName("diamond_ore_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.DIAMOND_BLOCK)).setRegistryName("diamond_block_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.ROCK).setLightLevel((state)->{return 4;}).hardnessAndResistance(3.0F, 3.0F)).setRegistryName("redstone_ore_trapdoor"));
+		event.getRegistry().register(new OreTrapdoor(Block.Properties.create(Material.ROCK).setLightLevel((state)->{return 4;}).hardnessAndResistance(3.0F, 3.0F)).setRegistryName("redstone_ore_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.ICE).slipperiness(0.98F).hardnessAndResistance(0.5F).sound(SoundType.GLASS).notSolid()).setRegistryName("ice_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.SNOW_BLOCK)).setRegistryName("snow_block_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.CLAY)).setRegistryName("clay_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.PUMPKIN)).setRegistryName("pumpkin_trapdoor"));
+		event.getRegistry().register(new PumpkinTrapdoor(Block.Properties.from(Blocks.PUMPKIN)).setRegistryName("pumpkin_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.NETHERRACK)).setRegistryName("netherrack_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.SAND, MaterialColor.BROWN).hardnessAndResistance(0.5F).speedFactor(0.4F).sound(SoundType.SAND)).setRegistryName("soul_sand_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.SOUL_SOIL)).setRegistryName("soul_soil_trapdoor"));// TODO: 19/08/2020 others soul_soil type
@@ -414,10 +411,10 @@ public class TrapdoorInit {
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.END_STONE)).setRegistryName("end_stone_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.DRAGON_EGG)).setRegistryName("dragon_egg_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.REDSTONE_LIGHT).setLightLevel((state)->{return 5;}).hardnessAndResistance(0.3F).sound(SoundType.GLASS)).setRegistryName("redstone_lamp_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.EMERALD_ORE)).setRegistryName("emerald_ore_trapdoor"));
+		event.getRegistry().register(new OreTrapdoor(Block.Properties.from(Blocks.EMERALD_ORE)).setRegistryName("emerald_ore_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.EMERALD_BLOCK)).setRegistryName("emerald_block_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.REDSTONE_BLOCK)).setRegistryName("redstone_block_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.NETHER_QUARTZ_ORE)).setRegistryName("nether_quartz_ore_trapdoor"));
+		event.getRegistry().register(new OreTrapdoor(Block.Properties.from(Blocks.NETHER_QUARTZ_ORE)).setRegistryName("nether_quartz_ore_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.HOPPER)).setRegistryName("hopper_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.QUARTZ_BLOCK)).setRegistryName("quartz_block_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.CHISELED_QUARTZ_BLOCK)).setRegistryName("chiseled_quartz_block_trapdoor"));

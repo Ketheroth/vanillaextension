@@ -1,10 +1,7 @@
 package com.nbrichau.vanillaextension.init;
 
 import com.nbrichau.vanillaextension.VanillaExtension;
-import com.nbrichau.vanillaextension.walls.CoarseDirtWall;
-import com.nbrichau.vanillaextension.walls.ConcretePowderWall;
-import com.nbrichau.vanillaextension.walls.GrassBlockWall;
-import com.nbrichau.vanillaextension.walls.LogWall;
+import com.nbrichau.vanillaextension.walls.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SoundType;
@@ -301,9 +298,9 @@ public class WallInit {
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.SAND)).setRegistryName("sand_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.RED_SAND)).setRegistryName("red_sand_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.GRAVEL)).setRegistryName("gravel_wall"));
-		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.GOLD_ORE)).setRegistryName("gold_ore_wall"));
-		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.IRON_ORE)).setRegistryName("iron_ore_wall"));
-		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.COAL_ORE)).setRegistryName("coal_ore_wall"));
+		event.getRegistry().register(new OreWall(Block.Properties.from(Blocks.GOLD_ORE)).setRegistryName("gold_ore_wall"));
+		event.getRegistry().register(new OreWall(Block.Properties.from(Blocks.IRON_ORE)).setRegistryName("iron_ore_wall"));
+		event.getRegistry().register(new OreWall(Block.Properties.from(Blocks.COAL_ORE)).setRegistryName("coal_ore_wall"));
 		event.getRegistry().register(new LogWall(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("oak_log_wall"));
 		event.getRegistry().register(new LogWall(Block.Properties.create(Material.WOOD, MaterialColor.OBSIDIAN).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("spruce_log_wall"));
 		event.getRegistry().register(new LogWall(Block.Properties.create(Material.WOOD, MaterialColor.SAND).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("birch_log_wall"));
@@ -337,7 +334,7 @@ public class WallInit {
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.SPONGE)).setRegistryName("sponge_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.WET_SPONGE)).setRegistryName("wet_sponge_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.GLASS)).setRegistryName("glass_wall"));
-		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.LAPIS_ORE)).setRegistryName("lapis_ore_wall"));
+		event.getRegistry().register(new OreWall(Block.Properties.from(Blocks.LAPIS_ORE)).setRegistryName("lapis_ore_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.LAPIS_BLOCK)).setRegistryName("lapis_block_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.CHISELED_SANDSTONE)).setRegistryName("chiseled_sandstone_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.CUT_SANDSTONE)).setRegistryName("cut_sandstone_wall"));
@@ -363,13 +360,13 @@ public class WallInit {
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.BOOKSHELF)).setRegistryName("bookshelf_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.OBSIDIAN)).setRegistryName("obsidian_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.SPAWNER)).setRegistryName("spawner_wall"));
-		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.DIAMOND_ORE)).setRegistryName("diamond_ore_wall"));
+		event.getRegistry().register(new OreWall(Block.Properties.from(Blocks.DIAMOND_ORE)).setRegistryName("diamond_ore_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.DIAMOND_BLOCK)).setRegistryName("diamond_block_wall"));
-		event.getRegistry().register(new WallBlock(Block.Properties.create(Material.ROCK).setLightLevel((state)->{return 4;}).hardnessAndResistance(3.0F, 3.0F)).setRegistryName("redstone_ore_wall"));
+		event.getRegistry().register(new OreWall(Block.Properties.create(Material.ROCK).setLightLevel((state)->{return 4;}).hardnessAndResistance(3.0F, 3.0F)).setRegistryName("redstone_ore_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.ICE)).setRegistryName("ice_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.SNOW_BLOCK)).setRegistryName("snow_block_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.CLAY)).setRegistryName("clay_wall"));
-		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.PUMPKIN)).setRegistryName("pumpkin_wall"));
+		event.getRegistry().register(new PumpkinWall(Block.Properties.from(Blocks.PUMPKIN)).setRegistryName("pumpkin_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.NETHERRACK)).setRegistryName("netherrack_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.SOUL_SAND)).setRegistryName("soul_sand_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.GLOWSTONE)).setRegistryName("glowstone_wall"));
@@ -409,10 +406,10 @@ public class WallInit {
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.END_STONE)).setRegistryName("end_stone_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.DRAGON_EGG)).setRegistryName("dragon_egg_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.create(Material.REDSTONE_LIGHT).setLightLevel((state)->{return 5;}).hardnessAndResistance(0.3F).sound(SoundType.GLASS)).setRegistryName("redstone_lamp_wall"));
-		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.EMERALD_ORE)).setRegistryName("emerald_ore_wall"));
+		event.getRegistry().register(new OreWall(Block.Properties.from(Blocks.EMERALD_ORE)).setRegistryName("emerald_ore_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.EMERALD_BLOCK)).setRegistryName("emerald_block_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.REDSTONE_BLOCK)).setRegistryName("redstone_block_wall"));
-		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.NETHER_QUARTZ_ORE)).setRegistryName("nether_quartz_ore_wall"));
+		event.getRegistry().register(new OreWall(Block.Properties.from(Blocks.NETHER_QUARTZ_ORE)).setRegistryName("nether_quartz_ore_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.HOPPER)).setRegistryName("hopper_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.QUARTZ_BLOCK)).setRegistryName("quartz_block_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.CHISELED_QUARTZ_BLOCK)).setRegistryName("chiseled_quartz_block_wall"));
