@@ -295,12 +295,12 @@ public class SlabInit {
 		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.WOOD, MaterialColor.DIRT).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("stripped_jungle_wood_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.WOOD, MaterialColor.ADOBE).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("stripped_acacia_wood_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("stripped_dark_oak_wood_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state,reader,pos)->false)).setRegistryName("oak_leaves_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state,reader,pos)->false)).setRegistryName("spruce_leaves_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state,reader,pos)->false)).setRegistryName("birch_leaves_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state,reader,pos)->false)).setRegistryName("jungle_leaves_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state,reader,pos)->false)).setRegistryName("acacia_leaves_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state,reader,pos)->false)).setRegistryName("dark_oak_leaves_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state, reader, pos) -> false)).setRegistryName("oak_leaves_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state, reader, pos) -> false)).setRegistryName("spruce_leaves_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state, reader, pos) -> false)).setRegistryName("birch_leaves_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state, reader, pos) -> false)).setRegistryName("jungle_leaves_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state, reader, pos) -> false)).setRegistryName("acacia_leaves_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f).sound(SoundType.PLANT).notSolid().setBlocksVision((state, reader, pos) -> false)).setRegistryName("dark_oak_leaves_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.SPONGE)).setRegistryName("sponge_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.WET_SPONGE)).setRegistryName("wet_sponge_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.GLASS)).setRegistryName("glass_slab"));
@@ -331,7 +331,7 @@ public class SlabInit {
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.SPAWNER)).setRegistryName("spawner_slab"));
 		event.getRegistry().register(new OreSlab(Block.Properties.from(Blocks.DIAMOND_ORE)).setRegistryName("diamond_ore_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.DIAMOND_BLOCK)).setRegistryName("diamond_block_slab"));
-		event.getRegistry().register(new OreSlab(Block.Properties.create(Material.ROCK).setLightLevel((state)->{return 4;}).hardnessAndResistance(3.0F, 3.0F)).setRegistryName("redstone_ore_slab"));
+		event.getRegistry().register(new RedstoneOreSlab(Block.Properties.from(Blocks.REDSTONE_ORE)).setRegistryName("redstone_ore_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.ICE).slipperiness(0.98F).hardnessAndResistance(0.5F).sound(SoundType.GLASS).notSolid()).setRegistryName("ice_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.SNOW_BLOCK)).setRegistryName("snow_block_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.CLAY)).setRegistryName("clay_slab"));
@@ -374,7 +374,7 @@ public class SlabInit {
 		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.ORGANIC, MaterialColor.PURPLE).hardnessAndResistance(0.6F).sound(SoundType.PLANT)).setRegistryName("mycelium_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.END_STONE)).setRegistryName("end_stone_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.DRAGON_EGG)).setRegistryName("dragon_egg_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.REDSTONE_LIGHT).setLightLevel((state)->{return 5;}).hardnessAndResistance(0.3F).sound(SoundType.GLASS)).setRegistryName("redstone_lamp_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.REDSTONE_LIGHT).setLightLevel((state) -> 5).hardnessAndResistance(0.3F).sound(SoundType.GLASS)).setRegistryName("redstone_lamp_slab"));
 		event.getRegistry().register(new OreSlab(Block.Properties.from(Blocks.EMERALD_ORE)).setRegistryName("emerald_ore_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.EMERALD_BLOCK)).setRegistryName("emerald_block_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.REDSTONE_BLOCK)).setRegistryName("redstone_block_slab"));
@@ -407,7 +407,7 @@ public class SlabInit {
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.PACKED_ICE)).setRegistryName("packed_ice_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.CHISELED_RED_SANDSTONE)).setRegistryName("chiseled_red_sandstone_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.PURPUR_PILLAR)).setRegistryName("purpur_pillar_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.NETHERRACK).setLightLevel((state)->{return 3;}).hardnessAndResistance(0.5F)).setRegistryName("magma_block_slab"));
+		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.NETHERRACK).setLightLevel((state) -> 3).hardnessAndResistance(0.5F)).setRegistryName("magma_block_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.NETHER_WART_BLOCK)).setRegistryName("nether_wart_block_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.BONE_BLOCK)).setRegistryName("bone_block_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.WHITE_GLAZED_TERRACOTTA)).setRegistryName("white_glazed_terracotta_slab"));

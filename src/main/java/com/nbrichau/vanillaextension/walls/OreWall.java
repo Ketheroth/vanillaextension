@@ -25,6 +25,8 @@ public class OreWall extends WallBlock {
 			return MathHelper.nextInt(rand, 2, 5);
 		} else if (this == WallInit.nether_quartz_ore_wall) {
 			return MathHelper.nextInt(rand, 2, 5);
+		} else if (this == WallInit.redstone_ore_wall) {
+			return MathHelper.nextInt(rand, 1, 5);
 		}/* else {
 			return this == WallInit.nether_gold_ore_wall ? MathHelper.nextInt(rand, 0, 1) : 0;
 		}*/

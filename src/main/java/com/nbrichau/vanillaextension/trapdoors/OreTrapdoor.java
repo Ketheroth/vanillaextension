@@ -25,6 +25,8 @@ public class OreTrapdoor extends TrapDoorBlock {
 			return MathHelper.nextInt(rand, 2, 5);
 		} else if (this == TrapdoorInit.nether_quartz_ore_trapdoor) {
 			return MathHelper.nextInt(rand, 2, 5);
+		} else if (this == TrapdoorInit.redstone_ore_trapdoor) {
+			return MathHelper.nextInt(rand, 1, 5);
 		} else {
 			return this == TrapdoorInit.nether_gold_ore_trapdoor ? MathHelper.nextInt(rand, 0, 1) : 0;
 		}
