@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [1.16.3-1.0.10]
+## Changed
+- Port to 1.16.3
+- Minimum Forge version : 1.16.3-34.0.1
+It should also work in 1.16.2
+
 ## [1.16.2-1.0.9]
 ### Changed
 - Port to 1.16.2
