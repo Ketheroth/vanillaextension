@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [1.16.2-1.0.9]
+### Changed
+- Port to 1.16.2
+- Minimum Forge version : 1.16.2-33.0.41
+- (Optional Dependancy) Minimum Patchouli version : 1.16-42
+
 ## [1.16.1-1.0.8]
 ### Added
 - Iron Ore Stairs & Wall blasting recipe
