@@ -41,6 +41,7 @@ public class WallInit {
 	public static final Block gold_ore_wall = null;
 	public static final Block iron_ore_wall = null;
 	public static final Block coal_ore_wall = null;
+	public static final Block nether_gold_ore_wall = null;
 	public static final Block oak_log_wall = null;
 	public static final Block spruce_log_wall = null;
 	public static final Block birch_log_wall = null;
@@ -109,6 +110,7 @@ public class WallInit {
 	public static final Block pumpkin_wall = null;
 	public static final Block netherrack_wall = null;
 	public static final Block soul_sand_wall = null;
+	public static final Block soul_soil_wall = null;
 	public static final Block glowstone_wall = null;
 	public static final Block carved_pumpkin_wall = null;
 	public static final Block jack_o_lantern_wall = null;
@@ -301,6 +303,7 @@ public class WallInit {
 		event.getRegistry().register(new OreWall(Block.Properties.from(Blocks.GOLD_ORE)).setRegistryName("gold_ore_wall"));
 		event.getRegistry().register(new OreWall(Block.Properties.from(Blocks.IRON_ORE)).setRegistryName("iron_ore_wall"));
 		event.getRegistry().register(new OreWall(Block.Properties.from(Blocks.COAL_ORE)).setRegistryName("coal_ore_wall"));
+		event.getRegistry().register(new OreWall(Block.Properties.from(Blocks.NETHER_GOLD_ORE)).setRegistryName("nether_gold_ore_wall"));
 		event.getRegistry().register(new LogWall(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("oak_log_wall"));
 		event.getRegistry().register(new LogWall(Block.Properties.create(Material.WOOD, MaterialColor.OBSIDIAN).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("spruce_log_wall"));
 		event.getRegistry().register(new LogWall(Block.Properties.create(Material.WOOD, MaterialColor.SAND).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("birch_log_wall"));
@@ -369,6 +372,7 @@ public class WallInit {
 		event.getRegistry().register(new PumpkinWall(Block.Properties.from(Blocks.PUMPKIN)).setRegistryName("pumpkin_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.NETHERRACK)).setRegistryName("netherrack_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.SOUL_SAND)).setRegistryName("soul_sand_wall"));
+		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.SOUL_SOIL)).setRegistryName("soul_soil_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.GLOWSTONE)).setRegistryName("glowstone_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.CARVED_PUMPKIN)).setRegistryName("carved_pumpkin_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.JACK_O_LANTERN)).setRegistryName("jack_o_lantern_wall"));
@@ -562,6 +566,7 @@ public class WallInit {
 		event.getRegistry().register(new BlockItem(gold_ore_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("gold_ore_wall"));
 		event.getRegistry().register(new BlockItem(iron_ore_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("iron_ore_wall"));
 		event.getRegistry().register(new BlockItem(coal_ore_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("coal_ore_wall"));
+		event.getRegistry().register(new BlockItem(nether_gold_ore_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("nether_gold_ore_wall"));
 		event.getRegistry().register(new BlockItem(oak_log_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("oak_log_wall"));
 		event.getRegistry().register(new BlockItem(spruce_log_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("spruce_log_wall"));
 		event.getRegistry().register(new BlockItem(birch_log_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("birch_log_wall"));
@@ -630,6 +635,7 @@ public class WallInit {
 		event.getRegistry().register(new BlockItem(pumpkin_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("pumpkin_wall"));
 		event.getRegistry().register(new BlockItem(netherrack_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("netherrack_wall"));
 		event.getRegistry().register(new BlockItem(soul_sand_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("soul_sand_wall"));
+		event.getRegistry().register(new BlockItem(soul_soil_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("soul_soil_wall"));
 		event.getRegistry().register(new BlockItem(glowstone_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("glowstone_wall"));
 		event.getRegistry().register(new BlockItem(carved_pumpkin_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("carved_pumpkin_wall"));
 		event.getRegistry().register(new BlockItem(jack_o_lantern_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("jack_o_lantern_wall"));

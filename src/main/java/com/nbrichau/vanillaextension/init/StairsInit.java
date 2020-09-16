@@ -29,6 +29,7 @@ public class StairsInit {
 	public static final Block gold_ore_stairs = null;
 	public static final Block iron_ore_stairs = null;
 	public static final Block coal_ore_stairs = null;
+	public static final Block nether_gold_ore_stairs = null;
 	public static final Block oak_log_stairs = null;
 	public static final Block spruce_log_stairs = null;
 	public static final Block birch_log_stairs = null;
@@ -97,6 +98,7 @@ public class StairsInit {
 	public static final Block pumpkin_stairs = null;
 	public static final Block netherrack_stairs = null;
 	public static final Block soul_sand_stairs = null;
+	public static final Block soul_soil_stairs = null;
 	public static final Block glowstone_stairs = null;
 	public static final Block carved_pumpkin_stairs = null;
 	public static final Block jack_o_lantern_stairs = null;
@@ -271,6 +273,7 @@ public class StairsInit {
 		event.getRegistry().register(new OreStairs(Blocks.GOLD_ORE::getDefaultState, Block.Properties.from(Blocks.GOLD_ORE)).setRegistryName("gold_ore_stairs"));
 		event.getRegistry().register(new OreStairs(Blocks.IRON_ORE::getDefaultState, Block.Properties.from(Blocks.IRON_ORE)).setRegistryName("iron_ore_stairs"));
 		event.getRegistry().register(new OreStairs(Blocks.COAL_ORE::getDefaultState, Block.Properties.from(Blocks.COAL_ORE)).setRegistryName("coal_ore_stairs"));
+		event.getRegistry().register(new OreStairs(Blocks.NETHER_GOLD_ORE::getDefaultState, Block.Properties.from(Blocks.NETHER_GOLD_ORE)).setRegistryName("nether_gold_ore_stairs"));
 		event.getRegistry().register(new LogStairs(Blocks.OAK_LOG::getDefaultState, Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("oak_log_stairs"));
 		event.getRegistry().register(new LogStairs(Blocks.SPRUCE_LOG::getDefaultState, Block.Properties.create(Material.WOOD, MaterialColor.OBSIDIAN).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("spruce_log_stairs"));
 		event.getRegistry().register(new LogStairs(Blocks.BIRCH_LOG::getDefaultState, Block.Properties.create(Material.WOOD, MaterialColor.SAND).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("birch_log_stairs"));
@@ -339,6 +342,7 @@ public class StairsInit {
 		event.getRegistry().register(new PumpkinStairs(Blocks.PUMPKIN::getDefaultState, Block.Properties.from(Blocks.PUMPKIN)).setRegistryName("pumpkin_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.NETHERRACK::getDefaultState, Block.Properties.from(Blocks.NETHERRACK)).setRegistryName("netherrack_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.SOUL_SAND::getDefaultState, Block.Properties.create(Material.SAND, MaterialColor.BROWN).hardnessAndResistance(0.5F).speedFactor(0.4F).sound(SoundType.SAND)).setRegistryName("soul_sand_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.SOUL_SOIL::getDefaultState, Block.Properties.from(Blocks.SOUL_SOIL)).setRegistryName("soul_soil_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.GLOWSTONE::getDefaultState, Block.Properties.from(Blocks.GLOWSTONE)).setRegistryName("glowstone_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.CARVED_PUMPKIN::getDefaultState, Block.Properties.from(Blocks.CARVED_PUMPKIN)).setRegistryName("carved_pumpkin_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.JACK_O_LANTERN::getDefaultState, Block.Properties.from(Blocks.JACK_O_LANTERN)).setRegistryName("jack_o_lantern_stairs"));
@@ -514,6 +518,7 @@ public class StairsInit {
 		event.getRegistry().register(new BlockItem(gold_ore_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("gold_ore_stairs"));
 		event.getRegistry().register(new BlockItem(iron_ore_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("iron_ore_stairs"));
 		event.getRegistry().register(new BlockItem(coal_ore_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("coal_ore_stairs"));
+		event.getRegistry().register(new BlockItem(nether_gold_ore_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("nether_gold_ore_stairs"));
 		event.getRegistry().register(new BlockItem(oak_log_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("oak_log_stairs"));
 		event.getRegistry().register(new BlockItem(spruce_log_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("spruce_log_stairs"));
 		event.getRegistry().register(new BlockItem(birch_log_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("birch_log_stairs"));
@@ -582,6 +587,7 @@ public class StairsInit {
 		event.getRegistry().register(new BlockItem(pumpkin_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("pumpkin_stairs"));
 		event.getRegistry().register(new BlockItem(netherrack_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("netherrack_stairs"));
 		event.getRegistry().register(new BlockItem(soul_sand_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("soul_sand_stairs"));
+		event.getRegistry().register(new BlockItem(soul_soil_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("soul_soil_stairs"));
 		event.getRegistry().register(new BlockItem(glowstone_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("glowstone_stairs"));
 		event.getRegistry().register(new BlockItem(carved_pumpkin_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("carved_pumpkin_stairs"));
 		event.getRegistry().register(new BlockItem(jack_o_lantern_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("jack_o_lantern_stairs"));

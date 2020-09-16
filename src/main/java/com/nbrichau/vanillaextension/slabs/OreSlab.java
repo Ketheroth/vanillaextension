@@ -24,10 +24,9 @@ public class OreSlab extends SlabBlock {
 			return MathHelper.nextInt(rand, 1, 3);
 		} else if (this == SlabInit.nether_quartz_ore_slab) {
 			return MathHelper.nextInt(rand, 1, 3);
-		}/* else {
+		} else {
 			return this == SlabInit.nether_gold_ore_slab ? MathHelper.nextInt(rand, 0, 1) : 0;
-		}*/
-		return 0;
+		}
 	}
 
 	@Override

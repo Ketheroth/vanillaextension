@@ -24,10 +24,9 @@ public class OreFence extends FenceBlock {
 			return MathHelper.nextInt(rand, 2, 5);
 		} else if (this == FenceInit.nether_quartz_ore_fence) {
 			return MathHelper.nextInt(rand, 2, 5);
-		}/* else {
+		} else {
 			return this == FenceInit.nether_gold_ore_fence ? MathHelper.nextInt(rand, 0, 1) : 0;
-		}*/
-		return 0;
+		}
 	}
 
 	@Override

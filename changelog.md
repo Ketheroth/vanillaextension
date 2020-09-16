@@ -5,7 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 ## Added
-- Sand and Gravel blocks are affected by gravity.
+- Sand and Gravel blocks are affected by gravity
+- Nether Gold Ore Slab, Stairs, Fence and Wall
+- Soul Soil Slab, Stairs, Fence and Wall
 - Netherrack blocks can be smelted to obtain nether brick
 
 ## Changed

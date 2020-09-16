@@ -26,10 +26,9 @@ public class OreStairs extends StairsBlock {
 			return MathHelper.nextInt(rand, 2, 5);
 		} else if (this == StairsInit.nether_quartz_ore_stairs) {
 			return MathHelper.nextInt(rand, 2, 5);
-		}/* else {
+		} else {
 			return this == StairsInit.nether_gold_ore_stairs ? MathHelper.nextInt(rand, 0, 1) : 0;
-		}*/
-		return 0;
+		}
 	}
 
 	@Override

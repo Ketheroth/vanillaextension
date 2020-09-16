@@ -39,7 +39,7 @@ public class TrapdoorInit {
 	public static final Block gold_ore_trapdoor = null;
 	public static final Block iron_ore_trapdoor = null;
 	public static final Block coal_ore_trapdoor = null;
-	public static final Block nether_gold_ore_trapdoor = null;// TODO: 19/08/2020 others nether_gold_ore type
+	public static final Block nether_gold_ore_trapdoor = null;
 	public static final Block oak_log_trapdoor = null;
 	public static final Block spruce_log_trapdoor = null;
 	public static final Block birch_log_trapdoor = null;
@@ -110,7 +110,7 @@ public class TrapdoorInit {
 	public static final Block pumpkin_trapdoor = null;
 	public static final Block netherrack_trapdoor = null;
 	public static final Block soul_sand_trapdoor = null;
-	public static final Block soul_soil_trapdoor = null;// TODO: 19/08/2020 others soul_soil type
+	public static final Block soul_soil_trapdoor = null;
 	public static final Block basalt_trapdoor = null;
 	public static final Block polished_basalt_trapdoor = null;
 	public static final Block glowstone_trapdoor = null;
@@ -303,7 +303,7 @@ public class TrapdoorInit {
 		event.getRegistry().register(new OreTrapdoor(Block.Properties.from(Blocks.GOLD_ORE)).setRegistryName("gold_ore_trapdoor"));
 		event.getRegistry().register(new OreTrapdoor(Block.Properties.from(Blocks.IRON_ORE)).setRegistryName("iron_ore_trapdoor"));
 		event.getRegistry().register(new OreTrapdoor(Block.Properties.from(Blocks.COAL_ORE)).setRegistryName("coal_ore_trapdoor"));
-		event.getRegistry().register(new OreTrapdoor(Block.Properties.from(Blocks.NETHER_GOLD_ORE)).setRegistryName("nether_gold_ore_trapdoor"));// TODO: 19/08/2020 others nether_gold_ore type
+		event.getRegistry().register(new OreTrapdoor(Block.Properties.from(Blocks.NETHER_GOLD_ORE)).setRegistryName("nether_gold_ore_trapdoor"));
 		event.getRegistry().register(new LogTrapdoor(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)).setRegistryName("oak_log_trapdoor"));
 		event.getRegistry().register(new LogTrapdoor(Block.Properties.create(Material.WOOD, MaterialColor.OBSIDIAN)).setRegistryName("spruce_log_trapdoor"));
 		event.getRegistry().register(new LogTrapdoor(Block.Properties.create(Material.WOOD, MaterialColor.SAND)).setRegistryName("birch_log_trapdoor"));
@@ -374,7 +374,7 @@ public class TrapdoorInit {
 		event.getRegistry().register(new PumpkinTrapdoor(Block.Properties.from(Blocks.PUMPKIN)).setRegistryName("pumpkin_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.NETHERRACK)).setRegistryName("netherrack_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.create(Material.SAND, MaterialColor.BROWN).hardnessAndResistance(0.5F).speedFactor(0.4F).sound(SoundType.SAND)).setRegistryName("soul_sand_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.SOUL_SOIL)).setRegistryName("soul_soil_trapdoor"));// TODO: 19/08/2020 others soul_soil type
+		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.SOUL_SOIL)).setRegistryName("soul_soil_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.BASALT)).setRegistryName("basalt_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.POLISHED_BASALT)).setRegistryName("polished_basalt_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.GLOWSTONE)).setRegistryName("glowstone_trapdoor"));
@@ -567,7 +567,7 @@ public class TrapdoorInit {
 		event.getRegistry().register(new BlockItem(gold_ore_trapdoor, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("gold_ore_trapdoor"));
 		event.getRegistry().register(new BlockItem(iron_ore_trapdoor, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("iron_ore_trapdoor"));
 		event.getRegistry().register(new BlockItem(coal_ore_trapdoor, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("coal_ore_trapdoor"));
-		event.getRegistry().register(new BlockItem(nether_gold_ore_trapdoor, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("nether_gold_ore_trapdoor"));// TODO: 19/08/2020 others nether_gold_ore type
+		event.getRegistry().register(new BlockItem(nether_gold_ore_trapdoor, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("nether_gold_ore_trapdoor"));
 		event.getRegistry().register(new BlockItem(oak_log_trapdoor, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("oak_log_trapdoor"));
 		event.getRegistry().register(new BlockItem(spruce_log_trapdoor, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("spruce_log_trapdoor"));
 		event.getRegistry().register(new BlockItem(birch_log_trapdoor, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("birch_log_trapdoor"));
@@ -638,7 +638,7 @@ public class TrapdoorInit {
 		event.getRegistry().register(new BlockItem(pumpkin_trapdoor, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("pumpkin_trapdoor"));
 		event.getRegistry().register(new BlockItem(netherrack_trapdoor, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("netherrack_trapdoor"));
 		event.getRegistry().register(new BlockItem(soul_sand_trapdoor, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("soul_sand_trapdoor"));
-		event.getRegistry().register(new BlockItem(soul_soil_trapdoor, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("soul_soil_trapdoor"));// TODO: 19/08/2020 others soul_soil type
+		event.getRegistry().register(new BlockItem(soul_soil_trapdoor, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("soul_soil_trapdoor"));
 		event.getRegistry().register(new BlockItem(basalt_trapdoor, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("basalt_trapdoor"));
 		event.getRegistry().register(new BlockItem(polished_basalt_trapdoor, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("polished_basalt_trapdoor"));
 		event.getRegistry().register(new BlockItem(glowstone_trapdoor, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("glowstone_trapdoor"));

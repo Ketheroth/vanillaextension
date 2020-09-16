@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:soul_soil"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:soul_soil_fence",
+		"count": 3
+	}
+}
