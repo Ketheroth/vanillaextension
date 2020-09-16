@@ -295,9 +295,9 @@ public class WallInit {
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.ACACIA_PLANKS)).setRegistryName("acacia_plank_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.DARK_OAK_PLANKS)).setRegistryName("dark_oak_plank_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.BEDROCK)).setRegistryName("bedrock_wall"));
-		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.SAND)).setRegistryName("sand_wall"));
-		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.RED_SAND)).setRegistryName("red_sand_wall"));
-		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.GRAVEL)).setRegistryName("gravel_wall"));
+		event.getRegistry().register(new FallingWall(Block.Properties.from(Blocks.SAND)).setRegistryName("sand_wall"));
+		event.getRegistry().register(new FallingWall(Block.Properties.from(Blocks.RED_SAND)).setRegistryName("red_sand_wall"));
+		event.getRegistry().register(new FallingWall(Block.Properties.from(Blocks.GRAVEL)).setRegistryName("gravel_wall"));
 		event.getRegistry().register(new OreWall(Block.Properties.from(Blocks.GOLD_ORE)).setRegistryName("gold_ore_wall"));
 		event.getRegistry().register(new OreWall(Block.Properties.from(Blocks.IRON_ORE)).setRegistryName("iron_ore_wall"));
 		event.getRegistry().register(new OreWall(Block.Properties.from(Blocks.COAL_ORE)).setRegistryName("coal_ore_wall"));

@@ -265,9 +265,9 @@ public class SlabInit {
 		event.getRegistry().register(new CoarseDirtSlab(Block.Properties.from(Blocks.COARSE_DIRT)).setRegistryName("coarse_dirt_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.PODZOL)).setRegistryName("podzol_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.BEDROCK)).setRegistryName("bedrock_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.SAND)).setRegistryName("sand_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.RED_SAND)).setRegistryName("red_sand_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.GRAVEL)).setRegistryName("gravel_slab"));
+		event.getRegistry().register(new FallingSlab(Block.Properties.from(Blocks.SAND)).setRegistryName("sand_slab"));
+		event.getRegistry().register(new FallingSlab(Block.Properties.from(Blocks.RED_SAND)).setRegistryName("red_sand_slab"));
+		event.getRegistry().register(new FallingSlab(Block.Properties.from(Blocks.GRAVEL)).setRegistryName("gravel_slab"));
 		event.getRegistry().register(new OreSlab(Block.Properties.from(Blocks.GOLD_ORE)).setRegistryName("gold_ore_slab"));
 		event.getRegistry().register(new OreSlab(Block.Properties.from(Blocks.IRON_ORE)).setRegistryName("iron_ore_slab"));
 		event.getRegistry().register(new OreSlab(Block.Properties.from(Blocks.COAL_ORE)).setRegistryName("coal_ore_slab"));

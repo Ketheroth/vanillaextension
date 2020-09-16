@@ -301,9 +301,9 @@ public class FenceInit {
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.PODZOL)).setRegistryName("podzol_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.COBBLESTONE)).setRegistryName("cobblestone_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.BEDROCK)).setRegistryName("bedrock_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.SAND)).setRegistryName("sand_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.RED_SAND)).setRegistryName("red_sand_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.GRAVEL)).setRegistryName("gravel_fence"));
+		event.getRegistry().register(new FallingFence(Block.Properties.from(Blocks.SAND)).setRegistryName("sand_fence"));
+		event.getRegistry().register(new FallingFence(Block.Properties.from(Blocks.RED_SAND)).setRegistryName("red_sand_fence"));
+		event.getRegistry().register(new FallingFence(Block.Properties.from(Blocks.GRAVEL)).setRegistryName("gravel_fence"));
 		event.getRegistry().register(new OreFence(Block.Properties.from(Blocks.GOLD_ORE)).setRegistryName("gold_ore_fence"));
 		event.getRegistry().register(new OreFence(Block.Properties.from(Blocks.IRON_ORE)).setRegistryName("iron_ore_fence"));
 		event.getRegistry().register(new OreFence(Block.Properties.from(Blocks.COAL_ORE)).setRegistryName("coal_ore_fence"));

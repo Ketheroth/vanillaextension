@@ -297,9 +297,9 @@ public class TrapdoorInit {
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.PODZOL)).setRegistryName("podzol_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.COBBLESTONE)).setRegistryName("cobblestone_trapdoor"));
 		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.BEDROCK)).setRegistryName("bedrock_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.SAND)).setRegistryName("sand_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.RED_SAND)).setRegistryName("red_sand_trapdoor"));
-		event.getRegistry().register(new TrapDoorBlock(Block.Properties.from(Blocks.GRAVEL)).setRegistryName("gravel_trapdoor"));
+		event.getRegistry().register(new FallingTrapdoor(Block.Properties.from(Blocks.SAND)).setRegistryName("sand_trapdoor"));
+		event.getRegistry().register(new FallingTrapdoor(Block.Properties.from(Blocks.RED_SAND)).setRegistryName("red_sand_trapdoor"));
+		event.getRegistry().register(new FallingTrapdoor(Block.Properties.from(Blocks.GRAVEL)).setRegistryName("gravel_trapdoor"));
 		event.getRegistry().register(new OreTrapdoor(Block.Properties.from(Blocks.GOLD_ORE)).setRegistryName("gold_ore_trapdoor"));
 		event.getRegistry().register(new OreTrapdoor(Block.Properties.from(Blocks.IRON_ORE)).setRegistryName("iron_ore_trapdoor"));
 		event.getRegistry().register(new OreTrapdoor(Block.Properties.from(Blocks.COAL_ORE)).setRegistryName("coal_ore_trapdoor"));

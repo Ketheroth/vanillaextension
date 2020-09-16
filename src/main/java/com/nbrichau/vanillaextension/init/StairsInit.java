@@ -265,9 +265,9 @@ public class StairsInit {
 		event.getRegistry().register(new CoarseDirtStairs(Blocks.COARSE_DIRT::getDefaultState, Block.Properties.from(Blocks.COARSE_DIRT)).setRegistryName("coarse_dirt_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.PODZOL::getDefaultState, Block.Properties.from(Blocks.PODZOL)).setRegistryName("podzol_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.BEDROCK::getDefaultState, Block.Properties.from(Blocks.BEDROCK)).setRegistryName("bedrock_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.SAND::getDefaultState, Block.Properties.from(Blocks.SAND)).setRegistryName("sand_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.RED_SAND::getDefaultState, Block.Properties.from(Blocks.RED_SAND)).setRegistryName("red_sand_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.GRAVEL::getDefaultState, Block.Properties.from(Blocks.GRAVEL)).setRegistryName("gravel_stairs"));
+		event.getRegistry().register(new FallingStairs(Block.Properties.from(Blocks.SAND)).setRegistryName("sand_stairs"));
+		event.getRegistry().register(new FallingStairs(Block.Properties.from(Blocks.RED_SAND)).setRegistryName("red_sand_stairs"));
+		event.getRegistry().register(new FallingStairs(Block.Properties.from(Blocks.GRAVEL)).setRegistryName("gravel_stairs"));
 		event.getRegistry().register(new OreStairs(Blocks.GOLD_ORE::getDefaultState, Block.Properties.from(Blocks.GOLD_ORE)).setRegistryName("gold_ore_stairs"));
 		event.getRegistry().register(new OreStairs(Blocks.IRON_ORE::getDefaultState, Block.Properties.from(Blocks.IRON_ORE)).setRegistryName("iron_ore_stairs"));
 		event.getRegistry().register(new OreStairs(Blocks.COAL_ORE::getDefaultState, Block.Properties.from(Blocks.COAL_ORE)).setRegistryName("coal_ore_stairs"));

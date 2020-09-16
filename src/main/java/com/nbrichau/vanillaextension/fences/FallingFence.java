@@ -16,11 +16,7 @@ import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.FluidTags;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Util;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -32,7 +28,8 @@ import net.minecraft.world.World;
 
 import java.util.Map;
 
-public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLoggable{
+public class FallingFence extends FallingBlock {
+
 	public static final BooleanProperty NORTH = SixWayBlock.NORTH;
 	public static final BooleanProperty EAST = SixWayBlock.EAST;
 	public static final BooleanProperty SOUTH = SixWayBlock.SOUTH;
@@ -46,19 +43,16 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 	private final Object2IntMap<BlockState> field_223008_i = new Object2IntOpenHashMap<>();
 	private final VoxelShape[] renderShapes;
 
-	private final BlockState solidifiedState;
-
-	public ConcretePowderFence(Block solidified, Properties properties) {
-		super(solidified, properties);
-		this.setDefaultState(this.stateContainer.getBaseState().with(NORTH, Boolean.FALSE).with(EAST, Boolean.FALSE).with(SOUTH, Boolean.FALSE).with(WEST, Boolean.FALSE).with(WATERLOGGED, Boolean.FALSE));
-		this.renderShapes = this.makeShapes(2.0F, 1.0F, 16.0F, 6.0F, 15.0F);
+	public FallingFence(Properties properties) {
+		super(properties);
 		this.collisionShapes = this.makeShapes(2.0F, 2.0F, 24.0F, 0.0F, 24.0F);
 		this.shapes = this.makeShapes(2.0F, 2.0F, 16.0F, 0.0F, 16.0F);
 
 		for (BlockState blockstate : this.stateContainer.getValidStates()) {
 			this.getIndex(blockstate);
 		}
-		this.solidifiedState = solidified.getDefaultState();
+		this.setDefaultState(this.stateContainer.getBaseState().with(NORTH, Boolean.FALSE).with(EAST, Boolean.FALSE).with(SOUTH, Boolean.FALSE).with(WEST, Boolean.FALSE).with(WATERLOGGED, Boolean.FALSE));
+		this.renderShapes = this.makeShapes(2.0F, 1.0F, 16.0F, 6.0F, 15.0F);
 	}
 
 	protected VoxelShape[] makeShapes(float nodeWidth, float extensionWidth, float p_196408_3_, float p_196408_4_, float p_196408_5_) {
@@ -80,6 +74,10 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 		}
 
 		return avoxelshape;
+	}
+
+	private static int getMask(Direction facing) {
+		return 1 << facing.getHorizontalIndex();
 	}
 
 	protected int getIndex(BlockState state) {
@@ -105,10 +103,6 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 		});
 	}
 
-	private static int getMask(Direction facing) {
-		return 1 << facing.getHorizontalIndex();
-	}
-
 	@Override
 	public VoxelShape getRenderShape(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		return this.renderShapes[this.getIndex(state)];
@@ -120,8 +114,33 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 	}
 
 	@Override
+	public boolean propagatesSkylightDown(BlockState state, IBlockReader reader, BlockPos pos) {
+		return !state.get(WATERLOGGED);
+	}
+
+	@Override
+	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+		return this.shapes[this.getIndex(state)];
+	}
+
+	@Override
+	public VoxelShape getCollisionShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+		return this.collisionShapes[this.getIndex(state)];
+	}
+
+	@Override
 	public boolean allowsMovement(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {
 		return false;
+	}
+
+	@Override
+	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+		if (worldIn.isRemote) {
+			ItemStack itemstack = player.getHeldItem(handIn);
+			return itemstack.getItem() == Items.LEAD ? ActionResultType.SUCCESS : ActionResultType.PASS;
+		} else {
+			return LeadItem.bindPlayerMobs(player, worldIn, pos);
+		}
 	}
 
 	public boolean canConnect(BlockState state, boolean isSideSolid, Direction direction) {
@@ -136,104 +155,81 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 	}
 
 	@Override
-	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-		if (worldIn.isRemote) {
-			ItemStack itemstack = player.getHeldItem(handIn);
-			return itemstack.getItem() == Items.LEAD ? ActionResultType.SUCCESS : ActionResultType.PASS;
-		} else {
-			return LeadItem.bindPlayerMobs(player, worldIn, pos);
-		}
-	}
-
-	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
 		IBlockReader iblockreader = context.getWorld();
 		BlockPos blockpos = context.getPos();
-		BlockState blockstate = iblockreader.getBlockState(blockpos);
 		FluidState fluidstate = context.getWorld().getFluidState(context.getPos());
 		BlockPos blockpos1 = blockpos.north();
 		BlockPos blockpos2 = blockpos.east();
 		BlockPos blockpos3 = blockpos.south();
 		BlockPos blockpos4 = blockpos.west();
-		BlockState blockstate1 = iblockreader.getBlockState(blockpos1);
-		BlockState blockstate2 = iblockreader.getBlockState(blockpos2);
-		BlockState blockstate3 = iblockreader.getBlockState(blockpos3);
-		BlockState blockstate4 = iblockreader.getBlockState(blockpos4);
-		BlockState finalState = shouldSolidify(iblockreader, blockpos, blockstate) ? this.solidifiedState : this.getDefaultState();
-		return finalState.with(NORTH, this.canConnect(blockstate1, blockstate1.isSolidSide(iblockreader, blockpos1, Direction.SOUTH), Direction.SOUTH))
-			.with(EAST, this.canConnect(blockstate2, blockstate2.isSolidSide(iblockreader, blockpos2, Direction.WEST), Direction.WEST))
-			.with(SOUTH, this.canConnect(blockstate3, blockstate3.isSolidSide(iblockreader, blockpos3, Direction.NORTH), Direction.NORTH))
-			.with(WEST, this.canConnect(blockstate4, blockstate4.isSolidSide(iblockreader, blockpos4, Direction.EAST), Direction.EAST))
-			.with(WATERLOGGED, fluidstate.getFluid() == Fluids.WATER);
+		BlockState blockstate = iblockreader.getBlockState(blockpos1);
+		BlockState blockstate1 = iblockreader.getBlockState(blockpos2);
+		BlockState blockstate2 = iblockreader.getBlockState(blockpos3);
+		BlockState blockstate3 = iblockreader.getBlockState(blockpos4);
+		return super.getStateForPlacement(context).with(NORTH, this.canConnect(blockstate, blockstate.isSolidSide(iblockreader, blockpos1, Direction.SOUTH), Direction.SOUTH)).with(EAST, this.canConnect(blockstate1, blockstate1.isSolidSide(iblockreader, blockpos2, Direction.WEST), Direction.WEST)).with(SOUTH, this.canConnect(blockstate2, blockstate2.isSolidSide(iblockreader, blockpos3, Direction.NORTH), Direction.NORTH)).with(WEST, this.canConnect(blockstate3, blockstate3.isSolidSide(iblockreader, blockpos4, Direction.EAST), Direction.EAST)).with(WATERLOGGED, fluidstate.getFluid() == Fluids.WATER);
 	}
 
-	/**
-	 * Update the provided state given the provided neighbor facing and neighbor state, returning a new state.
-	 * For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately
-	 * returns its solidified counterpart.
-	 * Note that this method should ideally consider only the specific face passed in.
-	 */
 	@Override
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+		worldIn.getPendingBlockTicks().scheduleTick(currentPos, this, this.getFallDelay());
+
 		if (stateIn.get(WATERLOGGED)) {
 			worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
 		}
-		BlockState state = isTouchingLiquid(worldIn, currentPos) ? this.solidifiedState.with(NORTH, stateIn.get(NORTH)).with(EAST, stateIn.get(EAST)).with(SOUTH, stateIn.get(SOUTH)).with(WEST, stateIn.get(WEST)).with(WATERLOGGED, stateIn.get(WATERLOGGED)) : stateIn;
-		return facing.getAxis().getPlane() == Direction.Plane.HORIZONTAL ?
-			state.with(FACING_TO_PROPERTY_MAP.get(facing), this.canConnect(facingState, facingState.isSolidSide(worldIn, facingPos, facing.getOpposite()), facing.getOpposite())) :
-			super.updatePostPlacement(state, facing, facingState, worldIn, currentPos, facingPos);
+
+		return facing.getAxis().getPlane() == Direction.Plane.HORIZONTAL ? stateIn.with(FACING_TO_PROPERTY_MAP.get(facing), this.canConnect(facingState, facingState.isSolidSide(worldIn, facingPos, facing.getOpposite()), facing.getOpposite())) : super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 
+	@Override
+	public void onEndFalling(World worldIn, BlockPos pos, BlockState fallingState, BlockState hitState, FallingBlockEntity fallingBlock) {
+		FluidState fluidstate = worldIn.getFluidState(pos);
+		BlockPos blockpos1 = pos.north();
+		BlockPos blockpos2 = pos.east();
+		BlockPos blockpos3 = pos.south();
+		BlockPos blockpos4 = pos.west();
+		BlockState blockstate = ((IBlockReader) worldIn).getBlockState(blockpos1);
+		BlockState blockstate1 = ((IBlockReader) worldIn).getBlockState(blockpos2);
+		BlockState blockstate2 = ((IBlockReader) worldIn).getBlockState(blockpos3);
+		BlockState blockstate3 = ((IBlockReader) worldIn).getBlockState(blockpos4);
+		BlockState bs =this.getDefaultState().with(NORTH, this.canConnect(blockstate, blockstate.isSolidSide(worldIn, blockpos1, Direction.SOUTH), Direction.SOUTH)).with(EAST, this.canConnect(blockstate1, blockstate1.isSolidSide(worldIn, blockpos2, Direction.WEST), Direction.WEST)).with(SOUTH, this.canConnect(blockstate2, blockstate2.isSolidSide(worldIn, blockpos3, Direction.NORTH), Direction.NORTH)).with(WEST, this.canConnect(blockstate3, blockstate3.isSolidSide(worldIn, blockpos4, Direction.EAST), Direction.EAST)).with(WATERLOGGED, fluidstate.getFluid() == Fluids.WATER);
+		worldIn.setBlockState(pos, bs);
+	}
+
+	@Override
 	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
 		builder.add(NORTH, EAST, WEST, SOUTH, WATERLOGGED);
 	}
 
 	@Override
-	public void onEndFalling(World worldIn, BlockPos pos, BlockState fallingState, BlockState hitState, FallingBlockEntity fallingBlock) {
-		if (shouldSolidify(worldIn, pos, hitState)) {
-			FluidState fluidstate = worldIn.getFluidState(pos);
-			BlockPos blockpos1 = pos.north();
-			BlockPos blockpos2 = pos.east();
-			BlockPos blockpos3 = pos.south();
-			BlockPos blockpos4 = pos.west();
-			BlockState blockstate1 = ((IBlockReader) worldIn).getBlockState(blockpos1);
-			BlockState blockstate2 = ((IBlockReader) worldIn).getBlockState(blockpos2);
-			BlockState blockstate3 = ((IBlockReader) worldIn).getBlockState(blockpos3);
-			BlockState blockstate4 = ((IBlockReader) worldIn).getBlockState(blockpos4);
-			BlockState bs =   this.solidifiedState
-				.with(NORTH, this.canConnect(blockstate1, blockstate1.isSolidSide(worldIn, blockpos1, Direction.SOUTH), Direction.SOUTH))
-				.with(EAST, this.canConnect(blockstate2, blockstate2.isSolidSide(worldIn, blockpos2, Direction.WEST), Direction.WEST))
-				.with(SOUTH, this.canConnect(blockstate3, blockstate3.isSolidSide(worldIn, blockpos3, Direction.NORTH), Direction.NORTH))
-				.with(WEST, this.canConnect(blockstate4, blockstate4.isSolidSide(worldIn, blockpos4, Direction.EAST), Direction.EAST))
-				.with(WATERLOGGED, fluidstate.getFluid() == Fluids.WATER);
+	public FluidState getFluidState(BlockState state) {
+		return state.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
+	}
 
-			worldIn.setBlockState(pos, bs);
+	@Override
+	public BlockState rotate(BlockState state, Rotation rot) {
+		switch (rot) {
+			case CLOCKWISE_180:
+				return state.with(NORTH, state.get(SOUTH)).with(EAST, state.get(WEST)).with(SOUTH, state.get(NORTH)).with(WEST, state.get(EAST));
+			case COUNTERCLOCKWISE_90:
+				return state.with(NORTH, state.get(EAST)).with(EAST, state.get(SOUTH)).with(SOUTH, state.get(WEST)).with(WEST, state.get(NORTH));
+			case CLOCKWISE_90:
+				return state.with(NORTH, state.get(WEST)).with(EAST, state.get(NORTH)).with(SOUTH, state.get(EAST)).with(WEST, state.get(SOUTH));
+			default:
+				return state;
 		}
 	}
 
-	private static boolean shouldSolidify(IBlockReader reader, BlockPos pos, BlockState state) {
-		return causesSolidify(state) || isTouchingLiquid(reader, pos);
-	}
-
-	private static boolean isTouchingLiquid(IBlockReader reader, BlockPos pos) {
-		boolean flag = false;
-		BlockPos.Mutable blockpos$mutable = pos.toMutable();
-		for (Direction direction : Direction.values()) {
-			BlockState blockstate = reader.getBlockState(blockpos$mutable);
-			if (direction != Direction.DOWN || causesSolidify(blockstate)) {
-				blockpos$mutable.func_239622_a_(pos, direction);
-				blockstate = reader.getBlockState(blockpos$mutable);
-				if (causesSolidify(blockstate) && !blockstate.isSolidSide(reader, pos, direction.getOpposite())) {
-					flag = true;
-					break;
-				}
-			}
+	@Override
+	public BlockState mirror(BlockState state, Mirror mirrorIn) {
+		switch (mirrorIn) {
+			case LEFT_RIGHT:
+				return state.with(NORTH, state.get(SOUTH)).with(SOUTH, state.get(NORTH));
+			case FRONT_BACK:
+				return state.with(EAST, state.get(WEST)).with(WEST, state.get(EAST));
+			default:
+				return super.mirror(state, mirrorIn);
 		}
-		return flag;
-	}
-
-	private static boolean causesSolidify(BlockState state) {
-		return state.getFluidState().isTagged(FluidTags.WATER);
 	}
 
 }
