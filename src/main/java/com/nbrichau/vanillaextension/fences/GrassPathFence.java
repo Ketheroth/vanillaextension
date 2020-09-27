@@ -66,9 +66,9 @@ public class GrassPathFence extends GrassPathBlock {
 		float f3 = 8.0F + extensionWidth;
 		VoxelShape voxelshape = Block.makeCuboidShape((double) f, 0.0D, (double) f, (double) f1, (double) nodeHeight, (double) f1);
 		VoxelShape voxelshape1 = Block.makeCuboidShape((double) f2, (double) extensionBottom, 0.0D, (double) f3, (double) extensionHeight, (double) f3);
-		VoxelShape voxelshape2 = Block.makeCuboidShape((double) f2, (double) extensionBottom, (double) f2, (double) f3, (double) extensionHeight, 15.0D);
+		VoxelShape voxelshape2 = Block.makeCuboidShape((double) f2, (double) extensionBottom, (double) f2, (double) f3, (double) extensionHeight, 16.0D);
 		VoxelShape voxelshape3 = Block.makeCuboidShape(0.0D, (double) extensionBottom, (double) f2, (double) f3, (double) extensionHeight, (double) f3);
-		VoxelShape voxelshape4 = Block.makeCuboidShape((double) f2, (double) extensionBottom, (double) f2, 15.0D, (double) extensionHeight, (double) f3);
+		VoxelShape voxelshape4 = Block.makeCuboidShape((double) f2, (double) extensionBottom, (double) f2, 16.0D, (double) extensionHeight, (double) f3);
 		VoxelShape voxelshape5 = VoxelShapes.or(voxelshape1, voxelshape4);
 		VoxelShape voxelshape6 = VoxelShapes.or(voxelshape2, voxelshape3);
 		VoxelShape[] avoxelshape = new VoxelShape[]{VoxelShapes.empty(), voxelshape2, voxelshape3, voxelshape6, voxelshape1, VoxelShapes.or(voxelshape2, voxelshape1), VoxelShapes.or(voxelshape3, voxelshape1), VoxelShapes.or(voxelshape6, voxelshape1), voxelshape4, VoxelShapes.or(voxelshape2, voxelshape4), VoxelShapes.or(voxelshape3, voxelshape4), VoxelShapes.or(voxelshape6, voxelshape4), voxelshape5, VoxelShapes.or(voxelshape2, voxelshape5), VoxelShapes.or(voxelshape3, voxelshape5), VoxelShapes.or(voxelshape6, voxelshape5)};

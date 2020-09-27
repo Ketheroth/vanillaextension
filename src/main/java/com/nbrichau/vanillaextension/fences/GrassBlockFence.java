@@ -5,12 +5,16 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.SnowBlock;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.util.Direction;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.IWorldReader;
+import net.minecraft.world.World;
 import net.minecraft.world.lighting.LightEngine;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.common.ToolType;
 
 import java.util.Random;
 
@@ -72,5 +76,20 @@ public class GrassBlockFence extends FenceBlock {
 				}
 			}
 		}
+	}
+
+	@Override
+	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+		super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
+		if (!worldIn.isRemote()) {
+			if (player.getHeldItem(handIn).getToolTypes().contains(ToolType.SHOVEL)) {
+				BlockState bs = FenceInit.grass_path_fence.getDefaultState().with(NORTH, state.get(NORTH)).with(EAST, state.get(EAST)).with(SOUTH, state.get(SOUTH)).with(WEST, state.get(WEST)).with(WATERLOGGED, state.get(WATERLOGGED));
+				worldIn.setBlockState(pos, bs, 11);
+				worldIn.playSound(null, pos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				player.getHeldItem(handIn).damageItem(1, player, item -> item.sendBreakAnimation(handIn));
+				return ActionResultType.SUCCESS;
+			}
+		}
+		return ActionResultType.PASS;
 	}
 }
