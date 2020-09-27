@@ -9,9 +9,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Nether Gold Ore Slab, Stairs, Fence and Wall
 - Soul Soil Slab, Stairs, Fence and Wall
 - Netherrack blocks can be smelted to obtain nether brick
+- Grass Path Fence
 
 ## Changed
 - Minimum Forge version : 1.16.3-34.0.2
+- log trapdoor can be opened with right-click
 
 ## [1.16.3-1.0.10]
 ## Changed

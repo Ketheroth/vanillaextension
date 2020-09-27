@@ -70,18 +70,11 @@ public class RedstoneOreStairs extends StairsBlock {
 
 	}
 
-	/**
-	 * Returns whether or not this block is of a type that needs random ticking. Called for ref-counting purposes by
-	 * ExtendedBlockStorage in order to broadly cull a chunk from the random chunk update list for efficiency's sake.
-	 */
 	@Override
 	public boolean ticksRandomly(BlockState state) {
 		return state.get(LIT);
 	}
 
-	/**
-	 * Performs a random tick on a block.
-	 */
 	@Override
 	public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 		if (state.get(LIT)) {
@@ -95,11 +88,6 @@ public class RedstoneOreStairs extends StairsBlock {
 		return silktouch == 0 ? 1 + RANDOM.nextInt(5) : 0;
 	}
 
-	/**
-	 * Called periodically clientside on blocks near the player to show effects (like furnace fire particles). Note that
-	 * this method is unrelated to {@link randomTick} and {@link #needsRandomTick}, and will always be called regardless
-	 * of whether the block can receive random update ticks
-	 */
 	@OnlyIn(Dist.CLIENT)
 	@Override
 	public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {

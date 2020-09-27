@@ -195,6 +195,7 @@ public class FenceInit {
 	public static final Block purpur_block_fence = null;
 	public static final Block purpur_pillar_fence = null;
 	public static final Block end_stone_brick_fence = null;
+	public static final Block grass_path_fence = null;
 	public static final Block magma_block_fence = null;
 	public static final Block nether_wart_block_fence = null;
 	public static final Block red_nether_brick_fence = null;
@@ -465,6 +466,7 @@ public class FenceInit {
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.PURPUR_BLOCK)).setRegistryName("purpur_block_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.PURPUR_PILLAR)).setRegistryName("purpur_pillar_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.END_STONE_BRICKS)).setRegistryName("end_stone_brick_fence"));
+		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.GRASS_PATH)).setRegistryName("grass_path_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.ROCK, MaterialColor.NETHERRACK).setLightLevel((state) -> 3).hardnessAndResistance(0.5F)).setRegistryName("magma_block_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.NETHER_WART_BLOCK)).setRegistryName("nether_wart_block_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.RED_NETHER_BRICKS)).setRegistryName("red_nether_brick_fence"));
@@ -736,6 +738,7 @@ public class FenceInit {
 		event.getRegistry().register(new BlockItem(purpur_block_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("purpur_block_fence"));
 		event.getRegistry().register(new BlockItem(purpur_pillar_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("purpur_pillar_fence"));
 		event.getRegistry().register(new BlockItem(end_stone_brick_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("end_stone_brick_fence"));
+		event.getRegistry().register(new BlockItem(grass_path_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("grass_path_fence"));
 		event.getRegistry().register(new BlockItem(magma_block_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("magma_block_fence"));
 		event.getRegistry().register(new BlockItem(nether_wart_block_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("nether_wart_block_fence"));
 		event.getRegistry().register(new BlockItem(red_nether_brick_fence, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("red_nether_brick_fence"));

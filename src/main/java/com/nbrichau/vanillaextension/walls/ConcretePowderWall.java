@@ -39,31 +39,31 @@ public class ConcretePowderWall extends ConcretePowderBlock implements IWaterLog
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	private final Map<BlockState, VoxelShape> stateToShapeMap;
 	private final Map<BlockState, VoxelShape> stateToCollisionShapeMap;
-	private static final VoxelShape field_235619_i_ = Block.makeCuboidShape(7.0D, 0.0D, 7.0D, 9.0D, 16.0D, 9.0D);
-	private static final VoxelShape field_235620_j_ = Block.makeCuboidShape(7.0D, 0.0D, 0.0D, 9.0D, 16.0D, 9.0D);
-	private static final VoxelShape field_235621_k_ = Block.makeCuboidShape(7.0D, 0.0D, 7.0D, 9.0D, 16.0D, 16.0D);
-	private static final VoxelShape field_235622_o_ = Block.makeCuboidShape(0.0D, 0.0D, 7.0D, 9.0D, 16.0D, 9.0D);
-	private static final VoxelShape field_235623_p_ = Block.makeCuboidShape(7.0D, 0.0D, 7.0D, 16.0D, 16.0D, 9.0D);
+	private static final VoxelShape CENTER_POLE_SHAPE = Block.makeCuboidShape(7.0D, 0.0D, 7.0D, 9.0D, 16.0D, 9.0D);
+	private static final VoxelShape WALL_CONNECTION_NORTH_SIDE_SHAPE = Block.makeCuboidShape(7.0D, 0.0D, 0.0D, 9.0D, 16.0D, 9.0D);
+	private static final VoxelShape WALL_CONNECTION_SOUTH_SIDE_SHAPE = Block.makeCuboidShape(7.0D, 0.0D, 7.0D, 9.0D, 16.0D, 16.0D);
+	private static final VoxelShape WALL_CONNECTION_WEST_SIDE_SHAPE = Block.makeCuboidShape(0.0D, 0.0D, 7.0D, 9.0D, 16.0D, 9.0D);
+	private static final VoxelShape WALL_CONNECTION_EAST_SIDE_SHAPE = Block.makeCuboidShape(7.0D, 0.0D, 7.0D, 16.0D, 16.0D, 9.0D);
 	private final BlockState solidifiedState;
 
 	public ConcretePowderWall(Block solidified, Properties properties) {
 		super(solidified, properties);
 		this.solidifiedState = solidified.getDefaultState();
 		this.setDefaultState(this.stateContainer.getBaseState().with(UP, Boolean.TRUE).with(WALL_HEIGHT_NORTH, WallHeight.NONE).with(WALL_HEIGHT_EAST, WallHeight.NONE).with(WALL_HEIGHT_SOUTH, WallHeight.NONE).with(WALL_HEIGHT_WEST, WallHeight.NONE).with(WATERLOGGED, Boolean.FALSE));
-		this.stateToShapeMap = this.func_235624_a_(4.0F, 3.0F, 16.0F, 0.0F, 14.0F, 16.0F);
-		this.stateToCollisionShapeMap = this.func_235624_a_(4.0F, 3.0F, 24.0F, 0.0F, 24.0F, 24.0F);
+		this.stateToShapeMap = this.makeShapes(4.0F, 3.0F, 16.0F, 0.0F, 14.0F, 16.0F);
+		this.stateToCollisionShapeMap = this.makeShapes(4.0F, 3.0F, 24.0F, 0.0F, 24.0F, 24.0F);
 
 	}
 
-	private static VoxelShape func_235631_a_(VoxelShape p_235631_0_, WallHeight p_235631_1_, VoxelShape p_235631_2_, VoxelShape p_235631_3_) {
-		if (p_235631_1_ == WallHeight.TALL) {
-			return VoxelShapes.or(p_235631_0_, p_235631_3_);
+	private static VoxelShape getHeightAlteredShape(VoxelShape baseShape, WallHeight height, VoxelShape lowShape, VoxelShape tallShape) {
+		if (height == WallHeight.TALL) {
+			return VoxelShapes.or(baseShape, tallShape);
 		} else {
-			return p_235631_1_ == WallHeight.LOW ? VoxelShapes.or(p_235631_0_, p_235631_2_) : p_235631_0_;
+			return height == WallHeight.LOW ? VoxelShapes.or(baseShape, lowShape) : baseShape;
 		}
 	}
 
-	private Map<BlockState, VoxelShape> func_235624_a_(float p_235624_1_, float p_235624_2_, float p_235624_3_, float p_235624_4_, float p_235624_5_, float p_235624_6_) {
+	private Map<BlockState, VoxelShape> makeShapes(float p_235624_1_, float p_235624_2_, float p_235624_3_, float p_235624_4_, float p_235624_5_, float p_235624_6_) {
 		float f = 8.0F - p_235624_1_;
 		float f1 = 8.0F + p_235624_1_;
 		float f2 = 8.0F - p_235624_2_;
@@ -85,10 +85,10 @@ public class ConcretePowderWall extends ConcretePowderBlock implements IWaterLog
 					for (WallHeight wallheight2 : WALL_HEIGHT_WEST.getAllowedValues()) {
 						for (WallHeight wallheight3 : WALL_HEIGHT_SOUTH.getAllowedValues()) {
 							VoxelShape voxelshape9 = VoxelShapes.empty();
-							voxelshape9 = func_235631_a_(voxelshape9, wallheight, voxelshape4, voxelshape8);
-							voxelshape9 = func_235631_a_(voxelshape9, wallheight2, voxelshape3, voxelshape7);
-							voxelshape9 = func_235631_a_(voxelshape9, wallheight1, voxelshape1, voxelshape5);
-							voxelshape9 = func_235631_a_(voxelshape9, wallheight3, voxelshape2, voxelshape6);
+							voxelshape9 = getHeightAlteredShape(voxelshape9, wallheight, voxelshape4, voxelshape8);
+							voxelshape9 = getHeightAlteredShape(voxelshape9, wallheight2, voxelshape3, voxelshape7);
+							voxelshape9 = getHeightAlteredShape(voxelshape9, wallheight1, voxelshape1, voxelshape5);
+							voxelshape9 = getHeightAlteredShape(voxelshape9, wallheight3, voxelshape2, voxelshape6);
 							if (obool) {
 								voxelshape9 = VoxelShapes.or(voxelshape9, voxelshape);
 							}
@@ -120,10 +120,10 @@ public class ConcretePowderWall extends ConcretePowderBlock implements IWaterLog
 		return false;
 	}
 
-	private boolean func_220113_a(BlockState state, boolean p_220113_2_, Direction direction) {
+	private boolean shouldConnect(BlockState state, boolean sideSolid, Direction direction) {
 		Block block = state.getBlock();
 		boolean flag = block instanceof FenceGateBlock && FenceGateBlock.isParallel(state, direction);
-		return state.isIn(BlockTags.WALLS) || !cannotAttach(block) && p_220113_2_ || block instanceof PaneBlock || flag;
+		return state.isIn(BlockTags.WALLS) || !cannotAttach(block) && sideSolid || block instanceof PaneBlock || flag;
 	}
 
 	@Override
@@ -144,10 +144,10 @@ public class ConcretePowderWall extends ConcretePowderBlock implements IWaterLog
 		BlockState blockstate3 = iworldreader.getBlockState(blockpos3);
 		BlockState blockstate4 = iworldreader.getBlockState(blockpos4);
 		BlockState blockstate5 = iworldreader.getBlockState(blockpos5);
-		boolean flag = this.func_220113_a(blockstate1, blockstate1.isSolidSide(iworldreader, blockpos1, Direction.SOUTH), Direction.SOUTH);
-		boolean flag1 = this.func_220113_a(blockstate2, blockstate2.isSolidSide(iworldreader, blockpos2, Direction.WEST), Direction.WEST);
-		boolean flag2 = this.func_220113_a(blockstate3, blockstate3.isSolidSide(iworldreader, blockpos3, Direction.NORTH), Direction.NORTH);
-		boolean flag3 = this.func_220113_a(blockstate4, blockstate4.isSolidSide(iworldreader, blockpos4, Direction.EAST), Direction.EAST);
+		boolean flag = this.shouldConnect(blockstate1, blockstate1.isSolidSide(iworldreader, blockpos1, Direction.SOUTH), Direction.SOUTH);
+		boolean flag1 = this.shouldConnect(blockstate2, blockstate2.isSolidSide(iworldreader, blockpos2, Direction.WEST), Direction.WEST);
+		boolean flag2 = this.shouldConnect(blockstate3, blockstate3.isSolidSide(iworldreader, blockpos3, Direction.NORTH), Direction.NORTH);
+		boolean flag3 = this.shouldConnect(blockstate4, blockstate4.isSolidSide(iworldreader, blockpos4, Direction.EAST), Direction.EAST);
 		BlockState blockstate6 = shouldSolidify(iblockreader, blockpos, blockstate) ?
 			this.solidifiedState.with(WATERLOGGED, fluidstate.getFluid() == Fluids.WATER) :
 			this.getDefaultState().with(WATERLOGGED, fluidstate.getFluid() == Fluids.WATER);
@@ -175,40 +175,40 @@ public class ConcretePowderWall extends ConcretePowderBlock implements IWaterLog
 
 	}
 
-	private static boolean func_235629_a_(BlockState p_235629_0_, Property<WallHeight> p_235629_1_) {
-		return p_235629_0_.get(p_235629_1_) != WallHeight.NONE;
+	private static boolean hasHeightForProperty(BlockState state, Property<WallHeight> heightProperty) {
+		return state.get(heightProperty) != WallHeight.NONE;
 	}
 
-	private static boolean func_235632_a_(VoxelShape p_235632_0_, VoxelShape p_235632_1_) {
-		return !VoxelShapes.compare(p_235632_1_, p_235632_0_, IBooleanFunction.ONLY_FIRST);
+	private static boolean compareShapes(VoxelShape shape1, VoxelShape shape2) {
+		return !VoxelShapes.compare(shape2, shape1, IBooleanFunction.ONLY_FIRST);
 	}
 
-	private BlockState func_235625_a_(IWorldReader p_235625_1_, BlockState p_235625_2_, BlockPos p_235625_3_, BlockState p_235625_4_) {
-		boolean flag = func_235629_a_(p_235625_2_, WALL_HEIGHT_NORTH);
-		boolean flag1 = func_235629_a_(p_235625_2_, WALL_HEIGHT_EAST);
-		boolean flag2 = func_235629_a_(p_235625_2_, WALL_HEIGHT_SOUTH);
-		boolean flag3 = func_235629_a_(p_235625_2_, WALL_HEIGHT_WEST);
-		return this.func_235626_a_(p_235625_1_, p_235625_2_, p_235625_3_, p_235625_4_, flag, flag1, flag2, flag3);
+	private BlockState func_235625_a_(IWorldReader reader, BlockState state1, BlockPos pos, BlockState state2) {
+		boolean flag = hasHeightForProperty(state1, WALL_HEIGHT_NORTH);
+		boolean flag1 = hasHeightForProperty(state1, WALL_HEIGHT_EAST);
+		boolean flag2 = hasHeightForProperty(state1, WALL_HEIGHT_SOUTH);
+		boolean flag3 = hasHeightForProperty(state1, WALL_HEIGHT_WEST);
+		return this.func_235626_a_(reader, state1, pos, state2, flag, flag1, flag2, flag3);
 	}
 
-	private BlockState func_235627_a_(IWorldReader p_235627_1_, BlockPos p_235627_2_, BlockState p_235627_3_, BlockPos p_235627_4_, BlockState p_235627_5_, Direction p_235627_6_) {
-		Direction direction = p_235627_6_.getOpposite();
-		boolean flag = p_235627_6_ == Direction.NORTH ? this.func_220113_a(p_235627_5_, p_235627_5_.isSolidSide(p_235627_1_, p_235627_4_, direction), direction) : func_235629_a_(p_235627_3_, WALL_HEIGHT_NORTH);
-		boolean flag1 = p_235627_6_ == Direction.EAST ? this.func_220113_a(p_235627_5_, p_235627_5_.isSolidSide(p_235627_1_, p_235627_4_, direction), direction) : func_235629_a_(p_235627_3_, WALL_HEIGHT_EAST);
-		boolean flag2 = p_235627_6_ == Direction.SOUTH ? this.func_220113_a(p_235627_5_, p_235627_5_.isSolidSide(p_235627_1_, p_235627_4_, direction), direction) : func_235629_a_(p_235627_3_, WALL_HEIGHT_SOUTH);
-		boolean flag3 = p_235627_6_ == Direction.WEST ? this.func_220113_a(p_235627_5_, p_235627_5_.isSolidSide(p_235627_1_, p_235627_4_, direction), direction) : func_235629_a_(p_235627_3_, WALL_HEIGHT_WEST);
+	private BlockState func_235627_a_(IWorldReader reader, BlockPos p_235627_2_, BlockState p_235627_3_, BlockPos p_235627_4_, BlockState p_235627_5_, Direction directionIn) {
+		Direction direction = directionIn.getOpposite();
+		boolean flag = directionIn == Direction.NORTH ? this.shouldConnect(p_235627_5_, p_235627_5_.isSolidSide(reader, p_235627_4_, direction), direction) : hasHeightForProperty(p_235627_3_, WALL_HEIGHT_NORTH);
+		boolean flag1 = directionIn == Direction.EAST ? this.shouldConnect(p_235627_5_, p_235627_5_.isSolidSide(reader, p_235627_4_, direction), direction) : hasHeightForProperty(p_235627_3_, WALL_HEIGHT_EAST);
+		boolean flag2 = directionIn == Direction.SOUTH ? this.shouldConnect(p_235627_5_, p_235627_5_.isSolidSide(reader, p_235627_4_, direction), direction) : hasHeightForProperty(p_235627_3_, WALL_HEIGHT_SOUTH);
+		boolean flag3 = directionIn == Direction.WEST ? this.shouldConnect(p_235627_5_, p_235627_5_.isSolidSide(reader, p_235627_4_, direction), direction) : hasHeightForProperty(p_235627_3_, WALL_HEIGHT_WEST);
 		BlockPos blockpos = p_235627_2_.up();
-		BlockState blockstate = p_235627_1_.getBlockState(blockpos);
-		return this.func_235626_a_(p_235627_1_, p_235627_3_, blockpos, blockstate, flag, flag1, flag2, flag3);
+		BlockState blockstate = reader.getBlockState(blockpos);
+		return this.func_235626_a_(reader, p_235627_3_, blockpos, blockstate, flag, flag1, flag2, flag3);
 	}
 
-	private BlockState func_235626_a_(IWorldReader p_235626_1_, BlockState p_235626_2_, BlockPos p_235626_3_, BlockState p_235626_4_, boolean p_235626_5_, boolean p_235626_6_, boolean p_235626_7_, boolean p_235626_8_) {
-		VoxelShape voxelshape = p_235626_4_.getCollisionShape(p_235626_1_, p_235626_3_).project(Direction.DOWN);
-		BlockState blockstate = this.func_235630_a_(p_235626_2_, p_235626_5_, p_235626_6_, p_235626_7_, p_235626_8_, voxelshape);
-		return blockstate.with(UP, this.func_235628_a_(blockstate, p_235626_4_, voxelshape));
+	private BlockState func_235626_a_(IWorldReader reader, BlockState state, BlockPos pos, BlockState collisionState, boolean connectedSouth, boolean connectedWest, boolean connectedNorth, boolean connectedEast) {
+		VoxelShape voxelshape = collisionState.getCollisionShape(reader, pos).project(Direction.DOWN);
+		BlockState blockstate = this.func_235630_a_(state, connectedSouth, connectedWest, connectedNorth, connectedEast, voxelshape);
+		return blockstate.with(UP, this.func_235628_a_(blockstate, collisionState, voxelshape));
 	}
 
-	private boolean func_235628_a_(BlockState p_235628_1_, BlockState p_235628_2_, VoxelShape p_235628_3_) {
+	private boolean func_235628_a_(BlockState p_235628_1_, BlockState p_235628_2_, VoxelShape shape) {
 		boolean flag = p_235628_2_.getBlock() instanceof WallBlock && p_235628_2_.get(UP);
 		if (flag) {
 			return true;
@@ -229,19 +229,19 @@ public class ConcretePowderWall extends ConcretePowderBlock implements IWaterLog
 				if (flag6) {
 					return false;
 				} else {
-					return p_235628_2_.getBlock().isIn(BlockTags.WALL_POST_OVERRIDE) || func_235632_a_(p_235628_3_, field_235619_i_);
+					return p_235628_2_.getBlock().isIn(BlockTags.WALL_POST_OVERRIDE) || compareShapes(shape, CENTER_POLE_SHAPE);
 				}
 			}
 		}
 	}
 
-	private BlockState func_235630_a_(BlockState p_235630_1_, boolean p_235630_2_, boolean p_235630_3_, boolean p_235630_4_, boolean p_235630_5_, VoxelShape p_235630_6_) {
-		return p_235630_1_.with(WALL_HEIGHT_NORTH, this.func_235633_a_(p_235630_2_, p_235630_6_, field_235620_j_)).with(WALL_HEIGHT_EAST, this.func_235633_a_(p_235630_3_, p_235630_6_, field_235623_p_)).with(WALL_HEIGHT_SOUTH, this.func_235633_a_(p_235630_4_, p_235630_6_, field_235621_k_)).with(WALL_HEIGHT_WEST, this.func_235633_a_(p_235630_5_, p_235630_6_, field_235622_o_));
+	private BlockState func_235630_a_(BlockState state, boolean connectedSouth, boolean connectedWest, boolean connectedNorth, boolean connectedEast, VoxelShape shape) {
+		return state.with(WALL_HEIGHT_NORTH, this.func_235633_a_(connectedSouth, shape, WALL_CONNECTION_NORTH_SIDE_SHAPE)).with(WALL_HEIGHT_EAST, this.func_235633_a_(connectedWest, shape, WALL_CONNECTION_EAST_SIDE_SHAPE)).with(WALL_HEIGHT_SOUTH, this.func_235633_a_(connectedNorth, shape, WALL_CONNECTION_SOUTH_SIDE_SHAPE)).with(WALL_HEIGHT_WEST, this.func_235633_a_(connectedEast, shape, WALL_CONNECTION_WEST_SIDE_SHAPE));
 	}
 
 	private WallHeight func_235633_a_(boolean p_235633_1_, VoxelShape p_235633_2_, VoxelShape p_235633_3_) {
 		if (p_235633_1_) {
-			return func_235632_a_(p_235633_2_, p_235633_3_) ? WallHeight.TALL : WallHeight.LOW;
+			return compareShapes(p_235633_2_, p_235633_3_) ? WallHeight.TALL : WallHeight.LOW;
 		} else {
 			return WallHeight.NONE;
 		}
@@ -262,13 +262,6 @@ public class ConcretePowderWall extends ConcretePowderBlock implements IWaterLog
 		builder.add(UP, WALL_HEIGHT_NORTH, WALL_HEIGHT_EAST, WALL_HEIGHT_WEST, WALL_HEIGHT_SOUTH, WATERLOGGED);
 	}
 
-	/**
-	 * Returns the blockstate with the given rotation from the passed blockstate. If inapplicable, returns the passed
-	 * blockstate.
-	 *
-	 * @deprecated call via {@link IBlockState#withRotation(Rotation)} whenever possible. Implementing/overriding is
-	 * fine.
-	 */
 	@Override
 	public BlockState rotate(BlockState state, Rotation rot) {
 		switch (rot) {
@@ -283,12 +276,6 @@ public class ConcretePowderWall extends ConcretePowderBlock implements IWaterLog
 		}
 	}
 
-	/**
-	 * Returns the blockstate with the given mirror of the passed blockstate. If inapplicable, returns the passed
-	 * blockstate.
-	 *
-	 * @deprecated call via {@link IBlockState#withMirror(Mirror)} whenever possible. Implementing/overriding is fine.
-	 */
 	@Override
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		switch (mirrorIn) {
@@ -315,10 +302,10 @@ public class ConcretePowderWall extends ConcretePowderBlock implements IWaterLog
 			BlockState blockstate2 = ((IWorldReader) worldIn).getBlockState(blockpos3);
 			BlockState blockstate3 = ((IWorldReader) worldIn).getBlockState(blockpos4);
 			BlockState blockstate4 = ((IWorldReader) worldIn).getBlockState(blockpos5);
-			boolean flag = this.func_220113_a(blockstate, blockstate.isSolidSide(worldIn, blockpos1, Direction.SOUTH), Direction.SOUTH);
-			boolean flag1 = this.func_220113_a(blockstate1, blockstate1.isSolidSide(worldIn, blockpos2, Direction.WEST), Direction.WEST);
-			boolean flag2 = this.func_220113_a(blockstate2, blockstate2.isSolidSide(worldIn, blockpos3, Direction.NORTH), Direction.NORTH);
-			boolean flag3 = this.func_220113_a(blockstate3, blockstate3.isSolidSide(worldIn, blockpos4, Direction.EAST), Direction.EAST);
+			boolean flag = this.shouldConnect(blockstate, blockstate.isSolidSide(worldIn, blockpos1, Direction.SOUTH), Direction.SOUTH);
+			boolean flag1 = this.shouldConnect(blockstate1, blockstate1.isSolidSide(worldIn, blockpos2, Direction.WEST), Direction.WEST);
+			boolean flag2 = this.shouldConnect(blockstate2, blockstate2.isSolidSide(worldIn, blockpos3, Direction.NORTH), Direction.NORTH);
+			boolean flag3 = this.shouldConnect(blockstate3, blockstate3.isSolidSide(worldIn, blockpos4, Direction.EAST), Direction.EAST);
 			BlockState blockstate5 = this.solidifiedState.with(WATERLOGGED, fluidstate.getFluid() == Fluids.WATER);
 			BlockState bs = this.func_235626_a_(worldIn, blockstate5, blockpos5, blockstate4, flag, flag1, flag2, flag3);
 			worldIn.setBlockState(pos, bs);
@@ -335,7 +322,7 @@ public class ConcretePowderWall extends ConcretePowderBlock implements IWaterLog
 		for (Direction direction : Direction.values()) {
 			BlockState blockstate = reader.getBlockState(blockpos$mutable);
 			if (direction != Direction.DOWN || causesSolidify(blockstate)) {
-				blockpos$mutable.func_239622_a_(pos, direction);
+				blockpos$mutable.setAndMove(pos, direction);
 				blockstate = reader.getBlockState(blockpos$mutable);
 				if (causesSolidify(blockstate) && !blockstate.isSolidSide(reader, pos, direction.getOpposite())) {
 					flag = true;

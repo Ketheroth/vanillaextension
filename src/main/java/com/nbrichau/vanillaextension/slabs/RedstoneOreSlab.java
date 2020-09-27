@@ -93,11 +93,6 @@ public class RedstoneOreSlab extends SlabBlock {
 		return silktouch == 0 ? 1 + RANDOM.nextInt(3) : 0;
 	}
 
-	/**
-	 * Called periodically clientside on blocks near the player to show effects (like furnace fire particles). Note that
-	 * this method is unrelated to {@link randomTick} and {@link #needsRandomTick}, and will always be called regardless
-	 * of whether the block can receive random update ticks
-	 */
 	@OnlyIn(Dist.CLIENT)
 	public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
 		if (stateIn.get(LIT)) {

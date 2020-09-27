@@ -27,8 +27,11 @@ public class CoarseDirtTrapdoor extends TrapDoorBlock {
 				worldIn.playSound(null, pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
 				player.getHeldItem(handIn).damageItem(1, player, item -> item.sendBreakAnimation(handIn));
 				return ActionResultType.SUCCESS;
+			} else {
+				return ActionResultType.PASS;
 			}
+		} else {
+			return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
 		}
-		return ActionResultType.PASS;
 	}
 }

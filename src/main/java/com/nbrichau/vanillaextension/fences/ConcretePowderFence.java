@@ -221,7 +221,7 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 		for (Direction direction : Direction.values()) {
 			BlockState blockstate = reader.getBlockState(blockpos$mutable);
 			if (direction != Direction.DOWN || causesSolidify(blockstate)) {
-				blockpos$mutable.func_239622_a_(pos, direction);
+				blockpos$mutable.setAndMove(pos, direction);
 				blockstate = reader.getBlockState(blockpos$mutable);
 				if (causesSolidify(blockstate) && !blockstate.isSolidSide(reader, pos, direction.getOpposite())) {
 					flag = true;

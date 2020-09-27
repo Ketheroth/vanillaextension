@@ -106,7 +106,7 @@ public class ConcretePowderStairs extends ConcretePowderBlock implements IWaterL
 		for (Direction direction : Direction.values()) {
 			BlockState blockstate = reader.getBlockState(blockpos$mutable);
 			if (direction != Direction.DOWN || causesSolidify(blockstate)) {
-				blockpos$mutable.func_239622_a_(pos, direction);
+				blockpos$mutable.setAndMove(pos, direction);
 				blockstate = reader.getBlockState(blockpos$mutable);
 				if (causesSolidify(blockstate) && !blockstate.isSolidSide(reader, pos, direction.getOpposite())) {
 					flag = true;
@@ -190,24 +190,11 @@ public class ConcretePowderStairs extends ConcretePowderBlock implements IWaterL
 		return !isBlockStairs(blockstate) || blockstate.get(FACING) != state.get(FACING) || blockstate.get(HALF) != state.get(HALF);
 	}
 
-	/**
-	 * Returns the blockstate with the given rotation from the passed blockstate. If inapplicable, returns the passed
-	 * blockstate.
-	 *
-	 * @deprecated call via {@link IBlockState#withRotation(Rotation)} whenever possible. Implementing/overriding is
-	 * fine.
-	 */
 	@Override
 	public BlockState rotate(BlockState state, Rotation rot) {
 		return state.with(FACING, rot.rotate(state.get(FACING)));
 	}
 
-	/**
-	 * Returns the blockstate with the given mirror of the passed blockstate. If inapplicable, returns the passed
-	 * blockstate.
-	 *
-	 * @deprecated call via {@link IBlockState#withMirror(Mirror)} whenever possible. Implementing/overriding is fine.
-	 */
 	@Override
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		Direction direction = state.get(FACING);
