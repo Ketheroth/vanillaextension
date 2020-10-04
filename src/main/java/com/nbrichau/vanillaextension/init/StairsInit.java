@@ -170,6 +170,7 @@ public class StairsInit {
 	public static final Block cut_red_sandstone_stairs = null;
 	public static final Block smooth_stone_stairs = null;
 	public static final Block purpur_pillar_stairs = null;
+	public static final Block grass_path_stairs = null;
 	public static final Block magma_block_stairs = null;
 	public static final Block nether_wart_block_stairs = null;
 	public static final Block bone_block_stairs = null;
@@ -414,6 +415,7 @@ public class StairsInit {
 		event.getRegistry().register(new StairsBlock(Blocks.CUT_RED_SANDSTONE::getDefaultState, Block.Properties.from(Blocks.CUT_RED_SANDSTONE)).setRegistryName("cut_red_sandstone_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.SMOOTH_STONE::getDefaultState, Block.Properties.from(Blocks.SMOOTH_STONE)).setRegistryName("smooth_stone_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.PURPUR_PILLAR::getDefaultState, Block.Properties.from(Blocks.PURPUR_PILLAR)).setRegistryName("purpur_pillar_stairs"));
+		event.getRegistry().register(new GrassPathStairs(Blocks.GRASS_PATH::getDefaultState, Block.Properties.from(Blocks.GRASS_PATH)).setRegistryName("grass_path_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.MAGMA_BLOCK::getDefaultState, Block.Properties.create(Material.ROCK, MaterialColor.NETHERRACK).setLightLevel((state) -> 3).hardnessAndResistance(0.5F)).setRegistryName("magma_block_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.NETHER_WART_BLOCK::getDefaultState, Block.Properties.from(Blocks.NETHER_WART_BLOCK)).setRegistryName("nether_wart_block_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.BONE_BLOCK::getDefaultState, Block.Properties.from(Blocks.BONE_BLOCK)).setRegistryName("bone_block_stairs"));
@@ -659,6 +661,7 @@ public class StairsInit {
 		event.getRegistry().register(new BlockItem(cut_red_sandstone_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("cut_red_sandstone_stairs"));
 		event.getRegistry().register(new BlockItem(smooth_stone_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("smooth_stone_stairs"));
 		event.getRegistry().register(new BlockItem(purpur_pillar_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("purpur_pillar_stairs"));
+		event.getRegistry().register(new BlockItem(grass_path_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("grass_path_stairs"));
 		event.getRegistry().register(new BlockItem(magma_block_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("magma_block_stairs"));
 		event.getRegistry().register(new BlockItem(nether_wart_block_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("nether_wart_block_stairs"));
 		event.getRegistry().register(new BlockItem(bone_block_stairs, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("bone_block_stairs"));

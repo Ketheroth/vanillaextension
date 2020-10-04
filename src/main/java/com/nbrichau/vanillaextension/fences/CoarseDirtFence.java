@@ -20,15 +20,18 @@ public class CoarseDirtFence extends FenceBlock {
 
 	@Override
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-		if (!worldIn.isRemote()) {
-			if (player.getHeldItem(handIn).getToolTypes().contains(ToolType.HOE)) {
+		if (player.getHeldItem(handIn).getToolTypes().contains(ToolType.HOE)) {
+			if (!worldIn.isRemote()) {
 				BlockState bs = FenceInit.dirt_fence.getDefaultState().with(NORTH, state.get(NORTH)).with(EAST, state.get(EAST)).with(SOUTH, state.get(SOUTH)).with(WEST, state.get(WEST)).with(WATERLOGGED, state.get(WATERLOGGED));
 				worldIn.setBlockState(pos, bs, 11);
-				worldIn.playSound(null,pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F,1.0F);
-				player.getHeldItem(handIn).damageItem(1, player, item->item.sendBreakAnimation(handIn));
+				worldIn.playSound(null, pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				player.getHeldItem(handIn).damageItem(1, player, item -> item.sendBreakAnimation(handIn));
 				return ActionResultType.SUCCESS;
+			} else {
+				return ActionResultType.PASS;
 			}
+		} else {
+			return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
 		}
-		return ActionResultType.PASS;
 	}
 }

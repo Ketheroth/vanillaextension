@@ -28,9 +28,12 @@ public class LogFence extends FenceBlock {
 					player.getHeldItem(handIn).damageItem(1, player, item -> item.sendBreakAnimation(handIn));
 				}
 				return ActionResultType.SUCCESS;
+			} else {
+				return ActionResultType.PASS;
 			}
+		} else {
+			return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
 		}
-		return ActionResultType.PASS;
 	}
 
 	private static Block getBlockStripping(Block blockIn) {

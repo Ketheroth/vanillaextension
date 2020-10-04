@@ -189,6 +189,7 @@ public class WallInit {
 	public static final Block smooth_red_sandstone_wall = null;
 	public static final Block purpur_block_wall = null;
 	public static final Block purpur_pillar_wall = null;
+	public static final Block grass_path_wall = null;
 	public static final Block magma_block_wall = null;
 	public static final Block nether_wart_block_wall = null;
 	public static final Block bone_block_wall = null;
@@ -451,6 +452,7 @@ public class WallInit {
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.SMOOTH_RED_SANDSTONE)).setRegistryName("smooth_red_sandstone_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.PURPUR_BLOCK)).setRegistryName("purpur_block_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.PURPUR_PILLAR)).setRegistryName("purpur_pillar_wall"));
+		event.getRegistry().register(new GrassPathWall(Block.Properties.from(Blocks.GRASS_PATH)).setRegistryName("grass_path_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.MAGMA_BLOCK)).setRegistryName("magma_block_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.BONE_BLOCK)).setRegistryName("bone_block_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.NETHER_WART_BLOCK)).setRegistryName("nether_wart_block_wall"));
@@ -714,6 +716,7 @@ public class WallInit {
 		event.getRegistry().register(new BlockItem(smooth_red_sandstone_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("smooth_red_sandstone_wall"));
 		event.getRegistry().register(new BlockItem(purpur_block_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("purpur_block_wall"));
 		event.getRegistry().register(new BlockItem(purpur_pillar_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("purpur_pillar_wall"));
+		event.getRegistry().register(new BlockItem(grass_path_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("grass_path_wall"));
 		event.getRegistry().register(new BlockItem(magma_block_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("magma_block_wall"));
 		event.getRegistry().register(new BlockItem(bone_block_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("bone_block_wall"));
 		event.getRegistry().register(new BlockItem(nether_wart_block_wall, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("nether_wart_block_wall"));

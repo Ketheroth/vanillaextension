@@ -6,10 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 ## Added
 - Sand and Gravel blocks are affected by gravity
-- Nether Gold Ore Slab, Stairs, Fence and Wall
-- Soul Soil Slab, Stairs, Fence and Wall
+- Nether Gold Ore Slab, Stairs, Fence, Wall and Trapdoor
+- Soul Soil Slab, Stairs, Fence, Wall and Trapdoor
+- Grass Path Slab, Stairs, Fence, Wall, Trapdoor
 - Netherrack blocks can be smelted to obtain nether brick
-- Grass Path Fence
 
 ## Changed
 - Minimum Forge version : 1.16.3-34.0.2

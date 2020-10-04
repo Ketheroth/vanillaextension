@@ -81,15 +81,18 @@ public class GrassBlockFence extends FenceBlock {
 	@Override
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
-		if (!worldIn.isRemote()) {
-			if (player.getHeldItem(handIn).getToolTypes().contains(ToolType.SHOVEL)) {
+		if (player.getHeldItem(handIn).getToolTypes().contains(ToolType.SHOVEL)) {
+			if (!worldIn.isRemote()) {
 				BlockState bs = FenceInit.grass_path_fence.getDefaultState().with(NORTH, state.get(NORTH)).with(EAST, state.get(EAST)).with(SOUTH, state.get(SOUTH)).with(WEST, state.get(WEST)).with(WATERLOGGED, state.get(WATERLOGGED));
 				worldIn.setBlockState(pos, bs, 11);
 				worldIn.playSound(null, pos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
 				player.getHeldItem(handIn).damageItem(1, player, item -> item.sendBreakAnimation(handIn));
 				return ActionResultType.SUCCESS;
+			} else {
+				return ActionResultType.PASS;
 			}
+		} else {
+			return ActionResultType.PASS;
 		}
-		return ActionResultType.PASS;
 	}
 }

@@ -37,6 +37,13 @@ public class GrassBlockSlab extends SlabBlock implements IGrowable {
 				player.getHeldItem(handIn).damageItem(1, player, item -> item.sendBreakAnimation(handIn));
 				return ActionResultType.SUCCESS;
 			}
+			if (player.getHeldItem(handIn).getToolTypes().contains(ToolType.SHOVEL)) {
+				BlockState bs = SlabInit.grass_path_slab.getDefaultState().with(TYPE, state.get(TYPE)).with(WATERLOGGED, state.get(WATERLOGGED));
+				worldIn.setBlockState(pos, bs);
+				worldIn.playSound(null, pos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				player.getHeldItem(handIn).damageItem(1, player, item -> item.sendBreakAnimation(handIn));
+				return ActionResultType.SUCCESS;
+			}
 		}
 		return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
 	}

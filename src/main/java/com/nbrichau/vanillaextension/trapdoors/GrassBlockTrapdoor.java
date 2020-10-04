@@ -5,12 +5,18 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SnowBlock;
 import net.minecraft.block.TrapDoorBlock;
+import net.minecraft.block.material.Material;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.util.Direction;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.IWorldReader;
+import net.minecraft.world.World;
 import net.minecraft.world.lighting.LightEngine;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.common.ToolType;
 
 import java.util.Random;
 
@@ -71,5 +77,21 @@ public class GrassBlockTrapdoor extends TrapDoorBlock {
 				}
 			}
 		}
+	}
+
+	@Override
+	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+		if (!worldIn.isRemote()) {
+			if (player.getHeldItem(handIn).getToolTypes().contains(ToolType.SHOVEL)) {
+				BlockState bs = TrapdoorInit.grass_path_trapdoor.getDefaultState()
+						.with(HORIZONTAL_FACING, state.get(HORIZONTAL_FACING)).with(OPEN, state.get(OPEN)).with(HALF, state.get(HALF))
+						.with(POWERED, state.get(POWERED)).with(WATERLOGGED, state.get(WATERLOGGED));
+				worldIn.setBlockState(pos, bs);
+				worldIn.playSound(null, pos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				player.getHeldItem(handIn).damageItem(1, player, item -> item.sendBreakAnimation(handIn));
+				return ActionResultType.SUCCESS;
+			}
+		}
+		return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
 	}
 }

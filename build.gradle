@@ -79,10 +79,10 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.3-34.0.2'
+    minecraft 'net.minecraftforge:forge:1.16.3-34.0.2'//try forge 34.0.8 : new mixin
 
 //removed patchouli for now because crash on dev
-//    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16-42:api")
+//    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16-42:api") //latest : 44
 //    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16-42")
 }
 

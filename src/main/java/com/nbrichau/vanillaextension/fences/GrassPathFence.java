@@ -191,7 +191,9 @@ public class GrassPathFence extends GrassPathBlock {
 	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
 		if (!this.isValidPosition(state, worldIn, pos)) {
-			worldIn.setBlockState(pos, nudgeEntitiesWithNewState(state, FenceInit.dirt_fence.getDefaultState(), worldIn, pos));
+			worldIn.setBlockState(pos, nudgeEntitiesWithNewState(state, FenceInit.dirt_fence.getDefaultState()
+					.with(NORTH, state.get(NORTH)).with(EAST, state.get(EAST)).with(SOUTH, state.get(SOUTH))
+					.with(WEST, state.get(WEST)).with(WATERLOGGED, state.get(WATERLOGGED)), worldIn, pos));
 		}
 	}
 

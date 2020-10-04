@@ -170,6 +170,7 @@ public class SlabInit {
 	public static final Block packed_ice_slab = null;
 	public static final Block chiseled_red_sandstone_slab = null;
 	public static final Block purpur_pillar_slab = null;
+	public static final Block grass_path_slab = null;
 	public static final Block magma_block_slab = null;
 	public static final Block nether_wart_block_slab = null;
 	public static final Block bone_block_slab = null;
@@ -411,6 +412,7 @@ public class SlabInit {
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.PACKED_ICE)).setRegistryName("packed_ice_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.CHISELED_RED_SANDSTONE)).setRegistryName("chiseled_red_sandstone_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.PURPUR_PILLAR)).setRegistryName("purpur_pillar_slab"));
+		event.getRegistry().register(new GrassPathSlab(Block.Properties.from(Blocks.GRASS_PATH)).setRegistryName("grass_path_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.NETHERRACK).setLightLevel((state) -> 3).hardnessAndResistance(0.5F)).setRegistryName("magma_block_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.NETHER_WART_BLOCK)).setRegistryName("nether_wart_block_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.BONE_BLOCK)).setRegistryName("bone_block_slab"));
@@ -653,6 +655,7 @@ public class SlabInit {
 		event.getRegistry().register(new BlockItem(packed_ice_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("packed_ice_slab"));
 		event.getRegistry().register(new BlockItem(chiseled_red_sandstone_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("chiseled_red_sandstone_slab"));
 		event.getRegistry().register(new BlockItem(purpur_pillar_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("purpur_pillar_slab"));
+		event.getRegistry().register(new BlockItem(grass_path_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("grass_path_slab"));
 		event.getRegistry().register(new BlockItem(magma_block_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("magma_block_slab"));
 		event.getRegistry().register(new BlockItem(nether_wart_block_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("nether_wart_block_slab"));
 		event.getRegistry().register(new BlockItem(bone_block_slab, new Item.Properties().group(VanillaExtension.VanillaExtensionItemGroup.instance)).setRegistryName("bone_block_slab"));
