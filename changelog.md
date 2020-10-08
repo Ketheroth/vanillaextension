@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Nether Gold Ore Slab, Stairs, Fence, Wall and Trapdoor
 - Soul Soil Slab, Stairs, Fence, Wall and Trapdoor
 - Grass Path Slab, Stairs, Fence, Wall, Trapdoor
+- Redstone Lamp blocks con now be powered like the vanilla version
 - Netherrack blocks can be smelted to obtain nether brick
 
 ## Changed

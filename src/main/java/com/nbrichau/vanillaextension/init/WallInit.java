@@ -410,7 +410,7 @@ public class WallInit {
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.MYCELIUM)).setRegistryName("mycelium_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.END_STONE)).setRegistryName("end_stone_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.DRAGON_EGG)).setRegistryName("dragon_egg_wall"));
-		event.getRegistry().register(new WallBlock(Block.Properties.create(Material.REDSTONE_LIGHT).setLightLevel((state)->{return 5;}).hardnessAndResistance(0.3F).sound(SoundType.GLASS)).setRegistryName("redstone_lamp_wall"));
+		event.getRegistry().register(new RedstoneLampWall(Block.Properties.from(Blocks.REDSTONE_LAMP)).setRegistryName("redstone_lamp_wall"));
 		event.getRegistry().register(new OreWall(Block.Properties.from(Blocks.EMERALD_ORE)).setRegistryName("emerald_ore_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.EMERALD_BLOCK)).setRegistryName("emerald_block_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.REDSTONE_BLOCK)).setRegistryName("redstone_block_wall"));

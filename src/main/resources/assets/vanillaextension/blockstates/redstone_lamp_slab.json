@@ -1,7 +1,10 @@
 {
 	"variants": {
-		"type=bottom": { "model": "vanillaextension:block/redstone_lamp_slab" },
-		"type=top": { "model": "vanillaextension:block/redstone_lamp_slab_top" },
-		"type=double": { "model": "minecraft:block/redstone_lamp" }
+		"type=bottom,lit=false": { "model": "vanillaextension:block/redstone_lamp_slab" },
+		"type=top,lit=false": { "model": "vanillaextension:block/redstone_lamp_slab_top" },
+		"type=double,lit=false": { "model": "minecraft:block/redstone_lamp" },
+		"type=bottom,lit=true": { "model": "vanillaextension:block/redstone_lamp_slab_on" },
+		"type=top,lit=true": { "model": "vanillaextension:block/redstone_lamp_slab_top_on" },
+		"type=double,lit=true": { "model": "minecraft:block/redstone_lamp_on" }
 	}
 }

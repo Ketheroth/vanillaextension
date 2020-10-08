@@ -1,20 +1,43 @@
 {
 	"multipart": [
-		{"apply": { "model": "vanillaextension:block/redstone_lamp_fence_post" }},
 		{
-			"when": { "north": "true" },
+			"when": { "lit": "true" },
+			"apply": { "model": "vanillaextension:block/redstone_lamp_fence_post_on" }
+		},
+		{
+			"when": { "lit": "false" },
+			"apply": { "model": "vanillaextension:block/redstone_lamp_fence_post" }
+		},
+		{
+			"when": { "north": "true", "lit": "true" },
+			"apply": { "model": "vanillaextension:block/redstone_lamp_fence_side_on", "uvlock": true }
+		},
+		{
+			"when": { "east": "true", "lit": "true" },
+			"apply": { "model": "vanillaextension:block/redstone_lamp_fence_side_on", "y": 90, "uvlock": true }
+		},
+		{
+			"when": { "south": "true", "lit": "true" },
+			"apply": { "model": "vanillaextension:block/redstone_lamp_fence_side_on", "y": 180, "uvlock": true }
+		},
+		{
+			"when": { "west": "true", "lit": "true" },
+			"apply": { "model": "vanillaextension:block/redstone_lamp_fence_side_on", "y": 270, "uvlock": true }
+		},
+		{
+			"when": { "north": "true", "lit": "false" },
 			"apply": { "model": "vanillaextension:block/redstone_lamp_fence_side", "uvlock": true }
 		},
 		{
-			"when": { "east": "true" },
+			"when": { "east": "true", "lit": "false" },
 			"apply": { "model": "vanillaextension:block/redstone_lamp_fence_side", "y": 90, "uvlock": true }
 		},
 		{
-			"when": { "south": "true" },
+			"when": { "south": "true", "lit": "false" },
 			"apply": { "model": "vanillaextension:block/redstone_lamp_fence_side", "y": 180, "uvlock": true }
 		},
 		{
-			"when": { "west": "true" },
+			"when": { "west": "true", "lit": "false" },
 			"apply": { "model": "vanillaextension:block/redstone_lamp_fence_side", "y": 270, "uvlock": true }
 		}
 	]

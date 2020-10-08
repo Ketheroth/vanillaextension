@@ -2,10 +2,7 @@ package com.nbrichau.vanillaextension.init;
 
 import com.nbrichau.vanillaextension.VanillaExtension;
 import com.nbrichau.vanillaextension.slabs.*;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
@@ -379,7 +376,7 @@ public class SlabInit {
 		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.ORGANIC, MaterialColor.PURPLE).hardnessAndResistance(0.6F).sound(SoundType.PLANT)).setRegistryName("mycelium_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.END_STONE)).setRegistryName("end_stone_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.DRAGON_EGG)).setRegistryName("dragon_egg_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.REDSTONE_LIGHT).setLightLevel((state) -> 5).hardnessAndResistance(0.3F).sound(SoundType.GLASS)).setRegistryName("redstone_lamp_slab"));
+		event.getRegistry().register(new RedstoneLampSlab(AbstractBlock.Properties.from(Blocks.REDSTONE_LAMP)).setRegistryName("redstone_lamp_slab"));
 		event.getRegistry().register(new OreSlab(Block.Properties.from(Blocks.EMERALD_ORE)).setRegistryName("emerald_ore_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.EMERALD_BLOCK)).setRegistryName("emerald_block_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.REDSTONE_BLOCK)).setRegistryName("redstone_block_slab"));
