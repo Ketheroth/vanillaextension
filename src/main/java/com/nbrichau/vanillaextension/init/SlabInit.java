@@ -373,7 +373,7 @@ public class SlabInit {
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.IRON_BARS)).setRegistryName("iron_bars_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.MELON)).setRegistryName("melon_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.TALL_PLANTS).doesNotBlockMovement().hardnessAndResistance(0.2F).sound(SoundType.PLANT)).setRegistryName("vine_slab"));
-		event.getRegistry().register(new SlabBlock(Block.Properties.create(Material.ORGANIC, MaterialColor.PURPLE).hardnessAndResistance(0.6F).sound(SoundType.PLANT)).setRegistryName("mycelium_slab"));
+		event.getRegistry().register(new MyceliumSlab(Block.Properties.from(Blocks.MYCELIUM)).setRegistryName("mycelium_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.END_STONE)).setRegistryName("end_stone_slab"));
 		event.getRegistry().register(new SlabBlock(Block.Properties.from(Blocks.DRAGON_EGG)).setRegistryName("dragon_egg_slab"));
 		event.getRegistry().register(new RedstoneLampSlab(AbstractBlock.Properties.from(Blocks.REDSTONE_LAMP)).setRegistryName("redstone_lamp_slab"));

@@ -407,7 +407,7 @@ public class WallInit {
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.IRON_BARS)).setRegistryName("iron_bars_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.MELON)).setRegistryName("melon_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.VINE)).setRegistryName("vine_wall"));
-		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.MYCELIUM)).setRegistryName("mycelium_wall"));
+		event.getRegistry().register(new MyceliumWall(Block.Properties.from(Blocks.MYCELIUM)).setRegistryName("mycelium_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.END_STONE)).setRegistryName("end_stone_wall"));
 		event.getRegistry().register(new WallBlock(Block.Properties.from(Blocks.DRAGON_EGG)).setRegistryName("dragon_egg_wall"));
 		event.getRegistry().register(new RedstoneLampWall(Block.Properties.from(Blocks.REDSTONE_LAMP)).setRegistryName("redstone_lamp_wall"));

@@ -75,15 +75,14 @@ minecraft {
 }
 
 repositories {
-//    maven { url "https://maven.blamejared.com" }
+    maven { url "https://maven.blamejared.com" }
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.3-34.0.2'//try forge 34.0.8 : new mixin
+    minecraft 'net.minecraftforge:forge:1.16.3-34.1.0'
 
-//removed patchouli for now because crash on dev
-//    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16-42:api") //latest : 44
-//    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16-42")
+    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16-42:api")
+    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16-42")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

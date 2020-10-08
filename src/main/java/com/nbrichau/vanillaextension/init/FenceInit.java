@@ -418,7 +418,7 @@ public class FenceInit {
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.IRON_BARS)).setRegistryName("iron_bars_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.MELON)).setRegistryName("melon_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.TALL_PLANTS).doesNotBlockMovement().hardnessAndResistance(0.2F).sound(SoundType.PLANT)).setRegistryName("vine_fence"));
-		event.getRegistry().register(new FenceBlock(Block.Properties.create(Material.ORGANIC, MaterialColor.PURPLE).hardnessAndResistance(0.6F).sound(SoundType.PLANT)).setRegistryName("mycelium_fence"));
+		event.getRegistry().register(new MyceliumFence(Block.Properties.from(Blocks.MYCELIUM)).setRegistryName("mycelium_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.END_STONE)).setRegistryName("end_stone_fence"));
 		event.getRegistry().register(new FenceBlock(Block.Properties.from(Blocks.DRAGON_EGG)).setRegistryName("dragon_egg_fence"));
 		event.getRegistry().register(new RedstoneLampFence(Block.Properties.from(Blocks.REDSTONE_LAMP)).setRegistryName("redstone_lamp_fence"));

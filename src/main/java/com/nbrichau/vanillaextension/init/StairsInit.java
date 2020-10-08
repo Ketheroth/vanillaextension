@@ -377,7 +377,7 @@ public class StairsInit {
 		event.getRegistry().register(new StairsBlock(Blocks.IRON_BARS::getDefaultState, Block.Properties.from(Blocks.IRON_BARS)).setRegistryName("iron_bars_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.MELON::getDefaultState, Block.Properties.from(Blocks.MELON)).setRegistryName("melon_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.VINE::getDefaultState, Block.Properties.create(Material.TALL_PLANTS).doesNotBlockMovement().hardnessAndResistance(0.2F).sound(SoundType.PLANT)).setRegistryName("vine_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.MYCELIUM::getDefaultState, Block.Properties.create(Material.ORGANIC, MaterialColor.PURPLE).hardnessAndResistance(0.6F).sound(SoundType.PLANT)).setRegistryName("mycelium_stairs"));
+		event.getRegistry().register(new MyceliumStairs(Blocks.MYCELIUM::getDefaultState, Block.Properties.from(Blocks.MYCELIUM)).setRegistryName("mycelium_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.END_STONE::getDefaultState, Block.Properties.from(Blocks.END_STONE)).setRegistryName("end_stone_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.DRAGON_EGG::getDefaultState, Block.Properties.from(Blocks.DRAGON_EGG)).setRegistryName("dragon_egg_stairs"));
 		event.getRegistry().register(new RedstoneLampStairs(Blocks.REDSTONE_LAMP::getDefaultState, Block.Properties.from(Blocks.REDSTONE_LAMP)).setRegistryName("redstone_lamp_stairs"));

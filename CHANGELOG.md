@@ -3,17 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
-## [Unreleased]
+## [1.16.3-1.0.11]
+
+I consider the mod finished. I don't think there will be new features in the future.  
+Only port to newer versions and bug fixes.
+
 ## Added
 - Sand and Gravel blocks are affected by gravity
 - Nether Gold Ore Slab, Stairs, Fence, Wall and Trapdoor
 - Soul Soil Slab, Stairs, Fence, Wall and Trapdoor
 - Grass Path Slab, Stairs, Fence, Wall, Trapdoor
-- Redstone Lamp blocks con now be powered like the vanilla version
-- Netherrack blocks can be smelted to obtain nether brick
+- Redstone Lamp block variants can now be powered like the vanilla version
+- Netherrack block variants can be smelted to obtain nether brick
+- Mycelium block variants spread on dirt block (and variants)
 
 ## Changed
-- Minimum Forge version : 1.16.3-34.0.2
+- Minimum Forge version : 1.16.3-34.1.0
 - log trapdoor can be opened with right-click
 
 ## [1.16.3-1.0.10]
