@@ -160,12 +160,6 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 				.with(WATERLOGGED, ifluidstate.getFluid() == Fluids.WATER);
 	}
 
-	/**
-	 * Update the provided state given the provided neighbor facing and neighbor state, returning a new state.
-	 * For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately
-	 * returns its solidified counterpart.
-	 * Note that this method should ideally consider only the specific face passed in.
-	 */
 	@Override
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
 		if (stateIn.get(WATERLOGGED)) {
@@ -211,7 +205,6 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 	private static boolean isTouchingLiquid(IBlockReader reader, BlockPos pos) {
 		boolean flag = false;
 		BlockPos.Mutable blockpos$mutable = new BlockPos.Mutable(pos);
-
 		for (Direction direction : Direction.values()) {
 			BlockState blockstate = reader.getBlockState(blockpos$mutable);
 			if (direction != Direction.DOWN || causesSolidify(blockstate)) {
@@ -223,7 +216,6 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 				}
 			}
 		}
-
 		return flag;
 	}
 
