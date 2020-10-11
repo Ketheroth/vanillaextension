@@ -129,11 +129,11 @@ public class FallingWall extends FallingBlock {
 	}
 
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		return state.get(UP) ? this.wallShapes[this.getIndex(state)] : super.getShape(state, worldIn, pos, context);
+		return state.get(UP) ? this.wallShapes[this.getIndex(state)] : this.shapes[this.getIndex(state)];
 	}
 
 	public VoxelShape getCollisionShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		return state.get(UP) ? this.wallCollisionShapes[this.getIndex(state)] : super.getCollisionShape(state, worldIn, pos, context);
+		return state.get(UP) ? this.wallCollisionShapes[this.getIndex(state)] : this.collisionShapes[this.getIndex(state)];
 	}
 
 	public boolean allowsMovement(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {

@@ -66,7 +66,7 @@ public class ConcretePowderWall extends ConcretePowderBlock implements IWaterLog
 
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		return state.get(UP) ? this.wallShapes[this.getIndex(state)] : super.getShape(state, worldIn, pos, context);
+		return state.get(UP) ? this.wallShapes[this.getIndex(state)] : this.shapes[this.getIndex(state)];
 	}
 
 	private static int getMask(Direction facing) {
@@ -98,7 +98,7 @@ public class ConcretePowderWall extends ConcretePowderBlock implements IWaterLog
 
 	@Override
 	public VoxelShape getCollisionShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		return state.get(UP) ? this.wallCollisionShapes[this.getIndex(state)] : super.getCollisionShape(state, worldIn, pos, context);
+		return state.get(UP) ? this.wallCollisionShapes[this.getIndex(state)] : this.collisionShapes[this.getIndex(state)];
 	}
 
 	@Override

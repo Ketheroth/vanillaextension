@@ -1,6 +1,6 @@
 package com.nbrichau.vanillaextension.slabs;
 
-import com.nbrichau.vanillaextension.init.BlockInit;
+import com.nbrichau.vanillaextension.init.SlabInit;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.entity.player.PlayerEntity;
@@ -28,7 +28,7 @@ public class DirtSlab extends SlabBlock {
 				its.isItemEqualIgnoreDurability(Items.IRON_HOE.getDefaultInstance()) ||
 				its.isItemEqualIgnoreDurability(Items.GOLDEN_HOE.getDefaultInstance()) ||
 				its.isItemEqualIgnoreDurability(Items.DIAMOND_HOE.getDefaultInstance())) {
-				BlockState bs = BlockInit.farmland_slab.getDefaultState().with(TYPE, state.get(TYPE)).with(WATERLOGGED, state.get(WATERLOGGED));
+				BlockState bs = SlabInit.farmland_slab.getDefaultState().with(TYPE, state.get(TYPE)).with(WATERLOGGED, state.get(WATERLOGGED));
 				worldIn.setBlockState(pos, bs);
 				worldIn.playSound(null,pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F,1.0F);
 				player.getHeldItem(handIn).damageItem(1, player, item->item.sendBreakAnimation(handIn));

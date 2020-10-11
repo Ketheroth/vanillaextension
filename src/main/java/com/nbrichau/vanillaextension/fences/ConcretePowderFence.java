@@ -22,6 +22,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
@@ -105,6 +106,11 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 
 	private static int getMask(Direction facing) {
 		return 1 << facing.getHorizontalIndex();
+	}
+
+	@Override
+	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+		return this.shapes[this.getIndex(state)];
 	}
 
 	@Override

@@ -1,6 +1,6 @@
 package com.nbrichau.vanillaextension.stairs;
 
-import com.nbrichau.vanillaextension.init.BlockInit;
+import com.nbrichau.vanillaextension.init.StairsInit;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.Fluids;
@@ -102,7 +102,7 @@ public class FarmlandStairs extends FarmlandBlock implements IWaterLoggable{
 		BlockPos blockpos = context.getPos();
 		IFluidState ifluidstate = context.getWorld().getFluidState(blockpos);
 		BlockState blockstate = this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing()).with(HALF, direction != Direction.DOWN && (direction == Direction.UP || !(context.getHitVec().y - (double)blockpos.getY() > 0.5D)) ? Half.BOTTOM : Half.TOP).with(WATERLOGGED, ifluidstate.getFluid() == Fluids.WATER);
-		return !this.getDefaultState().isValidPosition(context.getWorld(), context.getPos()) ? BlockInit.dirt_stairs.getDefaultState() : blockstate.with(SHAPE, getShapeProperty(blockstate, context.getWorld(), blockpos));
+		return !this.getDefaultState().isValidPosition(context.getWorld(), context.getPos()) ? StairsInit.dirt_stairs.getDefaultState() : blockstate.with(SHAPE, getShapeProperty(blockstate, context.getWorld(), blockpos));
 	}
 
 	@Override
@@ -155,22 +155,11 @@ public class FarmlandStairs extends FarmlandBlock implements IWaterLoggable{
 		return !isBlockStairs(blockstate) || blockstate.get(FACING) != state.get(FACING) || blockstate.get(HALF) != state.get(HALF);
 	}
 
-	/**
-	 * Returns the blockstate with the given rotation from the passed blockstate. If inapplicable, returns the passed
-	 * blockstate.
-	 * @deprecated call via {@link IBlockState#withRotation(Rotation)} whenever possible. Implementing/overriding is
-	 * fine.
-	 */
 	@Override
 	public BlockState rotate(BlockState state, Rotation rot) {
 		return state.with(FACING, rot.rotate(state.get(FACING)));
 	}
 
-	/**
-	 * Returns the blockstate with the given mirror of the passed blockstate. If inapplicable, returns the passed
-	 * blockstate.
-	 * @deprecated call via {@link IBlockState#withMirror(Mirror)} whenever possible. Implementing/overriding is fine.
-	 */
 	@Override
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		Direction direction = state.get(FACING);
@@ -245,7 +234,7 @@ public class FarmlandStairs extends FarmlandBlock implements IWaterLoggable{
 
 
 	public static void turnToDirtStairs(BlockState state, World worldIn, BlockPos pos) {
-		BlockState bs = BlockInit.dirt_stairs.getDefaultState().with(FACING, state.get(FACING)).with(HALF, state.get(HALF)).with(SHAPE, state.get(SHAPE)).with(WATERLOGGED, state.get(WATERLOGGED));
+		BlockState bs = StairsInit.dirt_stairs.getDefaultState().with(FACING, state.get(FACING)).with(HALF, state.get(HALF)).with(SHAPE, state.get(SHAPE)).with(WATERLOGGED, state.get(WATERLOGGED));
 		worldIn.setBlockState(pos, bs);
 	}
 

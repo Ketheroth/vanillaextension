@@ -1,6 +1,6 @@
 package com.nbrichau.vanillaextension.slabs;
 
-import com.nbrichau.vanillaextension.init.BlockInit;
+import com.nbrichau.vanillaextension.init.SlabInit;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.Fluid;
@@ -19,7 +19,6 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
@@ -80,7 +79,7 @@ public class FarmlandSlab  extends FarmlandBlock implements IWaterLoggable {
 
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		return !this.getDefaultState().isValidPosition(context.getWorld(), context.getPos()) ? BlockInit.dirt_slab.getDefaultState() : this.getStateForPlacementSlab(context);
+		return !this.getDefaultState().isValidPosition(context.getWorld(), context.getPos()) ? SlabInit.dirt_slab.getDefaultState() : this.getStateForPlacementSlab(context);
 	}
 
 	@Override
@@ -175,7 +174,7 @@ public class FarmlandSlab  extends FarmlandBlock implements IWaterLoggable {
 	}
 
 	public static void turnToDirtSlab(BlockState state, World worldIn, BlockPos pos) {
-		BlockState bs = BlockInit.dirt_slab.getDefaultState().with(TYPE, state.get(TYPE)).with(WATERLOGGED, state.get(WATERLOGGED));
+		BlockState bs = SlabInit.dirt_slab.getDefaultState().with(TYPE, state.get(TYPE)).with(WATERLOGGED, state.get(WATERLOGGED));
 		worldIn.setBlockState(pos, bs);
 	}
 

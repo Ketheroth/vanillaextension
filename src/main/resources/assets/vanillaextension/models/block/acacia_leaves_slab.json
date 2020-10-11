@@ -1,5 +1,5 @@
 {
-	"parent": "block/slab",
+	"parent": "vanillaextension:block/slab",
 	"textures": {
 		"bottom": "minecraft:block/acacia_leaves",
 		"top": "minecraft:block/acacia_leaves",

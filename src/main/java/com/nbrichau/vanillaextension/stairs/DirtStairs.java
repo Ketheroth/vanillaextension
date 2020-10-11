@@ -1,6 +1,6 @@
 package com.nbrichau.vanillaextension.stairs;
 
-import com.nbrichau.vanillaextension.init.BlockInit;
+import com.nbrichau.vanillaextension.init.StairsInit;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.entity.player.PlayerEntity;
@@ -30,7 +30,7 @@ public class DirtStairs extends StairsBlock {
 				its.isItemEqualIgnoreDurability(Items.IRON_HOE.getDefaultInstance()) ||
 				its.isItemEqualIgnoreDurability(Items.GOLDEN_HOE.getDefaultInstance()) ||
 				its.isItemEqualIgnoreDurability(Items.DIAMOND_HOE.getDefaultInstance())) {
-				BlockState bs = BlockInit.farmland_stairs.getDefaultState().with(FACING, state.get(FACING)).with(HALF, state.get(HALF)).with(SHAPE, state.get(SHAPE)).with(WATERLOGGED, state.get(WATERLOGGED));
+				BlockState bs = StairsInit.farmland_stairs.getDefaultState().with(FACING, state.get(FACING)).with(HALF, state.get(HALF)).with(SHAPE, state.get(SHAPE)).with(WATERLOGGED, state.get(WATERLOGGED));
 				worldIn.setBlockState(pos, bs);
 				worldIn.playSound(null,pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F,1.0F);
 				player.getHeldItem(handIn).damageItem(1, player, item->item.sendBreakAnimation(handIn));

@@ -1,5 +1,5 @@
 {
-	"parent": "minecraft:block/wall_inventory",
+	"parent": "vanillaextension:block/wall_inventory_leaves",
 	"textures": {
 		"wall": "minecraft:block/acacia_leaves"
 	}
