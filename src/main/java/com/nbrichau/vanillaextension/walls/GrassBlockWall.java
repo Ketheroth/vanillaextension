@@ -1,4 +1,4 @@
-package com.nbrichau.vanillaextension.stairs;
+package com.nbrichau.vanillaextension.walls;
 
 import com.nbrichau.vanillaextension.init.FenceInit;
 import com.nbrichau.vanillaextension.init.SlabInit;
@@ -6,8 +6,6 @@ import com.nbrichau.vanillaextension.init.StairsInit;
 import com.nbrichau.vanillaextension.init.WallInit;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
@@ -19,39 +17,12 @@ import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.ToolType;
 
 import java.util.Random;
-import java.util.function.Supplier;
 
 import static net.minecraft.state.properties.BlockStateProperties.*;
 
-public class GrassBlockStairs extends StairsBlock {
-	public GrassBlockStairs(Supplier<BlockState> state, Properties properties) {
-		super(state, properties);
-	}
-
-	@Override
-	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-		if (!worldIn.isRemote()) {
-			ItemStack its = player.getHeldItem(handIn);
-			if (its.isItemEqualIgnoreDurability(Items.WOODEN_HOE.getDefaultInstance()) ||
-					its.isItemEqualIgnoreDurability(Items.STONE_HOE.getDefaultInstance()) ||
-					its.isItemEqualIgnoreDurability(Items.IRON_HOE.getDefaultInstance()) ||
-					its.isItemEqualIgnoreDurability(Items.GOLDEN_HOE.getDefaultInstance()) ||
-					its.isItemEqualIgnoreDurability(Items.DIAMOND_HOE.getDefaultInstance())) {
-				BlockState bs = StairsInit.farmland_stairs.getDefaultState().with(FACING, state.get(FACING)).with(HALF, state.get(HALF)).with(SHAPE, state.get(SHAPE)).with(WATERLOGGED, state.get(WATERLOGGED));
-				worldIn.setBlockState(pos, bs);
-				worldIn.playSound(null, pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
-				player.getHeldItem(handIn).damageItem(1, player, item -> item.sendBreakAnimation(handIn));
-				return ActionResultType.SUCCESS;
-			}
-			if (player.getHeldItem(handIn).getToolTypes().contains(ToolType.SHOVEL)) {
-				BlockState bs = StairsInit.grass_path_stairs.getDefaultState().with(FACING, state.get(FACING)).with(HALF, state.get(HALF)).with(SHAPE, state.get(SHAPE)).with(WATERLOGGED, state.get(WATERLOGGED));
-				worldIn.setBlockState(pos, bs);
-				worldIn.playSound(null, pos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
-				player.getHeldItem(handIn).damageItem(1, player, item -> item.sendBreakAnimation(handIn));
-				return ActionResultType.SUCCESS;
-			}
-		}
-		return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
+public class GrassBlockWall extends WallBlock {
+	public GrassBlockWall(Properties properties) {
+		super(properties);
 	}
 
 	private static boolean isSnowyConditions(BlockState state, IWorldReader worldReader, BlockPos pos) {
@@ -79,8 +50,8 @@ public class GrassBlockStairs extends StairsBlock {
 	public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 		if (!isSnowyConditions(state, worldIn, pos)) {
 			if (!worldIn.isAreaLoaded(pos, 3))
-				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
-			worldIn.setBlockState(pos, StairsInit.dirt_stairs.getDefaultState().with(FACING, state.get(FACING)).with(HALF, state.get(HALF)).with(SHAPE, state.get(SHAPE)).with(WATERLOGGED, state.get(WATERLOGGED)));
+				return;
+			worldIn.setBlockState(pos, WallInit.dirt_wall.getDefaultState().with(UP, state.get(UP)).with(NORTH, state.get(NORTH)).with(EAST, state.get(EAST)).with(SOUTH, state.get(SOUTH)).with(WEST, state.get(WEST)).with(WATERLOGGED, state.get(WATERLOGGED)));
 		} else {
 			if (worldIn.getLight(pos.up()) >= 9) {
 				for (int i = 0; i < 4; ++i) {
@@ -91,7 +62,7 @@ public class GrassBlockStairs extends StairsBlock {
 						if (block == Blocks.DIRT) {
 							worldIn.setBlockState(blockpos, Blocks.GRASS_BLOCK.getDefaultState().with(SNOWY, worldIn.getBlockState(blockpos.up()).getBlock() == Blocks.SNOW));
 						} else if (block == StairsInit.dirt_stairs) {
-							worldIn.setBlockState(blockpos, StairsInit.grass_block_stairs.getDefaultState().with(FACING, blockstate.get(FACING)).with(HALF, blockstate.get(HALF)).with(SHAPE, blockstate.get(SHAPE)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
+							worldIn.setBlockState(blockpos, StairsInit.grass_block_stairs.getDefaultState().with(HORIZONTAL_FACING, blockstate.get(HORIZONTAL_FACING)).with(HALF, blockstate.get(HALF)).with(STAIRS_SHAPE, blockstate.get(STAIRS_SHAPE)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
 						} else if (block == SlabInit.dirt_slab) {
 							worldIn.setBlockState(blockpos, SlabInit.grass_block_slab.getDefaultState().with(SLAB_TYPE, blockstate.get(SLAB_TYPE)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
 						} else if (block == FenceInit.dirt_fence) {
@@ -106,4 +77,20 @@ public class GrassBlockStairs extends StairsBlock {
 			}
 		}
 	}
+
+	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+		if (!worldIn.isRemote()) {
+			if (player.getHeldItem(handIn).getToolTypes().contains(ToolType.SHOVEL)) {
+				BlockState bs = WallInit.grass_path_wall.getDefaultState()
+						.with(HORIZONTAL_FACING, state.get(HORIZONTAL_FACING)).with(OPEN, state.get(OPEN)).with(HALF, state.get(HALF))
+						.with(POWERED, state.get(POWERED)).with(WATERLOGGED, state.get(WATERLOGGED));
+				worldIn.setBlockState(pos, bs);
+				worldIn.playSound(null, pos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				player.getHeldItem(handIn).damageItem(1, player, item -> item.sendBreakAnimation(handIn));
+				return ActionResultType.SUCCESS;
+			}
+		}
+		return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
+	}
+
 }
