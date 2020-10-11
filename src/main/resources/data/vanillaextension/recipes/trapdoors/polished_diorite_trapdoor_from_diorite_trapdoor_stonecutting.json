@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "vanillaextension:diorite_trapdoor"
+	},
+	"result": "vanillaextension:polished_diorite_trapdoor",
+	"count": 1
+}

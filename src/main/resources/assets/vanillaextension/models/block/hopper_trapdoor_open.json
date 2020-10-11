@@ -1,0 +1,8 @@
+{
+	"parent": "vanillaextension:block/template_orientable_trapdoor_open",
+	"textures": {
+		"bottom": "minecraft:block/hopper_outside",
+		"top": "minecraft:block/hopper_inside",
+		"side": "minecraft:block/hopper_outside"
+	}
+}

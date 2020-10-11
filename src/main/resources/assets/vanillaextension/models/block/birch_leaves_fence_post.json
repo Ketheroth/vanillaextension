@@ -1,5 +1,5 @@
 {
-	"parent": "minecraft:block/fence_post",
+	"parent": "vanillaextension:block/fence_post_leaves",
 	"textures": {
 		"texture": "minecraft:block/birch_leaves"
 	}

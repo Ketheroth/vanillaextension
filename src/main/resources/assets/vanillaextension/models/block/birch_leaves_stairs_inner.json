@@ -1,5 +1,5 @@
 {
-	"parent": "block/inner_stairs",
+	"parent": "vanillaextension:block/inner_stairs",
 	"textures": {
 		"bottom": "minecraft:block/birch_leaves",
 		"top": "minecraft:block/birch_leaves",

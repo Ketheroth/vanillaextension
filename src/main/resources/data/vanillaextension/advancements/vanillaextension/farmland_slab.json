@@ -1,0 +1,117 @@
+{
+	"parent": "vanillaextension:vanillaextension/root",
+	"display": {
+		"icon": {
+			"item": "vanillaextension:farmland_slab"
+		},
+		"title": "Those pesky water holes",
+		"description": "john1997br - Create a Farmland Slab by tilling a Dirt Slab or a Grass Block Slab with a Hoe",
+		"hidden": true
+	},
+	"criteria": {
+		"dirt_slab_wooden_hoe": {
+			"trigger": "minecraft:item_durability_changed",
+			"conditions": {
+				"delta": -1,
+				"item": {
+					"item": "minecraft:wooden_hoe"
+				}
+			}
+		},
+		"dirt_slab_stone_hoe": {
+			"trigger": "minecraft:item_durability_changed",
+			"conditions": {
+				"delta": -1,
+				"item": {
+					"item": "minecraft:stone_hoe"
+				}
+			}
+		},
+		"dirt_slab_iron_hoe": {
+			"trigger": "minecraft:item_durability_changed",
+			"conditions": {
+				"delta": -1,
+				"item": {
+					"item": "minecraft:iron_hoe"
+				}
+			}
+		},
+		"dirt_slab_diamond_hoe": {
+			"trigger": "minecraft:item_durability_changed",
+			"conditions": {
+				"delta": -1,
+				"item": {
+					"item": "minecraft:diamond_hoe"
+				}
+			}
+		},
+		"dirt_slab_golden_hoe": {
+			"trigger": "minecraft:item_durability_changed",
+			"conditions": {
+				"delta": -1,
+				"item": {
+					"item": "minecraft:golden_hoe"
+				}
+			}
+		},
+		"grass_block_slab_wooden_hoe": {
+			"trigger": "minecraft:item_durability_changed",
+			"conditions": {
+				"delta": -1,
+				"item": {
+					"item": "minecraft:wooden_hoe"
+				}
+			}
+		},
+		"grass_block_slab_stone_hoe": {
+			"trigger": "minecraft:item_durability_changed",
+			"conditions": {
+				"delta": -1,
+				"item": {
+					"item": "minecraft:stone_hoe"
+				}
+			}
+		},
+		"grass_block_slab_iron_hoe": {
+			"trigger": "minecraft:item_durability_changed",
+			"conditions": {
+				"delta": -1,
+				"item": {
+					"item": "minecraft:iron_hoe"
+				}
+			}
+		},
+		"grass_block_slab_diamond_hoe": {
+			"trigger": "minecraft:item_durability_changed",
+			"conditions": {
+				"delta": -1,
+				"item": {
+					"item": "minecraft:diamond_hoe"
+				}
+			}
+		},
+		"grass_block_slab_golden_hoe": {
+			"trigger": "minecraft:item_durability_changed",
+			"conditions": {
+				"delta": -1,
+				"item": {
+					"item": "minecraft:golden_hoe"
+				}
+			}
+		}
+	},
+	"requirements": [
+		[
+			"dirt_slab_wooden_hoe",
+			"dirt_slab_stone_hoe",
+			"dirt_slab_iron_hoe",
+			"dirt_slab_diamond_hoe",
+			"dirt_slab_golden_hoe",
+			"grass_block_slab_wooden_hoe",
+			"grass_block_slab_stone_hoe",
+			"grass_block_slab_iron_hoe",
+			"grass_block_slab_diamond_hoe",
+			"grass_block_slab_golden_hoe"
+		]
+	]
+}

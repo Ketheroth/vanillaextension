@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:white_glazed_terracotta"
+	},
+	"result": "vanillaextension:white_glazed_terracotta_trapdoor",
+	"count": 1
+}

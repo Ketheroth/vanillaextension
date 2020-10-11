@@ -1,0 +1,32 @@
+{
+	"parent": "minecraft:recipes/root",
+	"rewards": {
+		"recipes": [
+			"vanillaextension:light_gray_wool_trapdoor_from_wool_trapdoor"
+		]
+	},
+	"criteria": {
+		"has_block": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"tag": "vanillaextension:wool_trapdoors"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "vanillaextension:light_gray_wool_trapdoor_from_wool_trapdoor"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_block",
+			"has_the_recipe"
+		]
+	]
+}

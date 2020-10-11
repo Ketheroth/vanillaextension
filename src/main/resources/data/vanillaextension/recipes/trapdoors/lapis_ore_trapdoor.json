@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"   ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:lapis_ore"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:lapis_ore_trapdoor",
+		"count": 2
+	}
+}

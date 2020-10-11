@@ -1,0 +1,29 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:oak_log_trapdoor",
+		"vanillaextension:spruce_log_trapdoor",
+		"vanillaextension:birch_log_trapdoor",
+		"vanillaextension:jungle_log_trapdoor",
+		"vanillaextension:acacia_log_trapdoor",
+		"vanillaextension:dark_oak_log_trapdoor",
+		"vanillaextension:stripped_oak_log_trapdoor",
+		"vanillaextension:stripped_spruce_log_trapdoor",
+		"vanillaextension:stripped_birch_log_trapdoor",
+		"vanillaextension:stripped_jungle_log_trapdoor",
+		"vanillaextension:stripped_acacia_log_trapdoor",
+		"vanillaextension:stripped_dark_oak_log_trapdoor",
+		"vanillaextension:oak_wood_trapdoor",
+		"vanillaextension:spruce_wood_trapdoor",
+		"vanillaextension:birch_wood_trapdoor",
+		"vanillaextension:jungle_wood_trapdoor",
+		"vanillaextension:acacia_wood_trapdoor",
+		"vanillaextension:dark_oak_wood_trapdoor",
+		"vanillaextension:stripped_oak_wood_trapdoor",
+		"vanillaextension:stripped_spruce_wood_trapdoor",
+		"vanillaextension:stripped_birch_wood_trapdoor",
+		"vanillaextension:stripped_jungle_wood_trapdoor",
+		"vanillaextension:stripped_acacia_wood_trapdoor",
+		"vanillaextension:stripped_dark_oak_wood_trapdoor"
+	]
+}

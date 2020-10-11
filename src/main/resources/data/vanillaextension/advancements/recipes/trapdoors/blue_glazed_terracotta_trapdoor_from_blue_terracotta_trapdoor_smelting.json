@@ -1,0 +1,32 @@
+{
+	"parent": "minecraft:recipes/root",
+	"rewards": {
+		"recipes": [
+			"vanillaextension:blue_glazed_terracotta_trapdoor_from_blue_terracotta_trapdoor_smelting"
+		]
+	},
+	"criteria": {
+		"has_block": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "vanillaextension:blue_terracotta_trapdoor"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "vanillaextension:blue_glazed_terracotta_trapdoor_from_blue_terracotta_trapdoor_smelting"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_block",
+			"has_the_recipe"
+		]
+	]
+}

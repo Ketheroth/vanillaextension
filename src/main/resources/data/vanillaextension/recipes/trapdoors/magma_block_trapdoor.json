@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"   ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:magma_block"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:magma_block_trapdoor",
+		"count": 2
+	}
+}

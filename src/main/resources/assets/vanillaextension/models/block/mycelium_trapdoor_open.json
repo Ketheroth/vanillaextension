@@ -1,0 +1,21 @@
+{
+	"textures": {
+		"particle": "#side",
+		"bottom": "minecraft:block/dirt",
+		"top": "minecraft:block/mycelium_top",
+		"side": "minecraft:block/mycelium_side"
+	},
+	"elements": [
+		{   "from": [ 0, 0, 13 ],
+			"to": [ 16, 16, 16 ],
+			"faces": {
+				"down":  { "uv": [  0,  0, 16, 3 ], "rotation": 180, "texture": "#side", "cullface": "down" },
+				"up":    { "uv": [  0,  3, 16, 0 ], "rotation": 180, "texture": "#side", "cullface": "up" },
+				"north": { "uv": [  0, 16, 16, 0 ], "texture": "#top" },
+				"south": { "uv": [  0, 16, 16, 0 ], "texture": "#bottom", "cullface": "south" },
+				"west":  { "uv": [  0,  0, 16, 3 ], "rotation": 270, "texture": "#side", "cullface": "west" },
+				"east":  { "uv": [  0,  3, 16, 0 ], "rotation": 270, "texture": "#side", "cullface": "east" }
+			}
+		}
+	]
+}

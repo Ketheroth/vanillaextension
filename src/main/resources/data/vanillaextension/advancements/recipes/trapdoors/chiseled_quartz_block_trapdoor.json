@@ -1,0 +1,32 @@
+{
+	"parent": "minecraft:recipes/root",
+	"rewards": {
+		"recipes": [
+			"vanillaextension:chiseled_quartz_block_trapdoor"
+		]
+	},
+	"criteria": {
+		"has_block": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "minecraft:chiseled_quartz_block"
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "vanillaextension:chiseled_quartz_block_trapdoor"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_block",
+			"has_the_recipe"
+		]
+	]
+}

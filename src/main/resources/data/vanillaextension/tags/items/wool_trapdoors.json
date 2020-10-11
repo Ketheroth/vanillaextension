@@ -1,0 +1,21 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:white_wool_trapdoor",
+		"vanillaextension:orange_wool_trapdoor",
+		"vanillaextension:magenta_wool_trapdoor",
+		"vanillaextension:light_blue_wool_trapdoor",
+		"vanillaextension:yellow_wool_trapdoor",
+		"vanillaextension:lime_wool_trapdoor",
+		"vanillaextension:pink_wool_trapdoor",
+		"vanillaextension:gray_wool_trapdoor",
+		"vanillaextension:light_gray_wool_trapdoor",
+		"vanillaextension:cyan_wool_trapdoor",
+		"vanillaextension:purple_wool_trapdoor",
+		"vanillaextension:blue_wool_trapdoor",
+		"vanillaextension:brown_wool_trapdoor",
+		"vanillaextension:green_wool_trapdoor",
+		"vanillaextension:red_wool_trapdoor",
+		"vanillaextension:black_wool_trapdoor"
+	]
+}

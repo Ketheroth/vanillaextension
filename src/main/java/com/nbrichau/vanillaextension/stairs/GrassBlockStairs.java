@@ -1,9 +1,6 @@
 package com.nbrichau.vanillaextension.stairs;
 
-import com.nbrichau.vanillaextension.init.FenceInit;
-import com.nbrichau.vanillaextension.init.SlabInit;
-import com.nbrichau.vanillaextension.init.StairsInit;
-import com.nbrichau.vanillaextension.init.WallInit;
+import com.nbrichau.vanillaextension.init.*;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -79,7 +76,7 @@ public class GrassBlockStairs extends StairsBlock {
 	public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 		if (!isSnowyConditions(state, worldIn, pos)) {
 			if (!worldIn.isAreaLoaded(pos, 3))
-				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
+				return;
 			worldIn.setBlockState(pos, StairsInit.dirt_stairs.getDefaultState().with(FACING, state.get(FACING)).with(HALF, state.get(HALF)).with(SHAPE, state.get(SHAPE)).with(WATERLOGGED, state.get(WATERLOGGED)));
 		} else {
 			if (worldIn.getLight(pos.up()) >= 9) {
@@ -98,9 +95,9 @@ public class GrassBlockStairs extends StairsBlock {
 							worldIn.setBlockState(blockpos, FenceInit.grass_block_fence.getDefaultState().with(NORTH, blockstate.get(NORTH)).with(EAST, blockstate.get(EAST)).with(SOUTH, blockstate.get(SOUTH)).with(WEST, blockstate.get(WEST)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
 						} else if (block == WallInit.dirt_wall) {
 							worldIn.setBlockState(blockpos, WallInit.grass_block_wall.getDefaultState().with(UP, blockstate.get(UP)).with(NORTH, blockstate.get(NORTH)).with(EAST, blockstate.get(EAST)).with(SOUTH, blockstate.get(SOUTH)).with(WEST, blockstate.get(WEST)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
-						} /* else if (block == TrapdoorInit.dirt_trapdoor) {
+						} else if (block == TrapdoorInit.dirt_trapdoor) {
 							worldIn.setBlockState(blockpos, TrapdoorInit.grass_block_trapdoor.getDefaultState().with(HORIZONTAL_FACING, blockstate.get(HORIZONTAL_FACING)).with(OPEN, blockstate.get(OPEN)).with(HALF, blockstate.get(HALF)).with(POWERED, blockstate.get(POWERED)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
-						} */
+						}
 					}
 				}
 			}

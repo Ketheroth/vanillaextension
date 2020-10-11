@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:dead_tube_coral_block"
+	},
+	"result": "vanillaextension:dead_tube_coral_block_trapdoor",
+	"count": 1
+}

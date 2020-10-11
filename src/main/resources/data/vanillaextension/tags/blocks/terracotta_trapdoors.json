@@ -1,0 +1,22 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:terracotta_trapdoor",
+		"vanillaextension:white_terracotta_trapdoor",
+		"vanillaextension:orange_terracotta_trapdoor",
+		"vanillaextension:magenta_terracotta_trapdoor",
+		"vanillaextension:light_blue_terracotta_trapdoor",
+		"vanillaextension:yellow_terracotta_trapdoor",
+		"vanillaextension:lime_terracotta_trapdoor",
+		"vanillaextension:pink_terracotta_trapdoor",
+		"vanillaextension:gray_terracotta_trapdoor",
+		"vanillaextension:light_gray_terracotta_trapdoor",
+		"vanillaextension:cyan_terracotta_trapdoor",
+		"vanillaextension:purple_terracotta_trapdoor",
+		"vanillaextension:blue_terracotta_trapdoor",
+		"vanillaextension:brown_terracotta_trapdoor",
+		"vanillaextension:green_terracotta_trapdoor",
+		"vanillaextension:red_terracotta_trapdoor",
+		"vanillaextension:black_terracotta_trapdoor"
+	]
+}

@@ -1,0 +1,6 @@
+{
+	"parent": "vanillaextension:block/template_orientable_trapdoor_bottom_tint",
+	"textures": {
+		"texture": "minecraft:block/spruce_leaves"
+	}
+}

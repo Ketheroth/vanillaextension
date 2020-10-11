@@ -1,6 +1,7 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"pattern": [
+		" # ",
 		"###",
 		"###"
 	],
@@ -11,6 +12,6 @@
 	},
 	"result": {
 		"item": "vanillaextension:pink_stained_glass_wall",
-		"count": 6
+		"count": 7
 	}
 }

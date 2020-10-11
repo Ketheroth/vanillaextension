@@ -1,5 +1,5 @@
 {
-	"parent": "minecraft:block/fence_inventory",
+	"parent": "vanillaextension:block/fence_inventory_leaves",
 	"textures": {
 		"texture": "minecraft:block/spruce_leaves"
 	}

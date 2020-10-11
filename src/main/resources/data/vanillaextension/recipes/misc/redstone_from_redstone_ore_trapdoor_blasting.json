@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:blasting",
+	"ingredient": {
+		"item": "vanillaextension:redstone_ore_trapdoor"
+	},
+	"result": "minecraft:redstone",
+	"experience": 0.7,
+	"cookingtime": 100
+}

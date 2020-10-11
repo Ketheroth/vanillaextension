@@ -4,7 +4,7 @@ license="MIT License"
 issueTrackerURL="https://github.com/nbrichau/vanillaextension/issues"
 [[mods]]
 modId="vanillaextension"
-version="1.15.2-1.0.5"
+version="1.15.2-1.0.6"
 displayName="Vanilla Extension"
 #updateJSONURL="http://myurl.me/"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/vanilla-extension"

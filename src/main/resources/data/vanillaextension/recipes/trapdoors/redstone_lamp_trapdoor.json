@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"   ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:redstone_lamp"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:redstone_lamp_trapdoor",
+		"count": 2
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:redstone_lamp"
+	},
+	"result": "vanillaextension:redstone_lamp_trapdoor",
+	"count": 1
+}
