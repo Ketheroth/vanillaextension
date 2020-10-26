@@ -52,7 +52,7 @@ public class GrassBlockFence extends FenceBlock {
 		if (!isSnowyConditions(state, worldIn, pos)) {
 			if (!worldIn.isAreaLoaded(pos, 3))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
-			worldIn.setBlockState(pos, WallInit.dirt_wall.getDefaultState().with(NORTH, state.get(NORTH)).with(EAST, state.get(EAST)).with(SOUTH, state.get(SOUTH)).with(WEST, state.get(WEST)).with(WATERLOGGED, state.get(WATERLOGGED)));
+			worldIn.setBlockState(pos, FenceInit.dirt_fence.getDefaultState().with(NORTH, state.get(NORTH)).with(EAST, state.get(EAST)).with(SOUTH, state.get(SOUTH)).with(WEST, state.get(WEST)).with(WATERLOGGED, state.get(WATERLOGGED)));
 		} else {
 			if (worldIn.getLight(pos.up()) >= 9) {
 				for (int i = 0; i < 4; ++i) {

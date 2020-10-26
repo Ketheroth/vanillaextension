@@ -3,12 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [UNRELEASED]
+### Fixed
+- Mycelium and Grass fence turn back to Dirt Wall instead of Dirt Fence.
+- dark_oak_log_stairs wasn't translated
+
 ## [1.16.3-1.0.11]
 
 I consider the mod finished. I don't think there will be new features in the future.  
 Only port to newer versions and bug fixes.
 
-## Added
+### Added
 - Sand and Gravel blocks are affected by gravity
 - Nether Gold Ore Slab, Stairs, Fence, Wall and Trapdoor
 - Soul Soil Slab, Stairs, Fence, Wall and Trapdoor
@@ -17,12 +22,12 @@ Only port to newer versions and bug fixes.
 - Netherrack block variants can be smelted to obtain nether brick
 - Mycelium block variants spread on dirt block (and variants)
 
-## Changed
+### Changed
 - Minimum Forge version : 1.16.3-34.1.0
 - log trapdoor can be opened with right-click
 
 ## [1.16.3-1.0.10]
-## Changed
+### Changed
 - Port to 1.16.3
 - Minimum Forge version : 1.16.3-34.0.1
 It should also work in 1.16.2
