@@ -1,6 +1,0 @@
-{
-	"name": "Smelting Slabs",
-	"description": "Slabs by smelting",
-	"icon": "vanillaextension:cracked_stone_brick_slab",
-	"parent": "smelting"
-}

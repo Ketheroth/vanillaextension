@@ -1,5 +1,5 @@
 {
 	"name": "Smelting Recipes",
-	"description": "All smelting recipes added by the mod",
+	"description": "All smelting recipes added by the mod.$(br)A block can be smelted if the original block can be smelted.$(br)For Example : Sand can be smelted in Glass so Sand Fence can be smelted to obtain Glass Fence",
 	"icon": "minecraft:furnace"
 }

@@ -1,0 +1,51 @@
+{
+	"name": "List of Blocks",
+	"icon": "minecraft:stone",
+	"category": "vanillaextension:stonecutting",
+	"pages": [
+		{
+			"type": "text",
+			"text": "$(li)Ancient Debris$(li)Andesite$(li)Andesite Fence$(li)Andesite Trapdoor$(li)Basalt$(li)Basalt Fence$(li)Basalt Slab$(li)Basalt Stairs$(li)Basalt Trapdoor$(li)Basalt Wall$(li)Bedrock$(li)Blackstone$(li)Blackstone Fence"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Blackstone Slab$(li)Blackstone Stairs$(li)Blackstone Trapdoor$(li)Blackstone Wall$(li)Blue Ice$(li)Bone Block$(li)Brain Coral Block$(li)Bricks$(li)Bubble Coral Block$(li)Chiseled Nether Bricks$(li)Chiseled Polished Blackstone$(li)Chiseled Quartz Block$(li)Chiseled Red Sandstone$(li)Chiseled Sandstone$(li)Chiseled Stone Bricks"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Coal Block$(li)Coal Ore$(li)Cobblestone$(li)Concrete$(li)Cracked Nether Bricks$(li)Cracked Polished Blackstone Bricks$(li)Cracked Stone Bricks$(li)Crying Obsidian$(li)Cut Red Sandstone$(li)Cut Sandstone$(li)Dark Prismarine$(li)Dead Brain Coral Block$(li)Dead Bubble Coral Block$(li)Dead Fire Coral Block$(li)Dead Horn Coral Block"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Dead Tube Coral Block$(li)Diamond Block$(li)Diamond Ore$(li)Diorite$(li)Diorite Fence$(li)Diorite Trapdoor$(li)Dragon Egg$(li)Emerald Block$(li)Emerald Ore$(li)End Stone$(li)End Stone Bricks$(li)End Stone Fence$(li)End Stone Trapdoor$(li)Fire Coral Block$(li)Gilded Blackstone$(li)Glass"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Glazed Terracotta$(li)Glowstone$(li)Gold Block$(li)Gold Ore$(li)Granite$(li)Granite Fence$(li)Granite Trapdoor$(li)Honeycomb Block$(li)Hopper$(li)Horn Coral Block$(li)Iron Bars$(li)Iron Block$(li)Iron Ore$(li)Iron Trapdoor$(li)Lapis Block$(li)Lapis Ore"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Magma Block$(li)Mossy Cobblestone$(li)Mossy Stone Bricks$(li)Nether Brick Fence$(li)Nether Brick Slab$(li)Nether Brick Stairs$(li)Nether Brick Trapdoor$(li)Nether Brick Wall$(li)Nether Bricks$(li)Nether Gold Ore$(li)Nether Quartz Ore$(li)Netherite Block$(li)Netherrack$(li)Obsidian$(li)Packed Ice$(li)Polished Andesite"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Polished Basalt$(li)Polished Blackstone$(li)Polished Blackstone Bricks$(li)Polished Blackstone Fence$(li)Polished Blackstone Slab$(li)Polished Blackstone Stairs$(li)Polished Blackstone Trapdoor$(li)Polished Blackstone Wall$(li)Polished Diorite$(li)Polished Granite$(li)Prismarine$(li)Prismarine Bricks$(li)Prismarine Trapdoor$(li)Purpur Block$(li)Purpur Block Fence"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Purpur Block Trapdoor$(li)Purpur Pillar$(li)Purpur Slab$(li)Purpur Stairs$(li)Quartz Block$(li)Quartz Block Fence$(li)Quartz Block Trapdoor$(li)Quartz Block Wall$(li)Quartz Bricks$(li)Quartz Pillar$(li)Quartz Slab$(li)Quartz Stairs$(li)Red Nether Bricks$(li)Red Sandstone$(li)Red Sandstone Fence$(li)Red Sandstone Slab"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Red Sandstone Stairs$(li)Red Sandstone Trapdoor$(li)Red Sandstone Wall$(li)Redstone Block$(li)Redstone Lamp$(li)Redstone Ore$(li)Sandstone$(li)Sandstone Fence$(li)Sandstone Slab$(li)Sandstone Stairs$(li)Sandstone Trapdoor$(li)Sandstone Wall$(li)Sea Lantern$(li)Smooth Quartz$(li)Smooth Red Sandstone$(li)Smooth Sandstone"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Smooth Stone$(li)Spawner$(li)Stained Glass$(li)Stone$(li)Stone Brick Fence$(li)Stone Brick Slab$(li)Stone Brick Stairs$(li)Stone Brick Trapdoor$(li)Stone Brick Wall$(li)Stone Bricks$(li)Stone Fence$(li)Stone Slab$(li)Stone Stairs$(li)Stone Trapdoor$(li)Stone Wall$(li)Terracotta"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Tnt$(li)Tube Coral Block"
+		}
+	]
+}

@@ -12,8 +12,8 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.16.3-1.0.11'
-group = 'com.yourname.modid'
+version = '1.16.4-1.0.12'
+group = 'com.nbrichau.vanillaextension'
 archivesBaseName = 'vanillaextension'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
@@ -79,10 +79,10 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.3-34.1.0'
+    minecraft 'net.minecraftforge:forge:1.16.4-35.0.3'
 
-    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16-42:api")
-    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16-42")
+    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.2-47:api")
+    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.2-47")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

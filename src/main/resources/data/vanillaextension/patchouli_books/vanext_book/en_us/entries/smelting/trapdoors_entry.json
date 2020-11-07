@@ -1,0 +1,81 @@
+{
+	"name": "Fences Smelting Recipes",
+	"icon": "vanillaextension:cracked_stone_brick_fence",
+	"category": "vanillaextension:smelting",
+	"pages": [
+		{
+			"type": "text",
+			"text": "All the smelting recipes for trapdoors"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:trapdoor/sponge_trapdoor_from_wet_sponge_trapdoor_smelting",
+			"recipe2": "vanillaextension:trapdoor/stone_trapdoor_from_cobblestone_trapdoor_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:trapdoor/glass_trapdoor_from_red_sand_trapdoor_smelting",
+			"recipe2": "vanillaextension:trapdoor/glass_trapdoor_from_sand_trapdoor_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:trapdoor/cracked_nether_brick_trapdoor_from_nether_brick_trapdoor_smelting",
+			"recipe2": "vanillaextension:trapdoor/cracked_polished_blackstone_brick_trapdoor_from_polished_blackstone_brick_trapdoor_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:trapdoor/cracked_stone_brick_trapdoor_from_stone_brick_trapdoor_smelting",
+			"recipe2": "vanillaextension:trapdoor/terracotta_trapdoor_from_clay_trapdoor_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:trapdoor/smooth_quartz_trapdoor_from_quartz_block_trapdoor_smelting",
+			"recipe2": "vanillaextension:trapdoor/smooth_red_sandstone_trapdoor_from_red_sandstone_trapdoor_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:trapdoor/smooth_sandstone_trapdoor_from_sandstone_trapdoor_smelting",
+			"recipe2": "vanillaextension:trapdoor/smooth_stone_trapdoor_from_stone_trapdoor_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:trapdoor/black_glazed_terracotta_trapdoor_from_black_terracotta_trapdoor_smelting",
+			"recipe2": "vanillaextension:trapdoor/blue_glazed_terracotta_trapdoor_from_blue_terracotta_trapdoor_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:trapdoor/brown_glazed_terracotta_trapdoor_from_brown_terracotta_trapdoor_smelting",
+			"recipe2": "vanillaextension:trapdoor/cyan_glazed_terracotta_trapdoor_from_cyan_terracotta_trapdoor_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:trapdoor/gray_glazed_terracotta_trapdoor_from_gray_terracotta_trapdoor_smelting",
+			"recipe2": "vanillaextension:trapdoor/green_glazed_terracotta_trapdoor_from_green_terracotta_trapdoor_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:trapdoor/light_blue_glazed_terracotta_trapdoor_from_light_blue_terracotta_trapdoor_smelting",
+			"recipe2": "vanillaextension:trapdoor/light_gray_glazed_terracotta_trapdoor_from_light_gray_terracotta_trapdoor_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:trapdoor/lime_glazed_terracotta_trapdoor_from_lime_terracotta_trapdoor_smelting",
+			"recipe2": "vanillaextension:trapdoor/magenta_glazed_terracotta_trapdoor_from_magenta_terracotta_trapdoor_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:trapdoor/orange_glazed_terracotta_trapdoor_from_orange_terracotta_trapdoor_smelting",
+			"recipe2": "vanillaextension:trapdoor/pink_glazed_terracotta_trapdoor_from_pink_terracotta_trapdoor_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:trapdoor/purple_glazed_terracotta_trapdoor_from_purple_terracotta_trapdoor_smelting",
+			"recipe2": "vanillaextension:trapdoor/red_glazed_terracotta_trapdoor_from_red_terracotta_trapdoor_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:trapdoor/white_glazed_terracotta_trapdoor_from_white_terracotta_trapdoor_smelting",
+			"recipe2": "vanillaextension:trapdoor/yellow_glazed_terracotta_trapdoor_from_yellow_terracotta_trapdoor_smelting"
+		}
+	]
+}

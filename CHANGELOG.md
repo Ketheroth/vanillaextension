@@ -3,7 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
-## [UNRELEASED]
+## [1.16.4-1.0.12]
+
+## Changed
+- Port to 1.16.4 (also work in 1.16.2 and 1.16.3)
+- The in-game wiki with Patchouli is finished
+
 ### Fixed
 - Mycelium and Grass fence turn back to Dirt Wall instead of Dirt Fence.
 - dark_oak_log_stairs wasn't translated
@@ -36,7 +41,7 @@ It should also work in 1.16.2
 ### Changed
 - Port to 1.16.2
 - Minimum Forge version : 1.16.2-33.0.41
-- (Optional Dependancy) Minimum Patchouli version : 1.16-42
+- (Optional Dependency) Minimum Patchouli version : 1.16-42
 
 ## [1.16.1-1.0.8]
 ### Added

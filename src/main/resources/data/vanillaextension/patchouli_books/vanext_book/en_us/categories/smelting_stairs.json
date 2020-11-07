@@ -1,6 +1,0 @@
-{
-	"name": "Smelting Stairs",
-	"description": "Stairs by smelting",
-	"icon": "vanillaextension:cracked_stone_brick_stairs",
-	"parent": "smelting"
-}

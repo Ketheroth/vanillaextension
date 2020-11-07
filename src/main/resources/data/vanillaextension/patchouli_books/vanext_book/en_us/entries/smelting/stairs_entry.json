@@ -1,0 +1,70 @@
+{
+	"name": "Stairs Smelting Recipes",
+	"icon": "vanillaextension:cracked_polished_blackstone_brick_stairs",
+	"category": "vanillaextension:smelting",
+	"pages": [
+		{
+			"type": "text",
+			"text": "All the smelting recipes for stairs"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:stairs/glass_stairs_from_red_sand_stairs_smelting",
+			"recipe2": "vanillaextension:stairs/glass_stairs_from_sand_stairs_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:stairs/sponge_stairs_from_wet_sponge_stairs_smelting",
+			"recipe2": "vanillaextension:stairs/cracked_stone_brick_stairs_from_stone_brick_stairs_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:stairs/cracked_nether_brick_stairs_from_nether_brick_stairs_smelting",
+			"recipe2": "vanillaextension:stairs/cracked_polished_blackstone_brick_stairs_from_polished_blackstone_brick_stairs_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:stairs/smooth_stone_stairs_from_stone_stairs_smelting",
+			"recipe2": "vanillaextension:stairs/black_glazed_terracotta_stairs_from_black_terracotta_stairs_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:stairs/blue_glazed_terracotta_stairs_from_blue_terracotta_stairs_smelting",
+			"recipe2": "vanillaextension:stairs/brown_glazed_terracotta_stairs_from_brown_terracotta_stairs_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:stairs/cyan_glazed_terracotta_stairs_from_cyan_terracotta_stairs_smelting",
+			"recipe2": "vanillaextension:stairs/gray_glazed_terracotta_stairs_from_gray_terracotta_stairs_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:stairs/green_glazed_terracotta_stairs_from_green_terracotta_stairs_smelting",
+			"recipe2": "vanillaextension:stairs/light_blue_glazed_terracotta_stairs_from_light_blue_terracotta_stairs_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:stairs/light_gray_glazed_terracotta_stairs_from_light_gray_terracotta_stairs_smelting",
+			"recipe2": "vanillaextension:stairs/lime_glazed_terracotta_stairs_from_lime_terracotta_stairs_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:stairs/magenta_glazed_terracotta_stairs_from_magenta_terracotta_stairs_smelting",
+			"recipe2": "vanillaextension:stairs/orange_glazed_terracotta_stairs_from_orange_terracotta_stairs_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:stairs/pink_glazed_terracotta_stairs_from_pink_terracotta_stairs_smelting",
+			"recipe2": "vanillaextension:stairs/purple_glazed_terracotta_stairs_from_purple_terracotta_stairs_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:stairs/red_glazed_terracotta_stairs_from_red_terracotta_stairs_smelting",
+			"recipe2": "vanillaextension:stairs/white_glazed_terracotta_stairs_from_white_terracotta_stairs_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:stairs/yellow_glazed_terracotta_stairs_from_yellow_terracotta_stairs_smelting"
+		}
+	]
+}
