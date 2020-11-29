@@ -61,16 +61,16 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 		this.solidifiedState = solidified.getDefaultState();
 	}
 
-	protected VoxelShape[] makeShapes(float nodeWidth, float extensionWidth, float p_196408_3_, float p_196408_4_, float p_196408_5_) {
+	protected VoxelShape[] makeShapes(float nodeWidth, float extensionWidth, float nodeHeight, float extensionBottom, float extensionHeight) {
 		float f = 8.0F - nodeWidth;
 		float f1 = 8.0F + nodeWidth;
 		float f2 = 8.0F - extensionWidth;
 		float f3 = 8.0F + extensionWidth;
-		VoxelShape voxelshape = Block.makeCuboidShape((double) f, 0.0D, (double) f, (double) f1, (double) p_196408_3_, (double) f1);
-		VoxelShape voxelshape1 = Block.makeCuboidShape((double) f2, (double) p_196408_4_, 0.0D, (double) f3, (double) p_196408_5_, (double) f3);
-		VoxelShape voxelshape2 = Block.makeCuboidShape((double) f2, (double) p_196408_4_, (double) f2, (double) f3, (double) p_196408_5_, 16.0D);
-		VoxelShape voxelshape3 = Block.makeCuboidShape(0.0D, (double) p_196408_4_, (double) f2, (double) f3, (double) p_196408_5_, (double) f3);
-		VoxelShape voxelshape4 = Block.makeCuboidShape((double) f2, (double) p_196408_4_, (double) f2, 16.0D, (double) p_196408_5_, (double) f3);
+		VoxelShape voxelshape = Block.makeCuboidShape((double) f, 0.0D, (double) f, (double) f1, (double) nodeHeight, (double) f1);
+		VoxelShape voxelshape1 = Block.makeCuboidShape((double) f2, (double) extensionBottom, 0.0D, (double) f3, (double) extensionHeight, (double) f3);
+		VoxelShape voxelshape2 = Block.makeCuboidShape((double) f2, (double) extensionBottom, (double) f2, (double) f3, (double) extensionHeight, 16.0D);
+		VoxelShape voxelshape3 = Block.makeCuboidShape(0.0D, (double) extensionBottom, (double) f2, (double) f3, (double) extensionHeight, (double) f3);
+		VoxelShape voxelshape4 = Block.makeCuboidShape((double) f2, (double) extensionBottom, (double) f2, 16.0D, (double) extensionHeight, (double) f3);
 		VoxelShape voxelshape5 = VoxelShapes.or(voxelshape1, voxelshape4);
 		VoxelShape voxelshape6 = VoxelShapes.or(voxelshape2, voxelshape3);
 		VoxelShape[] avoxelshape = new VoxelShape[]{VoxelShapes.empty(), voxelshape2, voxelshape3, voxelshape6, voxelshape1, VoxelShapes.or(voxelshape2, voxelshape1), VoxelShapes.or(voxelshape3, voxelshape1), VoxelShapes.or(voxelshape6, voxelshape1), voxelshape4, VoxelShapes.or(voxelshape2, voxelshape4), VoxelShapes.or(voxelshape3, voxelshape4), VoxelShapes.or(voxelshape6, voxelshape4), voxelshape5, VoxelShapes.or(voxelshape2, voxelshape5), VoxelShapes.or(voxelshape3, voxelshape5), VoxelShapes.or(voxelshape6, voxelshape5)};
@@ -107,6 +107,16 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 
 	private static int getMask(Direction facing) {
 		return 1 << facing.getHorizontalIndex();
+	}
+
+	@Override
+	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+		return this.shapes[this.getIndex(state)];
+	}
+
+	@Override
+	public VoxelShape getCollisionShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+		return this.collisionShapes[this.getIndex(state)];
 	}
 
 	@Override
@@ -236,4 +246,8 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 		return state.getFluidState().isTagged(FluidTags.WATER);
 	}
 
+	@Override
+	public FluidState getFluidState(BlockState state) {
+		return state.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
+	}
 }

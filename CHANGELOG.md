@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [1.16.4-1.0.13]
+
+### Fixed
+- Vine Stairs make the game crash
+- Vine Stairs are replaced by a block on right click with this block
+- Hopper Stairs catch right click
+- Concrete Powder Fence have wrong collision shape
+- TNT Stairs can be ignited and turn into an exploding tnt (I don't want them to explode)
+
 ## [1.16.4-1.0.12]
 
 ## Changed
@@ -10,7 +19,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - The in-game wiki with Patchouli is finished
 
 ### Fixed
-- Mycelium and Grass fence turn back to Dirt Wall instead of Dirt Fence.
+- Mycelium and Grass fence turned back to Dirt Wall instead of Dirt Fence.
 - dark_oak_log_stairs wasn't translated
 
 ## [1.16.3-1.0.11]

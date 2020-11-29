@@ -330,7 +330,7 @@ public class StairsInit {
 		event.getRegistry().register(new StairsBlock(Blocks.BLACK_WOOL::getDefaultState, Block.Properties.from(Blocks.BLACK_WOOL)).setRegistryName("black_wool_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.GOLD_BLOCK::getDefaultState, Block.Properties.from(Blocks.GOLD_BLOCK)).setRegistryName("gold_block_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.IRON_BLOCK::getDefaultState, Block.Properties.from(Blocks.IRON_BLOCK)).setRegistryName("iron_block_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.TNT::getDefaultState, Block.Properties.from(Blocks.TNT)).setRegistryName("tnt_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.IRON_BLOCK::getDefaultState, Block.Properties.create(Material.IRON).zeroHardnessAndResistance().sound(SoundType.PLANT)).setRegistryName("tnt_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.BOOKSHELF::getDefaultState, Block.Properties.from(Blocks.BOOKSHELF)).setRegistryName("bookshelf_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.OBSIDIAN::getDefaultState, Block.Properties.from(Blocks.OBSIDIAN)).setRegistryName("obsidian_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.SPAWNER::getDefaultState, Block.Properties.from(Blocks.SPAWNER)).setRegistryName("spawner_stairs"));
@@ -376,7 +376,7 @@ public class StairsInit {
 		event.getRegistry().register(new StairsBlock(Blocks.MUSHROOM_STEM::getDefaultState, Block.Properties.from(Blocks.MUSHROOM_STEM)).setRegistryName("mushroom_stem_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.IRON_BARS::getDefaultState, Block.Properties.from(Blocks.IRON_BARS)).setRegistryName("iron_bars_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.MELON::getDefaultState, Block.Properties.from(Blocks.MELON)).setRegistryName("melon_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.VINE::getDefaultState, Block.Properties.create(Material.TALL_PLANTS).doesNotBlockMovement().hardnessAndResistance(0.2F).sound(SoundType.PLANT)).setRegistryName("vine_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.MELON::getDefaultState, Block.Properties.create(Material.ORGANIC).doesNotBlockMovement().hardnessAndResistance(0.2F).sound(SoundType.PLANT)).setRegistryName("vine_stairs"));
 		event.getRegistry().register(new MyceliumStairs(Blocks.MYCELIUM::getDefaultState, Block.Properties.from(Blocks.MYCELIUM)).setRegistryName("mycelium_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.END_STONE::getDefaultState, Block.Properties.from(Blocks.END_STONE)).setRegistryName("end_stone_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.DRAGON_EGG::getDefaultState, Block.Properties.from(Blocks.DRAGON_EGG)).setRegistryName("dragon_egg_stairs"));
@@ -385,7 +385,7 @@ public class StairsInit {
 		event.getRegistry().register(new StairsBlock(Blocks.EMERALD_BLOCK::getDefaultState, Block.Properties.from(Blocks.EMERALD_BLOCK)).setRegistryName("emerald_block_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.REDSTONE_BLOCK::getDefaultState, Block.Properties.from(Blocks.REDSTONE_BLOCK)).setRegistryName("redstone_block_stairs"));
 		event.getRegistry().register(new OreStairs(Blocks.NETHER_QUARTZ_ORE::getDefaultState, Block.Properties.from(Blocks.NETHER_QUARTZ_ORE)).setRegistryName("nether_quartz_ore_stairs"));
-		event.getRegistry().register(new StairsBlock(Blocks.HOPPER::getDefaultState, Block.Properties.from(Blocks.HOPPER)).setRegistryName("hopper_stairs"));
+		event.getRegistry().register(new StairsBlock(Blocks.IRON_BLOCK::getDefaultState, Block.Properties.from(Blocks.IRON_BLOCK)).setRegistryName("hopper_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.CHISELED_QUARTZ_BLOCK::getDefaultState, Block.Properties.from(Blocks.CHISELED_QUARTZ_BLOCK)).setRegistryName("chiseled_quartz_block_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.QUARTZ_PILLAR::getDefaultState, Block.Properties.from(Blocks.QUARTZ_PILLAR)).setRegistryName("quartz_pillar_stairs"));
 		event.getRegistry().register(new StairsBlock(Blocks.WHITE_TERRACOTTA::getDefaultState, Block.Properties.from(Blocks.WHITE_TERRACOTTA)).setRegistryName("white_terracotta_stairs"));
