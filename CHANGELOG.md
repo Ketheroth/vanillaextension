@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [1.15.2-1.0.7]
+
+### Fixed
+- Vine Stairs are replaced by a block on right click with this block
+- Hopper Stairs catch right click
+- TNT Stairs can be ignited and turn into an exploding tnt (I don't want them to explode)
+
+### Changed
+- The in-game wiki with Patchouli is finished
+
 ## [1.15.2-1.0.6]
 
 I consider the mod finished. I don't think there will be new features in the future.  

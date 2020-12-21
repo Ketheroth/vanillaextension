@@ -1,0 +1,16 @@
+{
+	"name": "Trapdoor Crafting Recipes",
+	"icon": "vanillaextension:stone_trapdoor",
+	"category": "vanillaextension:crafting",
+	"pages": [
+		{
+			"type": "text",
+			"text": "The crafting recipes for the trapdoors are changed to not conflict with the ones from walls.$(br)Attention, vanilla recipes are not changed."
+		},
+		{
+			"type": "crafting",
+			"recipe": "vanillaextension:trapdoors/stone_trapdoor",
+			"text": "You can change the stone block by another block that can be crafted in trapdoor."
+		}
+	]
+}

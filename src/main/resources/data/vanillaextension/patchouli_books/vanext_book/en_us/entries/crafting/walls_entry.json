@@ -1,0 +1,21 @@
+{
+	"name": "Walls Crafting Recipes",
+	"icon": "vanillaextension:pink_stained_glass_wall",
+	"category": "vanillaextension:crafting",
+	"pages": [
+		{
+			"type": "text",
+			"text": "The crafting recipes for glass walls and plank walls are changed to not conflict with the ones for glass panes and plank trapdoors."
+		},
+		{
+			"type": "crafting",
+			"recipe": "vanillaextension:walls/pink_stained_glass_wall",
+			"text": "You can change Pink Stained Glass by another color."
+		},
+		{
+			"type": "crafting",
+			"recipe": "vanillaextension:walls/oak_plank_wall",
+			"text": "You can change Oak Plank by another plank type."
+		}
+	]
+}

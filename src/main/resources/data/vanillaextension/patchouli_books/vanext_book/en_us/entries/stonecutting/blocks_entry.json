@@ -1,0 +1,43 @@
+{
+	"name": "List of Blocks",
+	"icon": "minecraft:stone",
+	"category": "vanillaextension:stonecutting",
+	"pages": [
+		{
+			"type": "text",
+			"text": "$(li)Andesite$(li)Andesite Fence$(li)Andesite Trapdoor$(li)Bedrock$(li)Blue Ice$(li)Bone Block$(li)Brain Coral Block$(li)Bricks$(li)Bubble Coral Block$(li)Chiseled Quartz Block$(li)Chiseled Red Sandstone$(li)Chiseled Sandstone$(li)Chiseled Stone Bricks"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Coal Block$(li)Coal Ore$(li)Cobblestone$(li)Concrete$(li)Cracked Stone Bricks$(li)Cut Red Sandstone$(li)Cut Sandstone$(li)Dark Prismarine$(li)Dead Brain Coral Block$(li)Dead Bubble Coral Block$(li)Dead Fire Coral Block$(li)Dead Horn Coral Block$(li)Dead Tube Coral Block$(li)Diamond Block$(li)Diamond Ore$(li)Diorite"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Diorite Fence$(li)Diorite Trapdoor$(li)Dragon Egg$(li)Emerald Block$(li)Emerald Ore$(li)End Stone$(li)End Stone Bricks$(li)End Stone Fence$(li)End Stone Trapdoor$(li)Fire Coral Block$(li)Glass$(li)Glazed Terracotta$(li)Glowstone$(li)Gold Block$(li)Gold Ore$(li)Granite"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Granite Fence$(li)Granite Trapdoor$(li)Honeycomb Block$(li)Hopper$(li)Horn Coral Block$(li)Iron Bars$(li)Iron Block$(li)Iron Ore$(li)Iron Trapdoor$(li)Lapis Block$(li)Lapis Ore$(li)Magma Block$(li)Mossy Cobblestone$(li)Mossy Stone Bricks$(li)Nether Brick Fence$(li)Nether Brick Slab"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Nether Brick Stairs$(li)Nether Brick Trapdoor$(li)Nether Brick Wall$(li)Nether Bricks$(li)Nether Quartz Ore$(li)Netherrack$(li)Obsidian$(li)Packed Ice$(li)Polished Andesite$(li)Polished Diorite$(li)Polished Granite$(li)Prismarine$(li)Prismarine Bricks$(li)Prismarine Trapdoor$(li)Purpur Block$(li)Purpur Block Fence"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Purpur Block Trapdoor$(li)Purpur Pillar$(li)Purpur Slab$(li)Purpur Stairs$(li)Quartz Block$(li)Quartz Block Fence$(li)Quartz Block Trapdoor$(li)Quartz Block Wall$(li)Quartz Pillar$(li)Quartz Slab$(li)Quartz Stairs$(li)Red Nether Bricks$(li)Red Sandstone$(li)Red Sandstone Fence$(li)Red Sandstone Slab$(li)Red Sandstone Stairs"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Red Sandstone Trapdoor$(li)Red Sandstone Wall$(li)Redstone Block$(li)Redstone Lamp$(li)Redstone Ore$(li)Sandstone$(li)Sandstone Fence$(li)Sandstone Slab$(li)Sandstone Stairs$(li)Sandstone Trapdoor$(li)Sandstone Wall$(li)Sea Lantern$(li)Smooth Quartz$(li)Smooth Red Sandstone$(li)Smooth Sandstone$(li)Smooth Stone"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Spawner$(li)Stained Glass$(li)Stone$(li)Stone Brick Fence$(li)Stone Brick Slab$(li)Stone Brick Stairs$(li)Stone Brick Trapdoor$(li)Stone Brick Wall$(li)Stone Bricks$(li)Stone Fence$(li)Stone Slab$(li)Stone Stairs$(li)Stone Trapdoor$(li)Stone Wall$(li)Terracotta$(li)TNT"
+		},
+		{
+			"type": "text",
+			"text": "$(li)Tube Coral Block"
+		}
+	]
+}

@@ -1,8 +1,32 @@
 {
-	"name": "Glazed Terracotta Fences Smelting Recipes",
-	"icon": "vanillaextension:green_glazed_terracotta_fence",
-	"category": "vanillaextension:smelting_fence",
+	"name": "Fences Smelting Recipes",
+	"icon": "vanillaextension:cracked_stone_brick_fence",
+	"category": "vanillaextension:smelting",
 	"pages": [
+		{
+			"type": "text",
+			"text": "All the smelting recipes for fences"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:fences/sponge_fence_from_wet_sponge_fence_smelting",
+			"recipe2": "vanillaextension:fences/stone_fence_from_cobblestone_fence_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:fences/glass_fence_from_red_sand_fence_smelting",
+			"recipe2": "vanillaextension:fences/glass_fence_from_sand_fence_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:fences/smooth_quartz_fence_from_quartz_block_fence_smelting",
+			"recipe2": "vanillaextension:fences/smooth_red_sandstone_fence_from_red_sandstone_fence_smelting"
+		},
+		{
+			"type": "smelting",
+			"recipe": "vanillaextension:fences/smooth_sandstone_fence_from_sandstone_fence_smelting",
+			"recipe2": "vanillaextension:fences/smooth_stone_fence_from_stone_fence_smelting"
+		},
 		{
 			"type": "smelting",
 			"recipe": "vanillaextension:fences/black_glazed_terracotta_fence_from_black_terracotta_fence_smelting",

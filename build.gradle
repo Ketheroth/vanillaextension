@@ -12,8 +12,8 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.15.2-1.0.6'
-group = 'com.yourname.modid'
+version = '1.15.2-1.0.7'
+group = 'com.nbrichau.vanillaextension'
 archivesBaseName = 'vanillaextension'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'

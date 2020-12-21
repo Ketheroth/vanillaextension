@@ -1,5 +1,5 @@
 {
 	"name": "Looting Special",
-	"description": "Some blocks need to be mined with silk touch to get the block, others drop another block.$(br)If the corresponding vanilla block need to be mined with silk touch then the modded block need to.",
+	"description": "Some blocks need to be mined with silk touch to get the block, others drop another block.$(br)If the corresponding vanilla block need to be mined with silk touch then the modded block need it too.",
 	"icon": "minecraft:iron_pickaxe"
 }
