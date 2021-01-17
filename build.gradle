@@ -12,7 +12,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.16.4-1.0.13'
+version = '1.16.5-1.0.14'
 group = 'com.nbrichau.vanillaextension'
 archivesBaseName = 'vanillaextension'
 
@@ -79,7 +79,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.4-35.0.3'
+    minecraft 'net.minecraftforge:forge:1.16.4-35.1.4'
 
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.2-47:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.2-47")
