@@ -12,7 +12,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.16.5-1.0.14'
+version = '1.16.5-1.0.15'
 group = 'com.nbrichau.vanillaextension'
 archivesBaseName = 'vanillaextension'
 
@@ -30,6 +30,8 @@ minecraft {
 
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
+
+            properties 'mixin.env.disableRefMap': 'true'
 
             mods {
                 vanillaextension {
