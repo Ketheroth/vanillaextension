@@ -13,31 +13,33 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
+import net.minecraft.block.AbstractBlock.Properties;
+
 public class RedstoneLampTrapdoor extends TrapDoorBlock {
 
 	public static final BooleanProperty LIT = BlockStateProperties.LIT;
 
 	public RedstoneLampTrapdoor(Properties properties) {
 		super(properties);
-		this.setDefaultState(this.getDefaultState().with(LIT, Boolean.FALSE));
+		this.registerDefaultState(this.defaultBlockState().setValue(LIT, Boolean.FALSE));
 	}
 
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		return super.getStateForPlacement(context).with(LIT, context.getWorld().isBlockPowered(context.getPos()));
+		return super.getStateForPlacement(context).setValue(LIT, context.getLevel().hasNeighborSignal(context.getClickedPos()));
 	}
 
 	@Override
 	public void neighborChanged(BlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
 		super.neighborChanged(state, worldIn, pos, blockIn, fromPos, isMoving);
 
-		if (!worldIn.isRemote) {
-			boolean flag = state.get(LIT);
-			if (flag != worldIn.isBlockPowered(pos)) {
+		if (!worldIn.isClientSide) {
+			boolean flag = state.getValue(LIT);
+			if (flag != worldIn.hasNeighborSignal(pos)) {
 				if (flag) {
-					worldIn.getPendingBlockTicks().scheduleTick(pos, this, 4);
+					worldIn.getBlockTicks().scheduleTick(pos, this, 4);
 				} else {
-					worldIn.setBlockState(pos, state.func_235896_a_(LIT), 2);
+					worldIn.setBlock(pos, state.cycle(LIT), 2);
 				}
 			}
 
@@ -46,15 +48,15 @@ public class RedstoneLampTrapdoor extends TrapDoorBlock {
 
 	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
-		if (state.get(LIT) && !worldIn.isBlockPowered(pos)) {
-			worldIn.setBlockState(pos, state.func_235896_a_(LIT), 2);
+		if (state.getValue(LIT) && !worldIn.hasNeighborSignal(pos)) {
+			worldIn.setBlock(pos, state.cycle(LIT), 2);
 		}
 
 	}
 
 	@Override
-	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-		super.fillStateContainer(builder);
+	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
+		super.createBlockStateDefinition(builder);
 		builder.add(LIT);
 	}
 }

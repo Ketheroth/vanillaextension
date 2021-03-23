@@ -27,58 +27,60 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import java.util.Random;
 import java.util.function.Supplier;
 
+import net.minecraft.block.AbstractBlock.Properties;
+
 public class RedstoneOreStairs extends StairsBlock {
 	public static final BooleanProperty LIT = BlockStateProperties.LIT;
 
 	public RedstoneOreStairs(Supplier<BlockState> state, Properties properties) {
 		super(state, properties);
-		this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH).with(HALF, Half.BOTTOM).with(SHAPE, StairsShape.STRAIGHT).with(WATERLOGGED, Boolean.valueOf(false)).with(LIT, Boolean.FALSE));
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HALF, Half.BOTTOM).setValue(SHAPE, StairsShape.STRAIGHT).setValue(WATERLOGGED, Boolean.valueOf(false)).setValue(LIT, Boolean.FALSE));
 	}
 
 	@Override
-	public void onBlockClicked(BlockState state, World worldIn, BlockPos pos, PlayerEntity player) {
+	public void attack(BlockState state, World worldIn, BlockPos pos, PlayerEntity player) {
 		activate(state, worldIn, pos);
-		super.onBlockClicked(state, worldIn, pos, player);
+		super.attack(state, worldIn, pos, player);
 	}
 
 	/**
 	 * Called when the given entity walks on this Block
 	 */
 	@Override
-	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
+	public void stepOn(World worldIn, BlockPos pos, Entity entityIn) {
 		activate(worldIn.getBlockState(pos), worldIn, pos);
-		super.onEntityWalk(worldIn, pos, entityIn);
+		super.stepOn(worldIn, pos, entityIn);
 	}
 
 	@Override
-	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-		if (worldIn.isRemote) {
+	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+		if (worldIn.isClientSide) {
 			spawnParticles(worldIn, pos);
 		} else {
 			activate(state, worldIn, pos);
 		}
 
-		ItemStack itemstack = player.getHeldItem(handIn);
+		ItemStack itemstack = player.getItemInHand(handIn);
 		return itemstack.getItem() instanceof BlockItem && (new BlockItemUseContext(player, handIn, itemstack, hit)).canPlace() ? ActionResultType.PASS : ActionResultType.SUCCESS;
 	}
 
 	private static void activate(BlockState state, World world, BlockPos pos) {
 		spawnParticles(world, pos);
-		if (!state.get(LIT)) {
-			world.setBlockState(pos, state.with(LIT, Boolean.TRUE), 3);
+		if (!state.getValue(LIT)) {
+			world.setBlock(pos, state.setValue(LIT, Boolean.TRUE), 3);
 		}
 
 	}
 
 	@Override
-	public boolean ticksRandomly(BlockState state) {
-		return state.get(LIT);
+	public boolean isRandomlyTicking(BlockState state) {
+		return state.getValue(LIT);
 	}
 
 	@Override
 	public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
-		if (state.get(LIT)) {
-			worldIn.setBlockState(pos, state.with(LIT, Boolean.FALSE), 3);
+		if (state.getValue(LIT)) {
+			worldIn.setBlock(pos, state.setValue(LIT, Boolean.FALSE), 3);
 		}
 
 	}
@@ -91,7 +93,7 @@ public class RedstoneOreStairs extends StairsBlock {
 	@OnlyIn(Dist.CLIENT)
 	@Override
 	public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
-		if (stateIn.get(LIT)) {
+		if (stateIn.getValue(LIT)) {
 			spawnParticles(worldIn, pos);
 		}
 
@@ -99,23 +101,23 @@ public class RedstoneOreStairs extends StairsBlock {
 
 	private static void spawnParticles(World world, BlockPos worldIn) {
 		double d0 = 0.5625D;
-		Random random = world.rand;
+		Random random = world.random;
 
 		for (Direction direction : Direction.values()) {
-			BlockPos blockpos = worldIn.offset(direction);
-			if (!world.getBlockState(blockpos).isOpaqueCube(world, blockpos)) {
+			BlockPos blockpos = worldIn.relative(direction);
+			if (!world.getBlockState(blockpos).isSolidRender(world, blockpos)) {
 				Direction.Axis direction$axis = direction.  getAxis();
-				double d1 = direction$axis == Direction.Axis.X ? 0.5D + 0.5625D * (double) direction.getXOffset() : (double) random.nextFloat();
-				double d2 = direction$axis == Direction.Axis.Y ? 0.5D + 0.5625D * (double) direction.getYOffset() : (double) random.nextFloat();
-				double d3 = direction$axis == Direction.Axis.Z ? 0.5D + 0.5625D * (double) direction.getZOffset() : (double) random.nextFloat();
-				world.addParticle(RedstoneParticleData.REDSTONE_DUST, (double) worldIn.getX() + d1, (double) worldIn.getY() + d2, (double) worldIn.getZ() + d3, 0.0D, 0.0D, 0.0D);
+				double d1 = direction$axis == Direction.Axis.X ? 0.5D + 0.5625D * (double) direction.getStepX() : (double) random.nextFloat();
+				double d2 = direction$axis == Direction.Axis.Y ? 0.5D + 0.5625D * (double) direction.getStepY() : (double) random.nextFloat();
+				double d3 = direction$axis == Direction.Axis.Z ? 0.5D + 0.5625D * (double) direction.getStepZ() : (double) random.nextFloat();
+				world.addParticle(RedstoneParticleData.REDSTONE, (double) worldIn.getX() + d1, (double) worldIn.getY() + d2, (double) worldIn.getZ() + d3, 0.0D, 0.0D, 0.0D);
 			}
 		}
 
 	}
 
 	@Override
-	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
 		builder.add(FACING, HALF, SHAPE, WATERLOGGED, LIT);
 	}
 }

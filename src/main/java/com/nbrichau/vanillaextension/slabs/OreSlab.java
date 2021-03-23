@@ -8,6 +8,8 @@ import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;
 
+import net.minecraft.block.AbstractBlock.Properties;
+
 public class OreSlab extends SlabBlock {
 	public OreSlab(Properties properties) {
 		super(properties);

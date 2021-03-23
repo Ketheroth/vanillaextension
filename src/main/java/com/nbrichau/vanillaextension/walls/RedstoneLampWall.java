@@ -20,6 +20,8 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Map;
 import java.util.Random;
 
+import net.minecraft.block.AbstractBlock.Properties;
+
 public class RedstoneLampWall extends WallBlock {
 
 	public static final BooleanProperty LIT = BlockStateProperties.LIT;
@@ -28,7 +30,7 @@ public class RedstoneLampWall extends WallBlock {
 
 	public RedstoneLampWall(Properties properties) {
 		super(properties);
-		this.setDefaultState(this.getDefaultState().with(LIT, Boolean.FALSE));
+		this.registerDefaultState(this.defaultBlockState().setValue(LIT, Boolean.FALSE));
 		this.stateToShapeMap = this.makeShapes(4.0F, 3.0F, 16.0F, 0.0F, 14.0F, 16.0F);
 		this.stateToCollisionShapeMap = this.makeShapes(4.0F, 3.0F, 24.0F, 0.0F, 24.0F, 24.0F);
 	}
@@ -38,22 +40,22 @@ public class RedstoneLampWall extends WallBlock {
 		float f1 = 8.0F + p_235624_1_;
 		float f2 = 8.0F - p_235624_2_;
 		float f3 = 8.0F + p_235624_2_;
-		VoxelShape voxelshape = Block.makeCuboidShape((double)f, 0.0D, (double)f, (double)f1, (double)p_235624_3_, (double)f1);
-		VoxelShape voxelshape1 = Block.makeCuboidShape((double)f2, (double)p_235624_4_, 0.0D, (double)f3, (double)p_235624_5_, (double)f3);
-		VoxelShape voxelshape2 = Block.makeCuboidShape((double)f2, (double)p_235624_4_, (double)f2, (double)f3, (double)p_235624_5_, 16.0D);
-		VoxelShape voxelshape3 = Block.makeCuboidShape(0.0D, (double)p_235624_4_, (double)f2, (double)f3, (double)p_235624_5_, (double)f3);
-		VoxelShape voxelshape4 = Block.makeCuboidShape((double)f2, (double)p_235624_4_, (double)f2, 16.0D, (double)p_235624_5_, (double)f3);
-		VoxelShape voxelshape5 = Block.makeCuboidShape((double)f2, (double)p_235624_4_, 0.0D, (double)f3, (double)p_235624_6_, (double)f3);
-		VoxelShape voxelshape6 = Block.makeCuboidShape((double)f2, (double)p_235624_4_, (double)f2, (double)f3, (double)p_235624_6_, 16.0D);
-		VoxelShape voxelshape7 = Block.makeCuboidShape(0.0D, (double)p_235624_4_, (double)f2, (double)f3, (double)p_235624_6_, (double)f3);
-		VoxelShape voxelshape8 = Block.makeCuboidShape((double)f2, (double)p_235624_4_, (double)f2, 16.0D, (double)p_235624_6_, (double)f3);
+		VoxelShape voxelshape = Block.box((double)f, 0.0D, (double)f, (double)f1, (double)p_235624_3_, (double)f1);
+		VoxelShape voxelshape1 = Block.box((double)f2, (double)p_235624_4_, 0.0D, (double)f3, (double)p_235624_5_, (double)f3);
+		VoxelShape voxelshape2 = Block.box((double)f2, (double)p_235624_4_, (double)f2, (double)f3, (double)p_235624_5_, 16.0D);
+		VoxelShape voxelshape3 = Block.box(0.0D, (double)p_235624_4_, (double)f2, (double)f3, (double)p_235624_5_, (double)f3);
+		VoxelShape voxelshape4 = Block.box((double)f2, (double)p_235624_4_, (double)f2, 16.0D, (double)p_235624_5_, (double)f3);
+		VoxelShape voxelshape5 = Block.box((double)f2, (double)p_235624_4_, 0.0D, (double)f3, (double)p_235624_6_, (double)f3);
+		VoxelShape voxelshape6 = Block.box((double)f2, (double)p_235624_4_, (double)f2, (double)f3, (double)p_235624_6_, 16.0D);
+		VoxelShape voxelshape7 = Block.box(0.0D, (double)p_235624_4_, (double)f2, (double)f3, (double)p_235624_6_, (double)f3);
+		VoxelShape voxelshape8 = Block.box((double)f2, (double)p_235624_4_, (double)f2, 16.0D, (double)p_235624_6_, (double)f3);
 		ImmutableMap.Builder<BlockState, VoxelShape> builder = ImmutableMap.builder();
 
-		for(Boolean obool : UP.getAllowedValues()) {
-			for(WallHeight wallheight : WALL_HEIGHT_EAST.getAllowedValues()) {
-				for(WallHeight wallheight1 : WALL_HEIGHT_NORTH.getAllowedValues()) {
-					for(WallHeight wallheight2 : WALL_HEIGHT_WEST.getAllowedValues()) {
-						for(WallHeight wallheight3 : WALL_HEIGHT_SOUTH.getAllowedValues()) {
+		for(Boolean obool : UP.getPossibleValues()) {
+			for(WallHeight wallheight : EAST_WALL.getPossibleValues()) {
+				for(WallHeight wallheight1 : NORTH_WALL.getPossibleValues()) {
+					for(WallHeight wallheight2 : WEST_WALL.getPossibleValues()) {
+						for(WallHeight wallheight3 : SOUTH_WALL.getPossibleValues()) {
 							VoxelShape voxelshape9 = VoxelShapes.empty();
 							voxelshape9 = getHeightAlteredShape(voxelshape9, wallheight, voxelshape4, voxelshape8);
 							voxelshape9 = getHeightAlteredShape(voxelshape9, wallheight2, voxelshape3, voxelshape7);
@@ -63,11 +65,11 @@ public class RedstoneLampWall extends WallBlock {
 								voxelshape9 = VoxelShapes.or(voxelshape9, voxelshape);
 							}
 
-							BlockState blockstate = this.getDefaultState().with(UP, obool).with(WALL_HEIGHT_EAST, wallheight).with(WALL_HEIGHT_WEST, wallheight2).with(WALL_HEIGHT_NORTH, wallheight1).with(WALL_HEIGHT_SOUTH, wallheight3);
-							builder.put(blockstate.with(WATERLOGGED, Boolean.FALSE).with(LIT, Boolean.FALSE), voxelshape9);
-							builder.put(blockstate.with(WATERLOGGED, Boolean.TRUE).with(LIT, Boolean.FALSE), voxelshape9);
-							builder.put(blockstate.with(WATERLOGGED, Boolean.FALSE).with(LIT, Boolean.TRUE), voxelshape9);
-							builder.put(blockstate.with(WATERLOGGED, Boolean.TRUE).with(LIT, Boolean.TRUE), voxelshape9);
+							BlockState blockstate = this.defaultBlockState().setValue(UP, obool).setValue(EAST_WALL, wallheight).setValue(WEST_WALL, wallheight2).setValue(NORTH_WALL, wallheight1).setValue(SOUTH_WALL, wallheight3);
+							builder.put(blockstate.setValue(WATERLOGGED, Boolean.FALSE).setValue(LIT, Boolean.FALSE), voxelshape9);
+							builder.put(blockstate.setValue(WATERLOGGED, Boolean.TRUE).setValue(LIT, Boolean.FALSE), voxelshape9);
+							builder.put(blockstate.setValue(WATERLOGGED, Boolean.FALSE).setValue(LIT, Boolean.TRUE), voxelshape9);
+							builder.put(blockstate.setValue(WATERLOGGED, Boolean.TRUE).setValue(LIT, Boolean.TRUE), voxelshape9);
 						}
 					}
 				}
@@ -96,18 +98,18 @@ public class RedstoneLampWall extends WallBlock {
 
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		return super.getStateForPlacement(context).with(LIT, context.getWorld().isBlockPowered(context.getPos()));
+		return super.getStateForPlacement(context).setValue(LIT, context.getLevel().hasNeighborSignal(context.getClickedPos()));
 	}
 
 	@Override
 	public void neighborChanged(BlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
-		if (!worldIn.isRemote) {
-			boolean flag = state.get(LIT);
-			if (flag != worldIn.isBlockPowered(pos)) {
+		if (!worldIn.isClientSide) {
+			boolean flag = state.getValue(LIT);
+			if (flag != worldIn.hasNeighborSignal(pos)) {
 				if (flag) {
-					worldIn.getPendingBlockTicks().scheduleTick(pos, this, 4);
+					worldIn.getBlockTicks().scheduleTick(pos, this, 4);
 				} else {
-					worldIn.setBlockState(pos, state.func_235896_a_(LIT), 2);
+					worldIn.setBlock(pos, state.cycle(LIT), 2);
 				}
 			}
 
@@ -116,15 +118,15 @@ public class RedstoneLampWall extends WallBlock {
 
 	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
-		if (state.get(LIT) && !worldIn.isBlockPowered(pos)) {
-			worldIn.setBlockState(pos, state.func_235896_a_(LIT), 2);
+		if (state.getValue(LIT) && !worldIn.hasNeighborSignal(pos)) {
+			worldIn.setBlock(pos, state.cycle(LIT), 2);
 		}
 
 	}
 
 	@Override
-	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-		super.fillStateContainer(builder);
+	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
+		super.createBlockStateDefinition(builder);
 		builder.add(LIT);
 	}
 

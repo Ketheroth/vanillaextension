@@ -20,27 +20,29 @@ import java.util.Random;
 
 import static net.minecraft.state.properties.BlockStateProperties.*;
 
+import net.minecraft.block.AbstractBlock.Properties;
+
 public class GrassBlockWall extends WallBlock {
 	public GrassBlockWall(Properties properties) {
 		super(properties);
 	}
 
 	private static boolean isSnowyConditions(BlockState state, IWorldReader worldReader, BlockPos pos) {
-		BlockPos blockpos = pos.up();
+		BlockPos blockpos = pos.above();
 		BlockState blockstate = worldReader.getBlockState(blockpos);
-		if (blockstate.isIn(Blocks.SNOW) && blockstate.get(SnowBlock.LAYERS) == 1) {
+		if (blockstate.is(Blocks.SNOW) && blockstate.getValue(SnowBlock.LAYERS) == 1) {
 			return true;
-		} else if (blockstate.getFluidState().getLevel() == 8) {
+		} else if (blockstate.getFluidState().getAmount() == 8) {
 			return false;
 		} else {
-			int i = LightEngine.func_215613_a(worldReader, state, pos, blockstate, blockpos, Direction.UP, blockstate.getOpacity(worldReader, blockpos));
+			int i = LightEngine.getLightBlockInto(worldReader, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(worldReader, blockpos));
 			return i < worldReader.getMaxLightLevel();
 		}
 	}
 
 	private static boolean isSnowyAndNotUnderwater(BlockState state, IWorldReader worldReader, BlockPos pos) {
-		BlockPos blockpos = pos.up();
-		return isSnowyConditions(state, worldReader, pos) && !worldReader.getFluidState(blockpos).isTagged(FluidTags.WATER);
+		BlockPos blockpos = pos.above();
+		return isSnowyConditions(state, worldReader, pos) && !worldReader.getFluidState(blockpos).is(FluidTags.WATER);
 	}
 
 	/**
@@ -51,25 +53,25 @@ public class GrassBlockWall extends WallBlock {
 		if (!isSnowyConditions(state, worldIn, pos)) {
 			if (!worldIn.isAreaLoaded(pos, 3))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
-			worldIn.setBlockState(pos, WallInit.dirt_wall.getDefaultState().with(UP, state.get(UP)).with(WALL_HEIGHT_NORTH, state.get(WALL_HEIGHT_NORTH)).with(WALL_HEIGHT_EAST, state.get(WALL_HEIGHT_EAST)).with(WALL_HEIGHT_SOUTH, state.get(WALL_HEIGHT_SOUTH)).with(WALL_HEIGHT_WEST, state.get(WALL_HEIGHT_WEST)).with(WATERLOGGED, state.get(WATERLOGGED)));
+			worldIn.setBlockAndUpdate(pos, WallInit.dirt_wall.defaultBlockState().setValue(UP, state.getValue(UP)).setValue(NORTH_WALL, state.getValue(NORTH_WALL)).setValue(EAST_WALL, state.getValue(EAST_WALL)).setValue(SOUTH_WALL, state.getValue(SOUTH_WALL)).setValue(WEST_WALL, state.getValue(WEST_WALL)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
 		} else {
-			if (worldIn.getLight(pos.up()) >= 9) {
+			if (worldIn.getMaxLocalRawBrightness(pos.above()) >= 9) {
 				for (int i = 0; i < 4; ++i) {
-					BlockPos blockpos = pos.add(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
+					BlockPos blockpos = pos.offset(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
 					BlockState blockstate = worldIn.getBlockState(blockpos);
 					if (isSnowyAndNotUnderwater(blockstate, worldIn, blockpos)) {
-						if (blockstate.isIn(Blocks.DIRT)) {
-							worldIn.setBlockState(blockpos, Blocks.GRASS_BLOCK.getDefaultState().with(SNOWY, worldIn.getBlockState(blockpos.up()).isIn(Blocks.SNOW)));
-						} else if (blockstate.isIn(StairsInit.dirt_stairs)) {
-							worldIn.setBlockState(blockpos, StairsInit.grass_block_stairs.getDefaultState().with(HORIZONTAL_FACING, blockstate.get(HORIZONTAL_FACING)).with(HALF, blockstate.get(HALF)).with(STAIRS_SHAPE, blockstate.get(STAIRS_SHAPE)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
-						} else if (blockstate.isIn(SlabInit.dirt_slab)) {
-							worldIn.setBlockState(blockpos, SlabInit.grass_block_slab.getDefaultState().with(SLAB_TYPE, blockstate.get(SLAB_TYPE)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
-						} else if (blockstate.isIn(FenceInit.dirt_fence)) {
-							worldIn.setBlockState(blockpos, FenceInit.grass_block_fence.getDefaultState().with(NORTH, blockstate.get(NORTH)).with(EAST, blockstate.get(EAST)).with(SOUTH, blockstate.get(SOUTH)).with(WEST, blockstate.get(WEST)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
-						} else if (blockstate.isIn(WallInit.dirt_wall)) {
-							worldIn.setBlockState(blockpos, WallInit.grass_block_wall.getDefaultState().with(UP, blockstate.get(UP)).with(WALL_HEIGHT_NORTH, blockstate.get(WALL_HEIGHT_NORTH)).with(WALL_HEIGHT_EAST, blockstate.get(WALL_HEIGHT_EAST)).with(WALL_HEIGHT_SOUTH, blockstate.get(WALL_HEIGHT_SOUTH)).with(WALL_HEIGHT_WEST, blockstate.get(WALL_HEIGHT_WEST)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
-						} else if (blockstate.isIn(TrapdoorInit.dirt_trapdoor)) {
-							worldIn.setBlockState(blockpos, TrapdoorInit.grass_block_trapdoor.getDefaultState().with(HORIZONTAL_FACING, blockstate.get(HORIZONTAL_FACING)).with(OPEN, blockstate.get(OPEN)).with(HALF, blockstate.get(HALF)).with(POWERED, blockstate.get(POWERED)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
+						if (blockstate.is(Blocks.DIRT)) {
+							worldIn.setBlockAndUpdate(blockpos, Blocks.GRASS_BLOCK.defaultBlockState().setValue(SNOWY, worldIn.getBlockState(blockpos.above()).is(Blocks.SNOW)));
+						} else if (blockstate.is(StairsInit.dirt_stairs)) {
+							worldIn.setBlockAndUpdate(blockpos, StairsInit.grass_block_stairs.defaultBlockState().setValue(HORIZONTAL_FACING, blockstate.getValue(HORIZONTAL_FACING)).setValue(HALF, blockstate.getValue(HALF)).setValue(STAIRS_SHAPE, blockstate.getValue(STAIRS_SHAPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(SlabInit.dirt_slab)) {
+							worldIn.setBlockAndUpdate(blockpos, SlabInit.grass_block_slab.defaultBlockState().setValue(SLAB_TYPE, blockstate.getValue(SLAB_TYPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(FenceInit.dirt_fence)) {
+							worldIn.setBlockAndUpdate(blockpos, FenceInit.grass_block_fence.defaultBlockState().setValue(NORTH, blockstate.getValue(NORTH)).setValue(EAST, blockstate.getValue(EAST)).setValue(SOUTH, blockstate.getValue(SOUTH)).setValue(WEST, blockstate.getValue(WEST)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(WallInit.dirt_wall)) {
+							worldIn.setBlockAndUpdate(blockpos, WallInit.grass_block_wall.defaultBlockState().setValue(UP, blockstate.getValue(UP)).setValue(NORTH_WALL, blockstate.getValue(NORTH_WALL)).setValue(EAST_WALL, blockstate.getValue(EAST_WALL)).setValue(SOUTH_WALL, blockstate.getValue(SOUTH_WALL)).setValue(WEST_WALL, blockstate.getValue(WEST_WALL)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(TrapdoorInit.dirt_trapdoor)) {
+							worldIn.setBlockAndUpdate(blockpos, TrapdoorInit.grass_block_trapdoor.defaultBlockState().setValue(HORIZONTAL_FACING, blockstate.getValue(HORIZONTAL_FACING)).setValue(OPEN, blockstate.getValue(OPEN)).setValue(HALF, blockstate.getValue(HALF)).setValue(POWERED, blockstate.getValue(POWERED)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						}
 					}
 				}
@@ -77,19 +79,19 @@ public class GrassBlockWall extends WallBlock {
 		}
 	}
 
-	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-		if (!worldIn.isRemote()) {
-			if (player.getHeldItem(handIn).getToolTypes().contains(ToolType.SHOVEL)) {
-				BlockState bs = WallInit.grass_path_wall.getDefaultState()
-						.with(HORIZONTAL_FACING, state.get(HORIZONTAL_FACING)).with(OPEN, state.get(OPEN)).with(HALF, state.get(HALF))
-						.with(POWERED, state.get(POWERED)).with(WATERLOGGED, state.get(WATERLOGGED));
-				worldIn.setBlockState(pos, bs);
-				worldIn.playSound(null, pos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
-				player.getHeldItem(handIn).damageItem(1, player, item -> item.sendBreakAnimation(handIn));
+	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+		if (!worldIn.isClientSide()) {
+			if (player.getItemInHand(handIn).getToolTypes().contains(ToolType.SHOVEL)) {
+				BlockState bs = WallInit.grass_path_wall.defaultBlockState()
+						.setValue(HORIZONTAL_FACING, state.getValue(HORIZONTAL_FACING)).setValue(OPEN, state.getValue(OPEN)).setValue(HALF, state.getValue(HALF))
+						.setValue(POWERED, state.getValue(POWERED)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+				worldIn.setBlockAndUpdate(pos, bs);
+				worldIn.playSound(null, pos, SoundEvents.SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				player.getItemInHand(handIn).hurtAndBreak(1, player, item -> item.broadcastBreakEvent(handIn));
 				return ActionResultType.SUCCESS;
 			}
 		}
-		return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
+		return super.use(state, worldIn, pos, player, handIn, hit);
 	}
 
 }

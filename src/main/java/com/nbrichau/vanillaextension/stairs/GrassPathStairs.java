@@ -26,18 +26,20 @@ import java.util.Random;
 import java.util.function.Supplier;
 import java.util.stream.IntStream;
 
+import net.minecraft.block.AbstractBlock.Properties;
+
 public class GrassPathStairs extends StairsBlock {
 
-	protected static final VoxelShape AABB_SLAB_TOP = Block.makeCuboidShape(0.0D, 8.0D, 0.0D, 16.0D, 15.0D, 16.0D);
-	protected static final VoxelShape AABB_SLAB_BOTTOM = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D);
-	protected static final VoxelShape NWD_CORNER = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 8.0D, 7.0D, 8.0D);
-	protected static final VoxelShape SWD_CORNER = Block.makeCuboidShape(0.0D, 0.0D, 8.0D, 8.0D, 7.0D, 16.0D);
-	protected static final VoxelShape NWU_CORNER = Block.makeCuboidShape(0.0D, 7.0D, 0.0D, 8.0D, 15.0D, 8.0D);
-	protected static final VoxelShape SWU_CORNER = Block.makeCuboidShape(0.0D, 7.0D, 8.0D, 8.0D, 15.0D, 16.0D);
-	protected static final VoxelShape NED_CORNER = Block.makeCuboidShape(8.0D, 0.0D, 0.0D, 16.0D, 7.0D, 8.0D);
-	protected static final VoxelShape SED_CORNER = Block.makeCuboidShape(8.0D, 0.0D, 8.0D, 16.0D, 7.0D, 16.0D);
-	protected static final VoxelShape NEU_CORNER = Block.makeCuboidShape(8.0D, 7.0D, 0.0D, 16.0D, 15.0D, 8.0D);
-	protected static final VoxelShape SEU_CORNER = Block.makeCuboidShape(8.0D, 7.0D, 8.0D, 16.0D, 15.0D, 16.0D);
+	protected static final VoxelShape AABB_SLAB_TOP = Block.box(0.0D, 8.0D, 0.0D, 16.0D, 15.0D, 16.0D);
+	protected static final VoxelShape AABB_SLAB_BOTTOM = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D);
+	protected static final VoxelShape NWD_CORNER = Block.box(0.0D, 0.0D, 0.0D, 8.0D, 7.0D, 8.0D);
+	protected static final VoxelShape SWD_CORNER = Block.box(0.0D, 0.0D, 8.0D, 8.0D, 7.0D, 16.0D);
+	protected static final VoxelShape NWU_CORNER = Block.box(0.0D, 7.0D, 0.0D, 8.0D, 15.0D, 8.0D);
+	protected static final VoxelShape SWU_CORNER = Block.box(0.0D, 7.0D, 8.0D, 8.0D, 15.0D, 16.0D);
+	protected static final VoxelShape NED_CORNER = Block.box(8.0D, 0.0D, 0.0D, 16.0D, 7.0D, 8.0D);
+	protected static final VoxelShape SED_CORNER = Block.box(8.0D, 0.0D, 8.0D, 16.0D, 7.0D, 16.0D);
+	protected static final VoxelShape NEU_CORNER = Block.box(8.0D, 7.0D, 0.0D, 16.0D, 15.0D, 8.0D);
+	protected static final VoxelShape SEU_CORNER = Block.box(8.0D, 7.0D, 8.0D, 16.0D, 15.0D, 16.0D);
 	protected static final VoxelShape[] SLAB_TOP_SHAPES = makeShapes(AABB_SLAB_TOP, NWD_CORNER, NED_CORNER, SWD_CORNER, SED_CORNER);
 	protected static final VoxelShape[] SLAB_BOTTOM_SHAPES = makeShapes(AABB_SLAB_BOTTOM, NWU_CORNER, NEU_CORNER, SWU_CORNER, SEU_CORNER);
 	private static final int[] PALETTE_SHAPE_MAP = new int[]{12, 5, 3, 10, 14, 13, 7, 11, 13, 7, 11, 14, 8, 4, 1, 2, 4, 1, 2, 8};
@@ -77,24 +79,24 @@ public class GrassPathStairs extends StairsBlock {
 
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		BlockState bs = !this.getDefaultState().isValidPosition(context.getWorld(), context.getPos()) ? StairsInit.dirt_stairs.getDefaultState() : this.getDefaultState();
+		BlockState bs = !this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ? StairsInit.dirt_stairs.defaultBlockState() : this.defaultBlockState();
 
-		Direction direction = context.getFace();
-		BlockPos blockpos = context.getPos();
-		FluidState fluidstate = context.getWorld().getFluidState(blockpos);
-		BlockState blockstate = bs.with(FACING, context.getPlacementHorizontalFacing())
-				.with(HALF, direction != Direction.DOWN && (direction == Direction.UP || !(context.getHitVec().y - (double) blockpos.getY() > 0.5D)) ? Half.BOTTOM : Half.TOP)
-				.with(WATERLOGGED, fluidstate.getFluid() == Fluids.WATER);
-		return blockstate.with(SHAPE, getShapeProperty(blockstate, context.getWorld(), blockpos));
+		Direction direction = context.getClickedFace();
+		BlockPos blockpos = context.getClickedPos();
+		FluidState fluidstate = context.getLevel().getFluidState(blockpos);
+		BlockState blockstate = bs.setValue(FACING, context.getHorizontalDirection())
+				.setValue(HALF, direction != Direction.DOWN && (direction == Direction.UP || !(context.getClickLocation().y - (double) blockpos.getY() > 0.5D)) ? Half.BOTTOM : Half.TOP)
+				.setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
+		return blockstate.setValue(SHAPE, getShapeProperty(blockstate, context.getLevel(), blockpos));
 	}
 
 	private static StairsShape getShapeProperty(BlockState state, IBlockReader worldIn, BlockPos pos) {
-		Direction direction = state.get(FACING);
-		BlockState blockstate = worldIn.getBlockState(pos.offset(direction));
-		if (isBlockStairs(blockstate) && state.get(HALF) == blockstate.get(HALF)) {
-			Direction direction1 = blockstate.get(FACING);
-			if (direction1.getAxis() != state.get(FACING).getAxis() && isDifferentStairs(state, worldIn, pos, direction1.getOpposite())) {
-				if (direction1 == direction.rotateYCCW()) {
+		Direction direction = state.getValue(FACING);
+		BlockState blockstate = worldIn.getBlockState(pos.relative(direction));
+		if (isBlockStairs(blockstate) && state.getValue(HALF) == blockstate.getValue(HALF)) {
+			Direction direction1 = blockstate.getValue(FACING);
+			if (direction1.getAxis() != state.getValue(FACING).getAxis() && isDifferentStairs(state, worldIn, pos, direction1.getOpposite())) {
+				if (direction1 == direction.getCounterClockWise()) {
 					return StairsShape.OUTER_LEFT;
 				}
 
@@ -102,11 +104,11 @@ public class GrassPathStairs extends StairsBlock {
 			}
 		}
 
-		BlockState blockstate1 = worldIn.getBlockState(pos.offset(direction.getOpposite()));
-		if (isBlockStairs(blockstate1) && state.get(HALF) == blockstate1.get(HALF)) {
-			Direction direction2 = blockstate1.get(FACING);
-			if (direction2.getAxis() != state.get(FACING).getAxis() && isDifferentStairs(state, worldIn, pos, direction2)) {
-				if (direction2 == direction.rotateYCCW()) {
+		BlockState blockstate1 = worldIn.getBlockState(pos.relative(direction.getOpposite()));
+		if (isBlockStairs(blockstate1) && state.getValue(HALF) == blockstate1.getValue(HALF)) {
+			Direction direction2 = blockstate1.getValue(FACING);
+			if (direction2.getAxis() != state.getValue(FACING).getAxis() && isDifferentStairs(state, worldIn, pos, direction2)) {
+				if (direction2 == direction.getCounterClockWise()) {
 					return StairsShape.INNER_LEFT;
 				}
 
@@ -118,8 +120,8 @@ public class GrassPathStairs extends StairsBlock {
 	}
 
 	private static boolean isDifferentStairs(BlockState state, IBlockReader worldIn, BlockPos pos, Direction face) {
-		BlockState blockstate = worldIn.getBlockState(pos.offset(face));
-		return !isBlockStairs(blockstate) || blockstate.get(FACING) != state.get(FACING) || blockstate.get(HALF) != state.get(HALF);
+		BlockState blockstate = worldIn.getBlockState(pos.relative(face));
+		return !isBlockStairs(blockstate) || blockstate.getValue(FACING) != state.getValue(FACING) || blockstate.getValue(HALF) != state.getValue(HALF);
 	}
 
 	public static boolean isBlockStairs(BlockState state) {
@@ -127,37 +129,37 @@ public class GrassPathStairs extends StairsBlock {
 	}
 
 	@Override
-	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
-		if (facing == Direction.UP && !stateIn.isValidPosition(worldIn, currentPos)) {
-			worldIn.getPendingBlockTicks().scheduleTick(currentPos, this, 1);
+	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+		if (facing == Direction.UP && !stateIn.canSurvive(worldIn, currentPos)) {
+			worldIn.getBlockTicks().scheduleTick(currentPos, this, 1);
 		}
 
-		return super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+		return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 
 
 	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
-		if (!this.isValidPosition(state, worldIn, pos)) {
-			worldIn.setBlockState(pos, nudgeEntitiesWithNewState(state, FenceInit.dirt_fence.getDefaultState().with(FACING, state.get(FACING)).with(HALF, state.get(HALF))
-							.with(WATERLOGGED, state.get(WATERLOGGED)).with(SHAPE, state.get(SHAPE)),
+		if (!this.canSurvive(state, worldIn, pos)) {
+			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, FenceInit.dirt_fence.defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF))
+							.setValue(WATERLOGGED, state.getValue(WATERLOGGED)).setValue(SHAPE, state.getValue(SHAPE)),
 					worldIn, pos));
 		}
 	}
 
 	@Override
-	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
-		BlockState blockstate = worldIn.getBlockState(pos.up());
+	public boolean canSurvive(BlockState state, IWorldReader worldIn, BlockPos pos) {
+		BlockState blockstate = worldIn.getBlockState(pos.above());
 		return !blockstate.getMaterial().isSolid() || blockstate.getBlock() instanceof FenceGateBlock;
 	}
 
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		return (state.get(HALF) == Half.TOP ? SLAB_TOP_SHAPES : SLAB_BOTTOM_SHAPES)[PALETTE_SHAPE_MAP[this.getPaletteId(state)]];
+		return (state.getValue(HALF) == Half.TOP ? SLAB_TOP_SHAPES : SLAB_BOTTOM_SHAPES)[PALETTE_SHAPE_MAP[this.getPaletteId(state)]];
 	}
 
 	private int getPaletteId(BlockState state) {
-		return state.get(SHAPE).ordinal() * 4 + state.get(FACING).getHorizontalIndex();
+		return state.getValue(SHAPE).ordinal() * 4 + state.getValue(FACING).get2DDataValue();
 	}
 
 }

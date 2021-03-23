@@ -15,12 +15,14 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
+import net.minecraft.block.AbstractBlock.Properties;
+
 public class ConcretePowderStairs extends FallingStairs implements IWaterLoggable {
 	private final BlockState solidifiedState;
 
 	public ConcretePowderStairs(Block solidified, Properties properties) {
 		super(properties);
-		this.solidifiedState = solidified.getDefaultState();
+		this.solidifiedState = solidified.defaultBlockState();
 	}
 
 	private static boolean shouldSolidify(IBlockReader reader, BlockPos pos, BlockState state) {
@@ -29,13 +31,13 @@ public class ConcretePowderStairs extends FallingStairs implements IWaterLoggabl
 
 	private static boolean isTouchingLiquid(IBlockReader reader, BlockPos pos) {
 		boolean flag = false;
-		BlockPos.Mutable blockpos$mutable = pos.toMutable();
+		BlockPos.Mutable blockpos$mutable = pos.mutable();
 		for (Direction direction : Direction.values()) {
 			BlockState blockstate = reader.getBlockState(blockpos$mutable);
 			if (direction != Direction.DOWN || causesSolidify(blockstate)) {
-				blockpos$mutable.setAndMove(pos, direction);
+				blockpos$mutable.setWithOffset(pos, direction);
 				blockstate = reader.getBlockState(blockpos$mutable);
-				if (causesSolidify(blockstate) && !blockstate.isSolidSide(reader, pos, direction.getOpposite())) {
+				if (causesSolidify(blockstate) && !blockstate.isFaceSturdy(reader, pos, direction.getOpposite())) {
 					flag = true;
 					break;
 				}
@@ -45,26 +47,26 @@ public class ConcretePowderStairs extends FallingStairs implements IWaterLoggabl
 	}
 
 	private static boolean causesSolidify(BlockState state) {
-		return state.getFluidState().isTagged(FluidTags.WATER);
+		return state.getFluidState().is(FluidTags.WATER);
 	}
 
-	public void onEndFalling(World worldIn, BlockPos pos, BlockState fallingState, BlockState hitState, FallingBlockEntity fallingBlock) {
-		BlockState newState = shouldSolidify(worldIn, pos, hitState) ? this.solidifiedState.with(FACING, fallingState.get(FACING)).with(HALF, fallingState.get(HALF)) : fallingState;
-		worldIn.setBlockState(pos, newState.with(SHAPE, getShapeProperty(fallingState, worldIn, pos)).with(WATERLOGGED, worldIn.getFluidState(pos).getFluid() == Fluids.WATER));
+	public void onLand(World worldIn, BlockPos pos, BlockState fallingState, BlockState hitState, FallingBlockEntity fallingBlock) {
+		BlockState newState = shouldSolidify(worldIn, pos, hitState) ? this.solidifiedState.setValue(FACING, fallingState.getValue(FACING)).setValue(HALF, fallingState.getValue(HALF)) : fallingState;
+		worldIn.setBlockAndUpdate(pos, newState.setValue(SHAPE, getShapeProperty(fallingState, worldIn, pos)).setValue(WATERLOGGED, worldIn.getFluidState(pos).getType() == Fluids.WATER));
 	}
 
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		Direction direction = context.getFace();
-		BlockPos blockpos = context.getPos();
-		FluidState fluidstate = context.getWorld().getFluidState(blockpos);
-		IBlockReader iblockreader = context.getWorld();
-		BlockState defaultState = shouldSolidify(iblockreader, blockpos, iblockreader.getBlockState(blockpos)) ? this.solidifiedState : this.getDefaultState();
-		BlockState blockstate = defaultState.with(FACING, context.getPlacementHorizontalFacing()).with(HALF, direction != Direction.DOWN && (direction == Direction.UP || !(context.getHitVec().y - (double) blockpos.getY() > 0.5D)) ? Half.BOTTOM : Half.TOP).with(WATERLOGGED, fluidstate.getFluid() == Fluids.WATER);
-		return blockstate.with(SHAPE, getShapeProperty(blockstate, context.getWorld(), blockpos));
+		Direction direction = context.getClickedFace();
+		BlockPos blockpos = context.getClickedPos();
+		FluidState fluidstate = context.getLevel().getFluidState(blockpos);
+		IBlockReader iblockreader = context.getLevel();
+		BlockState defaultState = shouldSolidify(iblockreader, blockpos, iblockreader.getBlockState(blockpos)) ? this.solidifiedState : this.defaultBlockState();
+		BlockState blockstate = defaultState.setValue(FACING, context.getHorizontalDirection()).setValue(HALF, direction != Direction.DOWN && (direction == Direction.UP || !(context.getClickLocation().y - (double) blockpos.getY() > 0.5D)) ? Half.BOTTOM : Half.TOP).setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
+		return blockstate.setValue(SHAPE, getShapeProperty(blockstate, context.getLevel(), blockpos));
 	}
 
-	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
-		BlockState blockstate = isTouchingLiquid(worldIn, currentPos) ? this.solidifiedState.with(FACING, stateIn.get(FACING)).with(HALF, stateIn.get(HALF)).with(SHAPE, stateIn.get(SHAPE)) : stateIn;
-		return super.updatePostPlacement(blockstate, facing, facingState, worldIn, currentPos, facingPos);
+	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+		BlockState blockstate = isTouchingLiquid(worldIn, currentPos) ? this.solidifiedState.setValue(FACING, stateIn.getValue(FACING)).setValue(HALF, stateIn.getValue(HALF)).setValue(SHAPE, stateIn.getValue(SHAPE)) : stateIn;
+		return super.updateShape(blockstate, facing, facingState, worldIn, currentPos, facingPos);
 	}
 }

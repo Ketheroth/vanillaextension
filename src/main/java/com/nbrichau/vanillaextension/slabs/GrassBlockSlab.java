@@ -22,59 +22,61 @@ import java.util.Random;
 
 import static net.minecraft.state.properties.BlockStateProperties.*;
 
+import net.minecraft.block.AbstractBlock.Properties;
+
 public class GrassBlockSlab extends SlabBlock implements IGrowable {
 	public GrassBlockSlab(Properties properties) {
 		super(properties);
 	}
 
 	@Override
-	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-		if (!worldIn.isRemote()) {
-			if (player.getHeldItem(handIn).getToolTypes().contains(ToolType.HOE)) {
-				BlockState bs = SlabInit.farmland_slab.getDefaultState().with(TYPE, state.get(TYPE)).with(WATERLOGGED, state.get(WATERLOGGED));
-				worldIn.setBlockState(pos, bs);
-				worldIn.playSound(null, pos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
-				player.getHeldItem(handIn).damageItem(1, player, item -> item.sendBreakAnimation(handIn));
+	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+		if (!worldIn.isClientSide()) {
+			if (player.getItemInHand(handIn).getToolTypes().contains(ToolType.HOE)) {
+				BlockState bs = SlabInit.farmland_slab.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+				worldIn.setBlockAndUpdate(pos, bs);
+				worldIn.playSound(null, pos, SoundEvents.HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				player.getItemInHand(handIn).hurtAndBreak(1, player, item -> item.broadcastBreakEvent(handIn));
 				return ActionResultType.SUCCESS;
 			}
-			if (player.getHeldItem(handIn).getToolTypes().contains(ToolType.SHOVEL)) {
-				BlockState bs = SlabInit.grass_path_slab.getDefaultState().with(TYPE, state.get(TYPE)).with(WATERLOGGED, state.get(WATERLOGGED));
-				worldIn.setBlockState(pos, bs);
-				worldIn.playSound(null, pos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
-				player.getHeldItem(handIn).damageItem(1, player, item -> item.sendBreakAnimation(handIn));
+			if (player.getItemInHand(handIn).getToolTypes().contains(ToolType.SHOVEL)) {
+				BlockState bs = SlabInit.grass_path_slab.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+				worldIn.setBlockAndUpdate(pos, bs);
+				worldIn.playSound(null, pos, SoundEvents.SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				player.getItemInHand(handIn).hurtAndBreak(1, player, item -> item.broadcastBreakEvent(handIn));
 				return ActionResultType.SUCCESS;
 			}
 		}
-		return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
+		return super.use(state, worldIn, pos, player, handIn, hit);
 	}
 
 	@Override
-	public boolean canGrow(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
-		return worldIn.getBlockState(pos.up()).isAir();
+	public boolean isValidBonemealTarget(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
+		return worldIn.getBlockState(pos.above()).isAir();
 	}
 
 	@Override
-	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
+	public boolean isBonemealSuccess(World worldIn, Random rand, BlockPos pos, BlockState state) {
 		return true;
 	}
 
 	@Override
-	public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
-		if (state.get(TYPE).equals(SlabType.TOP) || state.get(TYPE).equals(SlabType.DOUBLE)) {
-			BlockPos blockpos = pos.up();
-			BlockState blockstate = Blocks.GRASS.getDefaultState();
+	public void performBonemeal(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
+		if (state.getValue(TYPE).equals(SlabType.TOP) || state.getValue(TYPE).equals(SlabType.DOUBLE)) {
+			BlockPos blockpos = pos.above();
+			BlockState blockstate = Blocks.GRASS.defaultBlockState();
 			label48:
 			for(int i = 0; i < 128; ++i) {
 				BlockPos blockpos1 = blockpos;
 				for(int j = 0; j < i / 16; ++j) {
-					blockpos1 = blockpos1.add(rand.nextInt(3) - 1, (rand.nextInt(3) - 1) * rand.nextInt(3) / 2, rand.nextInt(3) - 1);
-					if (!worldIn.getBlockState(blockpos1.down()).isIn(this) || worldIn.getBlockState(blockpos1).hasOpaqueCollisionShape(worldIn, blockpos1)) {
+					blockpos1 = blockpos1.offset(rand.nextInt(3) - 1, (rand.nextInt(3) - 1) * rand.nextInt(3) / 2, rand.nextInt(3) - 1);
+					if (!worldIn.getBlockState(blockpos1.below()).is(this) || worldIn.getBlockState(blockpos1).isCollisionShapeFullBlock(worldIn, blockpos1)) {
 						continue label48;
 					}
 				}
 				BlockState blockstate2 = worldIn.getBlockState(blockpos1);
-				if (blockstate2.isIn(blockstate.getBlock()) && rand.nextInt(10) == 0) {
-					((IGrowable)blockstate.getBlock()).grow(worldIn, rand, blockpos1, blockstate2);
+				if (blockstate2.is(blockstate.getBlock()) && rand.nextInt(10) == 0) {
+					((IGrowable)blockstate.getBlock()).performBonemeal(worldIn, rand, blockpos1, blockstate2);
 				}
 				if (blockstate2.isAir()) {
 					BlockState blockstate1;
@@ -85,12 +87,12 @@ public class GrassBlockSlab extends SlabBlock implements IGrowable {
 						}
 						ConfiguredFeature<?, ?> configuredfeature = list.get(0);
 						FlowersFeature flowersfeature = (FlowersFeature)configuredfeature.feature;
-						blockstate1 = flowersfeature.getFlowerToPlace(rand, blockpos1, configuredfeature.func_242767_c());
+						blockstate1 = flowersfeature.getRandomFlower(rand, blockpos1, configuredfeature.config());
 					} else {
 						blockstate1 = blockstate;
 					}
-					if (blockstate1.isValidPosition(worldIn, blockpos1)) {
-						worldIn.setBlockState(blockpos1, blockstate1, 3);
+					if (blockstate1.canSurvive(worldIn, blockpos1)) {
+						worldIn.setBlock(blockpos1, blockstate1, 3);
 					}
 				}
 			}
@@ -98,21 +100,21 @@ public class GrassBlockSlab extends SlabBlock implements IGrowable {
 	}
 
 	private static boolean isSnowyConditions(BlockState state, IWorldReader worldReader, BlockPos pos) {
-		BlockPos blockpos = pos.up();
+		BlockPos blockpos = pos.above();
 		BlockState blockstate = worldReader.getBlockState(blockpos);
-		if (blockstate.isIn(Blocks.SNOW) && blockstate.get(SnowBlock.LAYERS) == 1) {
+		if (blockstate.is(Blocks.SNOW) && blockstate.getValue(SnowBlock.LAYERS) == 1) {
 			return true;
-		} else if (blockstate.getFluidState().getLevel() == 8) {
+		} else if (blockstate.getFluidState().getAmount() == 8) {
 			return false;
 		} else {
-			int i = LightEngine.func_215613_a(worldReader, state, pos, blockstate, blockpos, Direction.UP, blockstate.getOpacity(worldReader, blockpos));
+			int i = LightEngine.getLightBlockInto(worldReader, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(worldReader, blockpos));
 			return i < worldReader.getMaxLightLevel();
 		}
 	}
 
 	private static boolean isSnowyAndNotUnderwater(BlockState state, IWorldReader worldReader, BlockPos pos) {
-		BlockPos blockpos = pos.up();
-		return isSnowyConditions(state, worldReader, pos) && !worldReader.getFluidState(blockpos).isTagged(FluidTags.WATER);
+		BlockPos blockpos = pos.above();
+		return isSnowyConditions(state, worldReader, pos) && !worldReader.getFluidState(blockpos).is(FluidTags.WATER);
 	}
 
 	/**
@@ -123,25 +125,25 @@ public class GrassBlockSlab extends SlabBlock implements IGrowable {
 		if (!isSnowyConditions(state, worldIn, pos)) {
 			if (!worldIn.isAreaLoaded(pos, 3))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
-			worldIn.setBlockState(pos, SlabInit.dirt_slab.getDefaultState().with(TYPE, state.get(TYPE)).with(WATERLOGGED, state.get(WATERLOGGED)));
+			worldIn.setBlockAndUpdate(pos, SlabInit.dirt_slab.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
 		} else {
-			if (worldIn.getLight(pos.up()) >= 9) {
+			if (worldIn.getMaxLocalRawBrightness(pos.above()) >= 9) {
 				for (int i = 0; i < 4; ++i) {
-					BlockPos blockpos = pos.add(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
+					BlockPos blockpos = pos.offset(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
 					BlockState blockstate = worldIn.getBlockState(blockpos);
 					if (isSnowyAndNotUnderwater(blockstate, worldIn, blockpos)) {
-						if (blockstate.isIn(Blocks.DIRT)) {
-							worldIn.setBlockState(blockpos, Blocks.GRASS_BLOCK.getDefaultState().with(SNOWY, worldIn.getBlockState(blockpos.up()).isIn(Blocks.SNOW)));
-						} else if (blockstate.isIn(StairsInit.dirt_stairs)) {
-							worldIn.setBlockState(blockpos, StairsInit.grass_block_stairs.getDefaultState().with(HORIZONTAL_FACING, blockstate.get(HORIZONTAL_FACING)).with(HALF, blockstate.get(HALF)).with(STAIRS_SHAPE, blockstate.get(STAIRS_SHAPE)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
-						} else if (blockstate.isIn(SlabInit.dirt_slab)) {
-							worldIn.setBlockState(blockpos, SlabInit.grass_block_slab.getDefaultState().with(TYPE, blockstate.get(TYPE)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
-						} else if (blockstate.isIn(FenceInit.dirt_fence)) {
-							worldIn.setBlockState(blockpos, FenceInit.grass_block_fence.getDefaultState().with(NORTH, blockstate.get(NORTH)).with(EAST, blockstate.get(EAST)).with(SOUTH, blockstate.get(SOUTH)).with(WEST, blockstate.get(WEST)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
-						} else if (blockstate.isIn(WallInit.dirt_wall)) {
-							worldIn.setBlockState(blockpos, WallInit.grass_block_wall.getDefaultState().with(UP, blockstate.get(UP)).with(WALL_HEIGHT_NORTH, blockstate.get(WALL_HEIGHT_NORTH)).with(WALL_HEIGHT_EAST, blockstate.get(WALL_HEIGHT_EAST)).with(WALL_HEIGHT_SOUTH, blockstate.get(WALL_HEIGHT_SOUTH)).with(WALL_HEIGHT_WEST, blockstate.get(WALL_HEIGHT_WEST)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
-						} else if (blockstate.isIn(TrapdoorInit.dirt_trapdoor)) {
-							worldIn.setBlockState(blockpos, TrapdoorInit.grass_block_trapdoor.getDefaultState().with(HORIZONTAL_FACING, blockstate.get(HORIZONTAL_FACING)).with(OPEN, blockstate.get(OPEN)).with(HALF, blockstate.get(HALF)).with(POWERED, blockstate.get(POWERED)).with(WATERLOGGED, blockstate.get(WATERLOGGED)));
+						if (blockstate.is(Blocks.DIRT)) {
+							worldIn.setBlockAndUpdate(blockpos, Blocks.GRASS_BLOCK.defaultBlockState().setValue(SNOWY, worldIn.getBlockState(blockpos.above()).is(Blocks.SNOW)));
+						} else if (blockstate.is(StairsInit.dirt_stairs)) {
+							worldIn.setBlockAndUpdate(blockpos, StairsInit.grass_block_stairs.defaultBlockState().setValue(HORIZONTAL_FACING, blockstate.getValue(HORIZONTAL_FACING)).setValue(HALF, blockstate.getValue(HALF)).setValue(STAIRS_SHAPE, blockstate.getValue(STAIRS_SHAPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(SlabInit.dirt_slab)) {
+							worldIn.setBlockAndUpdate(blockpos, SlabInit.grass_block_slab.defaultBlockState().setValue(TYPE, blockstate.getValue(TYPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(FenceInit.dirt_fence)) {
+							worldIn.setBlockAndUpdate(blockpos, FenceInit.grass_block_fence.defaultBlockState().setValue(NORTH, blockstate.getValue(NORTH)).setValue(EAST, blockstate.getValue(EAST)).setValue(SOUTH, blockstate.getValue(SOUTH)).setValue(WEST, blockstate.getValue(WEST)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(WallInit.dirt_wall)) {
+							worldIn.setBlockAndUpdate(blockpos, WallInit.grass_block_wall.defaultBlockState().setValue(UP, blockstate.getValue(UP)).setValue(NORTH_WALL, blockstate.getValue(NORTH_WALL)).setValue(EAST_WALL, blockstate.getValue(EAST_WALL)).setValue(SOUTH_WALL, blockstate.getValue(SOUTH_WALL)).setValue(WEST_WALL, blockstate.getValue(WEST_WALL)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(TrapdoorInit.dirt_trapdoor)) {
+							worldIn.setBlockAndUpdate(blockpos, TrapdoorInit.grass_block_trapdoor.defaultBlockState().setValue(HORIZONTAL_FACING, blockstate.getValue(HORIZONTAL_FACING)).setValue(OPEN, blockstate.getValue(OPEN)).setValue(HALF, blockstate.getValue(HALF)).setValue(POWERED, blockstate.getValue(POWERED)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						}
 					}
 				}

@@ -9,6 +9,8 @@ import net.minecraft.util.math.MathHelper;
 import java.util.Random;
 import java.util.function.Supplier;
 
+import net.minecraft.block.AbstractBlock.Properties;
+
 public class OreStairs extends StairsBlock {
 
 	public OreStairs(Supplier<BlockState> state, Properties properties) {

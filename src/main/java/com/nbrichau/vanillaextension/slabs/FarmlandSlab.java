@@ -31,33 +31,35 @@ import net.minecraftforge.common.PlantType;
 import java.util.Random;
 
 
+import net.minecraft.block.AbstractBlock.Properties;
+
 public class FarmlandSlab  extends FarmlandBlock implements IWaterLoggable {
 	public static final EnumProperty<SlabType> TYPE = BlockStateProperties.SLAB_TYPE;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-	protected static final VoxelShape BOTTOM_SHAPE = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D);
-	protected static final VoxelShape TOP_SHAPE = Block.makeCuboidShape(0.0D, 8.0D, 0.0D, 16.0D, 15.0D, 16.0D);
+	protected static final VoxelShape BOTTOM_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D);
+	protected static final VoxelShape TOP_SHAPE = Block.box(0.0D, 8.0D, 0.0D, 16.0D, 15.0D, 16.0D);
 
 	public FarmlandSlab(Properties builder) {
 		super(builder);
-		this.setDefaultState(this.getDefaultState().with(TYPE, SlabType.BOTTOM).with(WATERLOGGED, Boolean.FALSE).with(MOISTURE, 0));
+		this.registerDefaultState(this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM).setValue(WATERLOGGED, Boolean.FALSE).setValue(MOISTURE, 0));
 	}
 
 	@Override
-	public boolean isTransparent(BlockState state) {
-		return state.get(TYPE) != SlabType.DOUBLE;
+	public boolean useShapeForLightOcclusion(BlockState state) {
+		return state.getValue(TYPE) != SlabType.DOUBLE;
 	}
 
 	@Override
-	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
 		builder.add(TYPE, WATERLOGGED, MOISTURE);
 	}
 
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		SlabType slabtype = state.get(TYPE);
+		SlabType slabtype = state.getValue(TYPE);
 		switch(slabtype) {
 			case DOUBLE:
-				return VoxelShapes.fullCube();
+				return VoxelShapes.block();
 			case TOP:
 				return TOP_SHAPE;
 			default:
@@ -66,31 +68,31 @@ public class FarmlandSlab  extends FarmlandBlock implements IWaterLoggable {
 	}
 
 	public BlockState getStateForPlacementSlab(BlockItemUseContext context) {
-		BlockPos blockpos = context.getPos();
-		BlockState blockstate = context.getWorld().getBlockState(blockpos);
-		if (blockstate.isIn(this)) {
-			return blockstate.with(TYPE, SlabType.DOUBLE).with(WATERLOGGED, Boolean.FALSE);
+		BlockPos blockpos = context.getClickedPos();
+		BlockState blockstate = context.getLevel().getBlockState(blockpos);
+		if (blockstate.is(this)) {
+			return blockstate.setValue(TYPE, SlabType.DOUBLE).setValue(WATERLOGGED, Boolean.FALSE);
 		} else {
-			FluidState fluidstate = context.getWorld().getFluidState(blockpos);
-			BlockState blockstate1 = this.getDefaultState().with(TYPE, SlabType.BOTTOM).with(WATERLOGGED, fluidstate.getFluid() == Fluids.WATER);
-			Direction direction = context.getFace();
-			return direction != Direction.DOWN && (direction == Direction.UP || !(context.getHitVec().y - (double)blockpos.getY() > 0.5D)) ? blockstate1 : blockstate1.with(TYPE, SlabType.TOP);
+			FluidState fluidstate = context.getLevel().getFluidState(blockpos);
+			BlockState blockstate1 = this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM).setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
+			Direction direction = context.getClickedFace();
+			return direction != Direction.DOWN && (direction == Direction.UP || !(context.getClickLocation().y - (double)blockpos.getY() > 0.5D)) ? blockstate1 : blockstate1.setValue(TYPE, SlabType.TOP);
 		}
 	}
 
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		return !this.getDefaultState().isValidPosition(context.getWorld(), context.getPos()) ? SlabInit.dirt_slab.getDefaultState() : this.getStateForPlacementSlab(context);
+		return !this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ? SlabInit.dirt_slab.defaultBlockState() : this.getStateForPlacementSlab(context);
 	}
 
 	@Override
-	public boolean isReplaceable(BlockState state, BlockItemUseContext useContext) {
-		ItemStack itemstack = useContext.getItem();
-		SlabType slabtype = state.get(TYPE);
+	public boolean canBeReplaced(BlockState state, BlockItemUseContext useContext) {
+		ItemStack itemstack = useContext.getItemInHand();
+		SlabType slabtype = state.getValue(TYPE);
 		if (slabtype != SlabType.DOUBLE && itemstack.getItem() == this.asItem()) {
 			if (useContext.replacingClickedOnBlock()) {
-				boolean flag = useContext.getHitVec().y - (double)useContext.getPos().getY() > 0.5D;
-				Direction direction = useContext.getFace();
+				boolean flag = useContext.getClickLocation().y - (double)useContext.getClickedPos().getY() > 0.5D;
+				Direction direction = useContext.getClickedFace();
 				if (slabtype == SlabType.BOTTOM) {
 					return direction == Direction.UP || flag && direction.getAxis().isHorizontal();
 				} else {
@@ -106,17 +108,17 @@ public class FarmlandSlab  extends FarmlandBlock implements IWaterLoggable {
 
 	@Override
 	public FluidState getFluidState(BlockState state) {
-		return state.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
+		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
 	}
 
 	@Override
-	public boolean receiveFluid(IWorld worldIn, BlockPos pos, BlockState state, FluidState fluidStateIn) {
-		return state.get(TYPE) != SlabType.DOUBLE ? IWaterLoggable.super.receiveFluid(worldIn, pos, state, fluidStateIn) : false;
+	public boolean placeLiquid(IWorld worldIn, BlockPos pos, BlockState state, FluidState fluidStateIn) {
+		return state.getValue(TYPE) != SlabType.DOUBLE ? IWaterLoggable.super.placeLiquid(worldIn, pos, state, fluidStateIn) : false;
 	}
 
 	@Override
-	public boolean canContainFluid(IBlockReader worldIn, BlockPos pos, BlockState state, Fluid fluidIn) {
-		return state.get(TYPE) != SlabType.DOUBLE ? IWaterLoggable.super.canContainFluid(worldIn, pos, state, fluidIn) : false;
+	public boolean canPlaceLiquid(IBlockReader worldIn, BlockPos pos, BlockState state, Fluid fluidIn) {
+		return state.getValue(TYPE) != SlabType.DOUBLE ? IWaterLoggable.super.canPlaceLiquid(worldIn, pos, state, fluidIn) : false;
 	}
 
 	/**
@@ -126,23 +128,23 @@ public class FarmlandSlab  extends FarmlandBlock implements IWaterLoggable {
 	 * Note that this method should ideally consider only the specific face passed in.
 	 */
 	@Override
-	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
-		if (stateIn.get(WATERLOGGED)) {
-			worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
+	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+		if (stateIn.getValue(WATERLOGGED)) {
+			worldIn.getLiquidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 		}
 
-		if (facing == Direction.UP && !stateIn.isValidPosition(worldIn, currentPos)) {
-			worldIn.getPendingBlockTicks().scheduleTick(currentPos, this, 1);
+		if (facing == Direction.UP && !stateIn.canSurvive(worldIn, currentPos)) {
+			worldIn.getBlockTicks().scheduleTick(currentPos, this, 1);
 		}
 
-		return super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+		return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 
 	@Override
-	public boolean allowsMovement(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {
+	public boolean isPathfindable(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {
 		switch(type) {
 			case WATER:
-				return worldIn.getFluidState(pos).isTagged(FluidTags.WATER);
+				return worldIn.getFluidState(pos).is(FluidTags.WATER);
 			case LAND:
 			case AIR:
 			default:
@@ -152,7 +154,7 @@ public class FarmlandSlab  extends FarmlandBlock implements IWaterLoggable {
 
 	@Override
 	public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction facing, IPlantable plantable) {
-		PlantType type = plantable.getPlantType(world, pos.offset(facing));
+		PlantType type = plantable.getPlantType(world, pos.relative(facing));
 		return PlantType.CROP.equals(type);
 	}
 
@@ -161,27 +163,27 @@ public class FarmlandSlab  extends FarmlandBlock implements IWaterLoggable {
 	 */
 	@Override
 	public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
-		int i = state.get(MOISTURE);
-		if (!hasWater(worldIn, pos) && !worldIn.isRainingAt(pos.up())) {
+		int i = state.getValue(MOISTURE);
+		if (!hasWater(worldIn, pos) && !worldIn.isRainingAt(pos.above())) {
 			if (i > 0) {
-				worldIn.setBlockState(pos, state.with(MOISTURE, Integer.valueOf(i - 1)), 2);
+				worldIn.setBlock(pos, state.setValue(MOISTURE, Integer.valueOf(i - 1)), 2);
 			} else if (!hasCrops(worldIn, pos)) {
 				turnToDirtSlab(state, worldIn, pos);
 			}
 		} else if (i < 7) {
-			worldIn.setBlockState(pos, state.with(MOISTURE, Integer.valueOf(7)), 2);
+			worldIn.setBlock(pos, state.setValue(MOISTURE, Integer.valueOf(7)), 2);
 		}
 
 	}
 
 	public static void turnToDirtSlab(BlockState state, World worldIn, BlockPos pos) {
-		BlockState bs = SlabInit.dirt_slab.getDefaultState().with(TYPE, state.get(TYPE)).with(WATERLOGGED, state.get(WATERLOGGED));
-		worldIn.setBlockState(pos, bs);
+		BlockState bs = SlabInit.dirt_slab.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+		worldIn.setBlockAndUpdate(pos, bs);
 	}
 
 	private static boolean hasWater(IWorldReader worldIn, BlockPos pos) {
-		for(BlockPos blockpos : BlockPos.getAllInBoxMutable(pos.add(-4, 0, -4), pos.add(4, 1, 4))) {
-			if (worldIn.getFluidState(blockpos).isTagged(FluidTags.WATER)) {
+		for(BlockPos blockpos : BlockPos.betweenClosed(pos.offset(-4, 0, -4), pos.offset(4, 1, 4))) {
+			if (worldIn.getFluidState(blockpos).is(FluidTags.WATER)) {
 				return true;
 			}
 		}
@@ -190,16 +192,16 @@ public class FarmlandSlab  extends FarmlandBlock implements IWaterLoggable {
 	}
 
 	private boolean hasCrops(IBlockReader worldIn, BlockPos pos) {
-		BlockState state = worldIn.getBlockState(pos.up());
+		BlockState state = worldIn.getBlockState(pos.above());
 		return state.getBlock() instanceof net.minecraftforge.common.IPlantable && canSustainPlant(state, worldIn, pos, Direction.UP, (net.minecraftforge.common.IPlantable)state.getBlock());
 	}
 
 	@Override
-	public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) {
-		if (!worldIn.isRemote && net.minecraftforge.common.ForgeHooks.onFarmlandTrample(worldIn, pos, Blocks.DIRT.getDefaultState(), fallDistance, entityIn)) { // Forge: Move logic to Entity#canTrample
+	public void fallOn(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) {
+		if (!worldIn.isClientSide && net.minecraftforge.common.ForgeHooks.onFarmlandTrample(worldIn, pos, Blocks.DIRT.defaultBlockState(), fallDistance, entityIn)) { // Forge: Move logic to Entity#canTrample
 			turnToDirtSlab(worldIn.getBlockState(pos), worldIn, pos);
 		}
 
-		entityIn.onLivingFall(fallDistance, 1.0F);
+		entityIn.causeFallDamage(fallDistance, 1.0F);
 	}
 }

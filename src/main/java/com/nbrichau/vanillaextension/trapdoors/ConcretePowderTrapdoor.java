@@ -28,6 +28,8 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
+import net.minecraft.block.AbstractBlock.Properties;
+
 public class ConcretePowderTrapdoor extends ConcretePowderBlock implements IWaterLoggable {
 
 	public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
@@ -35,33 +37,33 @@ public class ConcretePowderTrapdoor extends ConcretePowderBlock implements IWate
 	public static final DirectionProperty HORIZONTAL_FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-	protected static final VoxelShape EAST_OPEN_AABB = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 3.0D, 16.0D, 16.0D);
-	protected static final VoxelShape WEST_OPEN_AABB = Block.makeCuboidShape(13.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
-	protected static final VoxelShape SOUTH_OPEN_AABB = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 3.0D);
-	protected static final VoxelShape NORTH_OPEN_AABB = Block.makeCuboidShape(0.0D, 0.0D, 13.0D, 16.0D, 16.0D, 16.0D);
-	protected static final VoxelShape BOTTOM_AABB = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D);
-	protected static final VoxelShape TOP_AABB = Block.makeCuboidShape(0.0D, 13.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape EAST_OPEN_AABB = Block.box(0.0D, 0.0D, 0.0D, 3.0D, 16.0D, 16.0D);
+	protected static final VoxelShape WEST_OPEN_AABB = Block.box(13.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape SOUTH_OPEN_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 3.0D);
+	protected static final VoxelShape NORTH_OPEN_AABB = Block.box(0.0D, 0.0D, 13.0D, 16.0D, 16.0D, 16.0D);
+	protected static final VoxelShape BOTTOM_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D);
+	protected static final VoxelShape TOP_AABB = Block.box(0.0D, 13.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
 	private final BlockState solidifiedState;
 
 	public ConcretePowderTrapdoor(Block solidified, Properties properties) {
 		super(solidified, properties);
-		this.setDefaultState(this.stateContainer.getBaseState().with(HORIZONTAL_FACING, Direction.NORTH).with(OPEN, Boolean.FALSE).with(HALF, Half.BOTTOM).with(POWERED, Boolean.FALSE).with(WATERLOGGED, Boolean.FALSE));
-		this.solidifiedState = solidified.getDefaultState();
+		this.registerDefaultState(this.stateDefinition.any().setValue(HORIZONTAL_FACING, Direction.NORTH).setValue(OPEN, Boolean.FALSE).setValue(HALF, Half.BOTTOM).setValue(POWERED, Boolean.FALSE).setValue(WATERLOGGED, Boolean.FALSE));
+		this.solidifiedState = solidified.defaultBlockState();
 	}
 
 	@Override
-	public void onEndFalling(World worldIn, BlockPos pos, BlockState fallingState, BlockState hitState, FallingBlockEntity fallingBlock) {
+	public void onLand(World worldIn, BlockPos pos, BlockState fallingState, BlockState hitState, FallingBlockEntity fallingBlock) {
 		if (shouldSolidify(worldIn, pos, hitState)) {
-			worldIn.setBlockState(pos, this.solidifiedState.with(HORIZONTAL_FACING, fallingState.get(HORIZONTAL_FACING)).with(OPEN, fallingState.get(OPEN)).with(HALF, fallingState.get(HALF)).with(POWERED, fallingState.get(POWERED)).with(WATERLOGGED, fallingState.get(WATERLOGGED)), 3);
+			worldIn.setBlock(pos, this.solidifiedState.setValue(HORIZONTAL_FACING, fallingState.getValue(HORIZONTAL_FACING)).setValue(OPEN, fallingState.getValue(OPEN)).setValue(HALF, fallingState.getValue(HALF)).setValue(POWERED, fallingState.getValue(POWERED)).setValue(WATERLOGGED, fallingState.getValue(WATERLOGGED)), 3);
 		}
 	}
 
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		if (!state.get(OPEN)) {
-			return state.get(HALF) == Half.TOP ? TOP_AABB : BOTTOM_AABB;
+		if (!state.getValue(OPEN)) {
+			return state.getValue(HALF) == Half.TOP ? TOP_AABB : BOTTOM_AABB;
 		} else {
-			switch ((Direction) state.get(HORIZONTAL_FACING)) {
+			switch ((Direction) state.getValue(HORIZONTAL_FACING)) {
 				case NORTH:
 				default:
 					return NORTH_OPEN_AABB;
@@ -75,57 +77,57 @@ public class ConcretePowderTrapdoor extends ConcretePowderBlock implements IWate
 		}
 	}
 
-	public boolean allowsMovement(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {
+	public boolean isPathfindable(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {
 		switch (type) {
 			case LAND:
-				return state.get(OPEN);
+				return state.getValue(OPEN);
 			case WATER:
-				return state.get(WATERLOGGED);
+				return state.getValue(WATERLOGGED);
 			case AIR:
-				return state.get(OPEN);
+				return state.getValue(OPEN);
 			default:
 				return false;
 		}
 	}
 
-	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-		if (this.material == Material.IRON) {
+	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+		if (this.material == Material.METAL) {
 			return ActionResultType.PASS;
 		} else {
-			state = state.func_235896_a_(OPEN);
-			worldIn.setBlockState(pos, state, 2);
-			if (state.get(WATERLOGGED)) {
-				worldIn.getPendingFluidTicks().scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
+			state = state.cycle(OPEN);
+			worldIn.setBlock(pos, state, 2);
+			if (state.getValue(WATERLOGGED)) {
+				worldIn.getLiquidTicks().scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 			}
 
-			this.playSound(player, worldIn, pos, state.get(OPEN));
-			return ActionResultType.func_233537_a_(worldIn.isRemote);
+			this.playSound(player, worldIn, pos, state.getValue(OPEN));
+			return ActionResultType.sidedSuccess(worldIn.isClientSide);
 		}
 	}
 
 	protected void playSound(@Nullable PlayerEntity player, World worldIn, BlockPos pos, boolean p_185731_4_) {
 		if (p_185731_4_) {
-			int i = this.material == Material.IRON ? 1037 : 1007;
-			worldIn.playEvent(player, i, pos, 0);
+			int i = this.material == Material.METAL ? 1037 : 1007;
+			worldIn.levelEvent(player, i, pos, 0);
 		} else {
-			int j = this.material == Material.IRON ? 1036 : 1013;
-			worldIn.playEvent(player, j, pos, 0);
+			int j = this.material == Material.METAL ? 1036 : 1013;
+			worldIn.levelEvent(player, j, pos, 0);
 		}
 
 	}
 
 	public void neighborChanged(BlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
-		if (!worldIn.isRemote) {
-			boolean flag = worldIn.isBlockPowered(pos);
-			if (flag != state.get(POWERED)) {
-				if (state.get(OPEN) != flag) {
-					state = state.with(OPEN, Boolean.valueOf(flag));
+		if (!worldIn.isClientSide) {
+			boolean flag = worldIn.hasNeighborSignal(pos);
+			if (flag != state.getValue(POWERED)) {
+				if (state.getValue(OPEN) != flag) {
+					state = state.setValue(OPEN, Boolean.valueOf(flag));
 					this.playSound((PlayerEntity) null, worldIn, pos, flag);
 				}
 
-				worldIn.setBlockState(pos, state.with(POWERED, Boolean.valueOf(flag)), 2);
-				if (state.get(WATERLOGGED)) {
-					worldIn.getPendingFluidTicks().scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
+				worldIn.setBlock(pos, state.setValue(POWERED, Boolean.valueOf(flag)), 2);
+				if (state.getValue(WATERLOGGED)) {
+					worldIn.getLiquidTicks().scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 				}
 			}
 
@@ -133,43 +135,43 @@ public class ConcretePowderTrapdoor extends ConcretePowderBlock implements IWate
 	}
 
 
-	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
 		builder.add(HORIZONTAL_FACING, OPEN, HALF, POWERED, WATERLOGGED);
 	}
 
 	public FluidState getFluidState(BlockState state) {
-		return state.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
+		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
 	}
 
 	@Override
 	public boolean isLadder(BlockState state, net.minecraft.world.IWorldReader world, BlockPos pos, net.minecraft.entity.LivingEntity entity) {
-		if (state.get(OPEN)) {
-			BlockState down = world.getBlockState(pos.down());
+		if (state.getValue(OPEN)) {
+			BlockState down = world.getBlockState(pos.below());
 			if (down.getBlock() == net.minecraft.block.Blocks.LADDER)
-				return down.get(LadderBlock.FACING) == state.get(HORIZONTAL_FACING);
+				return down.getValue(LadderBlock.FACING) == state.getValue(HORIZONTAL_FACING);
 		}
 		return false;
 	}
 
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		IBlockReader iblockreader = context.getWorld();
-		BlockPos blockpos = context.getPos();
+		IBlockReader iblockreader = context.getLevel();
+		BlockPos blockpos = context.getClickedPos();
 		BlockState blockstate0 = iblockreader.getBlockState(blockpos);
-		BlockState blockstate = shouldSolidify(iblockreader, blockpos, blockstate0) ? this.solidifiedState : this.getDefaultState();
-		FluidState fluidstate = context.getWorld().getFluidState(context.getPos());
-		Direction direction = context.getFace();
+		BlockState blockstate = shouldSolidify(iblockreader, blockpos, blockstate0) ? this.solidifiedState : this.defaultBlockState();
+		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
+		Direction direction = context.getClickedFace();
 		if (!context.replacingClickedOnBlock() && direction.getAxis().isHorizontal()) {
-			blockstate = blockstate.with(HORIZONTAL_FACING, direction).with(HALF, context.getHitVec().y - (double) context.getPos().getY() > 0.5D ? Half.TOP : Half.BOTTOM);
+			blockstate = blockstate.setValue(HORIZONTAL_FACING, direction).setValue(HALF, context.getClickLocation().y - (double) context.getClickedPos().getY() > 0.5D ? Half.TOP : Half.BOTTOM);
 		} else {
-			blockstate = blockstate.with(HORIZONTAL_FACING, context.getPlacementHorizontalFacing().getOpposite()).with(HALF, direction == Direction.UP ? Half.BOTTOM : Half.TOP);
+			blockstate = blockstate.setValue(HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite()).setValue(HALF, direction == Direction.UP ? Half.BOTTOM : Half.TOP);
 		}
 
-		if (context.getWorld().isBlockPowered(context.getPos())) {
-			blockstate = blockstate.with(OPEN, Boolean.valueOf(true)).with(POWERED, Boolean.valueOf(true));
+		if (context.getLevel().hasNeighborSignal(context.getClickedPos())) {
+			blockstate = blockstate.setValue(OPEN, Boolean.valueOf(true)).setValue(POWERED, Boolean.valueOf(true));
 		}
 
-		return blockstate.with(WATERLOGGED, Boolean.valueOf(fluidstate.getFluid() == Fluids.WATER));
+		return blockstate.setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
 	}
 
 	/**
@@ -179,12 +181,12 @@ public class ConcretePowderTrapdoor extends ConcretePowderBlock implements IWate
 	 * Note that this method should ideally consider only the specific face passed in.
 	 */
 	@Override
-	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
-		if (stateIn.get(WATERLOGGED)) {
-			worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
+	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+		if (stateIn.getValue(WATERLOGGED)) {
+			worldIn.getLiquidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 		}
 
-		return isTouchingLiquid(worldIn, currentPos) ? this.solidifiedState.with(HORIZONTAL_FACING, stateIn.get(HORIZONTAL_FACING)).with(OPEN, stateIn.get(OPEN)).with(HALF, stateIn.get(HALF)).with(POWERED, stateIn.get(POWERED)).with(WATERLOGGED, stateIn.get(WATERLOGGED)) : super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+		return isTouchingLiquid(worldIn, currentPos) ? this.solidifiedState.setValue(HORIZONTAL_FACING, stateIn.getValue(HORIZONTAL_FACING)).setValue(OPEN, stateIn.getValue(OPEN)).setValue(HALF, stateIn.getValue(HALF)).setValue(POWERED, stateIn.getValue(POWERED)).setValue(WATERLOGGED, stateIn.getValue(WATERLOGGED)) : super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 
 	private static boolean shouldSolidify(IBlockReader reader, BlockPos pos, BlockState state) {
@@ -193,13 +195,13 @@ public class ConcretePowderTrapdoor extends ConcretePowderBlock implements IWate
 
 	private static boolean isTouchingLiquid(IBlockReader reader, BlockPos pos) {
 		boolean flag = false;
-		BlockPos.Mutable blockpos$mutable = pos.toMutable();
+		BlockPos.Mutable blockpos$mutable = pos.mutable();
 		for (Direction direction : Direction.values()) {
 			BlockState blockstate = reader.getBlockState(blockpos$mutable);
 			if (direction != Direction.DOWN || causesSolidify(blockstate)) {
-				blockpos$mutable.setAndMove(pos, direction);
+				blockpos$mutable.setWithOffset(pos, direction);
 				blockstate = reader.getBlockState(blockpos$mutable);
-				if (causesSolidify(blockstate) && !blockstate.isSolidSide(reader, pos, direction.getOpposite())) {
+				if (causesSolidify(blockstate) && !blockstate.isFaceSturdy(reader, pos, direction.getOpposite())) {
 					flag = true;
 					break;
 				}
@@ -209,7 +211,7 @@ public class ConcretePowderTrapdoor extends ConcretePowderBlock implements IWate
 	}
 
 	private static boolean causesSolidify(BlockState state) {
-		return state.getFluidState().isTagged(FluidTags.WATER);
+		return state.getFluidState().is(FluidTags.WATER);
 	}
 
 }
