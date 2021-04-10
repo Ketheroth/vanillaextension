@@ -71,7 +71,7 @@ public class GrassPathTrapdoor extends TrapDoorBlock {
 	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
 		if (!this.canSurvive(state, worldIn, pos)) {
-			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, FenceInit.dirt_fence.defaultBlockState()
+			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, TrapdoorInit.dirt_trapdoor.defaultBlockState()
 					.setValue(FACING, state.getValue(FACING)).setValue(OPEN, state.getValue(OPEN)).setValue(HALF, state.getValue(HALF))
 					.setValue(POWERED, state.getValue(POWERED)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), worldIn, pos));
 		}

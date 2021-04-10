@@ -31,8 +31,6 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Map;
 import java.util.Random;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class GrassPathFence extends GrassPathBlock {
 
 	public static final BooleanProperty NORTH = SixWayBlock.NORTH;
@@ -163,7 +161,7 @@ public class GrassPathFence extends GrassPathBlock {
 
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		BlockState bs =  this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ? this.defaultBlockState(): FenceInit.dirt_fence.defaultBlockState();
+		BlockState bs = this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ? this.defaultBlockState() : FenceInit.dirt_fence.get().defaultBlockState();
 
 		IBlockReader iblockreader = context.getLevel();
 		BlockPos blockpos = context.getClickedPos();
@@ -193,7 +191,7 @@ public class GrassPathFence extends GrassPathBlock {
 	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
 		if (!this.canSurvive(state, worldIn, pos)) {
-			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, FenceInit.dirt_fence.defaultBlockState()
+			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, FenceInit.dirt_fence.get().defaultBlockState()
 					.setValue(NORTH, state.getValue(NORTH)).setValue(EAST, state.getValue(EAST)).setValue(SOUTH, state.getValue(SOUTH))
 					.setValue(WEST, state.getValue(WEST)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), worldIn, pos));
 		}

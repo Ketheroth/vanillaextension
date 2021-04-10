@@ -8,26 +8,24 @@ import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class OreFence extends FenceBlock {
 	public OreFence(Properties properties) {
 		super(properties);
 	}
 
 	protected int getExperience(Random rand) {
-		if (this == FenceInit.coal_ore_fence) {
+		if (this == FenceInit.coal_ore_fence.get()) {
 			return MathHelper.nextInt(rand, 0, 2);
-		} else if (this == FenceInit.diamond_ore_fence) {
+		} else if (this == FenceInit.diamond_ore_fence.get()) {
 			return MathHelper.nextInt(rand, 3, 7);
-		} else if (this == FenceInit.emerald_ore_fence) {
+		} else if (this == FenceInit.emerald_ore_fence.get()) {
 			return MathHelper.nextInt(rand, 3, 7);
-		} else if (this == FenceInit.lapis_ore_fence) {
+		} else if (this == FenceInit.lapis_ore_fence.get()) {
 			return MathHelper.nextInt(rand, 2, 5);
-		} else if (this == FenceInit.nether_quartz_ore_fence) {
+		} else if (this == FenceInit.nether_quartz_ore_fence.get()) {
 			return MathHelper.nextInt(rand, 2, 5);
 		} else {
-			return this == FenceInit.nether_gold_ore_fence ? MathHelper.nextInt(rand, 0, 1) : 0;
+			return this == FenceInit.nether_gold_ore_fence.get() ? MathHelper.nextInt(rand, 0, 1) : 0;
 		}
 	}
 

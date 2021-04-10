@@ -13,8 +13,6 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class CoarseDirtFence extends FenceBlock {
 	public CoarseDirtFence(Properties properties) {
 		super(properties);
@@ -24,7 +22,7 @@ public class CoarseDirtFence extends FenceBlock {
 	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		if (player.getItemInHand(handIn).getToolTypes().contains(ToolType.HOE)) {
 			if (!worldIn.isClientSide()) {
-				BlockState bs = FenceInit.dirt_fence.defaultBlockState().setValue(NORTH, state.getValue(NORTH)).setValue(EAST, state.getValue(EAST)).setValue(SOUTH, state.getValue(SOUTH)).setValue(WEST, state.getValue(WEST)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+				BlockState bs = FenceInit.dirt_fence.get().defaultBlockState().setValue(NORTH, state.getValue(NORTH)).setValue(EAST, state.getValue(EAST)).setValue(SOUTH, state.getValue(SOUTH)).setValue(WEST, state.getValue(WEST)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
 				worldIn.setBlock(pos, bs, 11);
 				worldIn.playSound(null, pos, SoundEvents.HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
 				player.getItemInHand(handIn).hurtAndBreak(1, player, item -> item.broadcastBreakEvent(handIn));

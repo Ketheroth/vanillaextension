@@ -17,10 +17,7 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Util;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -29,12 +26,13 @@ import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Map;
 
-import net.minecraft.block.AbstractBlock.Properties;
+import static com.nbrichau.vanillaextension.VanillaExtension.MODID;
 
-public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLoggable{
+public class ConcretePowderFence extends FallingBlock implements IWaterLoggable {
 	public static final BooleanProperty NORTH = SixWayBlock.NORTH;
 	public static final BooleanProperty EAST = SixWayBlock.EAST;
 	public static final BooleanProperty SOUTH = SixWayBlock.SOUTH;
@@ -48,10 +46,10 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 	private final Object2IntMap<BlockState> stateToIndex = new Object2IntOpenHashMap<>();
 	private final VoxelShape[] renderShapes;
 
-	private final BlockState solidifiedState;
+//	private final BlockState solidifiedState;
 
-	public ConcretePowderFence(Block solidified, Properties properties) {
-		super(solidified, properties);
+	public ConcretePowderFence(Properties properties) {
+		super(properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(NORTH, Boolean.FALSE).setValue(EAST, Boolean.FALSE).setValue(SOUTH, Boolean.FALSE).setValue(WEST, Boolean.FALSE).setValue(WATERLOGGED, Boolean.FALSE));
 		this.renderShapes = this.makeShapes(2.0F, 1.0F, 16.0F, 6.0F, 15.0F);
 		this.collisionShapes = this.makeShapes(2.0F, 2.0F, 24.0F, 0.0F, 24.0F);
@@ -60,7 +58,7 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 		for (BlockState blockstate : this.stateDefinition.getPossibleStates()) {
 			this.getIndex(blockstate);
 		}
-		this.solidifiedState = solidified.defaultBlockState();
+//		this.solidifiedState = ;
 	}
 
 	protected VoxelShape[] makeShapes(float nodeWidth, float extensionWidth, float nodeHeight, float extensionBottom, float extensionHeight) {
@@ -171,12 +169,12 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 		BlockState blockstate2 = iblockreader.getBlockState(blockpos2);
 		BlockState blockstate3 = iblockreader.getBlockState(blockpos3);
 		BlockState blockstate4 = iblockreader.getBlockState(blockpos4);
-		BlockState finalState = shouldSolidify(iblockreader, blockpos, blockstate) ? this.solidifiedState : this.defaultBlockState();
+		BlockState finalState = shouldSolidify(iblockreader, blockpos, blockstate) ? this.getSolidifiedState() : this.defaultBlockState();
 		return finalState.setValue(NORTH, this.canConnect(blockstate1, blockstate1.isFaceSturdy(iblockreader, blockpos1, Direction.SOUTH), Direction.SOUTH))
-			.setValue(EAST, this.canConnect(blockstate2, blockstate2.isFaceSturdy(iblockreader, blockpos2, Direction.WEST), Direction.WEST))
-			.setValue(SOUTH, this.canConnect(blockstate3, blockstate3.isFaceSturdy(iblockreader, blockpos3, Direction.NORTH), Direction.NORTH))
-			.setValue(WEST, this.canConnect(blockstate4, blockstate4.isFaceSturdy(iblockreader, blockpos4, Direction.EAST), Direction.EAST))
-			.setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
+				.setValue(EAST, this.canConnect(blockstate2, blockstate2.isFaceSturdy(iblockreader, blockpos2, Direction.WEST), Direction.WEST))
+				.setValue(SOUTH, this.canConnect(blockstate3, blockstate3.isFaceSturdy(iblockreader, blockpos3, Direction.NORTH), Direction.NORTH))
+				.setValue(WEST, this.canConnect(blockstate4, blockstate4.isFaceSturdy(iblockreader, blockpos4, Direction.EAST), Direction.EAST))
+				.setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
 	}
 
 	/**
@@ -190,10 +188,16 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 		if (stateIn.getValue(WATERLOGGED)) {
 			worldIn.getLiquidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 		}
-		BlockState state = isTouchingLiquid(worldIn, currentPos) ? this.solidifiedState.setValue(NORTH, stateIn.getValue(NORTH)).setValue(EAST, stateIn.getValue(EAST)).setValue(SOUTH, stateIn.getValue(SOUTH)).setValue(WEST, stateIn.getValue(WEST)).setValue(WATERLOGGED, stateIn.getValue(WATERLOGGED)) : stateIn;
+		BlockState state = isTouchingLiquid(worldIn, currentPos) ? this.getSolidifiedState().setValue(NORTH, stateIn.getValue(NORTH)).setValue(EAST, stateIn.getValue(EAST)).setValue(SOUTH, stateIn.getValue(SOUTH)).setValue(WEST, stateIn.getValue(WEST)).setValue(WATERLOGGED, stateIn.getValue(WATERLOGGED)) : stateIn;
 		return facing.getAxis().getPlane() == Direction.Plane.HORIZONTAL ?
-			state.setValue(FACING_TO_PROPERTY_MAP.get(facing), this.canConnect(facingState, facingState.isFaceSturdy(worldIn, facingPos, facing.getOpposite()), facing.getOpposite())) :
-			super.updateShape(state, facing, facingState, worldIn, currentPos, facingPos);
+				state.setValue(FACING_TO_PROPERTY_MAP.get(facing), this.canConnect(facingState, facingState.isFaceSturdy(worldIn, facingPos, facing.getOpposite()), facing.getOpposite())) :
+				super.updateShape(state, facing, facingState, worldIn, currentPos, facingPos);
+	}
+
+	private BlockState getSolidifiedState() {
+		String[] part = this.getRegistryName().getPath().split("_powder");
+		String name = part[0] + part[1];
+		return ForgeRegistries.BLOCKS.getValue(ResourceLocation.of(MODID + ":" + name, ':')).defaultBlockState();
 	}
 
 	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
@@ -202,25 +206,24 @@ public class ConcretePowderFence extends ConcretePowderBlock implements IWaterLo
 
 	@Override
 	public void onLand(World worldIn, BlockPos pos, BlockState fallingState, BlockState hitState, FallingBlockEntity fallingBlock) {
-		if (shouldSolidify(worldIn, pos, hitState)) {
-			FluidState fluidstate = worldIn.getFluidState(pos);
-			BlockPos blockpos1 = pos.north();
-			BlockPos blockpos2 = pos.east();
-			BlockPos blockpos3 = pos.south();
-			BlockPos blockpos4 = pos.west();
-			BlockState blockstate1 = ((IBlockReader) worldIn).getBlockState(blockpos1);
-			BlockState blockstate2 = ((IBlockReader) worldIn).getBlockState(blockpos2);
-			BlockState blockstate3 = ((IBlockReader) worldIn).getBlockState(blockpos3);
-			BlockState blockstate4 = ((IBlockReader) worldIn).getBlockState(blockpos4);
-			BlockState bs =   this.solidifiedState
+		FluidState fluidstate = worldIn.getFluidState(pos);
+		BlockPos blockpos1 = pos.north();
+		BlockPos blockpos2 = pos.east();
+		BlockPos blockpos3 = pos.south();
+		BlockPos blockpos4 = pos.west();
+		BlockState blockstate1 = ((IBlockReader) worldIn).getBlockState(blockpos1);
+		BlockState blockstate2 = ((IBlockReader) worldIn).getBlockState(blockpos2);
+		BlockState blockstate3 = ((IBlockReader) worldIn).getBlockState(blockpos3);
+		BlockState blockstate4 = ((IBlockReader) worldIn).getBlockState(blockpos4);
+		BlockState finalState = shouldSolidify(worldIn, pos, hitState) ? this.getSolidifiedState() : this.defaultBlockState();
+		BlockState bs = finalState
 				.setValue(NORTH, this.canConnect(blockstate1, blockstate1.isFaceSturdy(worldIn, blockpos1, Direction.SOUTH), Direction.SOUTH))
 				.setValue(EAST, this.canConnect(blockstate2, blockstate2.isFaceSturdy(worldIn, blockpos2, Direction.WEST), Direction.WEST))
 				.setValue(SOUTH, this.canConnect(blockstate3, blockstate3.isFaceSturdy(worldIn, blockpos3, Direction.NORTH), Direction.NORTH))
 				.setValue(WEST, this.canConnect(blockstate4, blockstate4.isFaceSturdy(worldIn, blockpos4, Direction.EAST), Direction.EAST))
 				.setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
 
-			worldIn.setBlockAndUpdate(pos, bs);
-		}
+		worldIn.setBlockAndUpdate(pos, bs);
 	}
 
 	private static boolean shouldSolidify(IBlockReader reader, BlockPos pos, BlockState state) {

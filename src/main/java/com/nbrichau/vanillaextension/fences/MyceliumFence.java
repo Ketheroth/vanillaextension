@@ -20,8 +20,6 @@ import java.util.Random;
 
 import static net.minecraft.state.properties.BlockStateProperties.*;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class MyceliumFence extends FenceBlock {
 
 	public MyceliumFence(Properties properties) {
@@ -51,7 +49,7 @@ public class MyceliumFence extends FenceBlock {
 		if (!isSnowyConditions(state, worldIn, pos)) {
 			if (!worldIn.isAreaLoaded(pos, 3))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
-			worldIn.setBlockAndUpdate(pos, FenceInit.dirt_fence.defaultBlockState().setValue(NORTH, state.getValue(NORTH)).setValue(EAST, state.getValue(EAST)).setValue(SOUTH, state.getValue(SOUTH)).setValue(WEST, state.getValue(WEST)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
+			worldIn.setBlockAndUpdate(pos, FenceInit.dirt_fence.get().defaultBlockState().setValue(NORTH, state.getValue(NORTH)).setValue(EAST, state.getValue(EAST)).setValue(SOUTH, state.getValue(SOUTH)).setValue(WEST, state.getValue(WEST)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
 		} else {
 			if (worldIn.getMaxLocalRawBrightness(pos.above()) >= 9) {
 				for (int i = 0; i < 4; ++i) {
@@ -64,8 +62,8 @@ public class MyceliumFence extends FenceBlock {
 							worldIn.setBlockAndUpdate(blockpos, StairsInit.mycelium_stairs.defaultBlockState().setValue(HORIZONTAL_FACING, blockstate.getValue(HORIZONTAL_FACING)).setValue(HALF, blockstate.getValue(HALF)).setValue(STAIRS_SHAPE, blockstate.getValue(STAIRS_SHAPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						} else if (blockstate.is(SlabInit.dirt_slab)) {
 							worldIn.setBlockAndUpdate(blockpos, SlabInit.mycelium_slab.defaultBlockState().setValue(SLAB_TYPE, blockstate.getValue(SLAB_TYPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
-						} else if (blockstate.is(FenceInit.dirt_fence)) {
-							worldIn.setBlockAndUpdate(blockpos, FenceInit.mycelium_fence.defaultBlockState().setValue(NORTH, blockstate.getValue(NORTH)).setValue(EAST, blockstate.getValue(EAST)).setValue(SOUTH, blockstate.getValue(SOUTH)).setValue(WEST, blockstate.getValue(WEST)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(FenceInit.dirt_fence.get())) {
+							worldIn.setBlockAndUpdate(blockpos, FenceInit.mycelium_fence.get().defaultBlockState().setValue(NORTH, blockstate.getValue(NORTH)).setValue(EAST, blockstate.getValue(EAST)).setValue(SOUTH, blockstate.getValue(SOUTH)).setValue(WEST, blockstate.getValue(WEST)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						} else if (blockstate.is(WallInit.dirt_wall)) {
 							worldIn.setBlockAndUpdate(blockpos, WallInit.mycelium_wall.defaultBlockState().setValue(UP, blockstate.getValue(UP)).setValue(NORTH_WALL, blockstate.getValue(NORTH_WALL)).setValue(EAST_WALL, blockstate.getValue(EAST_WALL)).setValue(SOUTH_WALL, blockstate.getValue(SOUTH_WALL)).setValue(WEST_WALL, blockstate.getValue(WEST_WALL)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						} else if (blockstate.is(TrapdoorInit.dirt_trapdoor)) {

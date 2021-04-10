@@ -31,7 +31,8 @@ minecraft {
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
-            properties 'mixin.env.disableRefMap': 'true'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             mods {
                 vanillaextension {
@@ -81,10 +82,10 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.5-36.0.63'
+    minecraft 'net.minecraftforge:forge:1.16.5-36.1.4'
 
-    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.2-47:api")
-    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.2-47")
+    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-50:api")
+    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-50")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

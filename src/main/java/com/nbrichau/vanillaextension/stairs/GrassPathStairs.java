@@ -141,7 +141,7 @@ public class GrassPathStairs extends StairsBlock {
 	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
 		if (!this.canSurvive(state, worldIn, pos)) {
-			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, FenceInit.dirt_fence.defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF))
+			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, StairsInit.dirt_stairs.defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF))
 							.setValue(WATERLOGGED, state.getValue(WATERLOGGED)).setValue(SHAPE, state.getValue(SHAPE)),
 					worldIn, pos));
 		}

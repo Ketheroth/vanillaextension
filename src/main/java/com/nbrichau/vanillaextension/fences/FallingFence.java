@@ -28,8 +28,6 @@ import net.minecraft.world.World;
 
 import java.util.Map;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class FallingFence extends FallingBlock {
 
 	public static final BooleanProperty NORTH = SixWayBlock.NORTH;
@@ -194,7 +192,7 @@ public class FallingFence extends FallingBlock {
 		BlockState blockstate1 = ((IBlockReader) worldIn).getBlockState(blockpos2);
 		BlockState blockstate2 = ((IBlockReader) worldIn).getBlockState(blockpos3);
 		BlockState blockstate3 = ((IBlockReader) worldIn).getBlockState(blockpos4);
-		BlockState bs =this.defaultBlockState().setValue(NORTH, this.canConnect(blockstate, blockstate.isFaceSturdy(worldIn, blockpos1, Direction.SOUTH), Direction.SOUTH)).setValue(EAST, this.canConnect(blockstate1, blockstate1.isFaceSturdy(worldIn, blockpos2, Direction.WEST), Direction.WEST)).setValue(SOUTH, this.canConnect(blockstate2, blockstate2.isFaceSturdy(worldIn, blockpos3, Direction.NORTH), Direction.NORTH)).setValue(WEST, this.canConnect(blockstate3, blockstate3.isFaceSturdy(worldIn, blockpos4, Direction.EAST), Direction.EAST)).setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
+		BlockState bs = this.defaultBlockState().setValue(NORTH, this.canConnect(blockstate, blockstate.isFaceSturdy(worldIn, blockpos1, Direction.SOUTH), Direction.SOUTH)).setValue(EAST, this.canConnect(blockstate1, blockstate1.isFaceSturdy(worldIn, blockpos2, Direction.WEST), Direction.WEST)).setValue(SOUTH, this.canConnect(blockstate2, blockstate2.isFaceSturdy(worldIn, blockpos3, Direction.NORTH), Direction.NORTH)).setValue(WEST, this.canConnect(blockstate3, blockstate3.isFaceSturdy(worldIn, blockpos4, Direction.EAST), Direction.EAST)).setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
 		worldIn.setBlockAndUpdate(pos, bs);
 	}
 
