@@ -13,8 +13,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.function.Supplier;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class LogStairs extends StairsBlock {
 
 	public LogStairs(Supplier<BlockState> state, Properties properties) {

@@ -261,5 +261,4 @@ public class SlabInit {
 		ITEMS.register(name, () -> new BlockItem(block, new Item.Properties().tab(VanillaExtension.VanillaExtensionItemGroup.instance)));
 		return BLOCKS.register(name, () -> block);
 	}
-
 }

@@ -49,7 +49,7 @@ public class MyceliumStairs extends StairsBlock {
 		if (!isSnowyConditions(state, worldIn, pos)) {
 			if (!worldIn.isAreaLoaded(pos, 3))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
-			worldIn.setBlockAndUpdate(pos, StairsInit.dirt_stairs.defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF)).setValue(SHAPE, state.getValue(SHAPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
+			worldIn.setBlockAndUpdate(pos, StairsInit.dirt_stairs.get().defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF)).setValue(SHAPE, state.getValue(SHAPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
 		} else {
 			if (worldIn.getMaxLocalRawBrightness(pos.above()) >= 9) {
 				for (int i = 0; i < 4; ++i) {
@@ -58,8 +58,8 @@ public class MyceliumStairs extends StairsBlock {
 					if (isSnowyAndNotUnderwater(blockstate, worldIn, blockpos)) {
 						if (blockstate.is(Blocks.DIRT)) {
 							worldIn.setBlockAndUpdate(blockpos, Blocks.MYCELIUM.defaultBlockState().setValue(SNOWY, worldIn.getBlockState(blockpos.above()).is(Blocks.SNOW)));
-						} else if (blockstate.is(StairsInit.dirt_stairs)) {
-							worldIn.setBlockAndUpdate(blockpos, StairsInit.mycelium_stairs.defaultBlockState().setValue(FACING, blockstate.getValue(FACING)).setValue(HALF, blockstate.getValue(HALF)).setValue(SHAPE, blockstate.getValue(SHAPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(StairsInit.dirt_stairs.get())) {
+							worldIn.setBlockAndUpdate(blockpos, StairsInit.mycelium_stairs.get().defaultBlockState().setValue(FACING, blockstate.getValue(FACING)).setValue(HALF, blockstate.getValue(HALF)).setValue(SHAPE, blockstate.getValue(SHAPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						} else if (blockstate.is(SlabInit.dirt_slab.get())) {
 							worldIn.setBlockAndUpdate(blockpos, SlabInit.mycelium_slab.get().defaultBlockState().setValue(SLAB_TYPE, blockstate.getValue(SLAB_TYPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						} else if (blockstate.is(FenceInit.dirt_fence.get())) {

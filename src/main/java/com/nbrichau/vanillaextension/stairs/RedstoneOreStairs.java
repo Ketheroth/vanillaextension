@@ -27,8 +27,6 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import java.util.Random;
 import java.util.function.Supplier;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class RedstoneOreStairs extends StairsBlock {
 	public static final BooleanProperty LIT = BlockStateProperties.LIT;
 
@@ -106,7 +104,7 @@ public class RedstoneOreStairs extends StairsBlock {
 		for (Direction direction : Direction.values()) {
 			BlockPos blockpos = worldIn.relative(direction);
 			if (!world.getBlockState(blockpos).isSolidRender(world, blockpos)) {
-				Direction.Axis direction$axis = direction.  getAxis();
+				Direction.Axis direction$axis = direction.getAxis();
 				double d1 = direction$axis == Direction.Axis.X ? 0.5D + 0.5625D * (double) direction.getStepX() : (double) random.nextFloat();
 				double d2 = direction$axis == Direction.Axis.Y ? 0.5D + 0.5625D * (double) direction.getStepY() : (double) random.nextFloat();
 				double d3 = direction$axis == Direction.Axis.Z ? 0.5D + 0.5625D * (double) direction.getStepZ() : (double) random.nextFloat();

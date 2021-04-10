@@ -32,8 +32,6 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class FallingStairs extends FallingBlock {
 	public static final DirectionProperty FACING = HorizontalBlock.FACING;
 	public static final EnumProperty<Half> HALF = BlockStateProperties.HALF;

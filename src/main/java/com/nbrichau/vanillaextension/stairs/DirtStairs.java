@@ -15,8 +15,6 @@ import net.minecraftforge.common.ToolType;
 
 import java.util.function.Supplier;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class DirtStairs extends StairsBlock {
 	public DirtStairs(Supplier<BlockState> state, Properties properties) {
 		super(state, properties);
@@ -26,10 +24,10 @@ public class DirtStairs extends StairsBlock {
 	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		if (!worldIn.isClientSide()) {
 			if (player.getItemInHand(handIn).getToolTypes().contains(ToolType.HOE)) {
-				BlockState bs = StairsInit.farmland_stairs.defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF)).setValue(SHAPE, state.getValue(SHAPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+				BlockState bs = StairsInit.farmland_stairs.get().defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF)).setValue(SHAPE, state.getValue(SHAPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
 				worldIn.setBlockAndUpdate(pos, bs);
-				worldIn.playSound(null,pos, SoundEvents.HOE_TILL, SoundCategory.BLOCKS, 1.0F,1.0F);
-				player.getItemInHand(handIn).hurtAndBreak(1, player, item->item.broadcastBreakEvent(handIn));
+				worldIn.playSound(null, pos, SoundEvents.HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				player.getItemInHand(handIn).hurtAndBreak(1, player, item -> item.broadcastBreakEvent(handIn));
 				return ActionResultType.SUCCESS;
 			}
 		}

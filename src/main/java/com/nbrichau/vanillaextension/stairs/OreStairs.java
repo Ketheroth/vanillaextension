@@ -9,8 +9,6 @@ import net.minecraft.util.math.MathHelper;
 import java.util.Random;
 import java.util.function.Supplier;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class OreStairs extends StairsBlock {
 
 	public OreStairs(Supplier<BlockState> state, Properties properties) {
@@ -18,18 +16,18 @@ public class OreStairs extends StairsBlock {
 	}
 
 	protected int getExperience(Random rand) {
-		if (this == StairsInit.coal_ore_stairs) {
+		if (this == StairsInit.coal_ore_stairs.get()) {
 			return MathHelper.nextInt(rand, 0, 2);
-		} else if (this == StairsInit.diamond_ore_stairs) {
+		} else if (this == StairsInit.diamond_ore_stairs.get()) {
 			return MathHelper.nextInt(rand, 3, 7);
-		} else if (this == StairsInit.emerald_ore_stairs) {
+		} else if (this == StairsInit.emerald_ore_stairs.get()) {
 			return MathHelper.nextInt(rand, 3, 7);
-		} else if (this == StairsInit.lapis_ore_stairs) {
+		} else if (this == StairsInit.lapis_ore_stairs.get()) {
 			return MathHelper.nextInt(rand, 2, 5);
-		} else if (this == StairsInit.nether_quartz_ore_stairs) {
+		} else if (this == StairsInit.nether_quartz_ore_stairs.get()) {
 			return MathHelper.nextInt(rand, 2, 5);
 		} else {
-			return this == StairsInit.nether_gold_ore_stairs ? MathHelper.nextInt(rand, 0, 1) : 0;
+			return this == StairsInit.nether_gold_ore_stairs.get() ? MathHelper.nextInt(rand, 0, 1) : 0;
 		}
 	}
 

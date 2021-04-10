@@ -14,8 +14,6 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import java.util.function.Supplier;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class RedstoneLampStairs extends StairsBlock {
 
 	public static final BooleanProperty LIT = BlockStateProperties.LIT;

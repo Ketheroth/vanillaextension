@@ -34,7 +34,7 @@ import java.util.stream.IntStream;
 
 import static net.minecraft.block.StairsBlock.isStairs;
 
-public class FarmlandStairs extends FarmlandBlock implements IWaterLoggable{
+public class FarmlandStairs extends FarmlandBlock implements IWaterLoggable {
 
 	public static final DirectionProperty FACING = HorizontalBlock.FACING;
 	public static final EnumProperty<Half> HALF = BlockStateProperties.HALF;
@@ -71,6 +71,7 @@ public class FarmlandStairs extends FarmlandBlock implements IWaterLoggable{
 			return new VoxelShape[p_199778_0_];
 		});
 	}
+
 	private int getShapeIndex(BlockState state) {
 		return state.getValue(SHAPE).ordinal() * 4 + state.getValue(FACING).get2DDataValue();
 	}
@@ -101,8 +102,8 @@ public class FarmlandStairs extends FarmlandBlock implements IWaterLoggable{
 		Direction direction = context.getClickedFace();
 		BlockPos blockpos = context.getClickedPos();
 		FluidState fluidstate = context.getLevel().getFluidState(blockpos);
-		BlockState blockstate = this.defaultBlockState().setValue(FACING, context.getHorizontalDirection()).setValue(HALF, direction != Direction.DOWN && (direction == Direction.UP || !(context.getClickLocation().y - (double)blockpos.getY() > 0.5D)) ? Half.BOTTOM : Half.TOP).setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
-		return !this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ? StairsInit.dirt_stairs.defaultBlockState() : blockstate.setValue(SHAPE, getShapeProperty(blockstate, context.getLevel(), blockpos));
+		BlockState blockstate = this.defaultBlockState().setValue(FACING, context.getHorizontalDirection()).setValue(HALF, direction != Direction.DOWN && (direction == Direction.UP || !(context.getClickLocation().y - (double) blockpos.getY() > 0.5D)) ? Half.BOTTOM : Half.TOP).setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
+		return !this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ? StairsInit.dirt_stairs.get().defaultBlockState() : blockstate.setValue(SHAPE, getShapeProperty(blockstate, context.getLevel(), blockpos));
 	}
 
 	@Override
@@ -164,10 +165,10 @@ public class FarmlandStairs extends FarmlandBlock implements IWaterLoggable{
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		Direction direction = state.getValue(FACING);
 		StairsShape stairsshape = state.getValue(SHAPE);
-		switch(mirrorIn) {
+		switch (mirrorIn) {
 			case LEFT_RIGHT:
 				if (direction.getAxis() == Direction.Axis.Z) {
-					switch(stairsshape) {
+					switch (stairsshape) {
 						case INNER_LEFT:
 							return state.rotate(Rotation.CLOCKWISE_180).setValue(SHAPE, StairsShape.INNER_RIGHT);
 						case INNER_RIGHT:
@@ -183,7 +184,7 @@ public class FarmlandStairs extends FarmlandBlock implements IWaterLoggable{
 				break;
 			case FRONT_BACK:
 				if (direction.getAxis() == Direction.Axis.X) {
-					switch(stairsshape) {
+					switch (stairsshape) {
 						case INNER_LEFT:
 							return state.rotate(Rotation.CLOCKWISE_180).setValue(SHAPE, StairsShape.INNER_LEFT);
 						case INNER_RIGHT:
@@ -234,12 +235,12 @@ public class FarmlandStairs extends FarmlandBlock implements IWaterLoggable{
 
 
 	public static void turnToDirtStairs(BlockState state, World worldIn, BlockPos pos) {
-		BlockState bs = StairsInit.dirt_stairs.defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF)).setValue(SHAPE, state.getValue(SHAPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+		BlockState bs = StairsInit.dirt_stairs.get().defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF)).setValue(SHAPE, state.getValue(SHAPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
 		worldIn.setBlockAndUpdate(pos, bs);
 	}
 
 	private static boolean hasWater(IWorldReader worldIn, BlockPos pos) {
-		for(BlockPos blockpos : BlockPos.betweenClosed(pos.offset(-4, 0, -4), pos.offset(4, 1, 4))) {
+		for (BlockPos blockpos : BlockPos.betweenClosed(pos.offset(-4, 0, -4), pos.offset(4, 1, 4))) {
 			if (worldIn.getFluidState(blockpos).is(FluidTags.WATER)) {
 				return true;
 			}
@@ -250,7 +251,7 @@ public class FarmlandStairs extends FarmlandBlock implements IWaterLoggable{
 
 	private boolean hasCrops(IBlockReader worldIn, BlockPos pos) {
 		BlockState state = worldIn.getBlockState(pos.above());
-		return state.getBlock() instanceof net.minecraftforge.common.IPlantable && canSustainPlant(state, worldIn, pos, Direction.UP, (net.minecraftforge.common.IPlantable)state.getBlock());
+		return state.getBlock() instanceof net.minecraftforge.common.IPlantable && canSustainPlant(state, worldIn, pos, Direction.UP, (net.minecraftforge.common.IPlantable) state.getBlock());
 	}
 
 	@Override

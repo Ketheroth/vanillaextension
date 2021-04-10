@@ -61,8 +61,8 @@ public class GrassBlockFence extends FenceBlock {
 					if (isSnowyAndNotUnderwater(blockstate, worldIn, blockpos)) {
 						if (blockstate.is(Blocks.DIRT)) {
 							worldIn.setBlockAndUpdate(blockpos, Blocks.GRASS_BLOCK.defaultBlockState().setValue(SNOWY, worldIn.getBlockState(blockpos.above()).is(Blocks.SNOW)));
-						} else if (blockstate.is(StairsInit.dirt_stairs)) {
-							worldIn.setBlockAndUpdate(blockpos, StairsInit.grass_block_stairs.defaultBlockState().setValue(HORIZONTAL_FACING, blockstate.getValue(HORIZONTAL_FACING)).setValue(HALF, blockstate.getValue(HALF)).setValue(STAIRS_SHAPE, blockstate.getValue(STAIRS_SHAPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(StairsInit.dirt_stairs.get())) {
+							worldIn.setBlockAndUpdate(blockpos, StairsInit.grass_block_stairs.get().defaultBlockState().setValue(HORIZONTAL_FACING, blockstate.getValue(HORIZONTAL_FACING)).setValue(HALF, blockstate.getValue(HALF)).setValue(STAIRS_SHAPE, blockstate.getValue(STAIRS_SHAPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						} else if (blockstate.is(SlabInit.dirt_slab.get())) {
 							worldIn.setBlockAndUpdate(blockpos, SlabInit.grass_block_slab.get().defaultBlockState().setValue(SLAB_TYPE, blockstate.getValue(SLAB_TYPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						} else if (blockstate.is(FenceInit.dirt_fence.get())) {

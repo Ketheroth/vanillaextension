@@ -30,17 +30,17 @@ public class GrassBlockStairs extends StairsBlock {
 	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		if (!worldIn.isClientSide()) {
 			if (player.getItemInHand(handIn).getToolTypes().contains(ToolType.HOE)) {
-				BlockState bs = StairsInit.farmland_stairs.defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF)).setValue(SHAPE, state.getValue(SHAPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+				BlockState bs = StairsInit.farmland_stairs.get().defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF)).setValue(SHAPE, state.getValue(SHAPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
 				worldIn.setBlockAndUpdate(pos, bs);
-				worldIn.playSound(null,pos, SoundEvents.HOE_TILL, SoundCategory.BLOCKS, 1.0F,1.0F);
-				player.getItemInHand(handIn).hurtAndBreak(1, player, item->item.broadcastBreakEvent(handIn));
+				worldIn.playSound(null, pos, SoundEvents.HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				player.getItemInHand(handIn).hurtAndBreak(1, player, item -> item.broadcastBreakEvent(handIn));
 				return ActionResultType.SUCCESS;
 			}
 			if (player.getItemInHand(handIn).getToolTypes().contains(ToolType.SHOVEL)) {
-				BlockState bs = StairsInit.grass_path_stairs.defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF)).setValue(SHAPE, state.getValue(SHAPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+				BlockState bs = StairsInit.grass_path_stairs.get().defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF)).setValue(SHAPE, state.getValue(SHAPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
 				worldIn.setBlockAndUpdate(pos, bs);
-				worldIn.playSound(null,pos, SoundEvents.SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F,1.0F);
-				player.getItemInHand(handIn).hurtAndBreak(1, player, item->item.broadcastBreakEvent(handIn));
+				worldIn.playSound(null, pos, SoundEvents.SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				player.getItemInHand(handIn).hurtAndBreak(1, player, item -> item.broadcastBreakEvent(handIn));
 				return ActionResultType.SUCCESS;
 			}
 		}
@@ -73,7 +73,7 @@ public class GrassBlockStairs extends StairsBlock {
 		if (!isSnowyConditions(state, worldIn, pos)) {
 			if (!worldIn.isAreaLoaded(pos, 3))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
-			worldIn.setBlockAndUpdate(pos, StairsInit.dirt_stairs.defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF)).setValue(SHAPE, state.getValue(SHAPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
+			worldIn.setBlockAndUpdate(pos, StairsInit.dirt_stairs.get().defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF)).setValue(SHAPE, state.getValue(SHAPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
 		} else {
 			if (worldIn.getMaxLocalRawBrightness(pos.above()) >= 9) {
 				for (int i = 0; i < 4; ++i) {
@@ -82,8 +82,8 @@ public class GrassBlockStairs extends StairsBlock {
 					if (isSnowyAndNotUnderwater(blockstate, worldIn, blockpos)) {
 						if (blockstate.is(Blocks.DIRT)) {
 							worldIn.setBlockAndUpdate(blockpos, Blocks.GRASS_BLOCK.defaultBlockState().setValue(SNOWY, worldIn.getBlockState(blockpos.above()).is(Blocks.SNOW)));
-						} else if (blockstate.is(StairsInit.dirt_stairs)) {
-							worldIn.setBlockAndUpdate(blockpos, StairsInit.grass_block_stairs.defaultBlockState().setValue(FACING, blockstate.getValue(FACING)).setValue(HALF, blockstate.getValue(HALF)).setValue(SHAPE, blockstate.getValue(SHAPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(StairsInit.dirt_stairs.get())) {
+							worldIn.setBlockAndUpdate(blockpos, StairsInit.grass_block_stairs.get().defaultBlockState().setValue(FACING, blockstate.getValue(FACING)).setValue(HALF, blockstate.getValue(HALF)).setValue(SHAPE, blockstate.getValue(SHAPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						} else if (blockstate.is(SlabInit.dirt_slab.get())) {
 							worldIn.setBlockAndUpdate(blockpos, SlabInit.grass_block_slab.get().defaultBlockState().setValue(SLAB_TYPE, blockstate.getValue(SLAB_TYPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						} else if (blockstate.is(FenceInit.dirt_fence.get())) {

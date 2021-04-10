@@ -1,15 +1,13 @@
 package com.nbrichau.vanillaextension.stairs;
 
-import com.nbrichau.vanillaextension.init.FenceInit;
 import com.nbrichau.vanillaextension.init.StairsInit;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.FenceGateBlock;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.state.BooleanProperty;
-import net.minecraft.state.DirectionProperty;
-import net.minecraft.state.EnumProperty;
-import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.Half;
 import net.minecraft.state.properties.StairsShape;
 import net.minecraft.util.Direction;
@@ -25,8 +23,6 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import java.util.function.Supplier;
 import java.util.stream.IntStream;
-
-import net.minecraft.block.AbstractBlock.Properties;
 
 public class GrassPathStairs extends StairsBlock {
 
@@ -79,7 +75,7 @@ public class GrassPathStairs extends StairsBlock {
 
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		BlockState bs = !this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ? StairsInit.dirt_stairs.defaultBlockState() : this.defaultBlockState();
+		BlockState bs = !this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ? StairsInit.dirt_stairs.get().defaultBlockState() : this.defaultBlockState();
 
 		Direction direction = context.getClickedFace();
 		BlockPos blockpos = context.getClickedPos();
@@ -141,7 +137,7 @@ public class GrassPathStairs extends StairsBlock {
 	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
 		if (!this.canSurvive(state, worldIn, pos)) {
-			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, StairsInit.dirt_stairs.defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF))
+			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, StairsInit.dirt_stairs.get().defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF))
 							.setValue(WATERLOGGED, state.getValue(WATERLOGGED)).setValue(SHAPE, state.getValue(SHAPE)),
 					worldIn, pos));
 		}
