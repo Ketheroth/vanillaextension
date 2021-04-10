@@ -13,8 +13,6 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class DirtSlab extends SlabBlock {
 	public DirtSlab(Properties properties) {
 		super(properties);
@@ -24,10 +22,10 @@ public class DirtSlab extends SlabBlock {
 	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		if (!worldIn.isClientSide()) {
 			if (player.getItemInHand(handIn).getToolTypes().contains(ToolType.HOE)) {
-				BlockState bs = SlabInit.farmland_slab.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+				BlockState bs = SlabInit.farmland_slab.get().defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
 				worldIn.setBlockAndUpdate(pos, bs);
-				worldIn.playSound(null,pos, SoundEvents.HOE_TILL, SoundCategory.BLOCKS, 1.0F,1.0F);
-				player.getItemInHand(handIn).hurtAndBreak(1, player, item->item.broadcastBreakEvent(handIn));
+				worldIn.playSound(null, pos, SoundEvents.HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				player.getItemInHand(handIn).hurtAndBreak(1, player, item -> item.broadcastBreakEvent(handIn));
 				return ActionResultType.SUCCESS;
 			}
 		}

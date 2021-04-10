@@ -20,8 +20,6 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class GrassPathSlab extends SlabBlock {
 
 	protected static final VoxelShape BOTTOM_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D);
@@ -46,11 +44,11 @@ public class GrassPathSlab extends SlabBlock {
 		if (blockstate.is(this)) {
 			return this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ?
 					blockstate.setValue(TYPE, SlabType.DOUBLE).setValue(WATERLOGGED, Boolean.FALSE) :
-					SlabInit.dirt_slab.defaultBlockState().setValue(TYPE, SlabType.DOUBLE).setValue(WATERLOGGED, Boolean.FALSE);
+					SlabInit.dirt_slab.get().defaultBlockState().setValue(TYPE, SlabType.DOUBLE).setValue(WATERLOGGED, Boolean.FALSE);
 		} else {
 			FluidState fluidstate = context.getLevel().getFluidState(blockpos);
 			BlockState bs = this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ?
-					this.defaultBlockState() : SlabInit.dirt_slab.defaultBlockState();
+					this.defaultBlockState() : SlabInit.dirt_slab.get().defaultBlockState();
 			BlockState blockstate1 = bs.setValue(TYPE, SlabType.BOTTOM).setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
 			Direction direction = context.getClickedFace();
 			return direction != Direction.DOWN && (direction == Direction.UP || !(context.getClickLocation().y - (double) blockpos.getY() > 0.5D)) ? blockstate1 : blockstate1.setValue(TYPE, SlabType.TOP);
@@ -72,7 +70,7 @@ public class GrassPathSlab extends SlabBlock {
 	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
 		if (!this.canSurvive(state, worldIn, pos)) {
-			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, SlabInit.dirt_slab.defaultBlockState()
+			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, SlabInit.dirt_slab.get().defaultBlockState()
 					.setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), worldIn, pos));
 		}
 	}

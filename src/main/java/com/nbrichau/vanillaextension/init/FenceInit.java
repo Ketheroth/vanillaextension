@@ -287,7 +287,6 @@ public class FenceInit {
 	public static final RegistryObject<Block> quartz_brick_fence = register("quartz_brick_fence", new FenceBlock(AbstractBlock.Properties.copy(Blocks.QUARTZ_BRICKS)));
 
 	private static RegistryObject<Block> register(String name, Block block) {
-//		block.setRegistryName(name);
 		ITEMS.register(name, () -> new BlockItem(block, new Item.Properties().tab(VanillaExtension.VanillaExtensionItemGroup.instance)));
 		return BLOCKS.register(name, () -> block);
 	}

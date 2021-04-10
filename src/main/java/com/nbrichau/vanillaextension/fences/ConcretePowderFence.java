@@ -46,8 +46,6 @@ public class ConcretePowderFence extends FallingBlock implements IWaterLoggable 
 	private final Object2IntMap<BlockState> stateToIndex = new Object2IntOpenHashMap<>();
 	private final VoxelShape[] renderShapes;
 
-//	private final BlockState solidifiedState;
-
 	public ConcretePowderFence(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(NORTH, Boolean.FALSE).setValue(EAST, Boolean.FALSE).setValue(SOUTH, Boolean.FALSE).setValue(WEST, Boolean.FALSE).setValue(WATERLOGGED, Boolean.FALSE));
@@ -58,7 +56,6 @@ public class ConcretePowderFence extends FallingBlock implements IWaterLoggable 
 		for (BlockState blockstate : this.stateDefinition.getPossibleStates()) {
 			this.getIndex(blockstate);
 		}
-//		this.solidifiedState = ;
 	}
 
 	protected VoxelShape[] makeShapes(float nodeWidth, float extensionWidth, float nodeHeight, float extensionBottom, float extensionHeight) {

@@ -13,8 +13,6 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class RedstoneLampSlab extends SlabBlock {
 
 	public static final BooleanProperty LIT = BlockStateProperties.LIT;

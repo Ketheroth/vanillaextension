@@ -22,8 +22,6 @@ import java.util.Random;
 
 import static net.minecraft.state.properties.BlockStateProperties.*;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class GrassBlockSlab extends SlabBlock implements IGrowable {
 	public GrassBlockSlab(Properties properties) {
 		super(properties);
@@ -33,14 +31,14 @@ public class GrassBlockSlab extends SlabBlock implements IGrowable {
 	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		if (!worldIn.isClientSide()) {
 			if (player.getItemInHand(handIn).getToolTypes().contains(ToolType.HOE)) {
-				BlockState bs = SlabInit.farmland_slab.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+				BlockState bs = SlabInit.farmland_slab.get().defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
 				worldIn.setBlockAndUpdate(pos, bs);
 				worldIn.playSound(null, pos, SoundEvents.HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
 				player.getItemInHand(handIn).hurtAndBreak(1, player, item -> item.broadcastBreakEvent(handIn));
 				return ActionResultType.SUCCESS;
 			}
 			if (player.getItemInHand(handIn).getToolTypes().contains(ToolType.SHOVEL)) {
-				BlockState bs = SlabInit.grass_path_slab.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+				BlockState bs = SlabInit.grass_path_slab.get().defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
 				worldIn.setBlockAndUpdate(pos, bs);
 				worldIn.playSound(null, pos, SoundEvents.SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
 				player.getItemInHand(handIn).hurtAndBreak(1, player, item -> item.broadcastBreakEvent(handIn));
@@ -66,9 +64,9 @@ public class GrassBlockSlab extends SlabBlock implements IGrowable {
 			BlockPos blockpos = pos.above();
 			BlockState blockstate = Blocks.GRASS.defaultBlockState();
 			label48:
-			for(int i = 0; i < 128; ++i) {
+			for (int i = 0; i < 128; ++i) {
 				BlockPos blockpos1 = blockpos;
-				for(int j = 0; j < i / 16; ++j) {
+				for (int j = 0; j < i / 16; ++j) {
 					blockpos1 = blockpos1.offset(rand.nextInt(3) - 1, (rand.nextInt(3) - 1) * rand.nextInt(3) / 2, rand.nextInt(3) - 1);
 					if (!worldIn.getBlockState(blockpos1.below()).is(this) || worldIn.getBlockState(blockpos1).isCollisionShapeFullBlock(worldIn, blockpos1)) {
 						continue label48;
@@ -76,7 +74,7 @@ public class GrassBlockSlab extends SlabBlock implements IGrowable {
 				}
 				BlockState blockstate2 = worldIn.getBlockState(blockpos1);
 				if (blockstate2.is(blockstate.getBlock()) && rand.nextInt(10) == 0) {
-					((IGrowable)blockstate.getBlock()).performBonemeal(worldIn, rand, blockpos1, blockstate2);
+					((IGrowable) blockstate.getBlock()).performBonemeal(worldIn, rand, blockpos1, blockstate2);
 				}
 				if (blockstate2.isAir()) {
 					BlockState blockstate1;
@@ -86,7 +84,7 @@ public class GrassBlockSlab extends SlabBlock implements IGrowable {
 							continue;
 						}
 						ConfiguredFeature<?, ?> configuredfeature = list.get(0);
-						FlowersFeature flowersfeature = (FlowersFeature)configuredfeature.feature;
+						FlowersFeature flowersfeature = (FlowersFeature) configuredfeature.feature;
 						blockstate1 = flowersfeature.getRandomFlower(rand, blockpos1, configuredfeature.config());
 					} else {
 						blockstate1 = blockstate;
@@ -125,7 +123,7 @@ public class GrassBlockSlab extends SlabBlock implements IGrowable {
 		if (!isSnowyConditions(state, worldIn, pos)) {
 			if (!worldIn.isAreaLoaded(pos, 3))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
-			worldIn.setBlockAndUpdate(pos, SlabInit.dirt_slab.defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
+			worldIn.setBlockAndUpdate(pos, SlabInit.dirt_slab.get().defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
 		} else {
 			if (worldIn.getMaxLocalRawBrightness(pos.above()) >= 9) {
 				for (int i = 0; i < 4; ++i) {
@@ -136,8 +134,8 @@ public class GrassBlockSlab extends SlabBlock implements IGrowable {
 							worldIn.setBlockAndUpdate(blockpos, Blocks.GRASS_BLOCK.defaultBlockState().setValue(SNOWY, worldIn.getBlockState(blockpos.above()).is(Blocks.SNOW)));
 						} else if (blockstate.is(StairsInit.dirt_stairs)) {
 							worldIn.setBlockAndUpdate(blockpos, StairsInit.grass_block_stairs.defaultBlockState().setValue(HORIZONTAL_FACING, blockstate.getValue(HORIZONTAL_FACING)).setValue(HALF, blockstate.getValue(HALF)).setValue(STAIRS_SHAPE, blockstate.getValue(STAIRS_SHAPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
-						} else if (blockstate.is(SlabInit.dirt_slab)) {
-							worldIn.setBlockAndUpdate(blockpos, SlabInit.grass_block_slab.defaultBlockState().setValue(TYPE, blockstate.getValue(TYPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(SlabInit.dirt_slab.get())) {
+							worldIn.setBlockAndUpdate(blockpos, SlabInit.grass_block_slab.get().defaultBlockState().setValue(TYPE, blockstate.getValue(TYPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						} else if (blockstate.is(FenceInit.dirt_fence.get())) {
 							worldIn.setBlockAndUpdate(blockpos, FenceInit.grass_block_fence.get().defaultBlockState().setValue(NORTH, blockstate.getValue(NORTH)).setValue(EAST, blockstate.getValue(EAST)).setValue(SOUTH, blockstate.getValue(SOUTH)).setValue(WEST, blockstate.getValue(WEST)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						} else if (blockstate.is(WallInit.dirt_wall)) {

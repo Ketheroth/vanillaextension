@@ -2,7 +2,7 @@ package com.nbrichau.vanillaextension.slabs;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.ConcretePowderBlock;
+import net.minecraft.block.FallingBlock;
 import net.minecraft.block.IWaterLoggable;
 import net.minecraft.entity.item.FallingBlockEntity;
 import net.minecraft.fluid.Fluid;
@@ -18,6 +18,7 @@ import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.SlabType;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Direction;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -25,27 +26,32 @@ import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import net.minecraftforge.registries.ForgeRegistries;
 
-import net.minecraft.block.AbstractBlock.Properties;
+import static com.nbrichau.vanillaextension.VanillaExtension.MODID;
 
-public class ConcretePowderSlab extends ConcretePowderBlock implements IWaterLoggable {
+public class ConcretePowderSlab extends FallingBlock implements IWaterLoggable {
 
 	public static final EnumProperty<SlabType> TYPE = BlockStateProperties.SLAB_TYPE;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	protected static final VoxelShape BOTTOM_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D);
 	protected static final VoxelShape TOP_SHAPE = Block.box(0.0D, 8.0D, 0.0D, 16.0D, 16.0D, 16.0D);
-	private final BlockState solidifiedState;
 
-	public ConcretePowderSlab(Block solidified, Properties properties) {
-		super(solidified, properties);
+	public ConcretePowderSlab(Properties properties) {
+		super(properties);
 		this.registerDefaultState(this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM).setValue(WATERLOGGED, Boolean.FALSE));
-		this.solidifiedState = solidified.defaultBlockState();
+	}
+
+	private BlockState getSolidifiedState() {
+		String[] part = this.getRegistryName().getPath().split("_powder");
+		String name = part[0] + part[1];
+		return ForgeRegistries.BLOCKS.getValue(ResourceLocation.of(MODID + ":" + name, ':')).defaultBlockState();
 	}
 
 	@Override
 	public void onLand(World worldIn, BlockPos pos, BlockState fallingState, BlockState hitState, FallingBlockEntity fallingBlock) {
 		if (shouldSolidify(worldIn, pos, hitState)) {
-			worldIn.setBlock(pos, this.solidifiedState.setValue(TYPE, fallingState.getValue(TYPE)).setValue(WATERLOGGED, fallingState.getValue(WATERLOGGED)), 3);
+			worldIn.setBlock(pos, this.getSolidifiedState().setValue(TYPE, fallingState.getValue(TYPE)).setValue(WATERLOGGED, fallingState.getValue(WATERLOGGED)), 3);
 		}
 	}
 
@@ -81,8 +87,8 @@ public class ConcretePowderSlab extends ConcretePowderBlock implements IWaterLog
 		}
 
 		return isTouchingLiquid(worldIn, currentPos) ?
-			this.solidifiedState.setValue(TYPE, stateIn.getValue(TYPE)).setValue(WATERLOGGED, Boolean.FALSE) :
-			super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+				this.getSolidifiedState().setValue(TYPE, stateIn.getValue(TYPE)).setValue(WATERLOGGED, Boolean.FALSE) :
+				super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 
 	@Override
@@ -113,8 +119,8 @@ public class ConcretePowderSlab extends ConcretePowderBlock implements IWaterLog
 			return blockstate.setValue(TYPE, SlabType.DOUBLE).setValue(WATERLOGGED, Boolean.FALSE);
 		} else {
 			FluidState fluidstate = context.getLevel().getFluidState(blockpos);
-			BlockState blockstate1 = this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM).setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
-			BlockState blockstate2 = solidifiedState.setValue(TYPE, SlabType.BOTTOM).setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+			BlockState blockstate1 = this.defaultBlockState().setValue(TYPE, SlabType.BOTTOM).setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
+			BlockState blockstate2 = this.getSolidifiedState().setValue(TYPE, SlabType.BOTTOM).setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
 			Direction direction = context.getClickedFace();
 
 			if (shouldSolidify(iblockreader, blockpos, blockstate)) {

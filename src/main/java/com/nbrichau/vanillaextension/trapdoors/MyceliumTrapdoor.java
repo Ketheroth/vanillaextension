@@ -20,8 +20,6 @@ import java.util.Random;
 
 import static net.minecraft.state.properties.BlockStateProperties.*;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class MyceliumTrapdoor extends TrapDoorBlock {
 	public MyceliumTrapdoor(Properties properties) {
 		super(properties);
@@ -61,8 +59,8 @@ public class MyceliumTrapdoor extends TrapDoorBlock {
 							worldIn.setBlockAndUpdate(blockpos, Blocks.MYCELIUM.defaultBlockState().setValue(SNOWY, worldIn.getBlockState(blockpos.above()).is(Blocks.SNOW)));
 						} else if (blockstate.is(StairsInit.dirt_stairs)) {
 							worldIn.setBlockAndUpdate(blockpos, StairsInit.mycelium_stairs.defaultBlockState().setValue(FACING, blockstate.getValue(FACING)).setValue(HALF, blockstate.getValue(HALF)).setValue(STAIRS_SHAPE, blockstate.getValue(STAIRS_SHAPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
-						} else if (blockstate.is(SlabInit.dirt_slab)) {
-							worldIn.setBlockAndUpdate(blockpos, SlabInit.mycelium_slab.defaultBlockState().setValue(SLAB_TYPE, blockstate.getValue(SLAB_TYPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(SlabInit.dirt_slab.get())) {
+							worldIn.setBlockAndUpdate(blockpos, SlabInit.mycelium_slab.get().defaultBlockState().setValue(SLAB_TYPE, blockstate.getValue(SLAB_TYPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						} else if (blockstate.is(FenceInit.dirt_fence.get())) {
 							worldIn.setBlockAndUpdate(blockpos, FenceInit.mycelium_fence.get().defaultBlockState().setValue(NORTH, blockstate.getValue(NORTH)).setValue(EAST, blockstate.getValue(EAST)).setValue(SOUTH, blockstate.getValue(SOUTH)).setValue(WEST, blockstate.getValue(WEST)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						} else if (blockstate.is(WallInit.dirt_wall)) {
