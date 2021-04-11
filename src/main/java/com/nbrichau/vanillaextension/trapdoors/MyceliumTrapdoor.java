@@ -48,7 +48,7 @@ public class MyceliumTrapdoor extends TrapDoorBlock {
 		if (!isSnowyConditions(state, worldIn, pos)) {
 			if (!worldIn.isAreaLoaded(pos, 3))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
-			worldIn.setBlockAndUpdate(pos, TrapdoorInit.dirt_trapdoor.defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(OPEN, state.getValue(OPEN)).setValue(HALF, state.getValue(HALF)).setValue(POWERED, state.getValue(POWERED)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
+			worldIn.setBlockAndUpdate(pos, TrapdoorInit.dirt_trapdoor.get().defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(OPEN, state.getValue(OPEN)).setValue(HALF, state.getValue(HALF)).setValue(POWERED, state.getValue(POWERED)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
 		} else {
 			if (worldIn.getMaxLocalRawBrightness(pos.above()) >= 9) {
 				for (int i = 0; i < 4; ++i) {
@@ -65,8 +65,8 @@ public class MyceliumTrapdoor extends TrapDoorBlock {
 							worldIn.setBlockAndUpdate(blockpos, FenceInit.mycelium_fence.get().defaultBlockState().setValue(NORTH, blockstate.getValue(NORTH)).setValue(EAST, blockstate.getValue(EAST)).setValue(SOUTH, blockstate.getValue(SOUTH)).setValue(WEST, blockstate.getValue(WEST)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						} else if (blockstate.is(WallInit.dirt_wall)) {
 							worldIn.setBlockAndUpdate(blockpos, WallInit.mycelium_wall.defaultBlockState().setValue(UP, blockstate.getValue(UP)).setValue(NORTH_WALL, blockstate.getValue(NORTH_WALL)).setValue(EAST_WALL, blockstate.getValue(EAST_WALL)).setValue(SOUTH_WALL, blockstate.getValue(SOUTH_WALL)).setValue(WEST_WALL, blockstate.getValue(WEST_WALL)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
-						} else if (blockstate.is(TrapdoorInit.dirt_trapdoor)) {
-							worldIn.setBlockAndUpdate(blockpos, TrapdoorInit.mycelium_trapdoor.defaultBlockState().setValue(FACING, blockstate.getValue(FACING)).setValue(OPEN, blockstate.getValue(OPEN)).setValue(HALF, blockstate.getValue(HALF)).setValue(POWERED, blockstate.getValue(POWERED)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(TrapdoorInit.dirt_trapdoor.get())) {
+							worldIn.setBlockAndUpdate(blockpos, TrapdoorInit.mycelium_trapdoor.get().defaultBlockState().setValue(FACING, blockstate.getValue(FACING)).setValue(OPEN, blockstate.getValue(OPEN)).setValue(HALF, blockstate.getValue(HALF)).setValue(POWERED, blockstate.getValue(POWERED)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						}
 					}
 				}

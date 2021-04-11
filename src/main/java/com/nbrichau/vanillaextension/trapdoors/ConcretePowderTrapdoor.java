@@ -18,6 +18,7 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -25,12 +26,13 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
 
-import net.minecraft.block.AbstractBlock.Properties;
+import static com.nbrichau.vanillaextension.VanillaExtension.MODID;
 
-public class ConcretePowderTrapdoor extends ConcretePowderBlock implements IWaterLoggable {
+public class ConcretePowderTrapdoor extends FallingBlock implements IWaterLoggable {
 
 	public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 	public static final EnumProperty<Half> HALF = BlockStateProperties.HALF;
@@ -44,18 +46,22 @@ public class ConcretePowderTrapdoor extends ConcretePowderBlock implements IWate
 	protected static final VoxelShape BOTTOM_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D);
 	protected static final VoxelShape TOP_AABB = Block.box(0.0D, 13.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
-	private final BlockState solidifiedState;
 
-	public ConcretePowderTrapdoor(Block solidified, Properties properties) {
-		super(solidified, properties);
+	public ConcretePowderTrapdoor(Properties properties) {
+		super(properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(HORIZONTAL_FACING, Direction.NORTH).setValue(OPEN, Boolean.FALSE).setValue(HALF, Half.BOTTOM).setValue(POWERED, Boolean.FALSE).setValue(WATERLOGGED, Boolean.FALSE));
-		this.solidifiedState = solidified.defaultBlockState();
+	}
+
+	private BlockState getSolidifiedState() {
+		String[] part = this.getRegistryName().getPath().split("_powder");
+		String name = part[0] + part[1];
+		return ForgeRegistries.BLOCKS.getValue(ResourceLocation.of(MODID + ":" + name, ':')).defaultBlockState();
 	}
 
 	@Override
 	public void onLand(World worldIn, BlockPos pos, BlockState fallingState, BlockState hitState, FallingBlockEntity fallingBlock) {
 		if (shouldSolidify(worldIn, pos, hitState)) {
-			worldIn.setBlock(pos, this.solidifiedState.setValue(HORIZONTAL_FACING, fallingState.getValue(HORIZONTAL_FACING)).setValue(OPEN, fallingState.getValue(OPEN)).setValue(HALF, fallingState.getValue(HALF)).setValue(POWERED, fallingState.getValue(POWERED)).setValue(WATERLOGGED, fallingState.getValue(WATERLOGGED)), 3);
+			worldIn.setBlock(pos, this.getSolidifiedState().setValue(HORIZONTAL_FACING, fallingState.getValue(HORIZONTAL_FACING)).setValue(OPEN, fallingState.getValue(OPEN)).setValue(HALF, fallingState.getValue(HALF)).setValue(POWERED, fallingState.getValue(POWERED)).setValue(WATERLOGGED, fallingState.getValue(WATERLOGGED)), 3);
 		}
 	}
 
@@ -121,11 +127,11 @@ public class ConcretePowderTrapdoor extends ConcretePowderBlock implements IWate
 			boolean flag = worldIn.hasNeighborSignal(pos);
 			if (flag != state.getValue(POWERED)) {
 				if (state.getValue(OPEN) != flag) {
-					state = state.setValue(OPEN, Boolean.valueOf(flag));
+					state = state.setValue(OPEN, flag);
 					this.playSound((PlayerEntity) null, worldIn, pos, flag);
 				}
 
-				worldIn.setBlock(pos, state.setValue(POWERED, Boolean.valueOf(flag)), 2);
+				worldIn.setBlock(pos, state.setValue(POWERED, flag), 2);
 				if (state.getValue(WATERLOGGED)) {
 					worldIn.getLiquidTicks().scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 				}
@@ -158,7 +164,7 @@ public class ConcretePowderTrapdoor extends ConcretePowderBlock implements IWate
 		IBlockReader iblockreader = context.getLevel();
 		BlockPos blockpos = context.getClickedPos();
 		BlockState blockstate0 = iblockreader.getBlockState(blockpos);
-		BlockState blockstate = shouldSolidify(iblockreader, blockpos, blockstate0) ? this.solidifiedState : this.defaultBlockState();
+		BlockState blockstate = shouldSolidify(iblockreader, blockpos, blockstate0) ? this.getSolidifiedState() : this.defaultBlockState();
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
 		Direction direction = context.getClickedFace();
 		if (!context.replacingClickedOnBlock() && direction.getAxis().isHorizontal()) {
@@ -168,10 +174,10 @@ public class ConcretePowderTrapdoor extends ConcretePowderBlock implements IWate
 		}
 
 		if (context.getLevel().hasNeighborSignal(context.getClickedPos())) {
-			blockstate = blockstate.setValue(OPEN, Boolean.valueOf(true)).setValue(POWERED, Boolean.valueOf(true));
+			blockstate = blockstate.setValue(OPEN, Boolean.TRUE).setValue(POWERED, Boolean.TRUE);
 		}
 
-		return blockstate.setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+		return blockstate.setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
 	}
 
 	/**
@@ -186,7 +192,7 @@ public class ConcretePowderTrapdoor extends ConcretePowderBlock implements IWate
 			worldIn.getLiquidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 		}
 
-		return isTouchingLiquid(worldIn, currentPos) ? this.solidifiedState.setValue(HORIZONTAL_FACING, stateIn.getValue(HORIZONTAL_FACING)).setValue(OPEN, stateIn.getValue(OPEN)).setValue(HALF, stateIn.getValue(HALF)).setValue(POWERED, stateIn.getValue(POWERED)).setValue(WATERLOGGED, stateIn.getValue(WATERLOGGED)) : super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+		return isTouchingLiquid(worldIn, currentPos) ? this.getSolidifiedState().setValue(HORIZONTAL_FACING, stateIn.getValue(HORIZONTAL_FACING)).setValue(OPEN, stateIn.getValue(OPEN)).setValue(HALF, stateIn.getValue(HALF)).setValue(POWERED, stateIn.getValue(POWERED)).setValue(WATERLOGGED, stateIn.getValue(WATERLOGGED)) : super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 
 	private static boolean shouldSolidify(IBlockReader reader, BlockPos pos, BlockState state) {

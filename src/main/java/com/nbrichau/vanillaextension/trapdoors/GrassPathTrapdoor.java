@@ -1,6 +1,5 @@
 package com.nbrichau.vanillaextension.trapdoors;
 
-import com.nbrichau.vanillaextension.init.FenceInit;
 import com.nbrichau.vanillaextension.init.TrapdoorInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -22,8 +21,6 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class GrassPathTrapdoor extends TrapDoorBlock {
 
 	protected static final VoxelShape EAST_OPEN_AABB = Block.box(0.0D, 0.0D, 0.0D, 3.0D, 15.0D, 16.0D);
@@ -40,7 +37,7 @@ public class GrassPathTrapdoor extends TrapDoorBlock {
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
 		BlockState blockstate = !this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ?
-				TrapdoorInit.dirt_trapdoor.defaultBlockState() : this.defaultBlockState();
+				TrapdoorInit.dirt_trapdoor.get().defaultBlockState() : this.defaultBlockState();
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
 		Direction direction = context.getClickedFace();
 		if (!context.replacingClickedOnBlock() && direction.getAxis().isHorizontal()) {
@@ -71,7 +68,7 @@ public class GrassPathTrapdoor extends TrapDoorBlock {
 	@Override
 	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
 		if (!this.canSurvive(state, worldIn, pos)) {
-			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, TrapdoorInit.dirt_trapdoor.defaultBlockState()
+			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, TrapdoorInit.dirt_trapdoor.get().defaultBlockState()
 					.setValue(FACING, state.getValue(FACING)).setValue(OPEN, state.getValue(OPEN)).setValue(HALF, state.getValue(HALF))
 					.setValue(POWERED, state.getValue(POWERED)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), worldIn, pos));
 		}

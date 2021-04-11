@@ -208,59 +208,59 @@ public class VanillaExtension {
 		RenderTypeLookup.setRenderLayer(WallInit.sea_lantern_wall, RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(WallInit.honey_block_wall, RenderType.translucent());
 
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.grass_block_trapdoor, RenderType.cutoutMipped());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.oak_leaves_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.spruce_leaves_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.birch_leaves_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.jungle_leaves_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.acacia_leaves_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.dark_oak_leaves_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.glass_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.spawner_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.ice_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.soul_sand_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.white_stained_glass_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.orange_stained_glass_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.magenta_stained_glass_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.light_blue_stained_glass_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.yellow_stained_glass_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.lime_stained_glass_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.pink_stained_glass_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.gray_stained_glass_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.light_gray_stained_glass_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.cyan_stained_glass_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.purple_stained_glass_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.blue_stained_glass_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.brown_stained_glass_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.green_stained_glass_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.red_stained_glass_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.black_stained_glass_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.iron_bars_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.vine_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.slime_block_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.sea_lantern_trapdoor, RenderType.translucent());
-		RenderTypeLookup.setRenderLayer(TrapdoorInit.honey_block_trapdoor, RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.grass_block_trapdoor.get(), RenderType.cutoutMipped());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.oak_leaves_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.spruce_leaves_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.birch_leaves_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.jungle_leaves_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.acacia_leaves_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.dark_oak_leaves_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.glass_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.spawner_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.ice_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.soul_sand_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.white_stained_glass_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.orange_stained_glass_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.magenta_stained_glass_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.light_blue_stained_glass_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.yellow_stained_glass_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.lime_stained_glass_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.pink_stained_glass_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.gray_stained_glass_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.light_gray_stained_glass_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.cyan_stained_glass_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.purple_stained_glass_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.blue_stained_glass_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.brown_stained_glass_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.green_stained_glass_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.red_stained_glass_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.black_stained_glass_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.iron_bars_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.vine_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.slime_block_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.sea_lantern_trapdoor.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(TrapdoorInit.honey_block_trapdoor.get(), RenderType.translucent());
 
-		Minecraft.getInstance().getBlockColors().register((a, r, g, b) -> r != null && g != null ? BiomeColors.getAverageGrassColor(r, g) : GrassColors.get(0.5D, 1.0D), StairsInit.grass_block_stairs.get(), SlabInit.grass_block_slab.get(), FenceInit.grass_block_fence.get(), WallInit.grass_block_wall, TrapdoorInit.grass_block_trapdoor);
-		Minecraft.getInstance().getBlockColors().register((a, r, g, b) -> FoliageColors.getEvergreenColor(), StairsInit.spruce_leaves_stairs.get(), SlabInit.spruce_leaves_slab.get(), FenceInit.spruce_leaves_fence.get(), WallInit.spruce_leaves_wall, TrapdoorInit.spruce_leaves_trapdoor);
-		Minecraft.getInstance().getBlockColors().register((a, r, g, b) -> FoliageColors.getBirchColor(), StairsInit.birch_leaves_stairs.get(), SlabInit.birch_leaves_slab.get(), FenceInit.birch_leaves_fence.get(), WallInit.birch_leaves_wall, TrapdoorInit.birch_leaves_trapdoor);
-		Minecraft.getInstance().getBlockColors().register((a, r, g, b) -> r != null && g != null ? BiomeColors.getAverageFoliageColor(r, g) : FoliageColors.getDefaultColor(), StairsInit.oak_leaves_stairs.get(), SlabInit.oak_leaves_slab.get(), FenceInit.oak_leaves_fence.get(), WallInit.oak_leaves_wall, TrapdoorInit.oak_leaves_trapdoor,
-				StairsInit.jungle_leaves_stairs.get(), SlabInit.jungle_leaves_slab.get(), FenceInit.jungle_leaves_fence.get(), WallInit.jungle_leaves_wall, TrapdoorInit.jungle_leaves_trapdoor,
-				StairsInit.acacia_leaves_stairs.get(), SlabInit.acacia_leaves_slab.get(), FenceInit.acacia_leaves_fence.get(), WallInit.acacia_leaves_wall, TrapdoorInit.acacia_leaves_trapdoor,
-				StairsInit.dark_oak_leaves_stairs.get(), SlabInit.dark_oak_leaves_slab.get(), FenceInit.dark_oak_leaves_fence.get(), WallInit.dark_oak_leaves_wall, TrapdoorInit.dark_oak_leaves_trapdoor,
-				StairsInit.vine_stairs.get(), SlabInit.vine_slab.get(), FenceInit.vine_fence.get(), WallInit.vine_wall, TrapdoorInit.vine_trapdoor);
+		Minecraft.getInstance().getBlockColors().register((a, r, g, b) -> r != null && g != null ? BiomeColors.getAverageGrassColor(r, g) : GrassColors.get(0.5D, 1.0D), StairsInit.grass_block_stairs.get(), SlabInit.grass_block_slab.get(), FenceInit.grass_block_fence.get(), WallInit.grass_block_wall, TrapdoorInit.grass_block_trapdoor.get());
+		Minecraft.getInstance().getBlockColors().register((a, r, g, b) -> FoliageColors.getEvergreenColor(), StairsInit.spruce_leaves_stairs.get(), SlabInit.spruce_leaves_slab.get(), FenceInit.spruce_leaves_fence.get(), WallInit.spruce_leaves_wall, TrapdoorInit.spruce_leaves_trapdoor.get());
+		Minecraft.getInstance().getBlockColors().register((a, r, g, b) -> FoliageColors.getBirchColor(), StairsInit.birch_leaves_stairs.get(), SlabInit.birch_leaves_slab.get(), FenceInit.birch_leaves_fence.get(), WallInit.birch_leaves_wall, TrapdoorInit.birch_leaves_trapdoor.get());
+		Minecraft.getInstance().getBlockColors().register((a, r, g, b) -> r != null && g != null ? BiomeColors.getAverageFoliageColor(r, g) : FoliageColors.getDefaultColor(), StairsInit.oak_leaves_stairs.get(), SlabInit.oak_leaves_slab.get(), FenceInit.oak_leaves_fence.get(), WallInit.oak_leaves_wall, TrapdoorInit.oak_leaves_trapdoor.get(),
+				StairsInit.jungle_leaves_stairs.get(), SlabInit.jungle_leaves_slab.get(), FenceInit.jungle_leaves_fence.get(), WallInit.jungle_leaves_wall, TrapdoorInit.jungle_leaves_trapdoor.get(),
+				StairsInit.acacia_leaves_stairs.get(), SlabInit.acacia_leaves_slab.get(), FenceInit.acacia_leaves_fence.get(), WallInit.acacia_leaves_wall, TrapdoorInit.acacia_leaves_trapdoor.get(),
+				StairsInit.dark_oak_leaves_stairs.get(), SlabInit.dark_oak_leaves_slab.get(), FenceInit.dark_oak_leaves_fence.get(), WallInit.dark_oak_leaves_wall, TrapdoorInit.dark_oak_leaves_trapdoor.get(),
+				StairsInit.vine_stairs.get(), SlabInit.vine_slab.get(), FenceInit.vine_fence.get(), WallInit.vine_wall, TrapdoorInit.vine_trapdoor.get());
 
 		Minecraft.getInstance().getItemColors().register((blockItem, tintIndexIn) -> {
 					BlockState blockstate = ((BlockItem) blockItem.getItem()).getBlock().defaultBlockState();
 					return Minecraft.getInstance().getBlockColors().getColor(blockstate, null, null, tintIndexIn);
-				}, StairsInit.grass_block_stairs.get(), SlabInit.grass_block_slab.get(), FenceInit.grass_block_fence.get(), WallInit.grass_block_wall, TrapdoorInit.grass_block_trapdoor,
-				StairsInit.vine_stairs.get(), SlabInit.vine_slab.get(), FenceInit.vine_fence.get(), WallInit.vine_wall, TrapdoorInit.vine_trapdoor,
-				StairsInit.oak_leaves_stairs.get(), SlabInit.oak_leaves_slab.get(), FenceInit.oak_leaves_fence.get(), WallInit.oak_leaves_wall, TrapdoorInit.oak_leaves_trapdoor,
-				StairsInit.spruce_leaves_stairs.get(), SlabInit.spruce_leaves_slab.get(), FenceInit.spruce_leaves_fence.get(), WallInit.spruce_leaves_wall, TrapdoorInit.spruce_leaves_trapdoor,
-				StairsInit.birch_leaves_stairs.get(), SlabInit.birch_leaves_slab.get(), FenceInit.birch_leaves_fence.get(), WallInit.birch_leaves_wall, TrapdoorInit.birch_leaves_trapdoor,
-				StairsInit.jungle_leaves_stairs.get(), SlabInit.jungle_leaves_slab.get(), FenceInit.jungle_leaves_fence.get(), WallInit.jungle_leaves_wall, TrapdoorInit.jungle_leaves_trapdoor,
-				StairsInit.acacia_leaves_stairs.get(), SlabInit.acacia_leaves_slab.get(), FenceInit.acacia_leaves_fence.get(), WallInit.acacia_leaves_wall, TrapdoorInit.acacia_leaves_trapdoor,
-				StairsInit.dark_oak_leaves_stairs.get(), SlabInit.dark_oak_leaves_slab.get(), FenceInit.dark_oak_leaves_fence.get(), WallInit.dark_oak_leaves_wall, TrapdoorInit.dark_oak_leaves_trapdoor);
+				}, StairsInit.grass_block_stairs.get(), SlabInit.grass_block_slab.get(), FenceInit.grass_block_fence.get(), WallInit.grass_block_wall, TrapdoorInit.grass_block_trapdoor.get(),
+				StairsInit.vine_stairs.get(), SlabInit.vine_slab.get(), FenceInit.vine_fence.get(), WallInit.vine_wall, TrapdoorInit.vine_trapdoor.get(),
+				StairsInit.oak_leaves_stairs.get(), SlabInit.oak_leaves_slab.get(), FenceInit.oak_leaves_fence.get(), WallInit.oak_leaves_wall, TrapdoorInit.oak_leaves_trapdoor.get(),
+				StairsInit.spruce_leaves_stairs.get(), SlabInit.spruce_leaves_slab.get(), FenceInit.spruce_leaves_fence.get(), WallInit.spruce_leaves_wall, TrapdoorInit.spruce_leaves_trapdoor.get(),
+				StairsInit.birch_leaves_stairs.get(), SlabInit.birch_leaves_slab.get(), FenceInit.birch_leaves_fence.get(), WallInit.birch_leaves_wall, TrapdoorInit.birch_leaves_trapdoor.get(),
+				StairsInit.jungle_leaves_stairs.get(), SlabInit.jungle_leaves_slab.get(), FenceInit.jungle_leaves_fence.get(), WallInit.jungle_leaves_wall, TrapdoorInit.jungle_leaves_trapdoor.get(),
+				StairsInit.acacia_leaves_stairs.get(), SlabInit.acacia_leaves_slab.get(), FenceInit.acacia_leaves_fence.get(), WallInit.acacia_leaves_wall, TrapdoorInit.acacia_leaves_trapdoor.get(),
+				StairsInit.dark_oak_leaves_stairs.get(), SlabInit.dark_oak_leaves_slab.get(), FenceInit.dark_oak_leaves_fence.get(), WallInit.dark_oak_leaves_wall, TrapdoorInit.dark_oak_leaves_trapdoor.get());
 
 	}
 

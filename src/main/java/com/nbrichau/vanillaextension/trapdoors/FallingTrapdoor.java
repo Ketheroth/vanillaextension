@@ -28,8 +28,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class FallingTrapdoor extends FallingBlock {
 
 	public static final DirectionProperty HORIZONTAL_FACING = BlockStateProperties.HORIZONTAL_FACING;
@@ -48,11 +46,12 @@ public class FallingTrapdoor extends FallingBlock {
 		super(properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(HORIZONTAL_FACING, Direction.NORTH).setValue(OPEN, Boolean.FALSE).setValue(HALF, Half.BOTTOM).setValue(POWERED, Boolean.FALSE).setValue(WATERLOGGED, Boolean.FALSE));
 	}
+
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
 		if (!state.getValue(OPEN)) {
 			return state.getValue(HALF) == Half.TOP ? TOP_AABB : BOTTOM_AABB;
 		} else {
-			switch((Direction)state.getValue(HORIZONTAL_FACING)) {
+			switch ((Direction) state.getValue(HORIZONTAL_FACING)) {
 				case NORTH:
 				default:
 					return NORTH_OPEN_AABB;
@@ -67,7 +66,7 @@ public class FallingTrapdoor extends FallingBlock {
 	}
 
 	public boolean isPathfindable(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {
-		switch(type) {
+		switch (type) {
 			case LAND:
 				return state.getValue(OPEN);
 			case WATER:
@@ -111,7 +110,7 @@ public class FallingTrapdoor extends FallingBlock {
 			if (flag != state.getValue(POWERED)) {
 				if (state.getValue(OPEN) != flag) {
 					state = state.setValue(OPEN, flag);
-					this.playSound((PlayerEntity)null, worldIn, pos, flag);
+					this.playSound((PlayerEntity) null, worldIn, pos, flag);
 				}
 
 				worldIn.setBlock(pos, state.setValue(POWERED, flag), 2);
@@ -128,7 +127,7 @@ public class FallingTrapdoor extends FallingBlock {
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
 		Direction direction = context.getClickedFace();
 		if (!context.replacingClickedOnBlock() && direction.getAxis().isHorizontal()) {
-			blockstate = blockstate.setValue(HORIZONTAL_FACING, direction).setValue(HALF, context.getClickLocation().y - (double)context.getClickedPos().getY() > 0.5D ? Half.TOP : Half.BOTTOM);
+			blockstate = blockstate.setValue(HORIZONTAL_FACING, direction).setValue(HALF, context.getClickLocation().y - (double) context.getClickedPos().getY() > 0.5D ? Half.TOP : Half.BOTTOM);
 		} else {
 			blockstate = blockstate.setValue(HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite()).setValue(HALF, direction == Direction.UP ? Half.BOTTOM : Half.TOP);
 		}

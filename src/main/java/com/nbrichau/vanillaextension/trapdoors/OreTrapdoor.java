@@ -8,8 +8,6 @@ import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class OreTrapdoor extends TrapDoorBlock {
 
 	public OreTrapdoor(Properties properties) {
@@ -17,20 +15,20 @@ public class OreTrapdoor extends TrapDoorBlock {
 	}
 
 	protected int getExperience(Random rand) {
-		if (this == TrapdoorInit.coal_ore_trapdoor) {
+		if (this == TrapdoorInit.coal_ore_trapdoor.get()) {
 			return MathHelper.nextInt(rand, 0, 2);
-		} else if (this == TrapdoorInit.diamond_ore_trapdoor) {
+		} else if (this == TrapdoorInit.diamond_ore_trapdoor.get()) {
 			return MathHelper.nextInt(rand, 3, 7);
-		} else if (this == TrapdoorInit.emerald_ore_trapdoor) {
+		} else if (this == TrapdoorInit.emerald_ore_trapdoor.get()) {
 			return MathHelper.nextInt(rand, 3, 7);
-		} else if (this == TrapdoorInit.lapis_ore_trapdoor) {
+		} else if (this == TrapdoorInit.lapis_ore_trapdoor.get()) {
 			return MathHelper.nextInt(rand, 2, 5);
-		} else if (this == TrapdoorInit.nether_quartz_ore_trapdoor) {
+		} else if (this == TrapdoorInit.nether_quartz_ore_trapdoor.get()) {
 			return MathHelper.nextInt(rand, 2, 5);
-		} else if (this == TrapdoorInit.redstone_ore_trapdoor) {
+		} else if (this == TrapdoorInit.redstone_ore_trapdoor.get()) {
 			return MathHelper.nextInt(rand, 1, 5);
 		} else {
-			return this == TrapdoorInit.nether_gold_ore_trapdoor ? MathHelper.nextInt(rand, 0, 1) : 0;
+			return this == TrapdoorInit.nether_gold_ore_trapdoor.get() ? MathHelper.nextInt(rand, 0, 1) : 0;
 		}
 	}
 
