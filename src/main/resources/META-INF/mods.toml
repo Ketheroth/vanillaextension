@@ -4,7 +4,7 @@ license="MIT License"
 issueTrackerURL="https://github.com/nbrichau/vanillaextension/issues"
 [[mods]]
 modId="vanillaextension"
-version="1.16.5-1.0.15"
+version="1.16.5-1.0.16"
 displayName="Vanilla Extension"
 #updateJSONURL="http://myurl.me/"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/vanilla-extension"
@@ -17,12 +17,12 @@ You can convert most of the vanilla blocks into stairs, slabs, fences, walls and
 [[dependencies.vanillaextension]]
     modId="forge"
     mandatory=true
-    versionRange="[33,)"
+    versionRange="[35,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.vanillaextension]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.2,1.17)"
+    versionRange="[1.16.4,1.17)"
     ordering="NONE"
     side="BOTH"

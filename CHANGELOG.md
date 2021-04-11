@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [1.16.5-1.0.16]
+
+### Changed
+- Dropped support for 1.16.2 and 1.16.3. Minimum version is now 1.16.4
+- Internal code change (use of deferred registries and use of Mojang mappings)
+
+### Fixed
+- Grass Path Stairs turn back to Dirt Fence when a block is placed on top
+- Grass Path Trapdoor turn back to Dirt Fence when a block is placed on top
+- Grass Path Slab side texture bad placed
+
 ## [1.16.5-1.0.15]
 
 ### Fixed
