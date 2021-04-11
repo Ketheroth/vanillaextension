@@ -28,8 +28,6 @@ import net.minecraft.world.World;
 
 import java.util.Map;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class FallingWall extends FallingBlock {
 
 	public static final BooleanProperty UP = BlockStateProperties.UP;

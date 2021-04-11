@@ -11,8 +11,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class LogWall extends WallBlock {
 
 	public LogWall(Properties properties) {

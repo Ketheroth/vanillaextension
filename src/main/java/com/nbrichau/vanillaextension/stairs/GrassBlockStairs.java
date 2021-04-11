@@ -88,8 +88,8 @@ public class GrassBlockStairs extends StairsBlock {
 							worldIn.setBlockAndUpdate(blockpos, SlabInit.grass_block_slab.get().defaultBlockState().setValue(SLAB_TYPE, blockstate.getValue(SLAB_TYPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						} else if (blockstate.is(FenceInit.dirt_fence.get())) {
 							worldIn.setBlockAndUpdate(blockpos, FenceInit.grass_block_fence.get().defaultBlockState().setValue(NORTH, blockstate.getValue(NORTH)).setValue(EAST, blockstate.getValue(EAST)).setValue(SOUTH, blockstate.getValue(SOUTH)).setValue(WEST, blockstate.getValue(WEST)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
-						} else if (blockstate.is(WallInit.dirt_wall)) {
-							worldIn.setBlockAndUpdate(blockpos, WallInit.grass_block_wall.defaultBlockState().setValue(UP, blockstate.getValue(UP)).setValue(NORTH_WALL, blockstate.getValue(NORTH_WALL)).setValue(EAST_WALL, blockstate.getValue(EAST_WALL)).setValue(SOUTH_WALL, blockstate.getValue(SOUTH_WALL)).setValue(WEST_WALL, blockstate.getValue(WEST_WALL)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(WallInit.dirt_wall.get())) {
+							worldIn.setBlockAndUpdate(blockpos, WallInit.grass_block_wall.get().defaultBlockState().setValue(UP, blockstate.getValue(UP)).setValue(NORTH_WALL, blockstate.getValue(NORTH_WALL)).setValue(EAST_WALL, blockstate.getValue(EAST_WALL)).setValue(SOUTH_WALL, blockstate.getValue(SOUTH_WALL)).setValue(WEST_WALL, blockstate.getValue(WEST_WALL)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						} else if (blockstate.is(TrapdoorInit.dirt_trapdoor.get())) {
 							worldIn.setBlockAndUpdate(blockpos, TrapdoorInit.grass_block_trapdoor.get().defaultBlockState().setValue(HORIZONTAL_FACING, blockstate.getValue(HORIZONTAL_FACING)).setValue(OPEN, blockstate.getValue(OPEN)).setValue(HALF, blockstate.getValue(HALF)).setValue(POWERED, blockstate.getValue(POWERED)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						}

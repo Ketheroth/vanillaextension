@@ -20,8 +20,6 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Map;
 import java.util.Random;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class RedstoneLampWall extends WallBlock {
 
 	public static final BooleanProperty LIT = BlockStateProperties.LIT;
@@ -40,22 +38,22 @@ public class RedstoneLampWall extends WallBlock {
 		float f1 = 8.0F + p_235624_1_;
 		float f2 = 8.0F - p_235624_2_;
 		float f3 = 8.0F + p_235624_2_;
-		VoxelShape voxelshape = Block.box((double)f, 0.0D, (double)f, (double)f1, (double)p_235624_3_, (double)f1);
-		VoxelShape voxelshape1 = Block.box((double)f2, (double)p_235624_4_, 0.0D, (double)f3, (double)p_235624_5_, (double)f3);
-		VoxelShape voxelshape2 = Block.box((double)f2, (double)p_235624_4_, (double)f2, (double)f3, (double)p_235624_5_, 16.0D);
-		VoxelShape voxelshape3 = Block.box(0.0D, (double)p_235624_4_, (double)f2, (double)f3, (double)p_235624_5_, (double)f3);
-		VoxelShape voxelshape4 = Block.box((double)f2, (double)p_235624_4_, (double)f2, 16.0D, (double)p_235624_5_, (double)f3);
-		VoxelShape voxelshape5 = Block.box((double)f2, (double)p_235624_4_, 0.0D, (double)f3, (double)p_235624_6_, (double)f3);
-		VoxelShape voxelshape6 = Block.box((double)f2, (double)p_235624_4_, (double)f2, (double)f3, (double)p_235624_6_, 16.0D);
-		VoxelShape voxelshape7 = Block.box(0.0D, (double)p_235624_4_, (double)f2, (double)f3, (double)p_235624_6_, (double)f3);
-		VoxelShape voxelshape8 = Block.box((double)f2, (double)p_235624_4_, (double)f2, 16.0D, (double)p_235624_6_, (double)f3);
+		VoxelShape voxelshape = Block.box((double) f, 0.0D, (double) f, (double) f1, (double) p_235624_3_, (double) f1);
+		VoxelShape voxelshape1 = Block.box((double) f2, (double) p_235624_4_, 0.0D, (double) f3, (double) p_235624_5_, (double) f3);
+		VoxelShape voxelshape2 = Block.box((double) f2, (double) p_235624_4_, (double) f2, (double) f3, (double) p_235624_5_, 16.0D);
+		VoxelShape voxelshape3 = Block.box(0.0D, (double) p_235624_4_, (double) f2, (double) f3, (double) p_235624_5_, (double) f3);
+		VoxelShape voxelshape4 = Block.box((double) f2, (double) p_235624_4_, (double) f2, 16.0D, (double) p_235624_5_, (double) f3);
+		VoxelShape voxelshape5 = Block.box((double) f2, (double) p_235624_4_, 0.0D, (double) f3, (double) p_235624_6_, (double) f3);
+		VoxelShape voxelshape6 = Block.box((double) f2, (double) p_235624_4_, (double) f2, (double) f3, (double) p_235624_6_, 16.0D);
+		VoxelShape voxelshape7 = Block.box(0.0D, (double) p_235624_4_, (double) f2, (double) f3, (double) p_235624_6_, (double) f3);
+		VoxelShape voxelshape8 = Block.box((double) f2, (double) p_235624_4_, (double) f2, 16.0D, (double) p_235624_6_, (double) f3);
 		ImmutableMap.Builder<BlockState, VoxelShape> builder = ImmutableMap.builder();
 
-		for(Boolean obool : UP.getPossibleValues()) {
-			for(WallHeight wallheight : EAST_WALL.getPossibleValues()) {
-				for(WallHeight wallheight1 : NORTH_WALL.getPossibleValues()) {
-					for(WallHeight wallheight2 : WEST_WALL.getPossibleValues()) {
-						for(WallHeight wallheight3 : SOUTH_WALL.getPossibleValues()) {
+		for (Boolean obool : UP.getPossibleValues()) {
+			for (WallHeight wallheight : EAST_WALL.getPossibleValues()) {
+				for (WallHeight wallheight1 : NORTH_WALL.getPossibleValues()) {
+					for (WallHeight wallheight2 : WEST_WALL.getPossibleValues()) {
+						for (WallHeight wallheight3 : SOUTH_WALL.getPossibleValues()) {
 							VoxelShape voxelshape9 = VoxelShapes.empty();
 							voxelshape9 = getHeightAlteredShape(voxelshape9, wallheight, voxelshape4, voxelshape8);
 							voxelshape9 = getHeightAlteredShape(voxelshape9, wallheight2, voxelshape3, voxelshape7);

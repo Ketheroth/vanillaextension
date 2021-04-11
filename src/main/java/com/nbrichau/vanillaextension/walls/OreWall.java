@@ -8,8 +8,6 @@ import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class OreWall extends WallBlock {
 
 	public OreWall(Properties properties) {
@@ -17,20 +15,20 @@ public class OreWall extends WallBlock {
 	}
 
 	protected int getExperience(Random rand) {
-		if (this == WallInit.coal_ore_wall) {
+		if (this == WallInit.coal_ore_wall.get()) {
 			return MathHelper.nextInt(rand, 0, 2);
-		} else if (this == WallInit.diamond_ore_wall) {
+		} else if (this == WallInit.diamond_ore_wall.get()) {
 			return MathHelper.nextInt(rand, 3, 7);
-		} else if (this == WallInit.emerald_ore_wall) {
+		} else if (this == WallInit.emerald_ore_wall.get()) {
 			return MathHelper.nextInt(rand, 3, 7);
-		} else if (this == WallInit.lapis_ore_wall) {
+		} else if (this == WallInit.lapis_ore_wall.get()) {
 			return MathHelper.nextInt(rand, 2, 5);
-		} else if (this == WallInit.nether_quartz_ore_wall) {
+		} else if (this == WallInit.nether_quartz_ore_wall.get()) {
 			return MathHelper.nextInt(rand, 2, 5);
-		} else if (this == WallInit.redstone_ore_wall) {
+		} else if (this == WallInit.redstone_ore_wall.get()) {
 			return MathHelper.nextInt(rand, 1, 5);
 		} else {
-			return this == WallInit.nether_gold_ore_wall ? MathHelper.nextInt(rand, 0, 1) : 0;
+			return this == WallInit.nether_gold_ore_wall.get() ? MathHelper.nextInt(rand, 0, 1) : 0;
 		}
 	}
 
