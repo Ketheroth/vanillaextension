@@ -1,8 +1,8 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"pattern": [
-		"#B#",
-		"#B#"
+		"B#B",
+		"B#B"
 	],
 	"key": {
 		"#": {
@@ -13,6 +13,7 @@
 		}
 	},
 	"result": {
-		"item": "vanillaextension:blank_fence_gate"
+		"item": "vanillaextension:blank_fence",
+		"count": 3
 	}
 }

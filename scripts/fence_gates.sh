@@ -19,5 +19,5 @@ for line in ${lines}; do
   sed "s/blank/${line}/g" "${blank_data_path}/loot_tables/blocks/blank_fence_gate.json" > "${data_path}/loot_tables/blocks/${line}_fence_gate.json"
   sed "s/blank/${line}/g" "${blank_data_path}/recipes/fence_gates/blank_fence_gate.json" > "${data_path}/recipes/fence_gates/${line}_fence_gate.json"
 
-  echo "${line}"
+  echo "${line}_fence_gate"
 done
