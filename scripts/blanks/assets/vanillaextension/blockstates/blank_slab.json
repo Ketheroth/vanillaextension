@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/blank_slab" },
+		"type=top": { "model": "vanillaextension:block/blank_slab_top" },
+		"type=double": { "model": "minecraft:block/blank" }
+	}
+}
