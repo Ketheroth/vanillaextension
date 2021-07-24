@@ -1,36 +1,26 @@
 package com.nbrichau.vanillaextension.slabs;
 
-import com.nbrichau.vanillaextension.init.SlabInit;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-
-import java.util.Random;
+import net.minecraft.core.BlockPos;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class OreSlab extends SlabBlock {
+
+	private final UniformInt xpRange;
+
 	public OreSlab(Properties properties) {
-		super(properties);
+		this(properties, UniformInt.of(0, 0));
 	}
 
-	protected int getExperience(Random rand) {
-		if (this == SlabInit.coal_ore_slab.get()) {
-			return MathHelper.nextInt(rand, 0, 1);
-		} else if (this == SlabInit.diamond_ore_slab.get()) {
-			return MathHelper.nextInt(rand, 2, 4);
-		} else if (this == SlabInit.emerald_ore_slab.get()) {
-			return MathHelper.nextInt(rand, 2, 4);
-		} else if (this == SlabInit.lapis_ore_slab.get()) {
-			return MathHelper.nextInt(rand, 1, 3);
-		} else if (this == SlabInit.nether_quartz_ore_slab.get()) {
-			return MathHelper.nextInt(rand, 1, 3);
-		} else {
-			return this == SlabInit.nether_gold_ore_slab.get() ? MathHelper.nextInt(rand, 0, 1) : 0;
-		}
+	public OreSlab(Properties properties, UniformInt xpRange) {
+		super(properties);
+		this.xpRange = xpRange;
 	}
 
 	@Override
-	public int getExpDrop(BlockState state, net.minecraft.world.IWorldReader reader, BlockPos pos, int fortune, int silktouch) {
-		return silktouch == 0 ? this.getExperience(RANDOM) : 0;
+	public int getExpDrop(BlockState state, net.minecraft.world.level.LevelReader reader, BlockPos pos, int fortune, int silktouch) {
+		return silktouch == 0 ? this.xpRange.sample(RANDOM) : 0;
 	}
+
 }

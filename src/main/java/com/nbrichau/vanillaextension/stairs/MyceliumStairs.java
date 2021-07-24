@@ -1,51 +1,52 @@
 package com.nbrichau.vanillaextension.stairs;
 
 import com.nbrichau.vanillaextension.init.*;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.SnowBlock;
-import net.minecraft.block.StairsBlock;
-import net.minecraft.particles.ParticleTypes;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.World;
-import net.minecraft.world.lighting.LightEngine;
-import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SnowLayerBlock;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.lighting.LayerLightEngine;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.Random;
 import java.util.function.Supplier;
 
-import static net.minecraft.state.properties.BlockStateProperties.*;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.*;
 
-public class MyceliumStairs extends StairsBlock {
+public class MyceliumStairs extends StairBlock {
+
 	public MyceliumStairs(Supplier<BlockState> state, Properties properties) {
 		super(state, properties);
 	}
 
-	private static boolean isSnowyConditions(BlockState state, IWorldReader worldReader, BlockPos pos) {
+	private static boolean isSnowyConditions(BlockState state, LevelReader worldReader, BlockPos pos) {
 		BlockPos blockpos = pos.above();
 		BlockState blockstate = worldReader.getBlockState(blockpos);
-		if (blockstate.is(Blocks.SNOW) && blockstate.getValue(SnowBlock.LAYERS) == 1) {
+		if (blockstate.is(Blocks.SNOW) && blockstate.getValue(SnowLayerBlock.LAYERS) == 1) {
 			return true;
 		} else if (blockstate.getFluidState().getAmount() == 8) {
 			return false;
 		} else {
-			int i = LightEngine.getLightBlockInto(worldReader, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(worldReader, blockpos));
+			int i = LayerLightEngine.getLightBlockInto(worldReader, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(worldReader, blockpos));
 			return i < worldReader.getMaxLightLevel();
 		}
 	}
 
-	private static boolean isSnowyAndNotUnderwater(BlockState state, IWorldReader worldReader, BlockPos pos) {
+	private static boolean isSnowyAndNotUnderwater(BlockState state, LevelReader worldReader, BlockPos pos) {
 		BlockPos blockpos = pos.above();
 		return isSnowyConditions(state, worldReader, pos) && !worldReader.getFluidState(blockpos).is(FluidTags.WATER);
 	}
 
 	@Override
-	public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
+	public void randomTick(BlockState state, ServerLevel worldIn, BlockPos pos, Random random) {
 		if (!isSnowyConditions(state, worldIn, pos)) {
 			if (!worldIn.isAreaLoaded(pos, 3))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
@@ -76,10 +77,11 @@ public class MyceliumStairs extends StairsBlock {
 	}
 
 	@OnlyIn(Dist.CLIENT)
-	public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+	public void animateTick(BlockState stateIn, Level worldIn, BlockPos pos, Random rand) {
 		super.animateTick(stateIn, worldIn, pos, rand);
 		if (rand.nextInt(10) == 0) {
 			worldIn.addParticle(ParticleTypes.MYCELIUM, (double) pos.getX() + rand.nextDouble(), (double) pos.getY() + 1.1D, (double) pos.getZ() + rand.nextDouble(), 0.0D, 0.0D, 0.0D);
 		}
 	}
+
 }

@@ -1,37 +1,39 @@
 package com.nbrichau.vanillaextension.trapdoors;
 
 import com.nbrichau.vanillaextension.init.TrapdoorInit;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.TrapDoorBlock;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvents;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.common.ToolType;
 
 public class CoarseDirtTrapdoor extends TrapDoorBlock {
+
 	public CoarseDirtTrapdoor(Properties properties) {
 		super(properties);
 	}
 
 	@Override
-	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
 		if (!worldIn.isClientSide()) {
 			if (player.getItemInHand(handIn).getToolTypes().contains(ToolType.HOE)) {
 				BlockState bs = TrapdoorInit.dirt_trapdoor.get().defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(OPEN, state.getValue(OPEN)).setValue(HALF, state.getValue(HALF)).setValue(POWERED, state.getValue(POWERED)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
 				worldIn.setBlock(pos, bs, 11);
-				worldIn.playSound(null, pos, SoundEvents.HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				worldIn.playSound(null, pos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1.0F, 1.0F);
 				player.getItemInHand(handIn).hurtAndBreak(1, player, item -> item.broadcastBreakEvent(handIn));
-				return ActionResultType.SUCCESS;
+				return InteractionResult.SUCCESS;
 			} else {
-				return ActionResultType.PASS;
+				return InteractionResult.PASS;
 			}
 		} else {
 			return super.use(state, worldIn, pos, player, handIn, hit);
 		}
 	}
+
 }

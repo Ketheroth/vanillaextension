@@ -2,40 +2,44 @@ package com.nbrichau.vanillaextension.fences;
 
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import net.minecraft.block.*;
-import net.minecraft.entity.item.FallingBlockEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.LeadItem;
-import net.minecraft.pathfinding.PathType;
-import net.minecraft.state.BooleanProperty;
-import net.minecraft.state.StateContainer;
-import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.Util;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.*;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.World;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.item.FallingBlockEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.LeadItem;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.Map;
 
 public class FallingFence extends FallingBlock {
 
-	public static final BooleanProperty NORTH = SixWayBlock.NORTH;
-	public static final BooleanProperty EAST = SixWayBlock.EAST;
-	public static final BooleanProperty SOUTH = SixWayBlock.SOUTH;
-	public static final BooleanProperty WEST = SixWayBlock.WEST;
+	public static final BooleanProperty NORTH = PipeBlock.NORTH;
+	public static final BooleanProperty EAST = PipeBlock.EAST;
+	public static final BooleanProperty SOUTH = PipeBlock.SOUTH;
+	public static final BooleanProperty WEST = PipeBlock.WEST;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-	protected static final Map<Direction, BooleanProperty> FACING_TO_PROPERTY_MAP = SixWayBlock.PROPERTY_BY_DIRECTION.entrySet().stream().filter((p_199775_0_) -> {
+	protected static final Map<Direction, BooleanProperty> FACING_TO_PROPERTY_MAP = PipeBlock.PROPERTY_BY_DIRECTION.entrySet().stream().filter((p_199775_0_) -> {
 		return p_199775_0_.getKey().getAxis().isHorizontal();
 	}).collect(Util.toMap());
 	protected final VoxelShape[] collisionShapes;
@@ -55,6 +59,10 @@ public class FallingFence extends FallingBlock {
 		this.renderShapes = this.makeShapes(2.0F, 1.0F, 16.0F, 6.0F, 15.0F);
 	}
 
+	private static int getMask(Direction facing) {
+		return 1 << facing.get2DDataValue();
+	}
+
 	protected VoxelShape[] makeShapes(float nodeWidth, float extensionWidth, float p_196408_3_, float p_196408_4_, float p_196408_5_) {
 		float f = 8.0F - nodeWidth;
 		float f1 = 8.0F + nodeWidth;
@@ -65,19 +73,15 @@ public class FallingFence extends FallingBlock {
 		VoxelShape voxelshape2 = Block.box((double) f2, (double) p_196408_4_, (double) f2, (double) f3, (double) p_196408_5_, 16.0D);
 		VoxelShape voxelshape3 = Block.box(0.0D, (double) p_196408_4_, (double) f2, (double) f3, (double) p_196408_5_, (double) f3);
 		VoxelShape voxelshape4 = Block.box((double) f2, (double) p_196408_4_, (double) f2, 16.0D, (double) p_196408_5_, (double) f3);
-		VoxelShape voxelshape5 = VoxelShapes.or(voxelshape1, voxelshape4);
-		VoxelShape voxelshape6 = VoxelShapes.or(voxelshape2, voxelshape3);
-		VoxelShape[] avoxelshape = new VoxelShape[]{VoxelShapes.empty(), voxelshape2, voxelshape3, voxelshape6, voxelshape1, VoxelShapes.or(voxelshape2, voxelshape1), VoxelShapes.or(voxelshape3, voxelshape1), VoxelShapes.or(voxelshape6, voxelshape1), voxelshape4, VoxelShapes.or(voxelshape2, voxelshape4), VoxelShapes.or(voxelshape3, voxelshape4), VoxelShapes.or(voxelshape6, voxelshape4), voxelshape5, VoxelShapes.or(voxelshape2, voxelshape5), VoxelShapes.or(voxelshape3, voxelshape5), VoxelShapes.or(voxelshape6, voxelshape5)};
+		VoxelShape voxelshape5 = Shapes.or(voxelshape1, voxelshape4);
+		VoxelShape voxelshape6 = Shapes.or(voxelshape2, voxelshape3);
+		VoxelShape[] avoxelshape = new VoxelShape[]{Shapes.empty(), voxelshape2, voxelshape3, voxelshape6, voxelshape1, Shapes.or(voxelshape2, voxelshape1), Shapes.or(voxelshape3, voxelshape1), Shapes.or(voxelshape6, voxelshape1), voxelshape4, Shapes.or(voxelshape2, voxelshape4), Shapes.or(voxelshape3, voxelshape4), Shapes.or(voxelshape6, voxelshape4), voxelshape5, Shapes.or(voxelshape2, voxelshape5), Shapes.or(voxelshape3, voxelshape5), Shapes.or(voxelshape6, voxelshape5)};
 
 		for (int i = 0; i < 16; ++i) {
-			avoxelshape[i] = VoxelShapes.or(voxelshape, avoxelshape[i]);
+			avoxelshape[i] = Shapes.or(voxelshape, avoxelshape[i]);
 		}
 
 		return avoxelshape;
-	}
-
-	private static int getMask(Direction facing) {
-		return 1 << facing.get2DDataValue();
 	}
 
 	protected int getIndex(BlockState state) {
@@ -104,40 +108,40 @@ public class FallingFence extends FallingBlock {
 	}
 
 	@Override
-	public VoxelShape getOcclusionShape(BlockState state, IBlockReader worldIn, BlockPos pos) {
+	public VoxelShape getOcclusionShape(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return this.renderShapes[this.getIndex(state)];
 	}
 
 	@Override
-	public VoxelShape getVisualShape(BlockState state, IBlockReader reader, BlockPos pos, ISelectionContext context) {
+	public VoxelShape getVisualShape(BlockState state, BlockGetter reader, BlockPos pos, CollisionContext context) {
 		return this.getShape(state, reader, pos, context);
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state, IBlockReader reader, BlockPos pos) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return !state.getValue(WATERLOGGED);
 	}
 
 	@Override
-	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		return this.shapes[this.getIndex(state)];
 	}
 
 	@Override
-	public VoxelShape getCollisionShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+	public VoxelShape getCollisionShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		return this.collisionShapes[this.getIndex(state)];
 	}
 
 	@Override
-	public boolean isPathfindable(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {
+	public boolean isPathfindable(BlockState state, BlockGetter worldIn, BlockPos pos, PathComputationType type) {
 		return false;
 	}
 
 	@Override
-	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
 		if (worldIn.isClientSide) {
 			ItemStack itemstack = player.getItemInHand(handIn);
-			return itemstack.getItem() == Items.LEAD ? ActionResultType.SUCCESS : ActionResultType.PASS;
+			return itemstack.getItem() == Items.LEAD ? InteractionResult.SUCCESS : InteractionResult.PASS;
 		} else {
 			return LeadItem.bindPlayerMobs(player, worldIn, pos);
 		}
@@ -145,18 +149,18 @@ public class FallingFence extends FallingBlock {
 
 	public boolean canConnect(BlockState state, boolean isSideSolid, Direction direction) {
 		Block block = state.getBlock();
-		boolean flag = this.isSameFence(block);
+		boolean flag = this.isSameFence(state);
 		boolean flag1 = block instanceof FenceGateBlock && FenceGateBlock.connectsToDirection(state, direction);
-		return !isExceptionForConnection(block) && isSideSolid || flag || flag1;
+		return !isExceptionForConnection(state) && isSideSolid || flag || flag1;
 	}
 
-	private boolean isSameFence(Block block) {
-		return block.is(BlockTags.FENCES) && block.is(BlockTags.WOODEN_FENCES) == this.defaultBlockState().is(BlockTags.WOODEN_FENCES);
+	private boolean isSameFence(BlockState state) {
+		return state.is(BlockTags.FENCES) && state.is(BlockTags.WOODEN_FENCES) == this.defaultBlockState().is(BlockTags.WOODEN_FENCES);
 	}
 
 	@Override
-	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		IBlockReader iblockreader = context.getLevel();
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		BlockGetter iblockreader = context.getLevel();
 		BlockPos blockpos = context.getClickedPos();
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
 		BlockPos blockpos1 = blockpos.north();
@@ -171,7 +175,7 @@ public class FallingFence extends FallingBlock {
 	}
 
 	@Override
-	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
 		worldIn.getBlockTicks().scheduleTick(currentPos, this, this.getDelayAfterPlace());
 
 		if (stateIn.getValue(WATERLOGGED)) {
@@ -182,22 +186,22 @@ public class FallingFence extends FallingBlock {
 	}
 
 	@Override
-	public void onLand(World worldIn, BlockPos pos, BlockState fallingState, BlockState hitState, FallingBlockEntity fallingBlock) {
+	public void onLand(Level worldIn, BlockPos pos, BlockState fallingState, BlockState hitState, FallingBlockEntity fallingBlock) {
 		FluidState fluidstate = worldIn.getFluidState(pos);
 		BlockPos blockpos1 = pos.north();
 		BlockPos blockpos2 = pos.east();
 		BlockPos blockpos3 = pos.south();
 		BlockPos blockpos4 = pos.west();
-		BlockState blockstate = ((IBlockReader) worldIn).getBlockState(blockpos1);
-		BlockState blockstate1 = ((IBlockReader) worldIn).getBlockState(blockpos2);
-		BlockState blockstate2 = ((IBlockReader) worldIn).getBlockState(blockpos3);
-		BlockState blockstate3 = ((IBlockReader) worldIn).getBlockState(blockpos4);
+		BlockState blockstate = ((BlockGetter) worldIn).getBlockState(blockpos1);
+		BlockState blockstate1 = ((BlockGetter) worldIn).getBlockState(blockpos2);
+		BlockState blockstate2 = ((BlockGetter) worldIn).getBlockState(blockpos3);
+		BlockState blockstate3 = ((BlockGetter) worldIn).getBlockState(blockpos4);
 		BlockState bs = this.defaultBlockState().setValue(NORTH, this.canConnect(blockstate, blockstate.isFaceSturdy(worldIn, blockpos1, Direction.SOUTH), Direction.SOUTH)).setValue(EAST, this.canConnect(blockstate1, blockstate1.isFaceSturdy(worldIn, blockpos2, Direction.WEST), Direction.WEST)).setValue(SOUTH, this.canConnect(blockstate2, blockstate2.isFaceSturdy(worldIn, blockpos3, Direction.NORTH), Direction.NORTH)).setValue(WEST, this.canConnect(blockstate3, blockstate3.isFaceSturdy(worldIn, blockpos4, Direction.EAST), Direction.EAST)).setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
 		worldIn.setBlockAndUpdate(pos, bs);
 	}
 
 	@Override
-	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(NORTH, EAST, WEST, SOUTH, WATERLOGGED);
 	}
 

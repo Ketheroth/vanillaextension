@@ -1,31 +1,29 @@
 package com.nbrichau.vanillaextension.stairs;
 
-import net.minecraft.block.*;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.item.FallingBlockEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.pathfinding.PathType;
-import net.minecraft.state.BooleanProperty;
-import net.minecraft.state.DirectionProperty;
-import net.minecraft.state.EnumProperty;
-import net.minecraft.state.StateContainer;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.state.properties.Half;
-import net.minecraft.state.properties.StairsShape;
-import net.minecraft.util.*;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
-import net.minecraft.world.Explosion;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.item.FallingBlockEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Explosion;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.*;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -33,7 +31,8 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class FallingStairs extends FallingBlock {
-	public static final DirectionProperty FACING = HorizontalBlock.FACING;
+
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	public static final EnumProperty<Half> HALF = BlockStateProperties.HALF;
 	public static final EnumProperty<StairsShape> SHAPE = BlockStateProperties.STAIRS_SHAPE;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -67,21 +66,21 @@ public class FallingStairs extends FallingBlock {
 	private static VoxelShape combineShapes(int bitfield, VoxelShape slabShape, VoxelShape nwCorner, VoxelShape neCorner, VoxelShape swCorner, VoxelShape seCorner) {
 		VoxelShape voxelshape = slabShape;
 		if ((bitfield & 1) != 0) {
-			voxelshape = VoxelShapes.or(slabShape, nwCorner);
+			voxelshape = Shapes.or(slabShape, nwCorner);
 		}
 		if ((bitfield & 2) != 0) {
-			voxelshape = VoxelShapes.or(voxelshape, neCorner);
+			voxelshape = Shapes.or(voxelshape, neCorner);
 		}
 		if ((bitfield & 4) != 0) {
-			voxelshape = VoxelShapes.or(voxelshape, swCorner);
+			voxelshape = Shapes.or(voxelshape, swCorner);
 		}
 		if ((bitfield & 8) != 0) {
-			voxelshape = VoxelShapes.or(voxelshape, seCorner);
+			voxelshape = Shapes.or(voxelshape, seCorner);
 		}
 		return voxelshape;
 	}
 
-	protected static StairsShape getShapeProperty(BlockState state, IBlockReader worldIn, BlockPos pos) {
+	protected static StairsShape getShapeProperty(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		Direction direction = state.getValue(FACING);
 		BlockState blockstate = worldIn.getBlockState(pos.relative(direction));
 		if (isBlockStairs(blockstate) && state.getValue(HALF) == blockstate.getValue(HALF)) {
@@ -107,20 +106,22 @@ public class FallingStairs extends FallingBlock {
 		return StairsShape.STRAIGHT;
 	}
 
-	protected static boolean isDifferentStairs(BlockState state, IBlockReader worldIn, BlockPos pos, Direction face) {
+	protected static boolean isDifferentStairs(BlockState state, BlockGetter worldIn, BlockPos pos, Direction face) {
 		BlockState blockstate = worldIn.getBlockState(pos.relative(face));
 		return !isBlockStairs(blockstate) || blockstate.getValue(FACING) != state.getValue(FACING) || blockstate.getValue(HALF) != state.getValue(HALF);
 	}
 
 	public static boolean isBlockStairs(BlockState state) {
-		return state.getBlock() instanceof StairsBlock || state.getBlock() instanceof FallingStairs;
+		return state.getBlock() instanceof StairBlock || state.getBlock() instanceof FallingStairs;
 	}
 
+	@Override
 	public boolean useShapeForLightOcclusion(BlockState state) {
 		return true;
 	}
 
-	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		return (state.getValue(HALF) == Half.TOP ? SLAB_TOP_SHAPES : SLAB_BOTTOM_SHAPES)[PALETTE_SHAPE_MAP[this.getPaletteId(state)]];
 	}
 
@@ -128,19 +129,23 @@ public class FallingStairs extends FallingBlock {
 		return state.getValue(SHAPE).ordinal() * 4 + state.getValue(FACING).get2DDataValue();
 	}
 
-	public void attack(BlockState state, World worldIn, BlockPos pos, PlayerEntity player) {
+	@Override
+	public void attack(BlockState state, Level worldIn, BlockPos pos, Player player) {
 		this.modelState.attack(worldIn, pos, player);
 	}
 
-	public void destroy(IWorld worldIn, BlockPos pos, BlockState state) {
+	@Override
+	public void destroy(LevelAccessor worldIn, BlockPos pos, BlockState state) {
 		this.modelBlock.destroy(worldIn, pos, state);
 	}
 
+	@Override
 	public float getExplosionResistance() {
 		return this.modelBlock.getExplosionResistance();
 	}
 
-	public void onPlace(BlockState state, World worldIn, BlockPos pos, BlockState oldState, boolean isMoving) {
+	@Override
+	public void onPlace(BlockState state, Level worldIn, BlockPos pos, BlockState oldState, boolean isMoving) {
 		worldIn.getBlockTicks().scheduleTick(pos, this, this.getDelayAfterPlace());
 		if (!state.is(state.getBlock())) {
 			this.modelState.neighborChanged(worldIn, pos, Blocks.AIR, pos, false);
@@ -148,33 +153,40 @@ public class FallingStairs extends FallingBlock {
 		}
 	}
 
-	public void onRemove(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
+	@Override
+	public void onRemove(BlockState state, Level worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
 		if (!state.is(newState.getBlock())) {
 			this.modelState.onRemove(worldIn, pos, newState, isMoving);
 		}
 	}
 
-	public void stepOn(World worldIn, BlockPos pos, Entity entityIn) {
-		this.modelBlock.stepOn(worldIn, pos, entityIn);
+	@Override
+	public void stepOn(Level worldIn, BlockPos pos, BlockState state, Entity entityIn) {
+		this.modelBlock.stepOn(worldIn, pos, state, entityIn);
 	}
 
+	@Override
 	public boolean isRandomlyTicking(BlockState state) {
 		return this.modelBlock.isRandomlyTicking(state);
 	}
 
-	public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
+	@Override
+	public void randomTick(BlockState state, ServerLevel worldIn, BlockPos pos, Random random) {
 		this.modelBlock.randomTick(state, worldIn, pos, random);
 	}
 
-	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+	@Override
+	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
 		return this.modelState.use(worldIn, player, handIn, hit);
 	}
 
-	public void wasExploded(World worldIn, BlockPos pos, Explosion explosionIn) {
+	@Override
+	public void wasExploded(Level worldIn, BlockPos pos, Explosion explosionIn) {
 		this.modelBlock.wasExploded(worldIn, pos, explosionIn);
 	}
 
-	public BlockState getStateForPlacement(BlockItemUseContext context) {
+	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		Direction direction = context.getClickedFace();
 		BlockPos blockpos = context.getClickedPos();
 		FluidState fluidstate = context.getLevel().getFluidState(blockpos);
@@ -182,7 +194,8 @@ public class FallingStairs extends FallingBlock {
 		return blockstate.setValue(SHAPE, getShapeProperty(blockstate, context.getLevel(), blockpos));
 	}
 
-	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+	@Override
+	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
 		if (stateIn.getValue(WATERLOGGED)) {
 			worldIn.getLiquidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 		}
@@ -191,14 +204,16 @@ public class FallingStairs extends FallingBlock {
 	}
 
 	@Override
-	public void onLand(World worldIn, BlockPos pos, BlockState fallingState, BlockState hitState, FallingBlockEntity fallingBlock) {
+	public void onLand(Level worldIn, BlockPos pos, BlockState fallingState, BlockState hitState, FallingBlockEntity fallingBlock) {
 		worldIn.setBlockAndUpdate(pos, fallingState.setValue(SHAPE, getShapeProperty(fallingState, worldIn, pos)).setValue(WATERLOGGED, worldIn.getFluidState(pos).getType() == Fluids.WATER));
 	}
 
+	@Override
 	public BlockState rotate(BlockState state, Rotation rot) {
 		return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
 	}
 
+	@Override
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		Direction direction = state.getValue(FACING);
 		StairsShape stairsshape = state.getValue(SHAPE);
@@ -238,20 +253,25 @@ public class FallingStairs extends FallingBlock {
 		return super.mirror(state, mirrorIn);
 	}
 
-	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
+	@Override
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(FACING, HALF, SHAPE, WATERLOGGED);
 	}
 
+	@Override
 	public FluidState getFluidState(BlockState state) {
 		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
 	}
 
-	public boolean isPathfindable(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {
+	@Override
+	public boolean isPathfindable(BlockState state, BlockGetter worldIn, BlockPos pos, PathComputationType type) {
 		return false;
 	}
 
 	@OnlyIn(Dist.CLIENT)
-	public int getDustColor(BlockState state, IBlockReader reader, BlockPos pos) {
+	@Override
+	public int getDustColor(BlockState state, BlockGetter reader, BlockPos pos) {
 		return -16777216;
 	}
+
 }

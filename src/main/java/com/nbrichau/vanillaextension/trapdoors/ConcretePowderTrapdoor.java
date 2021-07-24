@@ -1,38 +1,38 @@
 package com.nbrichau.vanillaextension.trapdoors;
 
-import net.minecraft.block.*;
-import net.minecraft.block.material.Material;
-import net.minecraft.entity.item.FallingBlockEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.pathfinding.PathType;
-import net.minecraft.state.BooleanProperty;
-import net.minecraft.state.DirectionProperty;
-import net.minecraft.state.EnumProperty;
-import net.minecraft.state.StateContainer;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.state.properties.Half;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.World;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.item.FallingBlockEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FallingBlock;
+import net.minecraft.world.level.block.LadderBlock;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.*;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
 
 import static com.nbrichau.vanillaextension.VanillaExtension.MODID;
 
-public class ConcretePowderTrapdoor extends FallingBlock implements IWaterLoggable {
+public class ConcretePowderTrapdoor extends FallingBlock implements SimpleWaterloggedBlock {
 
 	public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 	public static final EnumProperty<Half> HALF = BlockStateProperties.HALF;
@@ -52,6 +52,31 @@ public class ConcretePowderTrapdoor extends FallingBlock implements IWaterLoggab
 		this.registerDefaultState(this.stateDefinition.any().setValue(HORIZONTAL_FACING, Direction.NORTH).setValue(OPEN, Boolean.FALSE).setValue(HALF, Half.BOTTOM).setValue(POWERED, Boolean.FALSE).setValue(WATERLOGGED, Boolean.FALSE));
 	}
 
+	private static boolean shouldSolidify(BlockGetter reader, BlockPos pos, BlockState state) {
+		return causesSolidify(state) || isTouchingLiquid(reader, pos);
+	}
+
+	private static boolean isTouchingLiquid(BlockGetter reader, BlockPos pos) {
+		boolean flag = false;
+		BlockPos.MutableBlockPos blockpos$mutable = pos.mutable();
+		for (Direction direction : Direction.values()) {
+			BlockState blockstate = reader.getBlockState(blockpos$mutable);
+			if (direction != Direction.DOWN || causesSolidify(blockstate)) {
+				blockpos$mutable.setWithOffset(pos, direction);
+				blockstate = reader.getBlockState(blockpos$mutable);
+				if (causesSolidify(blockstate) && !blockstate.isFaceSturdy(reader, pos, direction.getOpposite())) {
+					flag = true;
+					break;
+				}
+			}
+		}
+		return flag;
+	}
+
+	private static boolean causesSolidify(BlockState state) {
+		return state.getFluidState().is(FluidTags.WATER);
+	}
+
 	private BlockState getSolidifiedState() {
 		String[] part = this.getRegistryName().getPath().split("_powder");
 		String name = part[0] + part[1];
@@ -59,13 +84,13 @@ public class ConcretePowderTrapdoor extends FallingBlock implements IWaterLoggab
 	}
 
 	@Override
-	public void onLand(World worldIn, BlockPos pos, BlockState fallingState, BlockState hitState, FallingBlockEntity fallingBlock) {
+	public void onLand(Level worldIn, BlockPos pos, BlockState fallingState, BlockState hitState, FallingBlockEntity fallingBlock) {
 		if (shouldSolidify(worldIn, pos, hitState)) {
 			worldIn.setBlock(pos, this.getSolidifiedState().setValue(HORIZONTAL_FACING, fallingState.getValue(HORIZONTAL_FACING)).setValue(OPEN, fallingState.getValue(OPEN)).setValue(HALF, fallingState.getValue(HALF)).setValue(POWERED, fallingState.getValue(POWERED)).setValue(WATERLOGGED, fallingState.getValue(WATERLOGGED)), 3);
 		}
 	}
 
-	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		if (!state.getValue(OPEN)) {
 			return state.getValue(HALF) == Half.TOP ? TOP_AABB : BOTTOM_AABB;
 		} else {
@@ -83,7 +108,7 @@ public class ConcretePowderTrapdoor extends FallingBlock implements IWaterLoggab
 		}
 	}
 
-	public boolean isPathfindable(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {
+	public boolean isPathfindable(BlockState state, BlockGetter worldIn, BlockPos pos, PathComputationType type) {
 		switch (type) {
 			case LAND:
 				return state.getValue(OPEN);
@@ -96,9 +121,9 @@ public class ConcretePowderTrapdoor extends FallingBlock implements IWaterLoggab
 		}
 	}
 
-	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
 		if (this.material == Material.METAL) {
-			return ActionResultType.PASS;
+			return InteractionResult.PASS;
 		} else {
 			state = state.cycle(OPEN);
 			worldIn.setBlock(pos, state, 2);
@@ -107,11 +132,11 @@ public class ConcretePowderTrapdoor extends FallingBlock implements IWaterLoggab
 			}
 
 			this.playSound(player, worldIn, pos, state.getValue(OPEN));
-			return ActionResultType.sidedSuccess(worldIn.isClientSide);
+			return InteractionResult.sidedSuccess(worldIn.isClientSide);
 		}
 	}
 
-	protected void playSound(@Nullable PlayerEntity player, World worldIn, BlockPos pos, boolean p_185731_4_) {
+	protected void playSound(@Nullable Player player, Level worldIn, BlockPos pos, boolean p_185731_4_) {
 		if (p_185731_4_) {
 			int i = this.material == Material.METAL ? 1037 : 1007;
 			worldIn.levelEvent(player, i, pos, 0);
@@ -122,13 +147,13 @@ public class ConcretePowderTrapdoor extends FallingBlock implements IWaterLoggab
 
 	}
 
-	public void neighborChanged(BlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
+	public void neighborChanged(BlockState state, Level worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
 		if (!worldIn.isClientSide) {
 			boolean flag = worldIn.hasNeighborSignal(pos);
 			if (flag != state.getValue(POWERED)) {
 				if (state.getValue(OPEN) != flag) {
 					state = state.setValue(OPEN, flag);
-					this.playSound((PlayerEntity) null, worldIn, pos, flag);
+					this.playSound((Player) null, worldIn, pos, flag);
 				}
 
 				worldIn.setBlock(pos, state.setValue(POWERED, flag), 2);
@@ -140,8 +165,7 @@ public class ConcretePowderTrapdoor extends FallingBlock implements IWaterLoggab
 		}
 	}
 
-
-	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(HORIZONTAL_FACING, OPEN, HALF, POWERED, WATERLOGGED);
 	}
 
@@ -150,18 +174,18 @@ public class ConcretePowderTrapdoor extends FallingBlock implements IWaterLoggab
 	}
 
 	@Override
-	public boolean isLadder(BlockState state, net.minecraft.world.IWorldReader world, BlockPos pos, net.minecraft.entity.LivingEntity entity) {
+	public boolean isLadder(BlockState state, net.minecraft.world.level.LevelReader world, BlockPos pos, net.minecraft.world.entity.LivingEntity entity) {
 		if (state.getValue(OPEN)) {
 			BlockState down = world.getBlockState(pos.below());
-			if (down.getBlock() == net.minecraft.block.Blocks.LADDER)
+			if (down.getBlock() == net.minecraft.world.level.block.Blocks.LADDER)
 				return down.getValue(LadderBlock.FACING) == state.getValue(HORIZONTAL_FACING);
 		}
 		return false;
 	}
 
 	@Override
-	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		IBlockReader iblockreader = context.getLevel();
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		BlockGetter iblockreader = context.getLevel();
 		BlockPos blockpos = context.getClickedPos();
 		BlockState blockstate0 = iblockreader.getBlockState(blockpos);
 		BlockState blockstate = shouldSolidify(iblockreader, blockpos, blockstate0) ? this.getSolidifiedState() : this.defaultBlockState();
@@ -187,37 +211,12 @@ public class ConcretePowderTrapdoor extends FallingBlock implements IWaterLoggab
 	 * Note that this method should ideally consider only the specific face passed in.
 	 */
 	@Override
-	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
 		if (stateIn.getValue(WATERLOGGED)) {
 			worldIn.getLiquidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 		}
 
 		return isTouchingLiquid(worldIn, currentPos) ? this.getSolidifiedState().setValue(HORIZONTAL_FACING, stateIn.getValue(HORIZONTAL_FACING)).setValue(OPEN, stateIn.getValue(OPEN)).setValue(HALF, stateIn.getValue(HALF)).setValue(POWERED, stateIn.getValue(POWERED)).setValue(WATERLOGGED, stateIn.getValue(WATERLOGGED)) : super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
-	}
-
-	private static boolean shouldSolidify(IBlockReader reader, BlockPos pos, BlockState state) {
-		return causesSolidify(state) || isTouchingLiquid(reader, pos);
-	}
-
-	private static boolean isTouchingLiquid(IBlockReader reader, BlockPos pos) {
-		boolean flag = false;
-		BlockPos.Mutable blockpos$mutable = pos.mutable();
-		for (Direction direction : Direction.values()) {
-			BlockState blockstate = reader.getBlockState(blockpos$mutable);
-			if (direction != Direction.DOWN || causesSolidify(blockstate)) {
-				blockpos$mutable.setWithOffset(pos, direction);
-				blockstate = reader.getBlockState(blockpos$mutable);
-				if (causesSolidify(blockstate) && !blockstate.isFaceSturdy(reader, pos, direction.getOpposite())) {
-					flag = true;
-					break;
-				}
-			}
-		}
-		return flag;
-	}
-
-	private static boolean causesSolidify(BlockState state) {
-		return state.getFluidState().is(FluidTags.WATER);
 	}
 
 }

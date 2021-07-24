@@ -1,24 +1,28 @@
 package com.nbrichau.vanillaextension.fences;
 
 import com.nbrichau.vanillaextension.init.*;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.FenceBlock;
-import net.minecraft.block.SnowBlock;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.util.*;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.World;
-import net.minecraft.world.lighting.LightEngine;
-import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.SnowLayerBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.lighting.LayerLightEngine;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.common.ToolType;
 
 import java.util.Random;
 
-import static net.minecraft.state.properties.BlockStateProperties.*;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.*;
 
 public class GrassBlockFence extends FenceBlock {
 
@@ -26,20 +30,20 @@ public class GrassBlockFence extends FenceBlock {
 		super(properties);
 	}
 
-	private static boolean isSnowyConditions(BlockState state, IWorldReader worldReader, BlockPos pos) {
+	private static boolean isSnowyConditions(BlockState state, LevelReader worldReader, BlockPos pos) {
 		BlockPos blockpos = pos.above();
 		BlockState blockstate = worldReader.getBlockState(blockpos);
-		if (blockstate.is(Blocks.SNOW) && blockstate.getValue(SnowBlock.LAYERS) == 1) {
+		if (blockstate.is(Blocks.SNOW) && blockstate.getValue(SnowLayerBlock.LAYERS) == 1) {
 			return true;
 		} else if (blockstate.getFluidState().getAmount() == 8) {
 			return false;
 		} else {
-			int i = LightEngine.getLightBlockInto(worldReader, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(worldReader, blockpos));
+			int i = LayerLightEngine.getLightBlockInto(worldReader, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(worldReader, blockpos));
 			return i < worldReader.getMaxLightLevel();
 		}
 	}
 
-	private static boolean isSnowyAndNotUnderwater(BlockState state, IWorldReader worldReader, BlockPos pos) {
+	private static boolean isSnowyAndNotUnderwater(BlockState state, LevelReader worldReader, BlockPos pos) {
 		BlockPos blockpos = pos.above();
 		return isSnowyConditions(state, worldReader, pos) && !worldReader.getFluidState(blockpos).is(FluidTags.WATER);
 	}
@@ -48,7 +52,7 @@ public class GrassBlockFence extends FenceBlock {
 	 * Performs a random tick on a block.
 	 */
 	@Override
-	public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
+	public void randomTick(BlockState state, ServerLevel worldIn, BlockPos pos, Random random) {
 		if (!isSnowyConditions(state, worldIn, pos)) {
 			if (!worldIn.isAreaLoaded(pos, 3))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
@@ -79,20 +83,21 @@ public class GrassBlockFence extends FenceBlock {
 	}
 
 	@Override
-	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
 		super.use(state, worldIn, pos, player, handIn, hit);
 		if (player.getItemInHand(handIn).getToolTypes().contains(ToolType.SHOVEL)) {
 			if (!worldIn.isClientSide()) {
-				BlockState bs = FenceInit.grass_path_fence.get().defaultBlockState().setValue(NORTH, state.getValue(NORTH)).setValue(EAST, state.getValue(EAST)).setValue(SOUTH, state.getValue(SOUTH)).setValue(WEST, state.getValue(WEST)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+				BlockState bs = FenceInit.dirt_path_fence.get().defaultBlockState().setValue(NORTH, state.getValue(NORTH)).setValue(EAST, state.getValue(EAST)).setValue(SOUTH, state.getValue(SOUTH)).setValue(WEST, state.getValue(WEST)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
 				worldIn.setBlock(pos, bs, 11);
-				worldIn.playSound(null, pos, SoundEvents.SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				worldIn.playSound(null, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
 				player.getItemInHand(handIn).hurtAndBreak(1, player, item -> item.broadcastBreakEvent(handIn));
-				return ActionResultType.SUCCESS;
+				return InteractionResult.SUCCESS;
 			} else {
-				return ActionResultType.PASS;
+				return InteractionResult.PASS;
 			}
 		} else {
-			return ActionResultType.PASS;
+			return InteractionResult.PASS;
 		}
 	}
+
 }

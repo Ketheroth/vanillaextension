@@ -1,38 +1,28 @@
 package com.nbrichau.vanillaextension.stairs;
 
-import com.nbrichau.vanillaextension.init.StairsInit;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.StairsBlock;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.core.BlockPos;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.state.BlockState;
 
-import java.util.Random;
 import java.util.function.Supplier;
 
-public class OreStairs extends StairsBlock {
+public class OreStairs extends StairBlock {
+
+	private final UniformInt xpRange;
 
 	public OreStairs(Supplier<BlockState> state, Properties properties) {
-		super(state, properties);
+		this(state, properties, UniformInt.of(0, 0));
 	}
 
-	protected int getExperience(Random rand) {
-		if (this == StairsInit.coal_ore_stairs.get()) {
-			return MathHelper.nextInt(rand, 0, 2);
-		} else if (this == StairsInit.diamond_ore_stairs.get()) {
-			return MathHelper.nextInt(rand, 3, 7);
-		} else if (this == StairsInit.emerald_ore_stairs.get()) {
-			return MathHelper.nextInt(rand, 3, 7);
-		} else if (this == StairsInit.lapis_ore_stairs.get()) {
-			return MathHelper.nextInt(rand, 2, 5);
-		} else if (this == StairsInit.nether_quartz_ore_stairs.get()) {
-			return MathHelper.nextInt(rand, 2, 5);
-		} else {
-			return this == StairsInit.nether_gold_ore_stairs.get() ? MathHelper.nextInt(rand, 0, 1) : 0;
-		}
+	public OreStairs(Supplier<BlockState> state, Properties properties, UniformInt xpRange) {
+		super(state, properties);
+		this.xpRange = xpRange;
 	}
 
 	@Override
-	public int getExpDrop(BlockState state, net.minecraft.world.IWorldReader reader, BlockPos pos, int fortune, int silktouch) {
-		return silktouch == 0 ? this.getExperience(RANDOM) : 0;
+	public int getExpDrop(BlockState state, net.minecraft.world.level.LevelReader reader, BlockPos pos, int fortune, int silktouch) {
+		return silktouch == 0 ? this.xpRange.sample(RANDOM) : 0;
 	}
+
 }

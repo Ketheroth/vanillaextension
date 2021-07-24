@@ -1,7 +1,0 @@
-{
-	"variants": {
-		"type=bottom": { "model": "vanillaextension:block/grass_path_slab" },
-		"type=top": { "model": "vanillaextension:block/grass_path_slab_top" },
-		"type=double": { "model": "minecraft:block/grass_path" }
-	}
-}

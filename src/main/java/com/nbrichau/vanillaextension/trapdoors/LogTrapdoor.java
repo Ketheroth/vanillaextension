@@ -1,14 +1,18 @@
 package com.nbrichau.vanillaextension.trapdoors;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.TrapDoorBlock;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.util.*;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -18,19 +22,23 @@ public class LogTrapdoor extends TrapDoorBlock {
 		super(properties);
 	}
 
+	private static Block getBlockStripping(Block blockIn) {
+		return ForgeRegistries.BLOCKS.getValue(ResourceLocation.of(blockIn.getRegistryName().getNamespace() + ":stripped_" + blockIn.getRegistryName().getPath(), ':'));
+	}
+
 	@Override
-	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
 		Block block = getBlockStripping(state.getBlock());
 		if (block != null && player.getItemInHand(handIn).getToolTypes().contains(ToolType.AXE) && !player.isCrouching()) {
-			worldIn.playSound(player, pos, SoundEvents.AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			worldIn.playSound(player, pos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0F, 1.0F);
 			if (!worldIn.isClientSide) {
 				worldIn.setBlock(pos, block.defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(OPEN, state.getValue(OPEN)).setValue(HALF, state.getValue(HALF)).setValue(POWERED, state.getValue(POWERED)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), 11);
 				if (player != null) {
 					player.getItemInHand(handIn).hurtAndBreak(1, player, item -> item.broadcastBreakEvent(handIn));
 				}
-				return ActionResultType.SUCCESS;
+				return InteractionResult.SUCCESS;
 			} else {
-				return ActionResultType.PASS;
+				return InteractionResult.PASS;
 			}
 		} else {
 			state = state.cycle(OPEN);
@@ -39,11 +47,8 @@ public class LogTrapdoor extends TrapDoorBlock {
 				worldIn.getLiquidTicks().scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 			}
 			this.playSound(player, worldIn, pos, state.getValue(OPEN));
-			return ActionResultType.sidedSuccess(worldIn.isClientSide);
+			return InteractionResult.sidedSuccess(worldIn.isClientSide);
 		}
 	}
 
-	private static Block getBlockStripping(Block blockIn) {
-		return ForgeRegistries.BLOCKS.getValue(ResourceLocation.of(blockIn.getRegistryName().getNamespace() + ":stripped_" + blockIn.getRegistryName().getPath(), ':'));
-	}
 }

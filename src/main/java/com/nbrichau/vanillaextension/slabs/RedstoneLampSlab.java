@@ -1,15 +1,15 @@
 package com.nbrichau.vanillaextension.slabs;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.state.BooleanProperty;
-import net.minecraft.state.StateContainer;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 
 import java.util.Random;
 
@@ -24,12 +24,12 @@ public class RedstoneLampSlab extends SlabBlock {
 	}
 
 	@Override
-	public BlockState getStateForPlacement(BlockItemUseContext context) {
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		return super.getStateForPlacement(context).setValue(LIT, context.getLevel().hasNeighborSignal(context.getClickedPos()));
 	}
 
 	@Override
-	public void neighborChanged(BlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
+	public void neighborChanged(BlockState state, Level worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
 		if (!worldIn.isClientSide) {
 			boolean flag = state.getValue(LIT);
 			if (flag != worldIn.hasNeighborSignal(pos)) {
@@ -44,15 +44,16 @@ public class RedstoneLampSlab extends SlabBlock {
 	}
 
 	@Override
-	public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
+	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, Random rand) {
 		if (state.getValue(LIT) && !worldIn.hasNeighborSignal(pos)) {
 			worldIn.setBlock(pos, state.cycle(LIT), 2);
 		}
 	}
 
 	@Override
-	protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
 		builder.add(LIT);
 	}
+
 }

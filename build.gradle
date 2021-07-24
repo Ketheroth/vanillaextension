@@ -1,25 +1,25 @@
 buildscript {
     repositories {
         maven { url = 'https://files.minecraftforge.net/maven' }
-        jcenter()
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
+apply from: 'https://raw.githubusercontent.com/SizableShrimp/Forge-Class-Remapper/main/classremapper.gradle'
 
 version = '1.16.5-1.0.16'
 group = 'com.nbrichau.vanillaextension'
 archivesBaseName = 'vanillaextension'
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+java.toolchain.languageVersion = JavaLanguageVersion.of(16)
 
 minecraft {
-    mappings channel: 'official', version: '1.16.5'
+    mappings channel: 'official', version: '1.17.1'
 
     runs {
         client {
@@ -82,10 +82,8 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.5-36.1.4'
+    minecraft 'net.minecraftforge:forge:1.17.1-37.0.1'
 
-    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-50:api")
-    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-50")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

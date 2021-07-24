@@ -1,39 +1,26 @@
 package com.nbrichau.vanillaextension.trapdoors;
 
-import com.nbrichau.vanillaextension.init.TrapdoorInit;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.TrapDoorBlock;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-
-import java.util.Random;
+import net.minecraft.core.BlockPos;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class OreTrapdoor extends TrapDoorBlock {
 
+	private final UniformInt xpRange;
+
 	public OreTrapdoor(Properties properties) {
-		super(properties);
+		this(properties, UniformInt.of(0, 0));
 	}
 
-	protected int getExperience(Random rand) {
-		if (this == TrapdoorInit.coal_ore_trapdoor.get()) {
-			return MathHelper.nextInt(rand, 0, 2);
-		} else if (this == TrapdoorInit.diamond_ore_trapdoor.get()) {
-			return MathHelper.nextInt(rand, 3, 7);
-		} else if (this == TrapdoorInit.emerald_ore_trapdoor.get()) {
-			return MathHelper.nextInt(rand, 3, 7);
-		} else if (this == TrapdoorInit.lapis_ore_trapdoor.get()) {
-			return MathHelper.nextInt(rand, 2, 5);
-		} else if (this == TrapdoorInit.nether_quartz_ore_trapdoor.get()) {
-			return MathHelper.nextInt(rand, 2, 5);
-		} else if (this == TrapdoorInit.redstone_ore_trapdoor.get()) {
-			return MathHelper.nextInt(rand, 1, 5);
-		} else {
-			return this == TrapdoorInit.nether_gold_ore_trapdoor.get() ? MathHelper.nextInt(rand, 0, 1) : 0;
-		}
+	public OreTrapdoor(Properties properties, UniformInt xpRange) {
+		super(properties);
+		this.xpRange = xpRange;
 	}
 
 	@Override
-	public int getExpDrop(BlockState state, net.minecraft.world.IWorldReader reader, BlockPos pos, int fortune, int silktouch) {
-		return silktouch == 0 ? this.getExperience(RANDOM) : 0;
+	public int getExpDrop(BlockState state, net.minecraft.world.level.LevelReader reader, BlockPos pos, int fortune, int silktouch) {
+		return silktouch == 0 ? this.xpRange.sample(RANDOM) : 0;
 	}
+
 }
