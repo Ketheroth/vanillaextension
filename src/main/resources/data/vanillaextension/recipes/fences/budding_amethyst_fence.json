@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:budding_amethyst"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:budding_amethyst_fence",
+		"count": 3
+	}
+}

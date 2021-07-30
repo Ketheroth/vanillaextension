@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"   ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:exposed_copper"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:exposed_copper_trapdoor",
+		"count": 2
+	}
+}

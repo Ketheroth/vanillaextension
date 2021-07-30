@@ -2,7 +2,7 @@
 	"parent": "minecraft:recipes/root",
 	"rewards": {
 		"recipes": [
-			"vanillaextension:slabs/brown_concrete_slab_from_brown_concrete_stonecuttin"
+			"vanillaextension:slabs/brown_concrete_slab_from_brown_concrete_stonecutting"
 		]
 	},
 	"criteria": {
@@ -19,7 +19,7 @@
 		"has_the_recipe": {
 			"trigger": "minecraft:recipe_unlocked",
 			"conditions": {
-				"recipe": "vanillaextension:slabs/brown_concrete_slab_from_brown_concrete_stonecuttin"
+				"recipe": "vanillaextension:slabs/brown_concrete_slab_from_brown_concrete_stonecutting"
 			}
 		}
 	},

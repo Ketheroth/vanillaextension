@@ -14,7 +14,7 @@ for line in ${lines}; do
   sed "s/blank/${line}/g" "${blank_assets_path}/models/item/blank_slab.json" > "${assets_path}/models/item/${line}_slab.json"
 
   sed "s/blank/${line}/g" "${blank_data_path}/advancements/recipes/slabs/blank_slab.json" > "${data_path}/advancements/recipes/slabs/${line}_slab.json"
-  sed "s/blank/${line}/g" "${blank_data_path}/advancements/recipes/blocks/blank_from_blank_slab.json" > "${data_path}/advancements/recipes/slabs/${line}_from_${line}_slab.json"
+  sed "s/blank/${line}/g" "${blank_data_path}/advancements/recipes/blocks/blank_from_blank_slab.json" > "${data_path}/advancements/recipes/blocks/${line}_from_${line}_slab.json"
   sed "s/blank/${line}/g" "${blank_data_path}/loot_tables/blocks/blank_slab.json" > "${data_path}/loot_tables/blocks/${line}_slab.json"
   sed "s/blank/${line}/g" "${blank_data_path}/recipes/slabs/blank_slab.json" > "${data_path}/recipes/slabs/${line}_slab.json"
   sed "s/blank/${line}/g" "${blank_data_path}/recipes/blocks/blank_from_blank_slab.json" > "${data_path}/recipes/blocks/${line}_from_${line}_slab.json"

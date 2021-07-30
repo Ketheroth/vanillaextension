@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:copper_block_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:copper_block",
+		"count": 1
+	}
+}

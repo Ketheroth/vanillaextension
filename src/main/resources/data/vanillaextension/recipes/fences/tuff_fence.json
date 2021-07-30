@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:tuff"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:tuff_fence",
+		"count": 3
+	}
+}

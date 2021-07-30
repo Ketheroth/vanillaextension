@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:deepslate_diamond_ore"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:deepslate_diamond_ore_fence",
+		"count": 3
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"   ",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:deepslate_redstone_ore"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:deepslate_redstone_ore_trapdoor",
+		"count": 2
+	}
+}

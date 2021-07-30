@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/raw_iron_block_slab" },
+		"type=top": { "model": "vanillaextension:block/raw_iron_block_slab_top" },
+		"type=double": { "model": "minecraft:block/raw_iron_block" }
+	}
+}

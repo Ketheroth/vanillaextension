@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:oxidized_copper_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:oxidized_copper",
+		"count": 1
+	}
+}

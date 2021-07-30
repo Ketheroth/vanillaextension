@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "vanillaextension:block/oxidized_copper_slab" },
+		"type=top": { "model": "vanillaextension:block/oxidized_copper_slab_top" },
+		"type=double": { "model": "minecraft:block/oxidized_copper" }
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "vanillaextension:glow_lichen_slab"
+		}
+	},
+	"result": {
+		"item": "minecraft:glow_lichen",
+		"count": 1
+	}
+}

@@ -10,10 +10,9 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
-apply from: 'https://raw.githubusercontent.com/SizableShrimp/Forge-Class-Remapper/main/classremapper.gradle'
 
-version = '1.16.5-1.0.16'
-group = 'com.nbrichau.vanillaextension'
+version = '1.17.1-1.1.0'
+group = 'com.ketheroth.vanillaextension'
 archivesBaseName = 'vanillaextension'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(16)
@@ -78,11 +77,11 @@ minecraft {
 }
 
 repositories {
-    maven { url "https://maven.blamejared.com" }
+
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.17.1-37.0.1'
+    minecraft 'net.minecraftforge:forge:1.17.1-37.0.15'
 
 }
 

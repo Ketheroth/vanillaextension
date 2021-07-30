@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B#B",
+		"B#B"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:stick"
+		},
+		"B": {
+			"item": "minecraft:azalea_leaves"
+		}
+	},
+	"result": {
+		"item": "vanillaextension:azalea_leaves_fence",
+		"count": 3
+	}
+}
