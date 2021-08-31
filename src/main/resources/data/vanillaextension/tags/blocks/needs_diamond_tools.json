@@ -1,0 +1,25 @@
+{
+	"replace": false,
+	"values": [
+		"vanillaextension:obsidian_fence",
+		"vanillaextension:obsidian_slab",
+		"vanillaextension:obsidian_stairs",
+		"vanillaextension:obsidian_trapdoor",
+		"vanillaextension:obsidian_wall",
+		"vanillaextension:crying_obsidian_fence",
+		"vanillaextension:crying_obsidian_slab",
+		"vanillaextension:crying_obsidian_stairs",
+		"vanillaextension:crying_obsidian_trapdoor",
+		"vanillaextension:crying_obsidian_wall",
+		"vanillaextension:netherite_block_fence",
+		"vanillaextension:netherite_block_slab",
+		"vanillaextension:netherite_block_stairs",
+		"vanillaextension:netherite_block_trapdoor",
+		"vanillaextension:netherite_block_wall",
+		"vanillaextension:ancient_debris_fence",
+		"vanillaextension:ancient_debris_slab",
+		"vanillaextension:ancient_debris_stairs",
+		"vanillaextension:ancient_debris_trapdoor",
+		"vanillaextension:ancient_debris_wall"
+	]
+}

@@ -22,7 +22,7 @@ import java.util.Random;
 import static net.minecraft.world.level.block.state.properties.BlockStateProperties.*;
 
 @ParametersAreNonnullByDefault
-public class MyceliumSlab extends SlabBlock {
+public class MyceliumSlab extends FlattenableSlab {
 
 	public MyceliumSlab(Properties properties) {
 		super(properties);

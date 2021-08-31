@@ -22,7 +22,7 @@ import java.util.Random;
 import static net.minecraft.world.level.block.state.properties.BlockStateProperties.*;
 
 @ParametersAreNonnullByDefault
-public class MyceliumFence extends FenceBlock {
+public class MyceliumFence extends FlattenableFence {
 
 	public MyceliumFence(Properties properties) {
 		super(properties);
@@ -83,7 +83,6 @@ public class MyceliumFence extends FenceBlock {
 		if (rand.nextInt(10) == 0) {
 			worldIn.addParticle(ParticleTypes.MYCELIUM, (double) pos.getX() + rand.nextDouble(), (double) pos.getY() + 1.1D, (double) pos.getZ() + rand.nextDouble(), 0.0D, 0.0D, 0.0D);
 		}
-
 	}
 
 }

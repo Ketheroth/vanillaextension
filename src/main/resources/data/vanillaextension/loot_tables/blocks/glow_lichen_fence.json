@@ -12,6 +12,14 @@
 			"conditions": [
 				{
 					"condition": "minecraft:survives_explosion"
+				},
+				{
+					"condition": "minecraft:match_tool",
+					"predicate": {
+						"items": [
+							"minecraft:shears"
+						]
+					}
 				}
 			]
 		}

@@ -19,7 +19,7 @@ import net.minecraft.world.level.block.SnowLayerBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.lighting.LayerLightEngine;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.common.ToolType;
+import net.minecraftforge.common.ToolActions;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Random;
@@ -28,7 +28,7 @@ import static net.minecraft.world.level.block.state.properties.BlockStatePropert
 
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class GrassBlockFence extends FenceBlock {
+public class GrassBlockFence extends FlattenableFence {
 
 	public GrassBlockFence(Properties properties) {
 		super(properties);
@@ -83,24 +83,6 @@ public class GrassBlockFence extends FenceBlock {
 					}
 				}
 			}
-		}
-	}
-
-	@Override
-	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
-		super.use(state, worldIn, pos, player, handIn, hit);
-		if (player.getItemInHand(handIn).getToolTypes().contains(ToolType.SHOVEL)) {
-			if (!worldIn.isClientSide()) {
-				BlockState bs = FenceInit.dirt_path_fence.get().defaultBlockState().setValue(NORTH, state.getValue(NORTH)).setValue(EAST, state.getValue(EAST)).setValue(SOUTH, state.getValue(SOUTH)).setValue(WEST, state.getValue(WEST)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
-				worldIn.setBlock(pos, bs, 11);
-				worldIn.playSound(null, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
-				player.getItemInHand(handIn).hurtAndBreak(1, player, item -> item.broadcastBreakEvent(handIn));
-				return InteractionResult.SUCCESS;
-			} else {
-				return InteractionResult.PASS;
-			}
-		} else {
-			return InteractionResult.PASS;
 		}
 	}
 

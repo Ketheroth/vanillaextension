@@ -24,7 +24,7 @@ import static net.minecraft.world.level.block.state.properties.BlockStatePropert
 
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class MyceliumWall extends WallBlock {
+public class MyceliumWall extends FlattenableWall {
 
 	public MyceliumWall(Properties properties) {
 		super(properties);

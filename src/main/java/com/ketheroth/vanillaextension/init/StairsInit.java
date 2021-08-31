@@ -294,7 +294,6 @@ public class StairsInit {
 	public static final RegistryObject<Block> RAW_IRON_BLOCK_STAIRS = register("raw_iron_block_stairs", new StairBlock(Blocks.RAW_IRON_BLOCK::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK)));
 	public static final RegistryObject<Block> ROOTED_DIRT_STAIRS = register("rooted_dirt_stairs", new StairBlock(Blocks.ROOTED_DIRT::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.ROOTED_DIRT)));
 	public static final RegistryObject<Block> SMOOTH_BASALT_STAIRS = register("smooth_basalt_stairs", new StairBlock(Blocks.SMOOTH_BASALT::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.SMOOTH_BASALT)));
-	public static final RegistryObject<Block> TINTED_GLASS_STAIRS = register("tinted_glass_stairs", new StairBlock(Blocks.TINTED_GLASS::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.TINTED_GLASS)));
 	public static final RegistryObject<Block> TUFF_STAIRS = register("tuff_stairs", new StairBlock(Blocks.TUFF::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.TUFF)));
 	public static final RegistryObject<Block> WAXED_COPPER_BLOCK_STAIRS = register("waxed_copper_block_stairs", new StairBlock(Blocks.WAXED_COPPER_BLOCK::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.WAXED_COPPER_BLOCK)));
 	public static final RegistryObject<Block> WAXED_EXPOSED_COPPER_STAIRS = register("waxed_exposed_copper_stairs", new StairBlock(Blocks.WAXED_EXPOSED_COPPER::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.WAXED_EXPOSED_COPPER)));

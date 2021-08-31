@@ -315,7 +315,6 @@ public class WallInit {
 	public static final RegistryObject<Block> RAW_IRON_BLOCK_WALL = register("raw_iron_block_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK)));
 	public static final RegistryObject<Block> ROOTED_DIRT_WALL = register("rooted_dirt_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.ROOTED_DIRT)));
 	public static final RegistryObject<Block> SMOOTH_BASALT_WALL = register("smooth_basalt_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_BASALT)));
-	public static final RegistryObject<Block> TINTED_GLASS_WALL = register("tinted_glass_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.TINTED_GLASS)));
 	public static final RegistryObject<Block> TUFF_WALL = register("tuff_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.TUFF)));
 	public static final RegistryObject<Block> WAXED_COPPER_BLOCK_WALL = register("waxed_copper_block_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.WAXED_COPPER_BLOCK)));
 	public static final RegistryObject<Block> WAXED_CUT_COPPER_WALL = register("waxed_cut_copper_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.WAXED_CUT_COPPER)));

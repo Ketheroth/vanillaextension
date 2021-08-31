@@ -320,7 +320,6 @@ public class TrapdoorInit {
 	public static final RegistryObject<Block> RAW_IRON_BLOCK_TRAPDOOR = register("raw_iron_block_trapdoor", new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK)));
 	public static final RegistryObject<Block> ROOTED_DIRT_TRAPDOOR = register("rooted_dirt_trapdoor", new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.ROOTED_DIRT)));
 	public static final RegistryObject<Block> SMOOTH_BASALT_TRAPDOOR = register("smooth_basalt_trapdoor", new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_BASALT)));
-	public static final RegistryObject<Block> TINTED_GLASS_TRAPDOOR = register("tinted_glass_trapdoor", new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.TINTED_GLASS)));
 	public static final RegistryObject<Block> TUFF_TRAPDOOR = register("tuff_trapdoor", new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.TUFF)));
 	public static final RegistryObject<Block> WAXED_COPPER_BLOCK_TRAPDOOR = register("waxed_copper_block_trapdoor", new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.WAXED_COPPER_BLOCK)));
 	public static final RegistryObject<Block> WAXED_CUT_COPPER_TRAPDOOR = register("waxed_cut_copper_trapdoor", new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.WAXED_CUT_COPPER)));

@@ -292,7 +292,6 @@ public class SlabInit {
 	public static final RegistryObject<Block> RAW_IRON_BLOCK_SLAB = register("raw_iron_block_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK)));
 	public static final RegistryObject<Block> ROOTED_DIRT_SLAB = register("rooted_dirt_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.ROOTED_DIRT)));
 	public static final RegistryObject<Block> SMOOTH_BASALT_SLAB = register("smooth_basalt_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_BASALT)));
-	public static final RegistryObject<Block> TINTED_GLASS_SLAB = register("tinted_glass_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.TINTED_GLASS)));
 	public static final RegistryObject<Block> TUFF_SLAB = register("tuff_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.TUFF)));
 	public static final RegistryObject<Block> WAXED_COPPER_BLOCK_SLAB = register("waxed_copper_block_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.WAXED_COPPER_BLOCK)));
 	public static final RegistryObject<Block> WAXED_EXPOSED_COPPER_SLAB = register("waxed_exposed_copper_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.WAXED_EXPOSED_COPPER)));

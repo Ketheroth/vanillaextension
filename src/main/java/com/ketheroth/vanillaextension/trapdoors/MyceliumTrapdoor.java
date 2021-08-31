@@ -22,7 +22,7 @@ import java.util.Random;
 import static net.minecraft.world.level.block.state.properties.BlockStateProperties.*;
 
 @ParametersAreNonnullByDefault
-public class MyceliumTrapdoor extends TrapDoorBlock {
+public class MyceliumTrapdoor extends FlattenableTrapdoor {
 
 	public MyceliumTrapdoor(Properties properties) {
 		super(properties);

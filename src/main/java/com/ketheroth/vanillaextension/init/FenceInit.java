@@ -303,7 +303,6 @@ public class FenceInit {
 	public static final RegistryObject<Block> BUDDING_AMETHYST_FENCE = register("budding_amethyst_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST)));
 	public static final RegistryObject<Block> TUFF_FENCE = register("tuff_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.TUFF)));
 	public static final RegistryObject<Block> CALCITE_FENCE = register("calcite_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE)));
-	public static final RegistryObject<Block> TINTED_GLASS_FENCE = register("tinted_glass_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.TINTED_GLASS)));
 	public static final RegistryObject<Block> COPPER_ORE_FENCE = register("copper_ore_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.COPPER_ORE)));
 	public static final RegistryObject<Block> DEEPSLATE_COPPER_ORE_FENCE = register("deepslate_copper_ore_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_COPPER_ORE)));
 	public static final RegistryObject<Block> COPPER_BLOCK_FENCE = register("copper_block_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK)));

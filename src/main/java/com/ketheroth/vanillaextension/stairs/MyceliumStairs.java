@@ -23,7 +23,7 @@ import java.util.function.Supplier;
 import static net.minecraft.world.level.block.state.properties.BlockStateProperties.*;
 
 @ParametersAreNonnullByDefault
-public class MyceliumStairs extends StairBlock {
+public class MyceliumStairs extends FlattenableStairs {
 
 	public MyceliumStairs(Supplier<BlockState> state, Properties properties) {
 		super(state, properties);
