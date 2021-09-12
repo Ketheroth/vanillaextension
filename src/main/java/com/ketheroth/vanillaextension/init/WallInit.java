@@ -28,9 +28,9 @@ public class WallInit {
 	public static final RegistryObject<Block> polished_diorite_wall = register("polished_diorite_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_DIORITE)));
 	public static final RegistryObject<Block> polished_andesite_wall = register("polished_andesite_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE)));
 	public static final RegistryObject<Block> grass_block_wall = register("grass_block_wall", new GrassBlockWall(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
-	public static final RegistryObject<Block> dirt_wall = register("dirt_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)));
+	public static final RegistryObject<Block> dirt_wall = register("dirt_wall", new FlattenableWall(BlockBehaviour.Properties.copy(Blocks.DIRT)));
 	public static final RegistryObject<Block> coarse_dirt_wall = register("coarse_dirt_wall", new CoarseDirtWall(BlockBehaviour.Properties.copy(Blocks.COARSE_DIRT)));
-	public static final RegistryObject<Block> podzol_wall = register("podzol_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.PODZOL)));
+	public static final RegistryObject<Block> podzol_wall = register("podzol_wall", new FlattenableWall(BlockBehaviour.Properties.copy(Blocks.PODZOL)));
 	public static final RegistryObject<Block> oak_plank_wall = register("oak_plank_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> spruce_plank_wall = register("spruce_plank_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS)));
 	public static final RegistryObject<Block> birch_plank_wall = register("birch_plank_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_PLANKS)));
@@ -313,7 +313,7 @@ public class WallInit {
 	public static final RegistryObject<Block> RAW_COPPER_BLOCK_WALL = register("raw_copper_block_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.RAW_COPPER_BLOCK)));
 	public static final RegistryObject<Block> RAW_GOLD_BLOCK_WALL = register("raw_gold_block_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.RAW_GOLD_BLOCK)));
 	public static final RegistryObject<Block> RAW_IRON_BLOCK_WALL = register("raw_iron_block_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK)));
-	public static final RegistryObject<Block> ROOTED_DIRT_WALL = register("rooted_dirt_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.ROOTED_DIRT)));
+	public static final RegistryObject<Block> ROOTED_DIRT_WALL = register("rooted_dirt_wall", new FlattenableWall(BlockBehaviour.Properties.copy(Blocks.ROOTED_DIRT)));
 	public static final RegistryObject<Block> SMOOTH_BASALT_WALL = register("smooth_basalt_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_BASALT)));
 	public static final RegistryObject<Block> TUFF_WALL = register("tuff_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.TUFF)));
 	public static final RegistryObject<Block> WAXED_COPPER_BLOCK_WALL = register("waxed_copper_block_wall", new WallBlock(BlockBehaviour.Properties.copy(Blocks.WAXED_COPPER_BLOCK)));

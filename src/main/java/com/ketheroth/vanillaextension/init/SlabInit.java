@@ -28,7 +28,7 @@ public class SlabInit {
 	public static final RegistryObject<Block> grass_block_slab = register("grass_block_slab", new GrassBlockSlab(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
 	public static final RegistryObject<Block> dirt_slab = register("dirt_slab", new DirtSlab(BlockBehaviour.Properties.copy(Blocks.DIRT)));
 	public static final RegistryObject<Block> coarse_dirt_slab = register("coarse_dirt_slab", new CoarseDirtSlab(BlockBehaviour.Properties.copy(Blocks.COARSE_DIRT)));
-	public static final RegistryObject<Block> podzol_slab = register("podzol_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.PODZOL)));
+	public static final RegistryObject<Block> podzol_slab = register("podzol_slab", new FlattenableSlab(BlockBehaviour.Properties.copy(Blocks.PODZOL)));
 	public static final RegistryObject<Block> bedrock_slab = register("bedrock_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
 	public static final RegistryObject<Block> sand_slab = register("sand_slab", new FallingSlab(BlockBehaviour.Properties.copy(Blocks.SAND)));
 	public static final RegistryObject<Block> red_sand_slab = register("red_sand_slab", new FallingSlab(BlockBehaviour.Properties.copy(Blocks.RED_SAND)));
@@ -290,7 +290,7 @@ public class SlabInit {
 	public static final RegistryObject<Block> RAW_COPPER_BLOCK_SLAB = register("raw_copper_block_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.RAW_COPPER_BLOCK)));
 	public static final RegistryObject<Block> RAW_GOLD_BLOCK_SLAB = register("raw_gold_block_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.RAW_GOLD_BLOCK)));
 	public static final RegistryObject<Block> RAW_IRON_BLOCK_SLAB = register("raw_iron_block_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK)));
-	public static final RegistryObject<Block> ROOTED_DIRT_SLAB = register("rooted_dirt_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.ROOTED_DIRT)));
+	public static final RegistryObject<Block> ROOTED_DIRT_SLAB = register("rooted_dirt_slab", new FlattenableSlab(BlockBehaviour.Properties.copy(Blocks.ROOTED_DIRT)));
 	public static final RegistryObject<Block> SMOOTH_BASALT_SLAB = register("smooth_basalt_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_BASALT)));
 	public static final RegistryObject<Block> TUFF_SLAB = register("tuff_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.TUFF)));
 	public static final RegistryObject<Block> WAXED_COPPER_BLOCK_SLAB = register("waxed_copper_block_slab", new SlabBlock(BlockBehaviour.Properties.copy(Blocks.WAXED_COPPER_BLOCK)));

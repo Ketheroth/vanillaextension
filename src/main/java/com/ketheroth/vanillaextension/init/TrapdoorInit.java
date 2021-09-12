@@ -31,7 +31,7 @@ public class TrapdoorInit {
 	public static final RegistryObject<Block> andesite_trapdoor = register("andesite_trapdoor", new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
 	public static final RegistryObject<Block> polished_andesite_trapdoor = register("polished_andesite_trapdoor", new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE)));
 	public static final RegistryObject<Block> grass_block_trapdoor = register("grass_block_trapdoor", new GrassBlockTrapdoor(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
-	public static final RegistryObject<Block> dirt_trapdoor = register("dirt_trapdoor", new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)));
+	public static final RegistryObject<Block> dirt_trapdoor = register("dirt_trapdoor", new FlattenableTrapdoor(BlockBehaviour.Properties.copy(Blocks.DIRT)));
 	public static final RegistryObject<Block> coarse_dirt_trapdoor = register("coarse_dirt_trapdoor", new CoarseDirtTrapdoor(BlockBehaviour.Properties.copy(Blocks.COARSE_DIRT)));
 	public static final RegistryObject<Block> podzol_trapdoor = register("podzol_trapdoor", new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.PODZOL)));
 	public static final RegistryObject<Block> cobblestone_trapdoor = register("cobblestone_trapdoor", new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));

@@ -27,7 +27,7 @@ public class StairsInit {
 	public static final RegistryObject<Block> grass_block_stairs = register("grass_block_stairs", new GrassBlockStairs(Blocks.GRASS_BLOCK::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
 	public static final RegistryObject<Block> dirt_stairs = register("dirt_stairs", new DirtStairs(Blocks.DIRT::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.DIRT)));
 	public static final RegistryObject<Block> coarse_dirt_stairs = register("coarse_dirt_stairs", new CoarseDirtStairs(Blocks.COARSE_DIRT::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.COARSE_DIRT)));
-	public static final RegistryObject<Block> podzol_stairs = register("podzol_stairs", new StairBlock(Blocks.PODZOL::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.PODZOL)));
+	public static final RegistryObject<Block> podzol_stairs = register("podzol_stairs", new FlattenableStairs(Blocks.PODZOL::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.PODZOL)));
 	public static final RegistryObject<Block> bedrock_stairs = register("bedrock_stairs", new StairBlock(Blocks.BEDROCK::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
 	public static final RegistryObject<Block> sand_stairs = register("sand_stairs", new FallingStairs(BlockBehaviour.Properties.copy(Blocks.SAND)));
 	public static final RegistryObject<Block> red_sand_stairs = register("red_sand_stairs", new FallingStairs(BlockBehaviour.Properties.copy(Blocks.RED_SAND)));
@@ -292,7 +292,7 @@ public class StairsInit {
 	public static final RegistryObject<Block> RAW_COPPER_BLOCK_STAIRS = register("raw_copper_block_stairs", new StairBlock(Blocks.RAW_COPPER_BLOCK::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.RAW_COPPER_BLOCK)));
 	public static final RegistryObject<Block> RAW_GOLD_BLOCK_STAIRS = register("raw_gold_block_stairs", new StairBlock(Blocks.RAW_GOLD_BLOCK::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.RAW_GOLD_BLOCK)));
 	public static final RegistryObject<Block> RAW_IRON_BLOCK_STAIRS = register("raw_iron_block_stairs", new StairBlock(Blocks.RAW_IRON_BLOCK::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK)));
-	public static final RegistryObject<Block> ROOTED_DIRT_STAIRS = register("rooted_dirt_stairs", new StairBlock(Blocks.ROOTED_DIRT::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.ROOTED_DIRT)));
+	public static final RegistryObject<Block> ROOTED_DIRT_STAIRS = register("rooted_dirt_stairs", new FlattenableStairs(Blocks.ROOTED_DIRT::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.ROOTED_DIRT)));
 	public static final RegistryObject<Block> SMOOTH_BASALT_STAIRS = register("smooth_basalt_stairs", new StairBlock(Blocks.SMOOTH_BASALT::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.SMOOTH_BASALT)));
 	public static final RegistryObject<Block> TUFF_STAIRS = register("tuff_stairs", new StairBlock(Blocks.TUFF::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.TUFF)));
 	public static final RegistryObject<Block> WAXED_COPPER_BLOCK_STAIRS = register("waxed_copper_block_stairs", new StairBlock(Blocks.WAXED_COPPER_BLOCK::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.WAXED_COPPER_BLOCK)));

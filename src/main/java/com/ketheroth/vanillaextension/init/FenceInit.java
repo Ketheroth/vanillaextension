@@ -29,9 +29,9 @@ public class FenceInit {
 	public static final RegistryObject<Block> andesite_fence = register("andesite_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE)));
 	public static final RegistryObject<Block> polished_andesite_fence = register("polished_andesite_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE)));
 	public static final RegistryObject<Block> grass_block_fence = register("grass_block_fence", new GrassBlockFence(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
-	public static final RegistryObject<Block> dirt_fence = register("dirt_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)));
+	public static final RegistryObject<Block> dirt_fence = register("dirt_fence", new FlattenableFence(BlockBehaviour.Properties.copy(Blocks.DIRT)));
 	public static final RegistryObject<Block> coarse_dirt_fence = register("coarse_dirt_fence", new CoarseDirtFence(BlockBehaviour.Properties.copy(Blocks.COARSE_DIRT)));
-	public static final RegistryObject<Block> podzol_fence = register("podzol_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.PODZOL)));
+	public static final RegistryObject<Block> podzol_fence = register("podzol_fence", new FlattenableFence(BlockBehaviour.Properties.copy(Blocks.PODZOL)));
 	public static final RegistryObject<Block> cobblestone_fence = register("cobblestone_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
 	public static final RegistryObject<Block> bedrock_fence = register("bedrock_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
 	public static final RegistryObject<Block> sand_fence = register("sand_fence", new FallingFence(BlockBehaviour.Properties.copy(Blocks.SAND)));
@@ -323,7 +323,7 @@ public class FenceInit {
 	public static final RegistryObject<Block> WAXED_OXIDIZED_CUT_COPPER_FENCE = register("waxed_oxidized_cut_copper_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.WAXED_OXIDIZED_CUT_COPPER)));
 	public static final RegistryObject<Block> DRIPSTONE_BLOCK_FENCE = register("dripstone_block_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)));
 	public static final RegistryObject<Block> MOSS_BLOCK_FENCE = register("moss_block_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_BLOCK)));
-	public static final RegistryObject<Block> ROOTED_DIRT_FENCE = register("rooted_dirt_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.ROOTED_DIRT)));
+	public static final RegistryObject<Block> ROOTED_DIRT_FENCE = register("rooted_dirt_fence", new FlattenableFence(BlockBehaviour.Properties.copy(Blocks.ROOTED_DIRT)));
 	public static final RegistryObject<Block> DEEPSLATE_FENCE = register("deepslate_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)));
 	public static final RegistryObject<Block> COBBLED_DEEPSLATE_FENCE = register("cobbled_deepslate_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.COBBLED_DEEPSLATE)));
 	public static final RegistryObject<Block> POLISHED_DEEPSLATE_FENCE = register("polished_deepslate_fence", new FenceBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_DEEPSLATE)));
