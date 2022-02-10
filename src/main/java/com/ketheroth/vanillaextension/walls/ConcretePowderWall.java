@@ -204,7 +204,7 @@ public class ConcretePowderWall extends FallingBlock implements SimpleWaterlogge
 	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
 		if (stateIn.getValue(WATERLOGGED)) {
-			worldIn.getLiquidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+			worldIn.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 		}
 		BlockState blockstate = isTouchingLiquid(worldIn, currentPos) ? this.getSolidifiedState().setValue(UP, stateIn.getValue(UP)).setValue(WALL_HEIGHT_NORTH, stateIn.getValue(WALL_HEIGHT_NORTH)).setValue(WALL_HEIGHT_EAST, stateIn.getValue(WALL_HEIGHT_EAST)).setValue(WALL_HEIGHT_SOUTH, stateIn.getValue(WALL_HEIGHT_SOUTH)).setValue(WALL_HEIGHT_WEST, stateIn.getValue(WALL_HEIGHT_WEST)).setValue(WATERLOGGED, stateIn.getValue(WATERLOGGED)) : stateIn;
 		if (facing == Direction.DOWN) {

@@ -156,11 +156,11 @@ public class FarmStairs extends FarmBlock implements SimpleWaterloggedBlock {
 	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
 		if (facing == Direction.UP && !stateIn.canSurvive(worldIn, currentPos)) {
-			worldIn.getBlockTicks().scheduleTick(currentPos, this, 1);
+			worldIn.scheduleTick(currentPos, this, 1);
 		}
 
 		if (stateIn.getValue(WATERLOGGED)) {
-			worldIn.getLiquidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+			worldIn.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 		}
 
 		return facing.getAxis().isHorizontal() ? stateIn.setValue(SHAPE, getShapeProperty(stateIn, worldIn, currentPos)) : super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);

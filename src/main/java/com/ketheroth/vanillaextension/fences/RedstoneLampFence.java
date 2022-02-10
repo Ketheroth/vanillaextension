@@ -35,7 +35,7 @@ public class RedstoneLampFence extends FenceBlock {
 			boolean flag = state.getValue(LIT);
 			if (flag != worldIn.hasNeighborSignal(pos)) {
 				if (flag) {
-					worldIn.getBlockTicks().scheduleTick(pos, this, 4);
+					worldIn.scheduleTick(pos, this, 4);
 				} else {
 					worldIn.setBlock(pos, state.cycle(LIT), 2);
 				}

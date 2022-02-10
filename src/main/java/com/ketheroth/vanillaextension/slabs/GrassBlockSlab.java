@@ -4,6 +4,7 @@ import com.ketheroth.vanillaextension.init.*;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.level.BlockGetter;
@@ -14,8 +15,9 @@ import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.SnowLayerBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.SlabType;
-import net.minecraft.world.level.levelgen.feature.AbstractFlowerFeature;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.lighting.LayerLightEngine;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -79,21 +81,17 @@ public class GrassBlockSlab extends DirtSlab implements BonemealableBlock {
 					((BonemealableBlock) blockstate.getBlock()).performBonemeal(worldIn, rand, blockpos1, blockstate2);
 				}
 				if (blockstate2.isAir()) {
-					BlockState blockstate1;
+					PlacedFeature placedfeature;
 					if (rand.nextInt(8) == 0) {
 						List<ConfiguredFeature<?, ?>> list = worldIn.getBiome(blockpos1).getGenerationSettings().getFlowerFeatures();
 						if (list.isEmpty()) {
 							continue;
 						}
-						ConfiguredFeature<?, ?> configuredfeature = list.get(0);
-						AbstractFlowerFeature flowersfeature = (AbstractFlowerFeature) configuredfeature.feature;
-						blockstate1 = flowersfeature.getRandomFlower(rand, blockpos1, configuredfeature.config());
+						placedfeature = ((RandomPatchConfiguration)list.get(0).config()).feature().get();
 					} else {
-						blockstate1 = blockstate;
+						placedfeature = VegetationPlacements.GRASS_BONEMEAL;
 					}
-					if (blockstate1.canSurvive(worldIn, blockpos1)) {
-						worldIn.setBlock(blockpos1, blockstate1, 3);
-					}
+					placedfeature.place(worldIn, worldIn.getChunkSource().getGenerator(), rand, blockpos1);
 				}
 			}
 		}

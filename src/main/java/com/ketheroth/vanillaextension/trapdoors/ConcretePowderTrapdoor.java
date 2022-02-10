@@ -121,7 +121,7 @@ public class ConcretePowderTrapdoor extends FallingBlock implements SimpleWaterl
 			state = state.cycle(OPEN);
 			worldIn.setBlock(pos, state, 2);
 			if (state.getValue(WATERLOGGED)) {
-				worldIn.getLiquidTicks().scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+				worldIn.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 			}
 
 			this.playSound(player, worldIn, pos, state.getValue(OPEN));
@@ -151,7 +151,7 @@ public class ConcretePowderTrapdoor extends FallingBlock implements SimpleWaterl
 
 				worldIn.setBlock(pos, state.setValue(POWERED, flag), 2);
 				if (state.getValue(WATERLOGGED)) {
-					worldIn.getLiquidTicks().scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+					worldIn.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 				}
 			}
 
@@ -206,7 +206,7 @@ public class ConcretePowderTrapdoor extends FallingBlock implements SimpleWaterl
 	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
 		if (stateIn.getValue(WATERLOGGED)) {
-			worldIn.getLiquidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+			worldIn.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 		}
 
 		return isTouchingLiquid(worldIn, currentPos) ? this.getSolidifiedState().setValue(HORIZONTAL_FACING, stateIn.getValue(HORIZONTAL_FACING)).setValue(OPEN, stateIn.getValue(OPEN)).setValue(HALF, stateIn.getValue(HALF)).setValue(POWERED, stateIn.getValue(POWERED)).setValue(WATERLOGGED, stateIn.getValue(WATERLOGGED)) : super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);

@@ -74,7 +74,7 @@ public class FallingTrapdoor extends FallingBlock {
 			state = state.cycle(OPEN);
 			worldIn.setBlock(pos, state, 2);
 			if (state.getValue(WATERLOGGED)) {
-				worldIn.getLiquidTicks().scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+				worldIn.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 			}
 
 			this.playSound(player, worldIn, pos, state.getValue(OPEN));
@@ -104,7 +104,7 @@ public class FallingTrapdoor extends FallingBlock {
 
 				worldIn.setBlock(pos, state.setValue(POWERED, flag), 2);
 				if (state.getValue(WATERLOGGED)) {
-					worldIn.getLiquidTicks().scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+					worldIn.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 				}
 			}
 
@@ -143,10 +143,10 @@ public class FallingTrapdoor extends FallingBlock {
 	 * Note that this method should ideally consider only the specific face passed in.
 	 */
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
-		worldIn.getBlockTicks().scheduleTick(currentPos, this, this.getDelayAfterPlace());
+		worldIn.scheduleTick(currentPos, this, this.getDelayAfterPlace());
 
 		if (stateIn.getValue(WATERLOGGED)) {
-			worldIn.getLiquidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+			worldIn.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 		}
 
 		return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);

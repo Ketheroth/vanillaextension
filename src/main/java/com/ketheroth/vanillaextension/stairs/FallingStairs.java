@@ -150,7 +150,7 @@ public class FallingStairs extends FallingBlock {
 
 	@Override
 	public void onPlace(BlockState state, Level worldIn, BlockPos pos, BlockState oldState, boolean isMoving) {
-		worldIn.getBlockTicks().scheduleTick(pos, this, this.getDelayAfterPlace());
+		worldIn.scheduleTick(pos, this, this.getDelayAfterPlace());
 		if (!state.is(state.getBlock())) {
 			this.modelState.neighborChanged(worldIn, pos, Blocks.AIR, pos, false);
 			this.modelBlock.onPlace(this.modelState, worldIn, pos, oldState, false);
@@ -201,9 +201,9 @@ public class FallingStairs extends FallingBlock {
 	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
 		if (stateIn.getValue(WATERLOGGED)) {
-			worldIn.getLiquidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+			worldIn.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 		}
-		worldIn.getBlockTicks().scheduleTick(currentPos, this, this.getDelayAfterPlace());
+		worldIn.scheduleTick(currentPos, this, this.getDelayAfterPlace());
 		return facing.getAxis().isHorizontal() ? stateIn.setValue(SHAPE, getShapeProperty(stateIn, worldIn, currentPos)) : super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 

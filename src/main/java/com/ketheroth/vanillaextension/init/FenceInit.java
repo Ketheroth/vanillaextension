@@ -12,7 +12,7 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import net.minecraftforge.fmllegacy.RegistryObject;
+import net.minecraftforge.registries.RegistryObject;
 
 import static com.ketheroth.vanillaextension.VanillaExtension.BLOCKS;
 import static com.ketheroth.vanillaextension.VanillaExtension.ITEMS;

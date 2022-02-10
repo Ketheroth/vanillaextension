@@ -113,10 +113,10 @@ public class FallingSlab extends FallingBlock implements SimpleWaterloggedBlock 
 
 	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
-		worldIn.getBlockTicks().scheduleTick(currentPos, this, this.getDelayAfterPlace());
+		worldIn.scheduleTick(currentPos, this, this.getDelayAfterPlace());
 
 		if (stateIn.getValue(WATERLOGGED)) {
-			worldIn.getLiquidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+			worldIn.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
 		}
 
 		return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
