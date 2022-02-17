@@ -1,18 +1,20 @@
 buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
-        maven { url = 'https://sizableshrimp.me/maven' }
+        maven { url = 'https://maven.parchmentmc.org' }
         mavenCentral()
     }
     dependencies {
-        classpath group: 'me.sizableshrimp.parchmenttest', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath 'org.parchmentmc:librarian:1.+'
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.16.5-1.0.17'
+version = mcversion + '-' + modversion
 group = 'com.ketheroth.vanillaextension'
 archivesBaseName = 'vanillaextension'
 
@@ -20,7 +22,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 
 minecraft {
-    mappings channel: 'parchment', version: '2021.07.27-1.16.5'
+    mappings channel: mappingchannel, version: mappingversion
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -72,17 +74,25 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.5-36.2.2'
+    minecraft 'net.minecraftforge:forge:' + mcversion + '-' + forgeversion
+    compileOnly fg.deobf('curse.maven:windowlogging-408759:3525771')
+    runtimeOnly fg.deobf('curse.maven:windowlogging-408759:3525771')
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
 jar {
     manifest {
         attributes([
-            "Specification-Title": "vanillaextension",
+            "Specification-Title": "Vanilla Extension",
             "Specification-Vendor": "Ketheroth",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,

@@ -1,5 +1,0 @@
-{
-	"name": "Stonecutting Recipes",
-	"description": "All stonecutting recipes added by the mod.$(br2)A block can be stonecutted if the original block can be stonecutted.$(br)If a block is a rock, this block can be stonecutted.",
-	"icon": "minecraft:stonecutter"
-}

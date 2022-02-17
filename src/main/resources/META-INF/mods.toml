@@ -1,16 +1,15 @@
 modLoader="javafml"
 loaderVersion="[33,)"
 license="MIT License"
-issueTrackerURL="https://github.com/nbrichau/vanillaextension/issues"
+issueTrackerURL="https://github.com/Ketheroth/vanillaextension/issues"
 [[mods]]
 modId="vanillaextension"
-version="1.16.5-1.0.17"
+version="1.16.5-1.0.18"
 displayName="Vanilla Extension"
-updateJSONURL="https://ketheroth.github.io/mods/uncrafter.json"
+updateJSONURL="https://ketheroth.com/mods/vanillaextension.json"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/vanilla-extension"
 logoFile="logo.png"
-credits="Thanks for downloading my mod"
-authors="Nelson Brichau"
+authors="Ketheroth"
 description='''
 You can convert most of the vanilla blocks into stairs, slabs, fences, walls and trapdoors.
 '''

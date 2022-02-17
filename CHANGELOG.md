@@ -3,9 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [1.16.5-1.0.18]
+
+### Added
+- Compatibility with Windowlogging
+
+### Removed
+- Patchouli integration. I felt it was useless.
+- Secret advancements, another useless thing.
+
 ## [1.16.5-1.0.17]
 
-## Fixed
+### Fixed
 - Double falling slabs drop only one slab item
 
 ## [1.16.5-1.0.16]
