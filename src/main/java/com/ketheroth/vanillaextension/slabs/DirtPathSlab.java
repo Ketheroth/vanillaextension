@@ -1,6 +1,6 @@
 package com.ketheroth.vanillaextension.slabs;
 
-import com.ketheroth.vanillaextension.init.SlabInit;
+import com.ketheroth.vanillaextension.init.VEBlocks;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -48,11 +48,11 @@ public class DirtPathSlab extends SlabBlock {
 		if (blockstate.is(this)) {
 			return this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ?
 					blockstate.setValue(TYPE, SlabType.DOUBLE).setValue(WATERLOGGED, Boolean.FALSE) :
-					SlabInit.dirt_slab.get().defaultBlockState().setValue(TYPE, SlabType.DOUBLE).setValue(WATERLOGGED, Boolean.FALSE);
+					VEBlocks.dirt_slab.get().defaultBlockState().setValue(TYPE, SlabType.DOUBLE).setValue(WATERLOGGED, Boolean.FALSE);
 		} else {
 			FluidState fluidstate = context.getLevel().getFluidState(blockpos);
 			BlockState bs = this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ?
-					this.defaultBlockState() : SlabInit.dirt_slab.get().defaultBlockState();
+					this.defaultBlockState() : VEBlocks.dirt_slab.get().defaultBlockState();
 			BlockState blockstate1 = bs.setValue(TYPE, SlabType.BOTTOM).setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
 			Direction direction = context.getClickedFace();
 			return direction != Direction.DOWN && (direction == Direction.UP || !(context.getClickLocation().y - (double) blockpos.getY() > 0.5D)) ? blockstate1 : blockstate1.setValue(TYPE, SlabType.TOP);
@@ -74,7 +74,7 @@ public class DirtPathSlab extends SlabBlock {
 	@Override
 	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, Random rand) {
 		if (!this.canSurvive(state, worldIn, pos)) {
-			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, SlabInit.dirt_slab.get().defaultBlockState()
+			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, VEBlocks.dirt_slab.get().defaultBlockState()
 					.setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), worldIn, pos));
 		}
 	}

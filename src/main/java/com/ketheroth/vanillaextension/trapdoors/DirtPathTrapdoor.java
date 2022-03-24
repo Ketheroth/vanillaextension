@@ -1,6 +1,6 @@
 package com.ketheroth.vanillaextension.trapdoors;
 
-import com.ketheroth.vanillaextension.init.TrapdoorInit;
+import com.ketheroth.vanillaextension.init.VEBlocks;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -41,7 +41,7 @@ public class DirtPathTrapdoor extends TrapDoorBlock {
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		BlockState blockstate = !this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ?
-				TrapdoorInit.dirt_trapdoor.get().defaultBlockState() : this.defaultBlockState();
+				VEBlocks.dirt_trapdoor.get().defaultBlockState() : this.defaultBlockState();
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
 		Direction direction = context.getClickedFace();
 		if (!context.replacingClickedOnBlock() && direction.getAxis().isHorizontal()) {
@@ -72,7 +72,7 @@ public class DirtPathTrapdoor extends TrapDoorBlock {
 	@Override
 	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, Random rand) {
 		if (!this.canSurvive(state, worldIn, pos)) {
-			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, TrapdoorInit.dirt_trapdoor.get().defaultBlockState()
+			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, VEBlocks.dirt_trapdoor.get().defaultBlockState()
 					.setValue(FACING, state.getValue(FACING)).setValue(OPEN, state.getValue(OPEN)).setValue(HALF, state.getValue(HALF))
 					.setValue(POWERED, state.getValue(POWERED)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), worldIn, pos));
 		}

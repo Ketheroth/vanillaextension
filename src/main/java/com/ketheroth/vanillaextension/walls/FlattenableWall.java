@@ -1,6 +1,6 @@
 package com.ketheroth.vanillaextension.walls;
 
-import com.ketheroth.vanillaextension.init.WallInit;
+import com.ketheroth.vanillaextension.init.VEBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -22,7 +22,7 @@ public class FlattenableWall extends WallBlock {
 	@Override
 	public BlockState getToolModifiedState(BlockState state, Level world, BlockPos pos, Player player, ItemStack stack, ToolAction toolAction) {
 		if (toolAction.equals(ToolActions.SHOVEL_FLATTEN)) {
-			return WallInit.dirt_path_wall.get().defaultBlockState().setValue(UP, state.getValue(UP)).setValue(NORTH_WALL, state.getValue(NORTH_WALL)).setValue(EAST_WALL, state.getValue(EAST_WALL)).setValue(SOUTH_WALL, state.getValue(SOUTH_WALL)).setValue(WEST_WALL, state.getValue(WEST_WALL)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+			return VEBlocks.dirt_path_wall.get().defaultBlockState().setValue(UP, state.getValue(UP)).setValue(NORTH_WALL, state.getValue(NORTH_WALL)).setValue(EAST_WALL, state.getValue(EAST_WALL)).setValue(SOUTH_WALL, state.getValue(SOUTH_WALL)).setValue(WEST_WALL, state.getValue(WEST_WALL)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
 		}
 		return super.getToolModifiedState(state, world, pos, player, stack, toolAction);
 	}

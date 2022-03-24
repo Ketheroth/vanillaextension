@@ -1,6 +1,6 @@
 package com.ketheroth.vanillaextension.trapdoors;
 
-import com.ketheroth.vanillaextension.init.TrapdoorInit;
+import com.ketheroth.vanillaextension.init.VEBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -22,7 +22,7 @@ public class FlattenableTrapdoor extends TrapDoorBlock {
 	@Override
 	public BlockState getToolModifiedState(BlockState state, Level world, BlockPos pos, Player player, ItemStack stack, ToolAction toolAction) {
 		if (toolAction.equals(ToolActions.SHOVEL_FLATTEN)) {
-			return TrapdoorInit.dirt_path_trapdoor.get().defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(OPEN, state.getValue(OPEN)).setValue(HALF, state.getValue(HALF)).setValue(POWERED, state.getValue(POWERED)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+			return VEBlocks.dirt_path_trapdoor.get().defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(OPEN, state.getValue(OPEN)).setValue(HALF, state.getValue(HALF)).setValue(POWERED, state.getValue(POWERED)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
 		}
 		return super.getToolModifiedState(state, world, pos, player, stack, toolAction);
 	}

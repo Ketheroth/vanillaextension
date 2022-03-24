@@ -1,6 +1,6 @@
 package com.ketheroth.vanillaextension.fences;
 
-import com.ketheroth.vanillaextension.init.FenceInit;
+import com.ketheroth.vanillaextension.init.VEBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -22,7 +22,7 @@ public class FlattenableFence extends FenceBlock {
 	@Override
 	public BlockState getToolModifiedState(BlockState state, Level world, BlockPos pos, Player player, ItemStack stack, ToolAction toolAction) {
 		if (toolAction.equals(ToolActions.SHOVEL_FLATTEN)) {
-			return FenceInit.dirt_path_fence.get().defaultBlockState().setValue(NORTH, state.getValue(NORTH)).setValue(EAST, state.getValue(EAST)).setValue(SOUTH, state.getValue(SOUTH)).setValue(WEST, state.getValue(WEST)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+			return VEBlocks.dirt_path_fence.get().defaultBlockState().setValue(NORTH, state.getValue(NORTH)).setValue(EAST, state.getValue(EAST)).setValue(SOUTH, state.getValue(SOUTH)).setValue(WEST, state.getValue(WEST)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
 		}
 		return super.getToolModifiedState(state, world, pos, player, stack, toolAction);
 	}

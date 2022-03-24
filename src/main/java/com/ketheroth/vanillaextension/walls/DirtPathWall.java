@@ -1,34 +1,32 @@
 package com.ketheroth.vanillaextension.walls;
 
 import com.google.common.collect.ImmutableMap;
-import com.ketheroth.vanillaextension.init.WallInit;
+import com.ketheroth.vanillaextension.init.VEBlocks;
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.phys.shapes.BooleanOp;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.server.level.ServerLevel;
-
-import java.util.Map;
-import java.util.Random;
-
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WallSide;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.shapes.BooleanOp;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.Map;
+import java.util.Random;
 
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
@@ -118,7 +116,7 @@ public class DirtPathWall extends WallBlock {
 		boolean flag1 = this.shouldConnect(blockstate1, blockstate1.isFaceSturdy(iworldreader, blockpos2, Direction.WEST), Direction.WEST);
 		boolean flag2 = this.shouldConnect(blockstate2, blockstate2.isFaceSturdy(iworldreader, blockpos3, Direction.NORTH), Direction.NORTH);
 		boolean flag3 = this.shouldConnect(blockstate3, blockstate3.isFaceSturdy(iworldreader, blockpos4, Direction.EAST), Direction.EAST);
-		BlockState blockstate5 = (!this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ? WallInit.dirt_wall.get().defaultBlockState() : this.defaultBlockState()).setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
+		BlockState blockstate5 = (!this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ? VEBlocks.dirt_wall.get().defaultBlockState() : this.defaultBlockState()).setValue(WATERLOGGED, fluidstate.getType() == Fluids.WATER);
 		return this.updateShape(iworldreader, blockstate5, blockpos5, blockstate4, flag, flag1, flag2, flag3);
 	}
 
@@ -189,7 +187,7 @@ public class DirtPathWall extends WallBlock {
 	@Override
 	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, Random rand) {
 		if (!this.canSurvive(state, worldIn, pos)) {
-			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, WallInit.dirt_wall.get().defaultBlockState()
+			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, VEBlocks.dirt_wall.get().defaultBlockState()
 							.setValue(UP, state.getValue(UP)).setValue(NORTH_WALL, state.getValue(NORTH_WALL)).setValue(EAST_WALL, state.getValue(EAST_WALL))
 							.setValue(SOUTH_WALL, state.getValue(SOUTH_WALL)).setValue(WEST_WALL, state.getValue(WEST_WALL)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)),
 					worldIn, pos));

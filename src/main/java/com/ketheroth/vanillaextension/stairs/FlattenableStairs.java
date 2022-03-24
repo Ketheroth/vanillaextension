@@ -1,6 +1,6 @@
 package com.ketheroth.vanillaextension.stairs;
 
-import com.ketheroth.vanillaextension.init.StairsInit;
+import com.ketheroth.vanillaextension.init.VEBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -23,7 +23,7 @@ public class FlattenableStairs extends StairBlock {
 	@Override
 	public BlockState getToolModifiedState(BlockState state, Level world, BlockPos pos, Player player, ItemStack stack, ToolAction toolAction) {
 		if (toolAction.equals(ToolActions.SHOVEL_FLATTEN)) {
-			return StairsInit.dirt_path_stairs.get().defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF)).setValue(SHAPE, state.getValue(SHAPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+			return VEBlocks.dirt_path_stairs.get().defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF)).setValue(SHAPE, state.getValue(SHAPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
 		}
 		return super.getToolModifiedState(state, world, pos, player, stack, toolAction);
 	}

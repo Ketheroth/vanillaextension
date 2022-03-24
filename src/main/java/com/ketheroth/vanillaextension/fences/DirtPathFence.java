@@ -1,6 +1,6 @@
 package com.ketheroth.vanillaextension.fences;
 
-import com.ketheroth.vanillaextension.init.FenceInit;
+import com.ketheroth.vanillaextension.init.VEBlocks;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -20,7 +20,12 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DirtPathBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.PipeBlock;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -167,7 +172,7 @@ public class DirtPathFence extends DirtPathBlock {
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		BlockState bs = this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ? this.defaultBlockState() : FenceInit.dirt_fence.get().defaultBlockState();
+		BlockState bs = this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ? this.defaultBlockState() : VEBlocks.dirt_fence.get().defaultBlockState();
 
 		BlockGetter getter = context.getLevel();
 		BlockPos blockpos = context.getClickedPos();
@@ -197,7 +202,7 @@ public class DirtPathFence extends DirtPathBlock {
 	@Override
 	public void tick(BlockState state, ServerLevel level, BlockPos pos, Random rand) {
 		if (!this.canSurvive(state, level, pos)) {
-			level.setBlockAndUpdate(pos, pushEntitiesUp(state, FenceInit.dirt_fence.get().defaultBlockState()
+			level.setBlockAndUpdate(pos, pushEntitiesUp(state, VEBlocks.dirt_fence.get().defaultBlockState()
 					.setValue(NORTH, state.getValue(NORTH)).setValue(EAST, state.getValue(EAST)).setValue(SOUTH, state.getValue(SOUTH))
 					.setValue(WEST, state.getValue(WEST)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)), level, pos));
 		}

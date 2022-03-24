@@ -1,9 +1,10 @@
 package com.ketheroth.vanillaextension.slabs;
 
-import com.ketheroth.vanillaextension.init.*;
+import com.ketheroth.vanillaextension.init.VEBlocks;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
@@ -24,7 +25,21 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.Random;
 
-import static net.minecraft.world.level.block.state.properties.BlockStateProperties.*;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.EAST;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.EAST_WALL;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.HALF;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.HORIZONTAL_FACING;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.NORTH;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.NORTH_WALL;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.OPEN;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.POWERED;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.SNOWY;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.SOUTH;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.SOUTH_WALL;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.STAIRS_SHAPE;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.UP;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.WEST;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.WEST_WALL;
 
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
@@ -81,17 +96,19 @@ public class GrassBlockSlab extends DirtSlab implements BonemealableBlock {
 					((BonemealableBlock) blockstate.getBlock()).performBonemeal(worldIn, rand, blockpos1, blockstate2);
 				}
 				if (blockstate2.isAir()) {
-					PlacedFeature placedfeature;
+					Holder<PlacedFeature> holder;
 					if (rand.nextInt(8) == 0) {
-						List<ConfiguredFeature<?, ?>> list = worldIn.getBiome(blockpos1).getGenerationSettings().getFlowerFeatures();
+						List<ConfiguredFeature<?, ?>> list = worldIn.getBiome(blockpos1).value().getGenerationSettings().getFlowerFeatures();
 						if (list.isEmpty()) {
 							continue;
 						}
-						placedfeature = ((RandomPatchConfiguration)list.get(0).config()).feature().get();
+
+						holder = ((RandomPatchConfiguration)list.get(0).config()).feature();
 					} else {
-						placedfeature = VegetationPlacements.GRASS_BONEMEAL;
+						holder = VegetationPlacements.GRASS_BONEMEAL;
 					}
-					placedfeature.place(worldIn, worldIn.getChunkSource().getGenerator(), rand, blockpos1);
+
+					holder.value().place(worldIn, worldIn.getChunkSource().getGenerator(), rand, blockpos1);
 				}
 			}
 		}
@@ -105,7 +122,7 @@ public class GrassBlockSlab extends DirtSlab implements BonemealableBlock {
 		if (!isSnowyConditions(state, worldIn, pos)) {
 			if (!worldIn.isAreaLoaded(pos, 3))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
-			worldIn.setBlockAndUpdate(pos, SlabInit.dirt_slab.get().defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
+			worldIn.setBlockAndUpdate(pos, VEBlocks.dirt_slab.get().defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED)));
 		} else {
 			if (worldIn.getMaxLocalRawBrightness(pos.above()) >= 9) {
 				for (int i = 0; i < 4; ++i) {
@@ -114,16 +131,16 @@ public class GrassBlockSlab extends DirtSlab implements BonemealableBlock {
 					if (isSnowyAndNotUnderwater(blockstate, worldIn, blockpos)) {
 						if (blockstate.is(Blocks.DIRT)) {
 							worldIn.setBlockAndUpdate(blockpos, Blocks.GRASS_BLOCK.defaultBlockState().setValue(SNOWY, worldIn.getBlockState(blockpos.above()).is(Blocks.SNOW)));
-						} else if (blockstate.is(StairsInit.dirt_stairs.get())) {
-							worldIn.setBlockAndUpdate(blockpos, StairsInit.grass_block_stairs.get().defaultBlockState().setValue(HORIZONTAL_FACING, blockstate.getValue(HORIZONTAL_FACING)).setValue(HALF, blockstate.getValue(HALF)).setValue(STAIRS_SHAPE, blockstate.getValue(STAIRS_SHAPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
-						} else if (blockstate.is(SlabInit.dirt_slab.get())) {
-							worldIn.setBlockAndUpdate(blockpos, SlabInit.grass_block_slab.get().defaultBlockState().setValue(TYPE, blockstate.getValue(TYPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
-						} else if (blockstate.is(FenceInit.dirt_fence.get())) {
-							worldIn.setBlockAndUpdate(blockpos, FenceInit.grass_block_fence.get().defaultBlockState().setValue(NORTH, blockstate.getValue(NORTH)).setValue(EAST, blockstate.getValue(EAST)).setValue(SOUTH, blockstate.getValue(SOUTH)).setValue(WEST, blockstate.getValue(WEST)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
-						} else if (blockstate.is(WallInit.dirt_wall.get())) {
-							worldIn.setBlockAndUpdate(blockpos, WallInit.grass_block_wall.get().defaultBlockState().setValue(UP, blockstate.getValue(UP)).setValue(NORTH_WALL, blockstate.getValue(NORTH_WALL)).setValue(EAST_WALL, blockstate.getValue(EAST_WALL)).setValue(SOUTH_WALL, blockstate.getValue(SOUTH_WALL)).setValue(WEST_WALL, blockstate.getValue(WEST_WALL)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
-						} else if (blockstate.is(TrapdoorInit.dirt_trapdoor.get())) {
-							worldIn.setBlockAndUpdate(blockpos, TrapdoorInit.grass_block_trapdoor.get().defaultBlockState().setValue(HORIZONTAL_FACING, blockstate.getValue(HORIZONTAL_FACING)).setValue(OPEN, blockstate.getValue(OPEN)).setValue(HALF, blockstate.getValue(HALF)).setValue(POWERED, blockstate.getValue(POWERED)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(VEBlocks.dirt_stairs.get())) {
+							worldIn.setBlockAndUpdate(blockpos, VEBlocks.grass_block_stairs.get().defaultBlockState().setValue(HORIZONTAL_FACING, blockstate.getValue(HORIZONTAL_FACING)).setValue(HALF, blockstate.getValue(HALF)).setValue(STAIRS_SHAPE, blockstate.getValue(STAIRS_SHAPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(VEBlocks.dirt_slab.get())) {
+							worldIn.setBlockAndUpdate(blockpos, VEBlocks.grass_block_slab.get().defaultBlockState().setValue(TYPE, blockstate.getValue(TYPE)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(VEBlocks.dirt_fence.get())) {
+							worldIn.setBlockAndUpdate(blockpos, VEBlocks.grass_block_fence.get().defaultBlockState().setValue(NORTH, blockstate.getValue(NORTH)).setValue(EAST, blockstate.getValue(EAST)).setValue(SOUTH, blockstate.getValue(SOUTH)).setValue(WEST, blockstate.getValue(WEST)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(VEBlocks.dirt_wall.get())) {
+							worldIn.setBlockAndUpdate(blockpos, VEBlocks.grass_block_wall.get().defaultBlockState().setValue(UP, blockstate.getValue(UP)).setValue(NORTH_WALL, blockstate.getValue(NORTH_WALL)).setValue(EAST_WALL, blockstate.getValue(EAST_WALL)).setValue(SOUTH_WALL, blockstate.getValue(SOUTH_WALL)).setValue(WEST_WALL, blockstate.getValue(WEST_WALL)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
+						} else if (blockstate.is(VEBlocks.dirt_trapdoor.get())) {
+							worldIn.setBlockAndUpdate(blockpos, VEBlocks.grass_block_trapdoor.get().defaultBlockState().setValue(HORIZONTAL_FACING, blockstate.getValue(HORIZONTAL_FACING)).setValue(OPEN, blockstate.getValue(OPEN)).setValue(HALF, blockstate.getValue(HALF)).setValue(POWERED, blockstate.getValue(POWERED)).setValue(WATERLOGGED, blockstate.getValue(WATERLOGGED)));
 						}
 					}
 				}

@@ -1,6 +1,6 @@
 package com.ketheroth.vanillaextension.slabs;
 
-import com.ketheroth.vanillaextension.init.SlabInit;
+import com.ketheroth.vanillaextension.init.VEBlocks;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -51,7 +51,7 @@ public class FarmSlab extends FarmBlock implements SimpleWaterloggedBlock {
 	}
 
 	public static void turnToDirtSlab(BlockState state, Level worldIn, BlockPos pos) {
-		BlockState bs = SlabInit.dirt_slab.get().defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
+		BlockState bs = VEBlocks.dirt_slab.get().defaultBlockState().setValue(TYPE, state.getValue(TYPE)).setValue(WATERLOGGED, state.getValue(WATERLOGGED));
 		worldIn.setBlockAndUpdate(pos, bs);
 	}
 
@@ -100,7 +100,7 @@ public class FarmSlab extends FarmBlock implements SimpleWaterloggedBlock {
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return !this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ? SlabInit.dirt_slab.get().defaultBlockState() : this.getStateForPlacementSlab(context);
+		return !this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ? VEBlocks.dirt_slab.get().defaultBlockState() : this.getStateForPlacementSlab(context);
 	}
 
 	@Override

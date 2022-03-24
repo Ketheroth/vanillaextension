@@ -1,6 +1,6 @@
 package com.ketheroth.vanillaextension.stairs;
 
-import com.ketheroth.vanillaextension.init.StairsInit;
+import com.ketheroth.vanillaextension.init.VEBlocks;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -113,7 +113,7 @@ public class DirtPathStairs extends StairBlock {
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		BlockState bs = !this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ? StairsInit.dirt_stairs.get().defaultBlockState() : this.defaultBlockState();
+		BlockState bs = !this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos()) ? VEBlocks.dirt_stairs.get().defaultBlockState() : this.defaultBlockState();
 
 		Direction direction = context.getClickedFace();
 		BlockPos blockpos = context.getClickedPos();
@@ -137,7 +137,7 @@ public class DirtPathStairs extends StairBlock {
 	@Override
 	public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, Random rand) {
 		if (!this.canSurvive(state, worldIn, pos)) {
-			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, StairsInit.dirt_stairs.get().defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF))
+			worldIn.setBlockAndUpdate(pos, pushEntitiesUp(state, VEBlocks.dirt_stairs.get().defaultBlockState().setValue(FACING, state.getValue(FACING)).setValue(HALF, state.getValue(HALF))
 							.setValue(WATERLOGGED, state.getValue(WATERLOGGED)).setValue(SHAPE, state.getValue(SHAPE)),
 					worldIn, pos));
 		}
