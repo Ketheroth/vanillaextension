@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## 1.18.2-1.1.2
+
+### Changed
+- Minimum Forge version is 40.1
+
+### Fixed
+- Azalea leaves stairs make the game crash
+- Fence variants of 1.17/1.18 new blocks don't have translated names 
+
 ## 1.18.2-1.1.1
 
 ### Changed
